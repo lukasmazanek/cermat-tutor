@@ -1,0 +1,1702 @@
+{
+  "topic": "pythagorean",
+  "name": "Pythagorova věta",
+  "version": "1.0",
+  "migrated": "2025-12-25",
+  "questions": [
+    {
+      "id": "PYTH-C01",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 3, b = 4, c = ?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "5",
+        "numeric": 5,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "7",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "12",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "c² = a² + b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "c = √(9 + 16) = √25 = 5"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C02",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 5, b = 12, c = ?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "13",
+        "numeric": 13,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "17",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "60",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "c² = a² + b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "c = √(25 + 144) = √169 = 13"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C03",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 6, b = 8, c = ?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "10",
+        "numeric": 10,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "14",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "48",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "c² = a² + b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "c = √(36 + 64) = √100 = 10"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C04",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 8, b = 15, c = ?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "17",
+        "numeric": 17,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "23",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "120",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "c² = a² + b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "c = √(64 + 225) = √289 = 17"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C05",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 7, b = 24, c = ?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "25",
+        "numeric": 25,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "31",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "168",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "c² = a² + b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "c = √(49 + 576) = √625 = 25"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C06",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 9, b = 40, c = ?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "41",
+        "numeric": 41,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "49",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "360",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "c² = a² + b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "c = √(81 + 1600) = √1681 = 41"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C07",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a = ?, b = 4, c = 5",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "3",
+        "numeric": 3,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "1",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "9",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "a² = c² - b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "a = √(25 - 16) = √9 = 3"
+        ],
+        "strategy": "a² = c² - b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C08",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 5, b = ?, c = 13",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "12",
+        "numeric": 12,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "8",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "18",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "b² = c² - a²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "b = √(169 - 25) = √144 = 12"
+        ],
+        "strategy": "b² = c² - a²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C09",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a = ?, b = 8, c = 10",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "6",
+        "numeric": 6,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "2",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "18",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "a² = c² - b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "a = √(100 - 64) = √36 = 6"
+        ],
+        "strategy": "a² = c² - b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C10",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 8, b = ?, c = 17",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "15",
+        "numeric": 15,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "9",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "25",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "b² = c² - a²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "b = √(289 - 64) = √225 = 15"
+        ],
+        "strategy": "b² = c² - a²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C11",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Odvěsny 3 a 4. Přepona?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "5",
+        "numeric": 5,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "7",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "12",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "c² = a² + b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "c = √(9 + 16) = √25 = 5"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C12",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Odvěsny 5 a 12. Přepona?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "13",
+        "numeric": 13,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "17",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "60",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "c² = a² + b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "c = √(25 + 144) = √169 = 13"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C13",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Odvěsna 3, přepona 5. Druhá odvěsna?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "4",
+        "numeric": 4,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "2",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "8",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "b² = c² - a²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "b = √(25 - 9) = √16 = 4"
+        ],
+        "strategy": "b² = c² - a²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C14",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Odvěsna 5, přepona 13. Druhá odvěsna?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "12",
+        "numeric": 12,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "8",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "18",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "b² = c² - a²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "b = √(169 - 25) = √144 = 12"
+        ],
+        "strategy": "b² = c² - a²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C15",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 1, b = 1, c = ?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "√2",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "2",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "c² = a² + b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "c = √(1 + 1) = √2 ≈ 1,41"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C16",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 2, b = 3, c = ?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "√13",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "5",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "√5",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "c² = a² + b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "c = √(4 + 9) = √13 ≈ 3,61"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C17",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 2, b = 5, c = ?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "√29",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "7",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "√7",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "c² = a² + b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "c = √(4 + 25) = √29 ≈ 5,39"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-C18",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 4, b = 5, c = ?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "√41",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "9",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "√9",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "c² = a² + b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "c = √(16 + 25) = √41 ≈ 6,40"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-T01",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Hledám přeponu c =",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "√(a² + b²)",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "a + b",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pythagorova věta: c² = a² + b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Přepona = odmocnina ze součtu čtverců odvěsen"
+        ],
+        "strategy": "Pythagorova věta: c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-T02",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Hledám odvěsnu a =",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "√(c² - b²)",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "c - b",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pythagorova věta: a² = c² - b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Odvěsna = odmocnina z rozdílu čtverců"
+        ],
+        "strategy": "Pythagorova věta: a² = c² - b²"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-T03",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Hledám odvěsnu b =",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "√(c² - a²)",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "c - a",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pythagorova věta: b² = c² - a²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Odvěsna = odmocnina z rozdílu čtverců"
+        ],
+        "strategy": "Pythagorova věta: b² = c² - a²"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-T04",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "c² = a² + b² → c =",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "√(a² + b²)",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "a² + b²",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Odmocnina obou stran"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "c² = ... → c = √(...)"
+        ],
+        "strategy": "Odmocnina obou stran"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-T05",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "a² = c² - b² → a =",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "√(c² - b²)",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "c² - b²",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Odmocnina obou stran"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "a² = ... → a = √(...)"
+        ],
+        "strategy": "Odmocnina obou stran"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-T06",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Přepona z odvěsen 3 a 4:",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "√(3² + 4²)",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "3 + 4",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "c = √(a² + b²)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Dosaď do vzorce: √(9 + 16) = √25 = 5"
+        ],
+        "strategy": "c = √(a² + b²)"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-T07",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Odvěsna, je-li b=4, c=5:",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "√(5² - 4²)",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "5 - 4",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "a = √(c² - b²)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Dosaď do vzorce: √(25 - 16) = √9 = 3"
+        ],
+        "strategy": "a = √(c² - b²)"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-T08",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "V Pythagorově větě se počítá s:",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "čtverci stran",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "stranami",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "c² = a² + b²"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Všechny strany jsou na druhou!"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-P01",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "problem_type"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Odvěsny jsou 3 a 4. Jaká je přepona?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "Obvod trojúhelníku",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "Obsah trojúhelníku",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Hledáme stranu pravoúhlého trojúhelníku"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Známe dvě strany, hledáme třetí → Pythagoras"
+        ],
+        "strategy": "Hledáme stranu pravoúhlého trojúhelníku"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "problem_type",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-P02",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "problem_type"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Je trojúhelník se stranami 5, 12, 13 pravoúhlý?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "Obvod/obsah",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "Konstrukce",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Ověřujeme: a² + b² = c²?"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "25 + 144 = 169 = 13² ✓ Ano, je pravoúhlý"
+        ],
+        "strategy": "Ověřujeme: a² + b² = c²?"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "problem_type",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-P03",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "problem_type"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Žebřík délky 5 m opřený o zeď dosahuje do výšky 4 m. Jak daleko je od zdi?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "Přímá úměrnost",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "Rovnice",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Žebřík = přepona, zeď = odvěsna"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "a = √(5² - 4²) = √9 = 3 m"
+        ],
+        "strategy": "Žebřík = přepona, zeď = odvěsna"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "problem_type",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-P04",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "problem_type"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Úhlopříčka obdélníku 3×4 cm má délku:",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "Obvod obdélníku",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "Obsah obdélníku",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Úhlopříčka = přepona pravoúhlého trojúhelníku"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "d = √(3² + 4²) = 5 cm"
+        ],
+        "strategy": "Úhlopříčka = přepona pravoúhlého trojúhelníku"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "problem_type",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-P05",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "problem_type"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Jaká je délka prostorové úhlopříčky kvádru 3×4×12?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "Objem kvádru",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "Povrch kvádru",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Dvakrát Pythagoras"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Nejdřív úhlopříčka podstavy, pak prostorová"
+        ],
+        "strategy": "Dvakrát Pythagoras"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "problem_type",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-P06",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "problem_type"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Vypočítej výšku rovnostranného trojúhelníku se stranou 6 cm.",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "Obsah trojúhelníku",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "Obvod trojúhelníku",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Výška půlí základnu"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "v = √(6² - 3²) = √27 = 3√3 cm"
+        ],
+        "strategy": "Výška půlí základnu"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "problem_type",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-P07",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "problem_type"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Loď pluje 6 km na východ, pak 8 km na sever. Jak daleko je od startu?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "Součet vzdáleností",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "Rychlost/čas/dráha",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pravoúhlý trojúhelník na mapě"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "d = √(6² + 8²) = 10 km"
+        ],
+        "strategy": "Pravoúhlý trojúhelník na mapě"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "problem_type",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "PYTH-P08",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorean",
+        "problem_type"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Střecha má sklon - výška 3 m, šířka 4 m. Délka střešní plochy?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "Obsah střechy",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "Objem podkroví",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Délka šikmé strany"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "s = √(3² + 4²) = 5 m"
+        ],
+        "strategy": "Délka šikmé strany"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "source": "lightning_questions",
+        "original_type": "problem_type",
+        "migrated": "2025-12-25"
+      }
+    }
+  ]
+}

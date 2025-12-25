@@ -1,0 +1,456 @@
+{
+  "topic": "equations",
+  "name": "Lineární rovnice",
+  "version": "1.0",
+  "migrated": "2025-12-25",
+  "questions": [
+    {
+      "id": "eq-001",
+      "topic": "equations",
+      "tags": [
+        "equations"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "2x + 5 = 13",
+        "context": "Vyřeš rovnici: 2x + 5 = 13",
+        "image": null
+      },
+      "answer": {
+        "correct": "4",
+        "numeric": 4,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Nejdřív odečti 5 od obou stran."
+        },
+        {
+          "level": 2,
+          "text": "Dostaneš 2x = 8. Teď vyděl obě strany 2."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "2x + 5 = 13",
+          "2x = 13 - 5",
+          "2x = 8",
+          "x = 4"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "eq-002",
+      "topic": "equations",
+      "tags": [
+        "equations"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "3x - 7 = 11",
+        "context": "Vyřeš rovnici: 3x - 7 = 11",
+        "image": null
+      },
+      "answer": {
+        "correct": "6",
+        "numeric": 6,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Přičti 7 k oběma stranám."
+        },
+        {
+          "level": 2,
+          "text": "Dostaneš 3x = 18. Vyděl obě strany 3."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "3x - 7 = 11",
+          "3x = 11 + 7",
+          "3x = 18",
+          "x = 6"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "eq-003",
+      "topic": "equations",
+      "tags": [
+        "equations"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "x/4 = 5",
+        "context": "Vyřeš rovnici: x/4 = 5",
+        "image": null
+      },
+      "answer": {
+        "correct": "20",
+        "numeric": 20,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "x je děleno 4. Co je opak dělení?"
+        },
+        {
+          "level": 2,
+          "text": "Vynásob obě strany 4."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "x/4 = 5",
+          "x = 5 × 4",
+          "x = 20"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "eq-004",
+      "topic": "equations",
+      "tags": [
+        "equations"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "5x + 3 = 2x + 15",
+        "context": "Vyřeš rovnici: 5x + 3 = 2x + 15",
+        "image": null
+      },
+      "answer": {
+        "correct": "4",
+        "numeric": 4,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Přesuň všechna x na jednu stranu. Odečti 2x od obou stran."
+        },
+        {
+          "level": 2,
+          "text": "Dostaneš 3x + 3 = 15. Teď odečti 3 a vyděl."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "5x + 3 = 2x + 15",
+          "5x - 2x = 15 - 3",
+          "3x = 12",
+          "x = 4"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "eq-005",
+      "topic": "equations",
+      "tags": [
+        "equations"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "4(x - 2) = 20",
+        "context": "Vyřeš rovnici: 4(x - 2) = 20",
+        "image": null
+      },
+      "answer": {
+        "correct": "7",
+        "numeric": 7,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Jsou dvě cesty - obě fungují! Roznásobit závorku, nebo nejdřív vydělit obě strany. Která je kratší?"
+        },
+        {
+          "level": 2,
+          "text": "Zkus vydělit obě strany 4. Co ti zbyde?"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "4(x - 2) = 20",
+          "x - 2 = 5",
+          "x = 7"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "eq-006",
+      "topic": "equations",
+      "tags": [
+        "equations"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "2(3x + 1) = 14",
+        "context": "Vyřeš rovnici: 2(3x + 1) = 14",
+        "image": null
+      },
+      "answer": {
+        "correct": "2",
+        "numeric": 2,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Jsou dvě cesty - obě fungují! Roznásobit závorku, nebo nejdřív vydělit obě strany 2. Co bude jednodušší?"
+        },
+        {
+          "level": 2,
+          "text": "Zkus vydělit obě strany 2. Dostaneš 3x + 1 = 7. Co dál?"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "2(3x + 1) = 14",
+          "3x + 1 = 7",
+          "3x = 6",
+          "x = 2"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "eq-007",
+      "topic": "equations",
+      "tags": [
+        "equations"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "x/3 + 2 = 5",
+        "context": "Vyřeš rovnici: x/3 + 2 = 5",
+        "image": null
+      },
+      "answer": {
+        "correct": "9",
+        "numeric": 9,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Odečti 2 od obou stran."
+        },
+        {
+          "level": 2,
+          "text": "Dostaneš x/3 = 3. Vynásob obě strany 3."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "x/3 + 2 = 5",
+          "x/3 = 3",
+          "x = 9"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "eq-008",
+      "topic": "equations",
+      "tags": [
+        "equations"
+      ],
+      "difficulty": 3,
+      "question": {
+        "stem": "(x + 3)/2 = (x - 1)/4 + 3",
+        "context": "Vyřeš rovnici: (x + 3)/2 = (x - 1)/4 + 3",
+        "image": null
+      },
+      "answer": {
+        "correct": "5",
+        "numeric": 5,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Zlomky v rovnici můžeš odstranit vynásobením. Čím vynásobíš, aby zmizely oba jmenovatele (2 a 4)?"
+        },
+        {
+          "level": 2,
+          "text": "Vynásob celou rovnici 4. Dostaneš 2(x + 3) = (x - 1) + 12. Teď roznásob závorky."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "(x + 3)/2 = (x - 1)/4 + 3",
+          "2(x + 3) = (x - 1) + 12",
+          "2x + 6 = x + 11",
+          "x = 5"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "eq-009",
+      "topic": "equations",
+      "tags": [
+        "equations"
+      ],
+      "difficulty": 3,
+      "question": {
+        "stem": "3(2x - 1) - 2(x + 3) = 7",
+        "context": "Vyřeš rovnici: 3(2x - 1) - 2(x + 3) = 7",
+        "image": null
+      },
+      "answer": {
+        "correct": "4",
+        "numeric": 4,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Roznásob obě závorky: 6x - 3 a -2x - 6"
+        },
+        {
+          "level": 2,
+          "text": "Spoj: 6x - 3 - 2x - 6 = 4x - 9 = 7"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "3(2x - 1) - 2(x + 3) = 7",
+          "6x - 3 - 2x - 6 = 7",
+          "4x - 9 = 7",
+          "4x = 16",
+          "x = 4"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "eq-010",
+      "topic": "equations",
+      "tags": [
+        "equations"
+      ],
+      "difficulty": 3,
+      "question": {
+        "stem": "0,5x + 1,5 = 2x - 3",
+        "context": "Vyřeš rovnici: 0,5x + 1,5 = 2x - 3",
+        "image": null
+      },
+      "answer": {
+        "correct": "3",
+        "numeric": 3,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Můžeš vynásobit 2, abys odstranil/a desetinná čísla: x + 3 = 4x - 6"
+        },
+        {
+          "level": 2,
+          "text": "Přesuň x na jednu stranu: 3 + 6 = 4x - x"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "0,5x + 1,5 = 2x - 3",
+          "x + 3 = 4x - 6",
+          "9 = 3x",
+          "x = 3"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    }
+  ]
+}

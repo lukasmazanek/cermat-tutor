@@ -1,4 +1,4 @@
-import problemBank from '../data/problem_bank.json'
+import questionsData from '../data/questions.json'
 import { SparklesIcon, LightBulbIcon, ChartBarIcon, CheckCircleIcon, BoltIcon, AcademicCapIcon } from '@heroicons/react/24/outline'
 
 // Helper to get mastered problem IDs from localStorage
@@ -22,12 +22,15 @@ function getMasteredProblemIds() {
 }
 
 function TopicSelector({ onSelectTopic, lastSession, onViewProgress, onStartLightning, onStartTypeDrill }) {
-  const topics = Object.values(problemBank.topics)
+  const topics = Object.values(questionsData.topics)
   const mastered = getMasteredProblemIds()
+
+  // Get open-answer problems for counting
+  const openProblems = questionsData.questions.filter(q => q.meta.supports_open)
 
   // Count problems per topic and mastered per topic
   const problemCounts = topics.reduce((acc, topic) => {
-    const topicProblems = problemBank.problems.filter(p => p.topic === topic.id)
+    const topicProblems = openProblems.filter(p => p.topic === topic.id)
     acc[topic.id] = {
       total: topicProblems.length,
       mastered: topicProblems.filter(p => mastered.has(p.id)).length,

@@ -1,9 +1,61 @@
 import { useState, useEffect } from 'react'
-import typeDrillData from '../../data/drills/type_drill.json'
+import questionsData from '../../data/questions.json'
 import TypeQuestion from './TypeQuestion'
 import StrategyQuestion from './StrategyQuestion'
 import Summary from './Summary'
 import BottomBar from '../BottomBar'
+
+// Transform unified format to TypeDrill format
+function toTypeDrillFormat(q) {
+  return {
+    id: 'TD-' + q.id,
+    prompt: q.question.context,
+    type: {
+      correct: q.meta.type_id,
+      correct_label: q.meta.type_label,
+      distractors: getTypeDistractors(q.meta.type_id)
+    },
+    strategy: {
+      correct: q.solution.strategy,
+      distractors: getStrategyDistractors(q.topic)
+    },
+    explanation: q.hints[0] || ''
+  }
+}
+
+// Helper: Get type distractors
+function getTypeDistractors(typeId) {
+  const distractorMap = {
+    'WORD-OXVICE': [
+      { id: 'NUM-PROC', label: 'Procenta' },
+      { id: 'ALG-EQ', label: 'Rovnice' }
+    ],
+    'ALG-EQ': [
+      { id: 'ALG-EXPR', label: 'Úprava výrazu' },
+      { id: 'NUM-ZLOM', label: 'Zlomky' }
+    ],
+    'NUM-ZLOM': [
+      { id: 'NUM-PROC', label: 'Procenta' },
+      { id: 'ALG-EQ', label: 'Rovnice' }
+    ],
+    'GEOM-PYTH': [
+      { id: 'GEOM-OBSAH', label: 'Obsah/obvod' },
+      { id: 'ALG-EQ', label: 'Rovnice' }
+    ]
+  }
+  return distractorMap[typeId] || [{ id: 'OTHER', label: 'Jiný typ' }]
+}
+
+// Helper: Get strategy distractors
+function getStrategyDistractors(topic) {
+  const map = {
+    'o_x_vice': ['+ zlomek', '÷ zlomek'],
+    'equations': ['Vytýkej', 'Rozlož'],
+    'fractions': ['Násob přímo', 'Převrať'],
+    'pythagorean': ['a + b', 'a × b']
+  }
+  return map[topic] || ['Jiná strategie']
+}
 
 function TypeDrill({ onExit, onViewProgress }) {
   const [questions, setQuestions] = useState([])
@@ -18,7 +70,12 @@ function TypeDrill({ onExit, onViewProgress }) {
 
   // Shuffle and pick 10 questions on mount
   useEffect(() => {
-    const shuffled = [...typeDrillData.questions].sort(() => Math.random() - 0.5)
+    // Filter questions with context and type_id for TypeDrill
+    const typeDrillQuestions = questionsData.questions
+      .filter(q => q.question.context && q.meta.type_id)
+      .map(toTypeDrillFormat)
+
+    const shuffled = [...typeDrillQuestions].sort(() => Math.random() - 0.5)
     setQuestions(shuffled.slice(0, 10))
     setQuestionStartTime(Date.now())
   }, [])
@@ -108,7 +165,7 @@ function TypeDrill({ onExit, onViewProgress }) {
   }
 
   return (
-    <div className="h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
+    <div className="h-screen h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
       {/* ZONE 1: Header (fixed) */}
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-center">

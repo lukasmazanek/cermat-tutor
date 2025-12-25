@@ -1,0 +1,2927 @@
+{
+  "topic": "o_x_vice",
+  "name": "o X více/méně",
+  "version": "1.0",
+  "migrated": "2025-12-25",
+  "questions": [
+    {
+      "id": "ox-001",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Měl jsem 100 Kč. Teď mám o polovinu více. Kolik má...",
+        "context": "Měl jsem 100 Kč. Teď mám o polovinu více. Kolik mám?",
+        "image": null
+      },
+      "answer": {
+        "correct": "150",
+        "numeric": 150,
+        "unit": "Kč",
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "50",
+          "error_type": "common_mistake",
+          "explanation": "Toto je jen polovina. 'O polovinu více' = původní + polovina."
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "\"O polovinu více\" znamená: původní + polovina z původního."
+        },
+        {
+          "level": 2,
+          "text": "Polovina ze 100 je 50. Přičti to k původním 100."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Původní: 100",
+          "Polovina: 100 × 1/2 = 50",
+          "O polovinu více: 100 + 50 = 150"
+        ],
+        "strategy": "× (1 + zlomek)"
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "ox-002",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Cena byla 80 Kč. Zlevnila o čtvrtinu. Jaká je nová...",
+        "context": "Cena byla 80 Kč. Zlevnila o čtvrtinu. Jaká je nová cena?",
+        "image": null
+      },
+      "answer": {
+        "correct": "60",
+        "numeric": 60,
+        "unit": "Kč",
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "20",
+          "error_type": "common_mistake",
+          "explanation": "Toto je jen čtvrtina. 'O čtvrtinu méně' = původní - čtvrtina."
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "\"O čtvrtinu méně\" znamená: původní - čtvrtina z původního."
+        },
+        {
+          "level": 2,
+          "text": "Čtvrtina z 80 je 20. Odečti od původních 80."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Původní: 80",
+          "Čtvrtina: 80 × 1/4 = 20",
+          "O čtvrtinu méně: 80 - 20 = 60"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "ox-003",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Táta vydělává 30 000 Kč měsíčně. Dostal přidáno o ...",
+        "context": "Táta vydělává 30 000 Kč měsíčně. Dostal přidáno o třetinu. Kolik vydělává teď?",
+        "image": null
+      },
+      "answer": {
+        "correct": "40000",
+        "numeric": 40000,
+        "unit": "Kč",
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "10000",
+          "error_type": "common_mistake",
+          "explanation": "Toto je jen třetina. Nový plat = starý + třetina."
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "\"O třetinu více\" = původní + třetina z původního."
+        },
+        {
+          "level": 2,
+          "text": "Třetina z 30 000 je 10 000. Přičti k původnímu platu."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Původní: 30 000",
+          "Třetina: 30 000 : 3 = 10 000",
+          "Nový plat: 30 000 + 10 000 = 40 000"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "ox-004",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "cena je o pětinu nižší. Původní cena byla 500 Kč. Kolik zaplatíš?",
+        "context": "Obchod má slevu: cena je o pětinu nižší. Původní cena byla 500 Kč. Kolik zaplatíš?",
+        "image": null
+      },
+      "answer": {
+        "correct": "400",
+        "numeric": 400,
+        "unit": "Kč",
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "100",
+          "error_type": "common_mistake",
+          "explanation": "Toto je sleva (pětina). Platíš zbytek: 500 - 100 = 400."
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "\"O pětinu méně\" = původní - pětina z původního."
+        },
+        {
+          "level": 2,
+          "text": "Pětina z 500 je 100. Nová cena = 500 - 100."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Původní: 500",
+          "Pětina: 500 : 5 = 100",
+          "Nová cena: 500 - 100 = 400"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "ox-005",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Délka tyče je 120 cm. Prodloužili ji o čtvrtinu. J...",
+        "context": "Délka tyče je 120 cm. Prodloužili ji o čtvrtinu. Jaká je nová délka?",
+        "image": null
+      },
+      "answer": {
+        "correct": "150",
+        "numeric": 150,
+        "unit": "cm",
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "\"O čtvrtinu více\" = původní + čtvrtina."
+        },
+        {
+          "level": 2,
+          "text": "Čtvrtina ze 120 je 30. Nová délka = 120 + 30."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Původní: 120",
+          "Čtvrtina: 120 : 4 = 30",
+          "Nová délka: 120 + 30 = 150"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "ox-006",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Co znamená \"o třetinu více\"?",
+        "context": "Co znamená \"o třetinu více\"?",
+        "image": null
+      },
+      "answer": {
+        "correct": "× 4/3 (neboli původní + třetina)",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "× 1/3",
+          "error_type": "option",
+          "explanation": null
+        },
+        {
+          "value": "+ 1/3",
+          "error_type": "option",
+          "explanation": null
+        },
+        {
+          "value": "× 3",
+          "error_type": "option",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "\"O třetinu více\" = dostaneš původní + ještě třetinu navíc."
+        },
+        {
+          "level": 2,
+          "text": "Matematicky: původní × (1 + 1/3) = původní × 4/3"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "'O třetinu více' = původní + třetina z původního",
+          "= původní × 1 + původní × 1/3",
+          "= původní × (1 + 1/3)",
+          "= původní × 4/3"
+        ],
+        "strategy": "× (1 + zlomek)"
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "ox-007",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice"
+      ],
+      "difficulty": 3,
+      "question": {
+        "stem": "Po zvýšení o čtvrtinu má Jan 750 Kč. Kolik měl pův...",
+        "context": "Po zvýšení o čtvrtinu má Jan 750 Kč. Kolik měl původně?",
+        "image": null
+      },
+      "answer": {
+        "correct": "600",
+        "numeric": 600,
+        "unit": "Kč",
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "562.5",
+          "error_type": "common_mistake",
+          "explanation": "Pozor! Čtvrtina z výsledku ≠ čtvrtina z původního. Musíš dělit 5/4."
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Po zvýšení o čtvrtinu má 5/4 původní částky."
+        },
+        {
+          "level": 2,
+          "text": "750 = původní × 5/4. Původní = 750 : 5 × 4 = 750 × 4/5"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Nová = Původní × 5/4",
+          "750 = Původní × 5/4",
+          "Původní = 750 × 4/5",
+          "Původní = 600"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "ox-008",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice"
+      ],
+      "difficulty": 3,
+      "question": {
+        "stem": "Cena po slevě o třetinu je 240 Kč. Jaká byla původ...",
+        "context": "Cena po slevě o třetinu je 240 Kč. Jaká byla původní cena?",
+        "image": null
+      },
+      "answer": {
+        "correct": "360",
+        "numeric": 360,
+        "unit": "Kč",
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "320",
+          "error_type": "common_mistake",
+          "explanation": "Třetina z 240 ≠ třetina z původní ceny. Původní = 240 × 3/2."
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Po slevě o třetinu zbývá 2/3 původní ceny."
+        },
+        {
+          "level": 2,
+          "text": "240 = původní × 2/3. Původní = 240 : 2 × 3 = 240 × 3/2"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Nová = Původní × 2/3",
+          "240 = Původní × 2/3",
+          "Původní = 240 × 3/2",
+          "Původní = 360"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "ox-009",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice"
+      ],
+      "difficulty": 3,
+      "question": {
+        "stem": "Kniha stála 280 Kč. Nejdřív zdražila o čtvrtinu, p...",
+        "context": "Kniha stála 280 Kč. Nejdřív zdražila o čtvrtinu, pak zlevnila o pětinu. Kolik stojí teď?",
+        "image": null
+      },
+      "answer": {
+        "correct": "280",
+        "numeric": 280,
+        "unit": "Kč",
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Dvě změny za sebou - jak na to? Tip: rozděl na dva kroky. Nejdřív spočítej cenu po zdražení."
+        },
+        {
+          "level": 2,
+          "text": "Po zdražení o čtvrtinu: 280 + 70 = 350 Kč. Teď z této nové ceny spočítej zlevnění o pětinu."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Po zdražení: 280 × 5/4 = 350",
+          "Po zlevnění: 350 × 4/5 = 280",
+          "Zajímavé: vrátila se na původní cenu!"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "ox-010",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Objem nádrže se zvětšil o polovinu. Původně měla 2...",
+        "context": "Objem nádrže se zvětšil o polovinu. Původně měla 200 litrů. Jaký je nový objem?",
+        "image": null
+      },
+      "answer": {
+        "correct": "300 litrů",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "100 litrů",
+          "error_type": "option",
+          "explanation": null
+        },
+        {
+          "value": "250 litrů",
+          "error_type": "option",
+          "explanation": null
+        },
+        {
+          "value": "400 litrů",
+          "error_type": "option",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "\"O polovinu více\" = původní + polovina z původního."
+        },
+        {
+          "level": 2,
+          "text": "Polovina z 200 je 100. Nový objem = 200 + 100."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Původní: 200 l",
+          "Polovina: 100 l",
+          "Nový objem: 200 + 100 = 300 l"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "TYPE-01",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o třetinu více než x =",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "x × 4/3",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "x × 1/3",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o třetinu více = násobit (1 + 1/3) = 4/3"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Přidáváme třetinu Z x, proto násobíme"
+        ],
+        "strategy": "o třetinu více = násobit (1 + 1/3) = 4/3"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "TYPE-03",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o třetinu méně než x =",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "x × 2/3",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "x × 1/3",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o třetinu méně = násobit (1 - 1/3) = 2/3"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Odebíráme třetinu, zůstávají dvě třetiny"
+        ],
+        "strategy": "o třetinu méně = násobit (1 - 1/3) = 2/3"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "TYPE-05",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o čtvrtinu více než x =",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "x × 5/4",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "x × 1/4",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o čtvrtinu více = násobit (1 + 1/4) = 5/4"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Přidáváme čtvrtinu Z x, proto násobíme"
+        ],
+        "strategy": "o čtvrtinu více = násobit (1 + 1/4) = 5/4"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "TYPE-07",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o čtvrtinu méně než x =",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "x × 3/4",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "x × 1/4",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o čtvrtinu méně = násobit (1 - 1/4) = 3/4"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Odebíráme čtvrtinu, zůstávají tři čtvrtiny"
+        ],
+        "strategy": "o čtvrtinu méně = násobit (1 - 1/4) = 3/4"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "TYPE-09",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o polovinu více než x =",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "x × 3/2",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "x × 1/2",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o polovinu více = násobit (1 + 1/2) = 3/2"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Přidáváme polovinu Z x, proto násobíme"
+        ],
+        "strategy": "o polovinu více = násobit (1 + 1/2) = 3/2"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "TYPE-11",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o polovinu méně než x =",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "x × 1/2",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "x × 2",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o polovinu méně = násobit (1 - 1/2) = 1/2"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Odebíráme polovinu, zůstává polovina"
+        ],
+        "strategy": "o polovinu méně = násobit (1 - 1/2) = 1/2"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "TYPE-13",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o pětinu více než x =",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "x × 6/5",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "x × 1/5",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o pětinu více = násobit (1 + 1/5) = 6/5"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Přidáváme pětinu Z x, proto násobíme"
+        ],
+        "strategy": "o pětinu více = násobit (1 + 1/5) = 6/5"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "TYPE-15",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "type_recognition"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o pětinu méně než x =",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "x × 4/5",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "x × 1/5",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o pětinu méně = násobit (1 - 1/5) = 4/5"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Odebíráme pětinu, zůstávají čtyři pětiny"
+        ],
+        "strategy": "o pětinu méně = násobit (1 - 1/5) = 4/5"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "type_recognition",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-01",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o polovinu více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,5",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,5",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "2",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X více = ×(1 + X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o polovinu = o 1/2 → ×(1 + 0,5) = ×1,5"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-02",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o polovinu méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,5",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "1,5",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "2",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X méně = ×(1 − X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o polovinu méně = ×(1 − 0,5) = ×0,5"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-03",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o třetinu více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "4/3",
+        "numeric": 4,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "1/3",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "3",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X více = ×(1 + X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o třetinu = o 1/3 → ×(1 + 1/3) = ×4/3"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-04",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o třetinu méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "2/3",
+        "numeric": 2,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "1/3",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "4/3",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X méně = ×(1 − X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o třetinu méně = ×(1 − 1/3) = ×2/3"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-05",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o čtvrtinu více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,25",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,25",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "4",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X více = ×(1 + X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o čtvrtinu = o 0,25 → ×(1 + 0,25) = ×1,25"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-06",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o čtvrtinu méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,75",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,25",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1,25",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X méně = ×(1 − X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o čtvrtinu méně = ×(1 − 0,25) = ×0,75"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-07",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o pětinu více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,2",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,2",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "5",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X více = ×(1 + X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o pětinu = o 0,2 → ×(1 + 0,2) = ×1,2"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-08",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o pětinu méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,8",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,2",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1,2",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X méně = ×(1 − X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o pětinu méně = ×(1 − 0,2) = ×0,8"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-09",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o desetinu více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,1",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,1",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "10",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X více = ×(1 + X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o desetinu = o 0,1 → ×(1 + 0,1) = ×1,1"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-10",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o desetinu méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,9",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,1",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1,1",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X méně = ×(1 − X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o desetinu méně = ×(1 − 0,1) = ×0,9"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-11",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o dvě třetiny více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "5/3",
+        "numeric": 5,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "2/3",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "3/2",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X více = ×(1 + X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 2/3 více → ×(1 + 2/3) = ×5/3"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-12",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o dvě třetiny méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1/3",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "2/3",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "5/3",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X méně = ×(1 − X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 2/3 méně → ×(1 − 2/3) = ×1/3"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-13",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o tři čtvrtiny více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,75",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,75",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "4/3",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X více = ×(1 + X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 3/4 více → ×(1 + 0,75) = ×1,75"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-14",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o tři čtvrtiny méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,25",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,75",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1,75",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X méně = ×(1 − X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 3/4 méně → ×(1 − 0,75) = ×0,25"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-15",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 10 % více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,1",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,1",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "10",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % více = ×(1 + X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 10 % více → ×(1 + 0,1) = ×1,1"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-16",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 10 % méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,9",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,1",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1,1",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % méně = ×(1 − X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 10 % méně → ×(1 − 0,1) = ×0,9"
+        ],
+        "strategy": "o X % méně = ×(1 − X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-17",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 25 % více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,25",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,25",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "25",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % více = ×(1 + X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 25 % více → ×(1 + 0,25) = ×1,25"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-18",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 25 % méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,75",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,25",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1,25",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % méně = ×(1 − X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 25 % méně → ×(1 − 0,25) = ×0,75"
+        ],
+        "strategy": "o X % méně = ×(1 − X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-19",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 50 % více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,5",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,5",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "50",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % více = ×(1 + X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 50 % více → ×(1 + 0,5) = ×1,5"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-20",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 50 % méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,5",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "1,5",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "50",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % méně = ×(1 − X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 50 % méně → ×(1 − 0,5) = ×0,5"
+        ],
+        "strategy": "o X % méně = ×(1 − X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-21",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 20 % více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,2",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,2",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "20",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % více = ×(1 + X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 20 % více → ×(1 + 0,2) = ×1,2"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-22",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 20 % méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,8",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,2",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1,2",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % méně = ×(1 − X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 20 % méně → ×(1 − 0,2) = ×0,8"
+        ],
+        "strategy": "o X % méně = ×(1 − X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-23",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 100 % více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "2",
+        "numeric": 2,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "1",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "100",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % více = ×(1 + X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 100 % více → ×(1 + 1) = ×2 (dvojnásobek)"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-24",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 75 % více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,75",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,75",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "75",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % více = ×(1 + X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 75 % více → ×(1 + 0,75) = ×1,75"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-25",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 75 % méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,25",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,75",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1,75",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % méně = ×(1 − X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 75 % méně → ×(1 − 0,75) = ×0,25"
+        ],
+        "strategy": "o X % méně = ×(1 − X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-26",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o šestinu více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "7/6",
+        "numeric": 7,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "1/6",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "6",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X více = ×(1 + X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 1/6 více → ×(1 + 1/6) = ×7/6"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-27",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o šestinu méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "5/6",
+        "numeric": 5,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "1/6",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "7/6",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X méně = ×(1 − X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 1/6 méně → ×(1 − 1/6) = ×5/6"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-28",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o dvě pětiny více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,4",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,4",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "5/2",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X více = ×(1 + X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 2/5 více → ×(1 + 0,4) = ×1,4"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-29",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o dvě pětiny méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,6",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,4",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1,4",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X méně = ×(1 − X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 2/5 méně → ×(1 − 0,4) = ×0,6"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-30",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o tři pětiny více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,6",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,6",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "5/3",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X více = ×(1 + X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 3/5 více → ×(1 + 0,6) = ×1,6"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-31",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o tři pětiny méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,4",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,6",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1,6",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X méně = ×(1 − X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 3/5 méně → ×(1 − 0,6) = ×0,4"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-32",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 5 % více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,05",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,05",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "5",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % více = ×(1 + X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 5 % více → ×(1 + 0,05) = ×1,05"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-33",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 5 % méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,95",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,05",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1,05",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % méně = ×(1 − X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 5 % méně → ×(1 − 0,05) = ×0,95"
+        ],
+        "strategy": "o X % méně = ×(1 − X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-34",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 30 % více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,3",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,3",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "30",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % více = ×(1 + X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 30 % více → ×(1 + 0,3) = ×1,3"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-35",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 30 % méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,7",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,3",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1,3",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % méně = ×(1 − X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 30 % méně → ×(1 − 0,3) = ×0,7"
+        ],
+        "strategy": "o X % méně = ×(1 − X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-36",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o čtyři pětiny více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,8",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,8",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "5/4",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X více = ×(1 + X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 4/5 více → ×(1 + 0,8) = ×1,8"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-37",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o čtyři pětiny méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,2",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,8",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1,8",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X méně = ×(1 − X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 4/5 méně → ×(1 − 0,8) = ×0,2"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-38",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o osminu více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,125",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,125",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "8",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X více = ×(1 + X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 1/8 více → ×(1 + 0,125) = ×1,125"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-39",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o osminu méně = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "0,875",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,125",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "1,125",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X méně = ×(1 − X)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 1/8 méně → ×(1 − 0,125) = ×0,875"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "OXV-40",
+      "topic": "o_x_vice",
+      "tags": [
+        "o_x_vice",
+        "calculation"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "o 40 % více = ×?",
+        "context": null,
+        "image": null
+      },
+      "answer": {
+        "correct": "1,4",
+        "numeric": 1,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {
+          "value": "0,4",
+          "error_type": "common_error",
+          "explanation": null
+        },
+        {
+          "value": "40",
+          "error_type": "common_error",
+          "explanation": null
+        }
+      ],
+      "hints": [
+        {
+          "level": 1,
+          "text": "o X % více = ×(1 + X/100)"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "o 40 % více → ×(1 + 0,4) = ×1,4"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "source": "lightning_questions",
+        "original_type": "calculation",
+        "migrated": "2025-12-25"
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import problemBank from '../data/problem_bank.json'
+import questionsData from '../data/questions.json'
 import BottomBar from './BottomBar'
 
 function ProgressPage({ onBack }) {
@@ -43,7 +43,7 @@ function ProgressPage({ onBack }) {
   // Get topic name
   const getTopicName = (topicId) => {
     if (topicId === 'mixed') return 'Mix'
-    return problemBank.topics[topicId]?.name_cs || topicId
+    return questionsData.topics[topicId]?.name_cs || topicId
   }
 
   // Format date for display
@@ -53,7 +53,7 @@ function ProgressPage({ onBack }) {
   }
 
   return (
-    <div className="h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
+    <div className="h-screen h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
       {/* ADR-010 mobile-safe pattern */}
       <div className="flex-1 min-h-0 overflow-y-auto max-w-2xl mx-auto w-full px-4 py-6 pb-20">
         {/* Header */}
@@ -78,7 +78,7 @@ function ProgressPage({ onBack }) {
           >
             Vše
           </button>
-          {Object.keys(problemBank.topics).map(topicId => (
+          {Object.keys(questionsData.topics).map(topicId => (
             <button
               key={topicId}
               onClick={() => setSelectedTopic(topicId)}
@@ -88,7 +88,7 @@ function ProgressPage({ onBack }) {
                   : 'bg-white text-slate-600 border border-slate-200'
                 }`}
             >
-              {problemBank.topics[topicId].name_cs}
+              {questionsData.topics[topicId].name_cs}
             </button>
           ))}
         </div>

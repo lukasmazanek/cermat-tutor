@@ -11,13 +11,15 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
   const [feedback, setFeedback] = useState(null) // 'correct' | 'tryAgain' | null
   const [wrongAttempts, setWrongAttempts] = useState(0) // Auto-hint after 3 wrong attempts
 
-  // Type prompt state (when typePromptEnabled)
-  // Phase: null (not started) | 'type' | 'strategy' | 'done'
-  const [promptPhase, setPromptPhase] = useState(typePromptEnabled ? 'type' : 'done')
-  const [typePromptResult, setTypePromptResult] = useState({ typeCorrect: null, strategyCorrect: null })
-
   // Get type mapping for current problem
   const typeMapping = topicTypeMapping.mappings[problem.topic] || null
+
+  // Type prompt state (when typePromptEnabled AND mapping exists)
+  // Phase: null (not started) | 'type' | 'strategy' | 'done'
+  const [promptPhase, setPromptPhase] = useState(
+    (typePromptEnabled && typeMapping) ? 'type' : 'done'
+  )
+  const [typePromptResult, setTypePromptResult] = useState({ typeCorrect: null, strategyCorrect: null })
 
   // Reset prompt phase when problem changes
   useEffect(() => {
@@ -27,7 +29,7 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
     } else {
       setPromptPhase('done')
     }
-  }, [problem.id, typePromptEnabled])
+  }, [problem.id, typePromptEnabled, typeMapping])
 
   // Get hint source: prefer solution_steps, fallback to hints
   const hintSource = problem.solution_steps?.length > 0 ? problem.solution_steps : (problem.hints || [])
@@ -248,10 +250,10 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
   }
 
   return (
-    <div className="h-[100dvh] flex flex-col -mx-4 -mt-2 px-4 pt-2">
+    <div className="h-screen h-[100dvh] flex flex-col -mx-4 -mt-2 overflow-hidden">
       {/* Progress bar */}
       {progress && (
-        <div className="mb-3">
+        <div className="mb-3 px-4 pt-2">
           <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
             <div
               className="h-full bg-safe-blue transition-all duration-500"
@@ -262,7 +264,7 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
       )}
 
       {/* Problem text and diagram */}
-      <div className="bg-white rounded-2xl shadow-sm p-5 mb-4">
+      <div className="bg-white rounded-2xl shadow-sm p-5 mb-4 mx-4">
         {/* Diagram - if present */}
         {problem.diagram && (
           <DiagramRenderer diagram={problem.diagram} />
@@ -327,9 +329,9 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
         </div>
       )}
 
-      {/* Content area - grows to push keyboard to bottom (only when solving) */}
+      {/* Content area - scrollable with padding for fixed bottom bar */}
       {promptPhase === 'done' && (
-      <div className="flex-1 flex flex-col overflow-auto">
+      <div className="flex-1 flex flex-col overflow-auto px-4 pb-64">
         {/* Type/Strategy result from prompt (shown in hint style) */}
         {typePromptEnabled && typeMapping && typePromptResult.typeCorrect !== null && (
           <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-4 mb-4 flex-shrink-0">
@@ -487,140 +489,128 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
       </div>
       )}
 
-      {/* Bottom bar - keyboard on mobile, just buttons on desktop (only when solving) */}
-      {promptPhase === 'done' && problem.type !== 'multiple_choice' && (
-        <div className="flex-shrink-0 bg-slate-50 pt-2 pb-2 border-t border-slate-200">
-          {/* Virtual keyboard - only on mobile, hidden when solution revealed */}
-          {isMobile && !solutionRevealed && (
-            <div className="grid grid-cols-5 gap-1 mb-2">
-              {/* Row 1: 7 8 9 ÷ √ */}
-              {['7', '8', '9', '/', '√'].map((key) => (
+      {/* Fixed bottom section - keyboard + BottomBar */}
+      {promptPhase === 'done' && (
+        <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 safe-area-pb">
+          <div className="max-w-2xl mx-auto px-4 pt-2 pb-2">
+            {/* Virtual keyboard - only on mobile, hidden when solution revealed or multiple choice */}
+            {isMobile && !solutionRevealed && problem.type !== 'multiple_choice' && (
+              <div className="grid grid-cols-5 gap-1 mb-2">
+                {/* Row 1: 7 8 9 ÷ √ */}
+                {['7', '8', '9', '/', '√'].map((key) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setUserAnswer(prev => prev + (key === '√' ? '√(' : key))}
+                    className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
+                      ${key === '/' || key === '√' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
+                  >
+                    {key === '/' ? '÷' : key}
+                  </button>
+                ))}
+                {/* Row 2: 4 5 6 × ^ */}
+                {['4', '5', '6', '*', '^'].map((key) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setUserAnswer(prev => prev + key)}
+                    className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
+                      ${key === '*' || key === '^' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
+                  >
+                    {key === '*' ? '×' : key}
+                  </button>
+                ))}
+                {/* Row 3: 1 2 3 − ( */}
+                {['1', '2', '3', '-', '('].map((key) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => setUserAnswer(prev => prev + key)}
+                    className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
+                      ${key === '-' || key === '(' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
+                  >
+                    {key === '-' ? '−' : key}
+                  </button>
+                ))}
+                {/* Row 4: 0 , ⌫ + ) */}
                 <button
-                  key={key}
                   type="button"
-                  onClick={() => setUserAnswer(prev => prev + (key === '√' ? '√(' : key))}
-                  className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
-                    ${key === '/' || key === '√' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
+                  onClick={() => setUserAnswer(prev => prev + '0')}
+                  className="h-11 rounded-xl text-base font-medium bg-slate-100 text-slate-800 transition-gentle active:scale-95"
                 >
-                  {key === '/' ? '÷' : key}
+                  0
                 </button>
-              ))}
-              {/* Row 2: 4 5 6 × ^ */}
-              {['4', '5', '6', '*', '^'].map((key) => (
                 <button
-                  key={key}
                   type="button"
-                  onClick={() => setUserAnswer(prev => prev + key)}
-                  className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
-                    ${key === '*' || key === '^' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
+                  onClick={() => setUserAnswer(prev => prev + '.')}
+                  className="h-11 rounded-xl text-base font-medium bg-slate-100 text-slate-800 transition-gentle active:scale-95"
                 >
-                  {key === '*' ? '×' : key}
+                  ,
                 </button>
-              ))}
-              {/* Row 3: 1 2 3 − ( */}
-              {['1', '2', '3', '-', '('].map((key) => (
                 <button
-                  key={key}
                   type="button"
-                  onClick={() => setUserAnswer(prev => prev + key)}
-                  className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
-                    ${key === '-' || key === '(' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
+                  onClick={() => setUserAnswer(prev => prev.slice(0, -1))}
+                  className="h-11 rounded-xl text-base bg-red-50 text-red-600 transition-gentle active:scale-95"
                 >
-                  {key === '-' ? '−' : key}
+                  ⌫
                 </button>
-              ))}
-              {/* Row 4: 0 , ⌫ + ) */}
-              <button
-                type="button"
-                onClick={() => setUserAnswer(prev => prev + '0')}
-                className="h-11 rounded-xl text-base font-medium bg-slate-100 text-slate-800 transition-gentle active:scale-95"
-              >
-                0
-              </button>
-              <button
-                type="button"
-                onClick={() => setUserAnswer(prev => prev + '.')}
-                className="h-11 rounded-xl text-base font-medium bg-slate-100 text-slate-800 transition-gentle active:scale-95"
-              >
-                ,
-              </button>
-              <button
-                type="button"
-                onClick={() => setUserAnswer(prev => prev.slice(0, -1))}
-                className="h-11 rounded-xl text-base bg-red-50 text-red-600 transition-gentle active:scale-95"
-              >
-                ⌫
-              </button>
-              <button
-                type="button"
-                onClick={() => setUserAnswer(prev => prev + '+')}
-                className="h-11 rounded-xl text-base font-medium bg-purple-100 text-purple-700 transition-gentle active:scale-95"
-              >
-                +
-              </button>
-              <button
-                type="button"
-                onClick={() => setUserAnswer(prev => prev + ')')}
-                className="h-11 rounded-xl text-base font-medium bg-purple-100 text-purple-700 transition-gentle active:scale-95"
-              >
-                )
-              </button>
-            </div>
-          )}
+                <button
+                  type="button"
+                  onClick={() => setUserAnswer(prev => prev + '+')}
+                  className="h-11 rounded-xl text-base font-medium bg-purple-100 text-purple-700 transition-gentle active:scale-95"
+                >
+                  +
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setUserAnswer(prev => prev + ')')}
+                  className="h-11 rounded-xl text-base font-medium bg-purple-100 text-purple-700 transition-gentle active:scale-95"
+                >
+                  )
+                </button>
+              </div>
+            )}
 
-          {/* Desktop symbol bar - math symbols only, hidden when solution revealed */}
-          {!isMobile && !solutionRevealed && (
-            <div className="flex gap-2 mb-3">
-              {[
-                { symbol: '√(', display: '√(' },
-                { symbol: '^', display: '^' },
-                { symbol: '(', display: '(' },
-                { symbol: ')', display: ')' }
-              ].map(({ symbol, display }) => (
-                <button
-                  key={symbol}
-                  type="button"
-                  onClick={() => setUserAnswer(prev => prev + symbol)}
-                  className="px-4 py-2 rounded-lg bg-purple-100 text-purple-700
-                    font-mono text-lg hover:bg-purple-200 transition-gentle"
-                >
-                  {display}
-                </button>
-              ))}
-            </div>
-          )}
+            {/* Desktop symbol bar - math symbols only, hidden when solution revealed */}
+            {!isMobile && !solutionRevealed && problem.type !== 'multiple_choice' && (
+              <div className="flex gap-2 mb-2">
+                {[
+                  { symbol: '√(', display: '√(' },
+                  { symbol: '^', display: '^' },
+                  { symbol: '(', display: '(' },
+                  { symbol: ')', display: ')' }
+                ].map(({ symbol, display }) => (
+                  <button
+                    key={symbol}
+                    type="button"
+                    onClick={() => setUserAnswer(prev => prev + symbol)}
+                    className="px-4 py-2 rounded-lg bg-purple-100 text-purple-700
+                      font-mono text-lg hover:bg-purple-200 transition-gentle"
+                  >
+                    {display}
+                  </button>
+                ))}
+              </div>
+            )}
 
-          {/* Action buttons - ADR-009 centralized */}
-          <BottomBar
-            contained
-            slots={{
-              1: { onClick: onExit },
-              2: { onClick: onViewProgress },
-              3: { onClick: onToggleTypePrompt, active: typePromptEnabled },
-              4: { onClick: showNextHint, disabled: solutionRevealed },
-              5: {
-                action: solutionRevealed ? 'continue' : 'submit',
-                onClick: solutionRevealed ? handleContinueAfterSolution : checkAnswer,
-                disabled: !solutionRevealed && !userAnswer.trim()
-              }
-            }}
-          />
-        </div>
-      )}
-
-      {/* Bottom bar for multiple choice - ADR-009 centralized */}
-      {promptPhase === 'done' && problem.type === 'multiple_choice' && (
-        <div className="flex-shrink-0 bg-slate-50 pt-2 pb-2 border-t border-slate-200">
-          <BottomBar
-            contained
-            slots={{
-              1: { onClick: onExit },
-              2: { onClick: onViewProgress },
-              3: { onClick: onToggleTypePrompt, active: typePromptEnabled },
-              4: { onClick: showNextHint, disabled: solutionRevealed },
-              5: { action: 'continue', onClick: handleContinueAfterSolution, disabled: !solutionRevealed }
-            }}
-          />
+            {/* Action buttons - ADR-009 centralized */}
+            <BottomBar
+              contained
+              slots={{
+                1: { onClick: onExit },
+                2: { onClick: onViewProgress },
+                3: { onClick: onToggleTypePrompt, active: typePromptEnabled },
+                4: { onClick: showNextHint, disabled: solutionRevealed },
+                5: problem.type === 'multiple_choice'
+                  ? { action: 'continue', onClick: handleContinueAfterSolution, disabled: !solutionRevealed }
+                  : {
+                      action: solutionRevealed ? 'continue' : 'submit',
+                      onClick: solutionRevealed ? handleContinueAfterSolution : checkAnswer,
+                      disabled: !solutionRevealed && !userAnswer.trim()
+                    }
+              }}
+            />
+          </div>
         </div>
       )}
     </div>

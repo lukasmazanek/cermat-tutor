@@ -1,12 +1,27 @@
 import { useState } from 'react'
 import { BoltIcon } from '@heroicons/react/24/solid'
-import lightningData from '../../data/lightning_questions.json'
+import questionsData from '../../data/questions.json'
 import Question from './Question'
 import Feedback from './Feedback'
 import Summary from './Summary'
 import BottomBar from '../BottomBar'
 
 const QUESTIONS_PER_ROUND = 10
+
+// Transform unified format to Lightning format for subcomponents
+function toLightningFormat(q) {
+  return {
+    id: q.id,
+    question: q.question.stem || q.question.context,
+    correct: q.answer.correct,
+    distractors: q.distractors,
+    type: q.meta.original_type || 'calculation',
+    hint: {
+      rule: q.solution.strategy || '',
+      explanation: q.hints[0] || ''
+    }
+  }
+}
 
 function LightningRound({ onExit, onViewProgress }) {
   const [phase, setPhase] = useState('playing') // 'playing' | 'feedback' | 'summary'
@@ -82,23 +97,24 @@ function LightningRound({ onExit, onViewProgress }) {
     advanceToNext()
   }
 
-  // Select mixed questions from all categories with guaranteed type mix
+  // Select mixed questions with guaranteed type mix
   function selectMixedQuestions() {
-    // Collect all questions from all categories
-    const allQuestions = Object.values(lightningData.categories)
-      .flatMap(cat => cat.questions)
+    // Filter only MC-capable questions from unified format
+    const mcQuestions = questionsData.questions
+      .filter(q => q.meta.supports_mc)
+      .map(toLightningFormat)
 
     // Separate questions by type to ensure mix
-    const typeQuestions = allQuestions.filter(q =>
+    const typeQuestions = mcQuestions.filter(q =>
       q.type === 'type_recognition' || q.type === 'problem_type'
     )
-    const calcQuestions = allQuestions.filter(q =>
+    const calcQuestions = mcQuestions.filter(q =>
       q.type !== 'type_recognition' && q.type !== 'problem_type'
     )
 
     // Shuffle each pool
-    const shuffledType = typeQuestions.sort(() => Math.random() - 0.5)
-    const shuffledCalc = calcQuestions.sort(() => Math.random() - 0.5)
+    const shuffledType = [...typeQuestions].sort(() => Math.random() - 0.5)
+    const shuffledCalc = [...calcQuestions].sort(() => Math.random() - 0.5)
 
     // Pick 3 type questions and 7 calc questions
     const typeCount = Math.min(3, shuffledType.length)
@@ -156,7 +172,7 @@ function LightningRound({ onExit, onViewProgress }) {
   const currentQuestion = questions[currentIndex]
 
   return (
-    <div className="h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
+    <div className="h-screen h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
       {/* Header */}
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-2xl mx-auto px-4 py-3">

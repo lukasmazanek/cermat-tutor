@@ -1,4 +1,4 @@
-import problemBank from '../data/problem_bank.json'
+import questionsData from '../data/questions.json'
 import { TrophyIcon, ChartBarIcon } from '@heroicons/react/24/outline'
 
 function SessionSummary({ attempts, totalProblems, topic, sessionMetrics, onNewSession, onViewProgress }) {
@@ -9,7 +9,7 @@ function SessionSummary({ attempts, totalProblems, topic, sessionMetrics, onNewS
   // Get topic name for display
   const topicName = topic === 'mixed'
     ? 'Mix všeho'
-    : problemBank.topics[topic]?.name_cs || topic
+    : questionsData.topics[topic]?.name_cs || topic
 
   // Get comparison with previous same-topic session
   const getComparison = () => {

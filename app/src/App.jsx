@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { LightBulbIcon } from '@heroicons/react/24/outline'
-import problemBank from './data/problem_bank.json'
+import questionsData from './data/questions.json'
 import ProblemCard from './components/ProblemCard'
 import SessionSummary from './components/SessionSummary'
 import TopicSelector from './components/TopicSelector'
@@ -40,10 +40,33 @@ function getMasteredProblemIds() {
   }
 }
 
+// Transform unified format to ProblemCard format
+function toProblemCardFormat(q) {
+  return {
+    id: q.id,
+    topic: q.topic,
+    difficulty: q.difficulty,
+    type: q.answer.numeric !== null ? 'number' : 'text',
+    problem_cs: q.question.context || q.question.stem,
+    answer: q.answer.numeric !== null ? q.answer.numeric : q.answer.correct,
+    answer_unit: q.answer.unit,
+    hints: q.hints,
+    solution_steps: q.solution.steps
+  }
+}
+
+// Get all problems that support open answer format
+function getOpenProblems() {
+  return questionsData.questions
+    .filter(q => q.meta.supports_open)
+    .map(toProblemCardFormat)
+}
+
 // Helper to generate session problems based on topic
 function generateSessionProblems(topicId) {
   const PROBLEMS_PER_SESSION = 6
   const mastered = getMasteredProblemIds()
+  const allProblems = getOpenProblems()
 
   // Filter out mastered problems, but keep them as fallback if not enough new ones
   const filterProblems = (problems) => {
@@ -55,10 +78,10 @@ function generateSessionProblems(topicId) {
   if (topicId === 'mixed') {
     // Confidence sandwich: strength → strength → strength → challenge → strength → strength
     const equations = filterProblems(
-      problemBank.problems.filter(p => p.topic === 'equations')
+      allProblems.filter(p => p.topic === 'equations')
     )
     const oxVice = filterProblems(
-      problemBank.problems.filter(p => p.topic === 'o_x_vice')
+      allProblems.filter(p => p.topic === 'o_x_vice')
     )
 
     // Shuffle and pick
@@ -76,7 +99,7 @@ function generateSessionProblems(topicId) {
   }
 
   // Single topic - get random problems, preferring unmastered
-  const allTopicProblems = problemBank.problems.filter(p => p.topic === topicId)
+  const allTopicProblems = allProblems.filter(p => p.topic === topicId)
   const unmasteredProblems = allTopicProblems.filter(p => !mastered.has(p.id))
 
   // Use unmastered if available, fall back to all if needed

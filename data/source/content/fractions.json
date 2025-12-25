@@ -1,0 +1,453 @@
+{
+  "topic": "fractions",
+  "name": "Zlomky",
+  "version": "1.0",
+  "migrated": "2025-12-25",
+  "questions": [
+    {
+      "id": "fr-001",
+      "topic": "fractions",
+      "tags": [
+        "fractions"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "1/2 + 1/4",
+        "context": "Vypočítej: 1/2 + 1/4",
+        "image": null
+      },
+      "answer": {
+        "correct": "3/4",
+        "numeric": 0.75,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Potřebuješ společného jmenovatele. Jaký je nejmenší společný násobek 2 a 4?"
+        },
+        {
+          "level": 2,
+          "text": "Převeď 1/2 na ?/4. Kolik čtvrtin je polovina?"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "1/2 + 1/4",
+          "2/4 + 1/4",
+          "3/4"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "fr-002",
+      "topic": "fractions",
+      "tags": [
+        "fractions"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "2/3 - 1/6",
+        "context": "Vypočítej: 2/3 - 1/6",
+        "image": null
+      },
+      "answer": {
+        "correct": "1/2",
+        "numeric": 0.5,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Společný jmenovatel pro 3 a 6 je 6."
+        },
+        {
+          "level": 2,
+          "text": "2/3 = 4/6. Teď odečti 1/6."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "2/3 - 1/6",
+          "4/6 - 1/6",
+          "3/6",
+          "1/2"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "fr-003",
+      "topic": "fractions",
+      "tags": [
+        "fractions"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "3/4 × 2/5",
+        "context": "Vypočítej: 3/4 × 2/5",
+        "image": null
+      },
+      "answer": {
+        "correct": "3/10",
+        "numeric": 0.3,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Jsou dvě cesty! Můžeš rovnou násobit a pak zkrátit, nebo nejdřív zkrátit křížem. Co je jednodušší?"
+        },
+        {
+          "level": 2,
+          "text": "Zkus zkrátit: 4 a 2 jsou dělitelné 2. Dostaneš 3/2 × 1/5. Teď násob."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "3/4 × 2/5",
+          "3/2 × 1/5 (zkráceno)",
+          "3/10"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "fr-004",
+      "topic": "fractions",
+      "tags": [
+        "fractions"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "2/3",
+        "context": "Vypočítej: 2/3 : 4",
+        "image": null
+      },
+      "answer": {
+        "correct": "1/6",
+        "numeric": 0.167,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Dělení číslem = násobení převrácenou hodnotou. 4 = 4/1, převrácená je 1/4."
+        },
+        {
+          "level": 2,
+          "text": "2/3 × 1/4 = ?"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "2/3 : 4",
+          "2/3 × 1/4",
+          "2/12",
+          "1/6"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "fr-005",
+      "topic": "fractions",
+      "tags": [
+        "fractions"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "5/6 - 1/4 + 1/3",
+        "context": "Vypočítej: 5/6 - 1/4 + 1/3",
+        "image": null
+      },
+      "answer": {
+        "correct": "11/12",
+        "numeric": 0.917,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Nejdřív najdi společného jmenovatele pro 6, 4 a 3. Je to 12."
+        },
+        {
+          "level": 2,
+          "text": "5/6 = 10/12, 1/4 = 3/12, 1/3 = 4/12"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "5/6 - 1/4 + 1/3",
+          "10/12 - 3/12 + 4/12",
+          "11/12"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "fr-006",
+      "topic": "fractions",
+      "tags": [
+        "fractions"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "(2/5)",
+        "context": "Vypočítej: (2/5) : (4/15)",
+        "image": null
+      },
+      "answer": {
+        "correct": "3/2",
+        "numeric": 1.5,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Dělení zlomkem = násobení převráceným zlomkem."
+        },
+        {
+          "level": 2,
+          "text": "2/5 × 15/4 = ? Zkus před násobením zkrátit."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "(2/5) : (4/15)",
+          "2/5 × 15/4",
+          "30/20",
+          "3/2"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "fr-007",
+      "topic": "fractions",
+      "tags": [
+        "fractions"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Kolik je 3/4 z 80?",
+        "context": "Kolik je 3/4 z 80?",
+        "image": null
+      },
+      "answer": {
+        "correct": "60",
+        "numeric": 60,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "'Z' znamená násobení. 3/4 × 80 = ?"
+        },
+        {
+          "level": 2,
+          "text": "Můžeš nejdřív vydělit 80 : 4 = 20, pak násobit 20 × 3."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "3/4 × 80",
+          "80 : 4 = 20",
+          "20 × 3 = 60"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "fr-008",
+      "topic": "fractions",
+      "tags": [
+        "fractions"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "24/36",
+        "context": "Zjednodušte: 24/36",
+        "image": null
+      },
+      "answer": {
+        "correct": "2/3",
+        "numeric": 0.667,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Najdi největšího společného dělitele 24 a 36."
+        },
+        {
+          "level": 2,
+          "text": "Oba jsou dělitelné 12. 24:12 = 2, 36:12 = 3."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "24/36",
+          "NSD(24,36) = 12",
+          "24:12 / 36:12",
+          "2/3"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "fr-009",
+      "topic": "fractions",
+      "tags": [
+        "fractions"
+      ],
+      "difficulty": 3,
+      "question": {
+        "stem": "1 - 2/3 × 3/4",
+        "context": "Vypočítej: 1 - 2/3 × 3/4",
+        "image": null
+      },
+      "answer": {
+        "correct": "1/2",
+        "numeric": 0.5,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Pozor na pořadí operací! Nejdřív násobení, pak odčítání."
+        },
+        {
+          "level": 2,
+          "text": "2/3 × 3/4 = 6/12 = 1/2. Pak 1 - 1/2 = ?"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "1 - 2/3 × 3/4",
+          "1 - 6/12",
+          "1 - 1/2",
+          "1/2"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "fr-010",
+      "topic": "fractions",
+      "tags": [
+        "fractions"
+      ],
+      "difficulty": 3,
+      "question": {
+        "stem": "Třetina čísla je 15. Jaké je to číslo?",
+        "context": "Třetina čísla je 15. Jaké je to číslo?",
+        "image": null
+      },
+      "answer": {
+        "correct": "45",
+        "numeric": 45,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Když třetina je 15, kolik jsou tři třetiny (celé číslo)?"
+        },
+        {
+          "level": 2,
+          "text": "x/3 = 15, takže x = 15 × 3"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "x/3 = 15",
+          "x = 15 × 3",
+          "x = 45"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "source": "problem_bank",
+        "migrated": "2025-12-25"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1245 @@
+{
+  "version": "2.0",
+  "generated": "2025-12-25T11:35:08.411Z",
+  "description": "Lightning round questions - generated from unified source",
+  "questions": [
+    {
+      "id": "ox-001",
+      "type": "calculation",
+      "question": "Měl jsem 100 Kč. Teď mám o polovinu více. Kolik má...",
+      "correct": "150",
+      "distractors": [
+        "50"
+      ],
+      "hint": {
+        "rule": "× (1 + zlomek)",
+        "explanation": "\"O polovinu více\" znamená: původní + polovina z původního."
+      }
+    },
+    {
+      "id": "ox-002",
+      "type": "calculation",
+      "question": "Cena byla 80 Kč. Zlevnila o čtvrtinu. Jaká je nová...",
+      "correct": "60",
+      "distractors": [
+        "20"
+      ],
+      "hint": {
+        "rule": "",
+        "explanation": "\"O čtvrtinu méně\" znamená: původní - čtvrtina z původního."
+      }
+    },
+    {
+      "id": "ox-003",
+      "type": "calculation",
+      "question": "Táta vydělává 30 000 Kč měsíčně. Dostal přidáno o ...",
+      "correct": "40000",
+      "distractors": [
+        "10000"
+      ],
+      "hint": {
+        "rule": "",
+        "explanation": "\"O třetinu více\" = původní + třetina z původního."
+      }
+    },
+    {
+      "id": "ox-004",
+      "type": "calculation",
+      "question": "cena je o pětinu nižší. Původní cena byla 500 Kč. Kolik zaplatíš?",
+      "correct": "400",
+      "distractors": [
+        "100"
+      ],
+      "hint": {
+        "rule": "",
+        "explanation": "\"O pětinu méně\" = původní - pětina z původního."
+      }
+    },
+    {
+      "id": "ox-006",
+      "type": "calculation",
+      "question": "Co znamená \"o třetinu více\"?",
+      "correct": "× 4/3 (neboli původní + třetina)",
+      "distractors": [
+        "× 1/3",
+        "+ 1/3"
+      ],
+      "hint": {
+        "rule": "× (1 + zlomek)",
+        "explanation": "\"O třetinu více\" = dostaneš původní + ještě třetinu navíc."
+      }
+    },
+    {
+      "id": "ox-007",
+      "type": "calculation",
+      "question": "Po zvýšení o čtvrtinu má Jan 750 Kč. Kolik měl pův...",
+      "correct": "600",
+      "distractors": [
+        "562.5"
+      ],
+      "hint": {
+        "rule": "",
+        "explanation": "Po zvýšení o čtvrtinu má 5/4 původní částky."
+      }
+    },
+    {
+      "id": "ox-008",
+      "type": "calculation",
+      "question": "Cena po slevě o třetinu je 240 Kč. Jaká byla původ...",
+      "correct": "360",
+      "distractors": [
+        "320"
+      ],
+      "hint": {
+        "rule": "",
+        "explanation": "Po slevě o třetinu zbývá 2/3 původní ceny."
+      }
+    },
+    {
+      "id": "ox-010",
+      "type": "calculation",
+      "question": "Objem nádrže se zvětšil o polovinu. Původně měla 2...",
+      "correct": "300 litrů",
+      "distractors": [
+        "100 litrů",
+        "250 litrů"
+      ],
+      "hint": {
+        "rule": "",
+        "explanation": "\"O polovinu více\" = původní + polovina z původního."
+      }
+    },
+    {
+      "id": "TYPE-01",
+      "type": "type_recognition",
+      "question": "o třetinu více než x =",
+      "correct": "x × 4/3",
+      "distractors": [
+        "x × 1/3"
+      ],
+      "hint": {
+        "rule": "o třetinu více = násobit (1 + 1/3) = 4/3",
+        "explanation": "o třetinu více = násobit (1 + 1/3) = 4/3"
+      }
+    },
+    {
+      "id": "TYPE-03",
+      "type": "type_recognition",
+      "question": "o třetinu méně než x =",
+      "correct": "x × 2/3",
+      "distractors": [
+        "x × 1/3"
+      ],
+      "hint": {
+        "rule": "o třetinu méně = násobit (1 - 1/3) = 2/3",
+        "explanation": "o třetinu méně = násobit (1 - 1/3) = 2/3"
+      }
+    },
+    {
+      "id": "TYPE-05",
+      "type": "type_recognition",
+      "question": "o čtvrtinu více než x =",
+      "correct": "x × 5/4",
+      "distractors": [
+        "x × 1/4"
+      ],
+      "hint": {
+        "rule": "o čtvrtinu více = násobit (1 + 1/4) = 5/4",
+        "explanation": "o čtvrtinu více = násobit (1 + 1/4) = 5/4"
+      }
+    },
+    {
+      "id": "TYPE-07",
+      "type": "type_recognition",
+      "question": "o čtvrtinu méně než x =",
+      "correct": "x × 3/4",
+      "distractors": [
+        "x × 1/4"
+      ],
+      "hint": {
+        "rule": "o čtvrtinu méně = násobit (1 - 1/4) = 3/4",
+        "explanation": "o čtvrtinu méně = násobit (1 - 1/4) = 3/4"
+      }
+    },
+    {
+      "id": "TYPE-09",
+      "type": "type_recognition",
+      "question": "o polovinu více než x =",
+      "correct": "x × 3/2",
+      "distractors": [
+        "x × 1/2"
+      ],
+      "hint": {
+        "rule": "o polovinu více = násobit (1 + 1/2) = 3/2",
+        "explanation": "o polovinu více = násobit (1 + 1/2) = 3/2"
+      }
+    },
+    {
+      "id": "TYPE-11",
+      "type": "type_recognition",
+      "question": "o polovinu méně než x =",
+      "correct": "x × 1/2",
+      "distractors": [
+        "x × 2"
+      ],
+      "hint": {
+        "rule": "o polovinu méně = násobit (1 - 1/2) = 1/2",
+        "explanation": "o polovinu méně = násobit (1 - 1/2) = 1/2"
+      }
+    },
+    {
+      "id": "TYPE-13",
+      "type": "type_recognition",
+      "question": "o pětinu více než x =",
+      "correct": "x × 6/5",
+      "distractors": [
+        "x × 1/5"
+      ],
+      "hint": {
+        "rule": "o pětinu více = násobit (1 + 1/5) = 6/5",
+        "explanation": "o pětinu více = násobit (1 + 1/5) = 6/5"
+      }
+    },
+    {
+      "id": "TYPE-15",
+      "type": "type_recognition",
+      "question": "o pětinu méně než x =",
+      "correct": "x × 4/5",
+      "distractors": [
+        "x × 1/5"
+      ],
+      "hint": {
+        "rule": "o pětinu méně = násobit (1 - 1/5) = 4/5",
+        "explanation": "o pětinu méně = násobit (1 - 1/5) = 4/5"
+      }
+    },
+    {
+      "id": "OXV-01",
+      "type": "calculation",
+      "question": "o polovinu více = ×?",
+      "correct": "1,5",
+      "distractors": [
+        "0,5",
+        "2"
+      ],
+      "hint": {
+        "rule": "o X více = ×(1 + X)",
+        "explanation": "o X více = ×(1 + X)"
+      }
+    },
+    {
+      "id": "OXV-02",
+      "type": "calculation",
+      "question": "o polovinu méně = ×?",
+      "correct": "0,5",
+      "distractors": [
+        "1,5",
+        "2"
+      ],
+      "hint": {
+        "rule": "o X méně = ×(1 − X)",
+        "explanation": "o X méně = ×(1 − X)"
+      }
+    },
+    {
+      "id": "OXV-03",
+      "type": "calculation",
+      "question": "o třetinu více = ×?",
+      "correct": "4/3",
+      "distractors": [
+        "1/3",
+        "3"
+      ],
+      "hint": {
+        "rule": "o X více = ×(1 + X)",
+        "explanation": "o X více = ×(1 + X)"
+      }
+    },
+    {
+      "id": "OXV-04",
+      "type": "calculation",
+      "question": "o třetinu méně = ×?",
+      "correct": "2/3",
+      "distractors": [
+        "1/3",
+        "4/3"
+      ],
+      "hint": {
+        "rule": "o X méně = ×(1 − X)",
+        "explanation": "o X méně = ×(1 − X)"
+      }
+    },
+    {
+      "id": "OXV-05",
+      "type": "calculation",
+      "question": "o čtvrtinu více = ×?",
+      "correct": "1,25",
+      "distractors": [
+        "0,25",
+        "4"
+      ],
+      "hint": {
+        "rule": "o X více = ×(1 + X)",
+        "explanation": "o X více = ×(1 + X)"
+      }
+    },
+    {
+      "id": "OXV-06",
+      "type": "calculation",
+      "question": "o čtvrtinu méně = ×?",
+      "correct": "0,75",
+      "distractors": [
+        "0,25",
+        "1,25"
+      ],
+      "hint": {
+        "rule": "o X méně = ×(1 − X)",
+        "explanation": "o X méně = ×(1 − X)"
+      }
+    },
+    {
+      "id": "OXV-07",
+      "type": "calculation",
+      "question": "o pětinu více = ×?",
+      "correct": "1,2",
+      "distractors": [
+        "0,2",
+        "5"
+      ],
+      "hint": {
+        "rule": "o X více = ×(1 + X)",
+        "explanation": "o X více = ×(1 + X)"
+      }
+    },
+    {
+      "id": "OXV-08",
+      "type": "calculation",
+      "question": "o pětinu méně = ×?",
+      "correct": "0,8",
+      "distractors": [
+        "0,2",
+        "1,2"
+      ],
+      "hint": {
+        "rule": "o X méně = ×(1 − X)",
+        "explanation": "o X méně = ×(1 − X)"
+      }
+    },
+    {
+      "id": "OXV-09",
+      "type": "calculation",
+      "question": "o desetinu více = ×?",
+      "correct": "1,1",
+      "distractors": [
+        "0,1",
+        "10"
+      ],
+      "hint": {
+        "rule": "o X více = ×(1 + X)",
+        "explanation": "o X více = ×(1 + X)"
+      }
+    },
+    {
+      "id": "OXV-10",
+      "type": "calculation",
+      "question": "o desetinu méně = ×?",
+      "correct": "0,9",
+      "distractors": [
+        "0,1",
+        "1,1"
+      ],
+      "hint": {
+        "rule": "o X méně = ×(1 − X)",
+        "explanation": "o X méně = ×(1 − X)"
+      }
+    },
+    {
+      "id": "OXV-11",
+      "type": "calculation",
+      "question": "o dvě třetiny více = ×?",
+      "correct": "5/3",
+      "distractors": [
+        "2/3",
+        "3/2"
+      ],
+      "hint": {
+        "rule": "o X více = ×(1 + X)",
+        "explanation": "o X více = ×(1 + X)"
+      }
+    },
+    {
+      "id": "OXV-12",
+      "type": "calculation",
+      "question": "o dvě třetiny méně = ×?",
+      "correct": "1/3",
+      "distractors": [
+        "2/3",
+        "5/3"
+      ],
+      "hint": {
+        "rule": "o X méně = ×(1 − X)",
+        "explanation": "o X méně = ×(1 − X)"
+      }
+    },
+    {
+      "id": "OXV-13",
+      "type": "calculation",
+      "question": "o tři čtvrtiny více = ×?",
+      "correct": "1,75",
+      "distractors": [
+        "0,75",
+        "4/3"
+      ],
+      "hint": {
+        "rule": "o X více = ×(1 + X)",
+        "explanation": "o X více = ×(1 + X)"
+      }
+    },
+    {
+      "id": "OXV-14",
+      "type": "calculation",
+      "question": "o tři čtvrtiny méně = ×?",
+      "correct": "0,25",
+      "distractors": [
+        "0,75",
+        "1,75"
+      ],
+      "hint": {
+        "rule": "o X méně = ×(1 − X)",
+        "explanation": "o X méně = ×(1 − X)"
+      }
+    },
+    {
+      "id": "OXV-15",
+      "type": "calculation",
+      "question": "o 10 % více = ×?",
+      "correct": "1,1",
+      "distractors": [
+        "0,1",
+        "10"
+      ],
+      "hint": {
+        "rule": "o X % více = ×(1 + X/100)",
+        "explanation": "o X % více = ×(1 + X/100)"
+      }
+    },
+    {
+      "id": "OXV-16",
+      "type": "calculation",
+      "question": "o 10 % méně = ×?",
+      "correct": "0,9",
+      "distractors": [
+        "0,1",
+        "1,1"
+      ],
+      "hint": {
+        "rule": "o X % méně = ×(1 − X/100)",
+        "explanation": "o X % méně = ×(1 − X/100)"
+      }
+    },
+    {
+      "id": "OXV-17",
+      "type": "calculation",
+      "question": "o 25 % více = ×?",
+      "correct": "1,25",
+      "distractors": [
+        "0,25",
+        "25"
+      ],
+      "hint": {
+        "rule": "o X % více = ×(1 + X/100)",
+        "explanation": "o X % více = ×(1 + X/100)"
+      }
+    },
+    {
+      "id": "OXV-18",
+      "type": "calculation",
+      "question": "o 25 % méně = ×?",
+      "correct": "0,75",
+      "distractors": [
+        "0,25",
+        "1,25"
+      ],
+      "hint": {
+        "rule": "o X % méně = ×(1 − X/100)",
+        "explanation": "o X % méně = ×(1 − X/100)"
+      }
+    },
+    {
+      "id": "OXV-19",
+      "type": "calculation",
+      "question": "o 50 % více = ×?",
+      "correct": "1,5",
+      "distractors": [
+        "0,5",
+        "50"
+      ],
+      "hint": {
+        "rule": "o X % více = ×(1 + X/100)",
+        "explanation": "o X % více = ×(1 + X/100)"
+      }
+    },
+    {
+      "id": "OXV-20",
+      "type": "calculation",
+      "question": "o 50 % méně = ×?",
+      "correct": "0,5",
+      "distractors": [
+        "1,5",
+        "50"
+      ],
+      "hint": {
+        "rule": "o X % méně = ×(1 − X/100)",
+        "explanation": "o X % méně = ×(1 − X/100)"
+      }
+    },
+    {
+      "id": "OXV-21",
+      "type": "calculation",
+      "question": "o 20 % více = ×?",
+      "correct": "1,2",
+      "distractors": [
+        "0,2",
+        "20"
+      ],
+      "hint": {
+        "rule": "o X % více = ×(1 + X/100)",
+        "explanation": "o X % více = ×(1 + X/100)"
+      }
+    },
+    {
+      "id": "OXV-22",
+      "type": "calculation",
+      "question": "o 20 % méně = ×?",
+      "correct": "0,8",
+      "distractors": [
+        "0,2",
+        "1,2"
+      ],
+      "hint": {
+        "rule": "o X % méně = ×(1 − X/100)",
+        "explanation": "o X % méně = ×(1 − X/100)"
+      }
+    },
+    {
+      "id": "OXV-23",
+      "type": "calculation",
+      "question": "o 100 % více = ×?",
+      "correct": "2",
+      "distractors": [
+        "1",
+        "100"
+      ],
+      "hint": {
+        "rule": "o X % více = ×(1 + X/100)",
+        "explanation": "o X % více = ×(1 + X/100)"
+      }
+    },
+    {
+      "id": "OXV-24",
+      "type": "calculation",
+      "question": "o 75 % více = ×?",
+      "correct": "1,75",
+      "distractors": [
+        "0,75",
+        "75"
+      ],
+      "hint": {
+        "rule": "o X % více = ×(1 + X/100)",
+        "explanation": "o X % více = ×(1 + X/100)"
+      }
+    },
+    {
+      "id": "OXV-25",
+      "type": "calculation",
+      "question": "o 75 % méně = ×?",
+      "correct": "0,25",
+      "distractors": [
+        "0,75",
+        "1,75"
+      ],
+      "hint": {
+        "rule": "o X % méně = ×(1 − X/100)",
+        "explanation": "o X % méně = ×(1 − X/100)"
+      }
+    },
+    {
+      "id": "OXV-26",
+      "type": "calculation",
+      "question": "o šestinu více = ×?",
+      "correct": "7/6",
+      "distractors": [
+        "1/6",
+        "6"
+      ],
+      "hint": {
+        "rule": "o X více = ×(1 + X)",
+        "explanation": "o X více = ×(1 + X)"
+      }
+    },
+    {
+      "id": "OXV-27",
+      "type": "calculation",
+      "question": "o šestinu méně = ×?",
+      "correct": "5/6",
+      "distractors": [
+        "1/6",
+        "7/6"
+      ],
+      "hint": {
+        "rule": "o X méně = ×(1 − X)",
+        "explanation": "o X méně = ×(1 − X)"
+      }
+    },
+    {
+      "id": "OXV-28",
+      "type": "calculation",
+      "question": "o dvě pětiny více = ×?",
+      "correct": "1,4",
+      "distractors": [
+        "0,4",
+        "5/2"
+      ],
+      "hint": {
+        "rule": "o X více = ×(1 + X)",
+        "explanation": "o X více = ×(1 + X)"
+      }
+    },
+    {
+      "id": "OXV-29",
+      "type": "calculation",
+      "question": "o dvě pětiny méně = ×?",
+      "correct": "0,6",
+      "distractors": [
+        "0,4",
+        "1,4"
+      ],
+      "hint": {
+        "rule": "o X méně = ×(1 − X)",
+        "explanation": "o X méně = ×(1 − X)"
+      }
+    },
+    {
+      "id": "OXV-30",
+      "type": "calculation",
+      "question": "o tři pětiny více = ×?",
+      "correct": "1,6",
+      "distractors": [
+        "0,6",
+        "5/3"
+      ],
+      "hint": {
+        "rule": "o X více = ×(1 + X)",
+        "explanation": "o X více = ×(1 + X)"
+      }
+    },
+    {
+      "id": "OXV-31",
+      "type": "calculation",
+      "question": "o tři pětiny méně = ×?",
+      "correct": "0,4",
+      "distractors": [
+        "0,6",
+        "1,6"
+      ],
+      "hint": {
+        "rule": "o X méně = ×(1 − X)",
+        "explanation": "o X méně = ×(1 − X)"
+      }
+    },
+    {
+      "id": "OXV-32",
+      "type": "calculation",
+      "question": "o 5 % více = ×?",
+      "correct": "1,05",
+      "distractors": [
+        "0,05",
+        "5"
+      ],
+      "hint": {
+        "rule": "o X % více = ×(1 + X/100)",
+        "explanation": "o X % více = ×(1 + X/100)"
+      }
+    },
+    {
+      "id": "OXV-33",
+      "type": "calculation",
+      "question": "o 5 % méně = ×?",
+      "correct": "0,95",
+      "distractors": [
+        "0,05",
+        "1,05"
+      ],
+      "hint": {
+        "rule": "o X % méně = ×(1 − X/100)",
+        "explanation": "o X % méně = ×(1 − X/100)"
+      }
+    },
+    {
+      "id": "OXV-34",
+      "type": "calculation",
+      "question": "o 30 % více = ×?",
+      "correct": "1,3",
+      "distractors": [
+        "0,3",
+        "30"
+      ],
+      "hint": {
+        "rule": "o X % více = ×(1 + X/100)",
+        "explanation": "o X % více = ×(1 + X/100)"
+      }
+    },
+    {
+      "id": "OXV-35",
+      "type": "calculation",
+      "question": "o 30 % méně = ×?",
+      "correct": "0,7",
+      "distractors": [
+        "0,3",
+        "1,3"
+      ],
+      "hint": {
+        "rule": "o X % méně = ×(1 − X/100)",
+        "explanation": "o X % méně = ×(1 − X/100)"
+      }
+    },
+    {
+      "id": "OXV-36",
+      "type": "calculation",
+      "question": "o čtyři pětiny více = ×?",
+      "correct": "1,8",
+      "distractors": [
+        "0,8",
+        "5/4"
+      ],
+      "hint": {
+        "rule": "o X více = ×(1 + X)",
+        "explanation": "o X více = ×(1 + X)"
+      }
+    },
+    {
+      "id": "OXV-37",
+      "type": "calculation",
+      "question": "o čtyři pětiny méně = ×?",
+      "correct": "0,2",
+      "distractors": [
+        "0,8",
+        "1,8"
+      ],
+      "hint": {
+        "rule": "o X méně = ×(1 − X)",
+        "explanation": "o X méně = ×(1 − X)"
+      }
+    },
+    {
+      "id": "OXV-38",
+      "type": "calculation",
+      "question": "o osminu více = ×?",
+      "correct": "1,125",
+      "distractors": [
+        "0,125",
+        "8"
+      ],
+      "hint": {
+        "rule": "o X více = ×(1 + X)",
+        "explanation": "o X více = ×(1 + X)"
+      }
+    },
+    {
+      "id": "OXV-39",
+      "type": "calculation",
+      "question": "o osminu méně = ×?",
+      "correct": "0,875",
+      "distractors": [
+        "0,125",
+        "1,125"
+      ],
+      "hint": {
+        "rule": "o X méně = ×(1 − X)",
+        "explanation": "o X méně = ×(1 − X)"
+      }
+    },
+    {
+      "id": "OXV-40",
+      "type": "calculation",
+      "question": "o 40 % více = ×?",
+      "correct": "1,4",
+      "distractors": [
+        "0,4",
+        "40"
+      ],
+      "hint": {
+        "rule": "o X % více = ×(1 + X/100)",
+        "explanation": "o X % více = ×(1 + X/100)"
+      }
+    },
+    {
+      "id": "PYTH-C01",
+      "type": "calculation",
+      "question": "a = 3, b = 4, c = ?",
+      "correct": "5",
+      "distractors": [
+        "7",
+        "12"
+      ],
+      "hint": {
+        "rule": "c² = a² + b²",
+        "explanation": "c² = a² + b²"
+      }
+    },
+    {
+      "id": "PYTH-C02",
+      "type": "calculation",
+      "question": "a = 5, b = 12, c = ?",
+      "correct": "13",
+      "distractors": [
+        "17",
+        "60"
+      ],
+      "hint": {
+        "rule": "c² = a² + b²",
+        "explanation": "c² = a² + b²"
+      }
+    },
+    {
+      "id": "PYTH-C03",
+      "type": "calculation",
+      "question": "a = 6, b = 8, c = ?",
+      "correct": "10",
+      "distractors": [
+        "14",
+        "48"
+      ],
+      "hint": {
+        "rule": "c² = a² + b²",
+        "explanation": "c² = a² + b²"
+      }
+    },
+    {
+      "id": "PYTH-C04",
+      "type": "calculation",
+      "question": "a = 8, b = 15, c = ?",
+      "correct": "17",
+      "distractors": [
+        "23",
+        "120"
+      ],
+      "hint": {
+        "rule": "c² = a² + b²",
+        "explanation": "c² = a² + b²"
+      }
+    },
+    {
+      "id": "PYTH-C05",
+      "type": "calculation",
+      "question": "a = 7, b = 24, c = ?",
+      "correct": "25",
+      "distractors": [
+        "31",
+        "168"
+      ],
+      "hint": {
+        "rule": "c² = a² + b²",
+        "explanation": "c² = a² + b²"
+      }
+    },
+    {
+      "id": "PYTH-C06",
+      "type": "calculation",
+      "question": "a = 9, b = 40, c = ?",
+      "correct": "41",
+      "distractors": [
+        "49",
+        "360"
+      ],
+      "hint": {
+        "rule": "c² = a² + b²",
+        "explanation": "c² = a² + b²"
+      }
+    },
+    {
+      "id": "PYTH-C07",
+      "type": "calculation",
+      "question": "a = ?, b = 4, c = 5",
+      "correct": "3",
+      "distractors": [
+        "1",
+        "9"
+      ],
+      "hint": {
+        "rule": "a² = c² - b²",
+        "explanation": "a² = c² - b²"
+      }
+    },
+    {
+      "id": "PYTH-C08",
+      "type": "calculation",
+      "question": "a = 5, b = ?, c = 13",
+      "correct": "12",
+      "distractors": [
+        "8",
+        "18"
+      ],
+      "hint": {
+        "rule": "b² = c² - a²",
+        "explanation": "b² = c² - a²"
+      }
+    },
+    {
+      "id": "PYTH-C09",
+      "type": "calculation",
+      "question": "a = ?, b = 8, c = 10",
+      "correct": "6",
+      "distractors": [
+        "2",
+        "18"
+      ],
+      "hint": {
+        "rule": "a² = c² - b²",
+        "explanation": "a² = c² - b²"
+      }
+    },
+    {
+      "id": "PYTH-C10",
+      "type": "calculation",
+      "question": "a = 8, b = ?, c = 17",
+      "correct": "15",
+      "distractors": [
+        "9",
+        "25"
+      ],
+      "hint": {
+        "rule": "b² = c² - a²",
+        "explanation": "b² = c² - a²"
+      }
+    },
+    {
+      "id": "PYTH-C11",
+      "type": "calculation",
+      "question": "Odvěsny 3 a 4. Přepona?",
+      "correct": "5",
+      "distractors": [
+        "7",
+        "12"
+      ],
+      "hint": {
+        "rule": "c² = a² + b²",
+        "explanation": "c² = a² + b²"
+      }
+    },
+    {
+      "id": "PYTH-C12",
+      "type": "calculation",
+      "question": "Odvěsny 5 a 12. Přepona?",
+      "correct": "13",
+      "distractors": [
+        "17",
+        "60"
+      ],
+      "hint": {
+        "rule": "c² = a² + b²",
+        "explanation": "c² = a² + b²"
+      }
+    },
+    {
+      "id": "PYTH-C13",
+      "type": "calculation",
+      "question": "Odvěsna 3, přepona 5. Druhá odvěsna?",
+      "correct": "4",
+      "distractors": [
+        "2",
+        "8"
+      ],
+      "hint": {
+        "rule": "b² = c² - a²",
+        "explanation": "b² = c² - a²"
+      }
+    },
+    {
+      "id": "PYTH-C14",
+      "type": "calculation",
+      "question": "Odvěsna 5, přepona 13. Druhá odvěsna?",
+      "correct": "12",
+      "distractors": [
+        "8",
+        "18"
+      ],
+      "hint": {
+        "rule": "b² = c² - a²",
+        "explanation": "b² = c² - a²"
+      }
+    },
+    {
+      "id": "PYTH-C15",
+      "type": "calculation",
+      "question": "a = 1, b = 1, c = ?",
+      "correct": "√2",
+      "distractors": [
+        "2",
+        "1"
+      ],
+      "hint": {
+        "rule": "c² = a² + b²",
+        "explanation": "c² = a² + b²"
+      }
+    },
+    {
+      "id": "PYTH-C16",
+      "type": "calculation",
+      "question": "a = 2, b = 3, c = ?",
+      "correct": "√13",
+      "distractors": [
+        "5",
+        "√5"
+      ],
+      "hint": {
+        "rule": "c² = a² + b²",
+        "explanation": "c² = a² + b²"
+      }
+    },
+    {
+      "id": "PYTH-C17",
+      "type": "calculation",
+      "question": "a = 2, b = 5, c = ?",
+      "correct": "√29",
+      "distractors": [
+        "7",
+        "√7"
+      ],
+      "hint": {
+        "rule": "c² = a² + b²",
+        "explanation": "c² = a² + b²"
+      }
+    },
+    {
+      "id": "PYTH-C18",
+      "type": "calculation",
+      "question": "a = 4, b = 5, c = ?",
+      "correct": "√41",
+      "distractors": [
+        "9",
+        "√9"
+      ],
+      "hint": {
+        "rule": "c² = a² + b²",
+        "explanation": "c² = a² + b²"
+      }
+    },
+    {
+      "id": "PYTH-T01",
+      "type": "type_recognition",
+      "question": "Hledám přeponu c =",
+      "correct": "√(a² + b²)",
+      "distractors": [
+        "a + b"
+      ],
+      "hint": {
+        "rule": "Pythagorova věta: c² = a² + b²",
+        "explanation": "Pythagorova věta: c² = a² + b²"
+      }
+    },
+    {
+      "id": "PYTH-T02",
+      "type": "type_recognition",
+      "question": "Hledám odvěsnu a =",
+      "correct": "√(c² - b²)",
+      "distractors": [
+        "c - b"
+      ],
+      "hint": {
+        "rule": "Pythagorova věta: a² = c² - b²",
+        "explanation": "Pythagorova věta: a² = c² - b²"
+      }
+    },
+    {
+      "id": "PYTH-T03",
+      "type": "type_recognition",
+      "question": "Hledám odvěsnu b =",
+      "correct": "√(c² - a²)",
+      "distractors": [
+        "c - a"
+      ],
+      "hint": {
+        "rule": "Pythagorova věta: b² = c² - a²",
+        "explanation": "Pythagorova věta: b² = c² - a²"
+      }
+    },
+    {
+      "id": "PYTH-T04",
+      "type": "type_recognition",
+      "question": "c² = a² + b² → c =",
+      "correct": "√(a² + b²)",
+      "distractors": [
+        "a² + b²"
+      ],
+      "hint": {
+        "rule": "Odmocnina obou stran",
+        "explanation": "Odmocnina obou stran"
+      }
+    },
+    {
+      "id": "PYTH-T05",
+      "type": "type_recognition",
+      "question": "a² = c² - b² → a =",
+      "correct": "√(c² - b²)",
+      "distractors": [
+        "c² - b²"
+      ],
+      "hint": {
+        "rule": "Odmocnina obou stran",
+        "explanation": "Odmocnina obou stran"
+      }
+    },
+    {
+      "id": "PYTH-T06",
+      "type": "type_recognition",
+      "question": "Přepona z odvěsen 3 a 4:",
+      "correct": "√(3² + 4²)",
+      "distractors": [
+        "3 + 4"
+      ],
+      "hint": {
+        "rule": "c = √(a² + b²)",
+        "explanation": "c = √(a² + b²)"
+      }
+    },
+    {
+      "id": "PYTH-T07",
+      "type": "type_recognition",
+      "question": "Odvěsna, je-li b=4, c=5:",
+      "correct": "√(5² - 4²)",
+      "distractors": [
+        "5 - 4"
+      ],
+      "hint": {
+        "rule": "a = √(c² - b²)",
+        "explanation": "a = √(c² - b²)"
+      }
+    },
+    {
+      "id": "PYTH-T08",
+      "type": "type_recognition",
+      "question": "V Pythagorově větě se počítá s:",
+      "correct": "čtverci stran",
+      "distractors": [
+        "stranami"
+      ],
+      "hint": {
+        "rule": "c² = a² + b²",
+        "explanation": "c² = a² + b²"
+      }
+    },
+    {
+      "id": "PYTH-P01",
+      "type": "problem_type",
+      "question": "Odvěsny jsou 3 a 4. Jaká je přepona?",
+      "correct": "Pythagorova věta",
+      "distractors": [
+        "Obvod trojúhelníku",
+        "Obsah trojúhelníku"
+      ],
+      "hint": {
+        "rule": "Hledáme stranu pravoúhlého trojúhelníku",
+        "explanation": "Hledáme stranu pravoúhlého trojúhelníku"
+      }
+    },
+    {
+      "id": "PYTH-P02",
+      "type": "problem_type",
+      "question": "Je trojúhelník se stranami 5, 12, 13 pravoúhlý?",
+      "correct": "Pythagorova věta",
+      "distractors": [
+        "Obvod/obsah",
+        "Konstrukce"
+      ],
+      "hint": {
+        "rule": "Ověřujeme: a² + b² = c²?",
+        "explanation": "Ověřujeme: a² + b² = c²?"
+      }
+    },
+    {
+      "id": "PYTH-P03",
+      "type": "problem_type",
+      "question": "Žebřík délky 5 m opřený o zeď dosahuje do výšky 4 m. Jak daleko je od zdi?",
+      "correct": "Pythagorova věta",
+      "distractors": [
+        "Přímá úměrnost",
+        "Rovnice"
+      ],
+      "hint": {
+        "rule": "Žebřík = přepona, zeď = odvěsna",
+        "explanation": "Žebřík = přepona, zeď = odvěsna"
+      }
+    },
+    {
+      "id": "PYTH-P04",
+      "type": "problem_type",
+      "question": "Úhlopříčka obdélníku 3×4 cm má délku:",
+      "correct": "Pythagorova věta",
+      "distractors": [
+        "Obvod obdélníku",
+        "Obsah obdélníku"
+      ],
+      "hint": {
+        "rule": "Úhlopříčka = přepona pravoúhlého trojúhelníku",
+        "explanation": "Úhlopříčka = přepona pravoúhlého trojúhelníku"
+      }
+    },
+    {
+      "id": "PYTH-P05",
+      "type": "problem_type",
+      "question": "Jaká je délka prostorové úhlopříčky kvádru 3×4×12?",
+      "correct": "Pythagorova věta",
+      "distractors": [
+        "Objem kvádru",
+        "Povrch kvádru"
+      ],
+      "hint": {
+        "rule": "Dvakrát Pythagoras",
+        "explanation": "Dvakrát Pythagoras"
+      }
+    },
+    {
+      "id": "PYTH-P06",
+      "type": "problem_type",
+      "question": "Vypočítej výšku rovnostranného trojúhelníku se stranou 6 cm.",
+      "correct": "Pythagorova věta",
+      "distractors": [
+        "Obsah trojúhelníku",
+        "Obvod trojúhelníku"
+      ],
+      "hint": {
+        "rule": "Výška půlí základnu",
+        "explanation": "Výška půlí základnu"
+      }
+    },
+    {
+      "id": "PYTH-P07",
+      "type": "problem_type",
+      "question": "Loď pluje 6 km na východ, pak 8 km na sever. Jak daleko je od startu?",
+      "correct": "Pythagorova věta",
+      "distractors": [
+        "Součet vzdáleností",
+        "Rychlost/čas/dráha"
+      ],
+      "hint": {
+        "rule": "Pravoúhlý trojúhelník na mapě",
+        "explanation": "Pravoúhlý trojúhelník na mapě"
+      }
+    },
+    {
+      "id": "PYTH-P08",
+      "type": "problem_type",
+      "question": "Střecha má sklon - výška 3 m, šířka 4 m. Délka střešní plochy?",
+      "correct": "Pythagorova věta",
+      "distractors": [
+        "Obsah střechy",
+        "Objem podkroví"
+      ],
+      "hint": {
+        "rule": "Délka šikmé strany",
+        "explanation": "Délka šikmé strany"
+      }
+    }
+  ]
+}

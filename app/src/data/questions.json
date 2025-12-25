@@ -1,0 +1,3817 @@
+{
+  "version": "3.0",
+  "generated": "2025-12-25T12:16:53.720Z",
+  "description": "Unified question format - presentation layer decides MC vs open answer",
+  "topics": {
+    "equations": {
+      "id": "equations",
+      "name_cs": "Lineární rovnice",
+      "is_strength": true,
+      "is_critical": false
+    },
+    "fractions": {
+      "id": "fractions",
+      "name_cs": "Zlomky",
+      "is_strength": true,
+      "is_critical": false
+    },
+    "o_x_vice": {
+      "id": "o_x_vice",
+      "name_cs": "o X více/méně",
+      "is_strength": false,
+      "is_critical": true
+    },
+    "pythagorean": {
+      "id": "pythagorean",
+      "name_cs": "Pythagorova věta",
+      "is_strength": true,
+      "is_critical": false
+    }
+  },
+  "questions": [
+    {
+      "id": "eq-001",
+      "topic": "equations",
+      "difficulty": 1,
+      "question": {
+        "stem": "2x + 5 = 13",
+        "context": "Vyřeš rovnici: 2x + 5 = 13"
+      },
+      "answer": {
+        "correct": "4",
+        "numeric": 4,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Nejdřív odečti 5 od obou stran.",
+        "Dostaneš 2x = 8. Teď vyděl obě strany 2."
+      ],
+      "solution": {
+        "steps": [
+          "2x + 5 = 13",
+          "2x = 13 - 5",
+          "2x = 8",
+          "x = 4"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "eq-002",
+      "topic": "equations",
+      "difficulty": 1,
+      "question": {
+        "stem": "3x - 7 = 11",
+        "context": "Vyřeš rovnici: 3x - 7 = 11"
+      },
+      "answer": {
+        "correct": "6",
+        "numeric": 6,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Přičti 7 k oběma stranám.",
+        "Dostaneš 3x = 18. Vyděl obě strany 3."
+      ],
+      "solution": {
+        "steps": [
+          "3x - 7 = 11",
+          "3x = 11 + 7",
+          "3x = 18",
+          "x = 6"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "eq-003",
+      "topic": "equations",
+      "difficulty": 1,
+      "question": {
+        "stem": "x/4 = 5",
+        "context": "Vyřeš rovnici: x/4 = 5"
+      },
+      "answer": {
+        "correct": "20",
+        "numeric": 20,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "x je děleno 4. Co je opak dělení?",
+        "Vynásob obě strany 4."
+      ],
+      "solution": {
+        "steps": [
+          "x/4 = 5",
+          "x = 5 × 4",
+          "x = 20"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "eq-004",
+      "topic": "equations",
+      "difficulty": 2,
+      "question": {
+        "stem": "5x + 3 = 2x + 15",
+        "context": "Vyřeš rovnici: 5x + 3 = 2x + 15"
+      },
+      "answer": {
+        "correct": "4",
+        "numeric": 4,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Přesuň všechna x na jednu stranu. Odečti 2x od obou stran.",
+        "Dostaneš 3x + 3 = 15. Teď odečti 3 a vyděl."
+      ],
+      "solution": {
+        "steps": [
+          "5x + 3 = 2x + 15",
+          "5x - 2x = 15 - 3",
+          "3x = 12",
+          "x = 4"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "eq-005",
+      "topic": "equations",
+      "difficulty": 2,
+      "question": {
+        "stem": "4(x - 2) = 20",
+        "context": "Vyřeš rovnici: 4(x - 2) = 20"
+      },
+      "answer": {
+        "correct": "7",
+        "numeric": 7,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Jsou dvě cesty - obě fungují! Roznásobit závorku, nebo nejdřív vydělit obě strany. Která je kratší?",
+        "Zkus vydělit obě strany 4. Co ti zbyde?"
+      ],
+      "solution": {
+        "steps": [
+          "4(x - 2) = 20",
+          "x - 2 = 5",
+          "x = 7"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "eq-006",
+      "topic": "equations",
+      "difficulty": 2,
+      "question": {
+        "stem": "2(3x + 1) = 14",
+        "context": "Vyřeš rovnici: 2(3x + 1) = 14"
+      },
+      "answer": {
+        "correct": "2",
+        "numeric": 2,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Jsou dvě cesty - obě fungují! Roznásobit závorku, nebo nejdřív vydělit obě strany 2. Co bude jednodušší?",
+        "Zkus vydělit obě strany 2. Dostaneš 3x + 1 = 7. Co dál?"
+      ],
+      "solution": {
+        "steps": [
+          "2(3x + 1) = 14",
+          "3x + 1 = 7",
+          "3x = 6",
+          "x = 2"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "eq-007",
+      "topic": "equations",
+      "difficulty": 2,
+      "question": {
+        "stem": "x/3 + 2 = 5",
+        "context": "Vyřeš rovnici: x/3 + 2 = 5"
+      },
+      "answer": {
+        "correct": "9",
+        "numeric": 9,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Odečti 2 od obou stran.",
+        "Dostaneš x/3 = 3. Vynásob obě strany 3."
+      ],
+      "solution": {
+        "steps": [
+          "x/3 + 2 = 5",
+          "x/3 = 3",
+          "x = 9"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "eq-008",
+      "topic": "equations",
+      "difficulty": 3,
+      "question": {
+        "stem": "(x + 3)/2 = (x - 1)/4 + 3",
+        "context": "Vyřeš rovnici: (x + 3)/2 = (x - 1)/4 + 3"
+      },
+      "answer": {
+        "correct": "5",
+        "numeric": 5,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Zlomky v rovnici můžeš odstranit vynásobením. Čím vynásobíš, aby zmizely oba jmenovatele (2 a 4)?",
+        "Vynásob celou rovnici 4. Dostaneš 2(x + 3) = (x - 1) + 12. Teď roznásob závorky."
+      ],
+      "solution": {
+        "steps": [
+          "(x + 3)/2 = (x - 1)/4 + 3",
+          "2(x + 3) = (x - 1) + 12",
+          "2x + 6 = x + 11",
+          "x = 5"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "eq-009",
+      "topic": "equations",
+      "difficulty": 3,
+      "question": {
+        "stem": "3(2x - 1) - 2(x + 3) = 7",
+        "context": "Vyřeš rovnici: 3(2x - 1) - 2(x + 3) = 7"
+      },
+      "answer": {
+        "correct": "4",
+        "numeric": 4,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Roznásob obě závorky: 6x - 3 a -2x - 6",
+        "Spoj: 6x - 3 - 2x - 6 = 4x - 9 = 7"
+      ],
+      "solution": {
+        "steps": [
+          "3(2x - 1) - 2(x + 3) = 7",
+          "6x - 3 - 2x - 6 = 7",
+          "4x - 9 = 7",
+          "4x = 16",
+          "x = 4"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "eq-010",
+      "topic": "equations",
+      "difficulty": 3,
+      "question": {
+        "stem": "0,5x + 1,5 = 2x - 3",
+        "context": "Vyřeš rovnici: 0,5x + 1,5 = 2x - 3"
+      },
+      "answer": {
+        "correct": "3",
+        "numeric": 3,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Můžeš vynásobit 2, abys odstranil/a desetinná čísla: x + 3 = 4x - 6",
+        "Přesuň x na jednu stranu: 3 + 6 = 4x - x"
+      ],
+      "solution": {
+        "steps": [
+          "0,5x + 1,5 = 2x - 3",
+          "x + 3 = 4x - 6",
+          "9 = 3x",
+          "x = 3"
+        ],
+        "strategy": "Izoluj x"
+      },
+      "meta": {
+        "type_id": "ALG-EQ",
+        "type_label": "Lineární rovnice",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "fr-001",
+      "topic": "fractions",
+      "difficulty": 1,
+      "question": {
+        "stem": "1/2 + 1/4",
+        "context": "Vypočítej: 1/2 + 1/4"
+      },
+      "answer": {
+        "correct": "3/4",
+        "numeric": 0.75,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Potřebuješ společného jmenovatele. Jaký je nejmenší společný násobek 2 a 4?",
+        "Převeď 1/2 na ?/4. Kolik čtvrtin je polovina?"
+      ],
+      "solution": {
+        "steps": [
+          "1/2 + 1/4",
+          "2/4 + 1/4",
+          "3/4"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "fr-002",
+      "topic": "fractions",
+      "difficulty": 1,
+      "question": {
+        "stem": "2/3 - 1/6",
+        "context": "Vypočítej: 2/3 - 1/6"
+      },
+      "answer": {
+        "correct": "1/2",
+        "numeric": 0.5,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Společný jmenovatel pro 3 a 6 je 6.",
+        "2/3 = 4/6. Teď odečti 1/6."
+      ],
+      "solution": {
+        "steps": [
+          "2/3 - 1/6",
+          "4/6 - 1/6",
+          "3/6",
+          "1/2"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "fr-003",
+      "topic": "fractions",
+      "difficulty": 1,
+      "question": {
+        "stem": "3/4 × 2/5",
+        "context": "Vypočítej: 3/4 × 2/5"
+      },
+      "answer": {
+        "correct": "3/10",
+        "numeric": 0.3,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Jsou dvě cesty! Můžeš rovnou násobit a pak zkrátit, nebo nejdřív zkrátit křížem. Co je jednodušší?",
+        "Zkus zkrátit: 4 a 2 jsou dělitelné 2. Dostaneš 3/2 × 1/5. Teď násob."
+      ],
+      "solution": {
+        "steps": [
+          "3/4 × 2/5",
+          "3/2 × 1/5 (zkráceno)",
+          "3/10"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "fr-004",
+      "topic": "fractions",
+      "difficulty": 1,
+      "question": {
+        "stem": "2/3",
+        "context": "Vypočítej: 2/3 : 4"
+      },
+      "answer": {
+        "correct": "1/6",
+        "numeric": 0.167,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Dělení číslem = násobení převrácenou hodnotou. 4 = 4/1, převrácená je 1/4.",
+        "2/3 × 1/4 = ?"
+      ],
+      "solution": {
+        "steps": [
+          "2/3 : 4",
+          "2/3 × 1/4",
+          "2/12",
+          "1/6"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "fr-005",
+      "topic": "fractions",
+      "difficulty": 2,
+      "question": {
+        "stem": "5/6 - 1/4 + 1/3",
+        "context": "Vypočítej: 5/6 - 1/4 + 1/3"
+      },
+      "answer": {
+        "correct": "11/12",
+        "numeric": 0.917,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Nejdřív najdi společného jmenovatele pro 6, 4 a 3. Je to 12.",
+        "5/6 = 10/12, 1/4 = 3/12, 1/3 = 4/12"
+      ],
+      "solution": {
+        "steps": [
+          "5/6 - 1/4 + 1/3",
+          "10/12 - 3/12 + 4/12",
+          "11/12"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "fr-006",
+      "topic": "fractions",
+      "difficulty": 2,
+      "question": {
+        "stem": "(2/5)",
+        "context": "Vypočítej: (2/5) : (4/15)"
+      },
+      "answer": {
+        "correct": "3/2",
+        "numeric": 1.5,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Dělení zlomkem = násobení převráceným zlomkem.",
+        "2/5 × 15/4 = ? Zkus před násobením zkrátit."
+      ],
+      "solution": {
+        "steps": [
+          "(2/5) : (4/15)",
+          "2/5 × 15/4",
+          "30/20",
+          "3/2"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "fr-007",
+      "topic": "fractions",
+      "difficulty": 2,
+      "question": {
+        "stem": "Kolik je 3/4 z 80?",
+        "context": "Kolik je 3/4 z 80?"
+      },
+      "answer": {
+        "correct": "60",
+        "numeric": 60,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "'Z' znamená násobení. 3/4 × 80 = ?",
+        "Můžeš nejdřív vydělit 80 : 4 = 20, pak násobit 20 × 3."
+      ],
+      "solution": {
+        "steps": [
+          "3/4 × 80",
+          "80 : 4 = 20",
+          "20 × 3 = 60"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "fr-008",
+      "topic": "fractions",
+      "difficulty": 2,
+      "question": {
+        "stem": "24/36",
+        "context": "Zjednodušte: 24/36"
+      },
+      "answer": {
+        "correct": "2/3",
+        "numeric": 0.667,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Najdi největšího společného dělitele 24 a 36.",
+        "Oba jsou dělitelné 12. 24:12 = 2, 36:12 = 3."
+      ],
+      "solution": {
+        "steps": [
+          "24/36",
+          "NSD(24,36) = 12",
+          "24:12 / 36:12",
+          "2/3"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "fr-009",
+      "topic": "fractions",
+      "difficulty": 3,
+      "question": {
+        "stem": "1 - 2/3 × 3/4",
+        "context": "Vypočítej: 1 - 2/3 × 3/4"
+      },
+      "answer": {
+        "correct": "1/2",
+        "numeric": 0.5,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Pozor na pořadí operací! Nejdřív násobení, pak odčítání.",
+        "2/3 × 3/4 = 6/12 = 1/2. Pak 1 - 1/2 = ?"
+      ],
+      "solution": {
+        "steps": [
+          "1 - 2/3 × 3/4",
+          "1 - 6/12",
+          "1 - 1/2",
+          "1/2"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "fr-010",
+      "topic": "fractions",
+      "difficulty": 3,
+      "question": {
+        "stem": "Třetina čísla je 15. Jaké je to číslo?",
+        "context": "Třetina čísla je 15. Jaké je to číslo?"
+      },
+      "answer": {
+        "correct": "45",
+        "numeric": 45,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Když třetina je 15, kolik jsou tři třetiny (celé číslo)?",
+        "x/3 = 15, takže x = 15 × 3"
+      ],
+      "solution": {
+        "steps": [
+          "x/3 = 15",
+          "x = 15 × 3",
+          "x = 45"
+        ],
+        "strategy": "Společný jmenovatel"
+      },
+      "meta": {
+        "type_id": "NUM-ZLOM",
+        "type_label": "Zlomky",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "ox-001",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "Měl jsem 100 Kč. Teď mám o polovinu více. Kolik má...",
+        "context": "Měl jsem 100 Kč. Teď mám o polovinu více. Kolik mám?"
+      },
+      "answer": {
+        "correct": "150",
+        "numeric": 150,
+        "unit": "Kč"
+      },
+      "distractors": [],
+      "hints": [
+        "\"O polovinu více\" znamená: původní + polovina z původního.",
+        "Polovina ze 100 je 50. Přičti to k původním 100."
+      ],
+      "solution": {
+        "steps": [
+          "Původní: 100",
+          "Polovina: 100 × 1/2 = 50",
+          "O polovinu více: 100 + 50 = 150"
+        ],
+        "strategy": "× (1 + zlomek)"
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "ox-002",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "Cena byla 80 Kč. Zlevnila o čtvrtinu. Jaká je nová...",
+        "context": "Cena byla 80 Kč. Zlevnila o čtvrtinu. Jaká je nová cena?"
+      },
+      "answer": {
+        "correct": "60",
+        "numeric": 60,
+        "unit": "Kč"
+      },
+      "distractors": [],
+      "hints": [
+        "\"O čtvrtinu méně\" znamená: původní - čtvrtina z původního.",
+        "Čtvrtina z 80 je 20. Odečti od původních 80."
+      ],
+      "solution": {
+        "steps": [
+          "Původní: 80",
+          "Čtvrtina: 80 × 1/4 = 20",
+          "O čtvrtinu méně: 80 - 20 = 60"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "ox-003",
+      "topic": "o_x_vice",
+      "difficulty": 2,
+      "question": {
+        "stem": "Táta vydělává 30 000 Kč měsíčně. Dostal přidáno o ...",
+        "context": "Táta vydělává 30 000 Kč měsíčně. Dostal přidáno o třetinu. Kolik vydělává teď?"
+      },
+      "answer": {
+        "correct": "40000",
+        "numeric": 40000,
+        "unit": "Kč"
+      },
+      "distractors": [],
+      "hints": [
+        "\"O třetinu více\" = původní + třetina z původního.",
+        "Třetina z 30 000 je 10 000. Přičti k původnímu platu."
+      ],
+      "solution": {
+        "steps": [
+          "Původní: 30 000",
+          "Třetina: 30 000 : 3 = 10 000",
+          "Nový plat: 30 000 + 10 000 = 40 000"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "ox-004",
+      "topic": "o_x_vice",
+      "difficulty": 2,
+      "question": {
+        "stem": "cena je o pětinu nižší. Původní cena byla 500 Kč. Kolik zaplatíš?",
+        "context": "Obchod má slevu: cena je o pětinu nižší. Původní cena byla 500 Kč. Kolik zaplatíš?"
+      },
+      "answer": {
+        "correct": "400",
+        "numeric": 400,
+        "unit": "Kč"
+      },
+      "distractors": [],
+      "hints": [
+        "\"O pětinu méně\" = původní - pětina z původního.",
+        "Pětina z 500 je 100. Nová cena = 500 - 100."
+      ],
+      "solution": {
+        "steps": [
+          "Původní: 500",
+          "Pětina: 500 : 5 = 100",
+          "Nová cena: 500 - 100 = 400"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "ox-005",
+      "topic": "o_x_vice",
+      "difficulty": 2,
+      "question": {
+        "stem": "Délka tyče je 120 cm. Prodloužili ji o čtvrtinu. J...",
+        "context": "Délka tyče je 120 cm. Prodloužili ji o čtvrtinu. Jaká je nová délka?"
+      },
+      "answer": {
+        "correct": "150",
+        "numeric": 150,
+        "unit": "cm"
+      },
+      "distractors": [],
+      "hints": [
+        "\"O čtvrtinu více\" = původní + čtvrtina.",
+        "Čtvrtina ze 120 je 30. Nová délka = 120 + 30."
+      ],
+      "solution": {
+        "steps": [
+          "Původní: 120",
+          "Čtvrtina: 120 : 4 = 30",
+          "Nová délka: 120 + 30 = 150"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "ox-006",
+      "topic": "o_x_vice",
+      "difficulty": 2,
+      "question": {
+        "stem": "Co znamená \"o třetinu více\"?",
+        "context": "Co znamená \"o třetinu více\"?"
+      },
+      "answer": {
+        "correct": "× 4/3 (neboli původní + třetina)",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "× 1/3",
+        "+ 1/3",
+        "× 3"
+      ],
+      "hints": [
+        "\"O třetinu více\" = dostaneš původní + ještě třetinu navíc.",
+        "Matematicky: původní × (1 + 1/3) = původní × 4/3"
+      ],
+      "solution": {
+        "steps": [
+          "'O třetinu více' = původní + třetina z původního",
+          "= původní × 1 + původní × 1/3",
+          "= původní × (1 + 1/3)",
+          "= původní × 4/3"
+        ],
+        "strategy": "× (1 + zlomek)"
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": "× 4/3 (neboli původní + třetina)"
+      }
+    },
+    {
+      "id": "ox-007",
+      "topic": "o_x_vice",
+      "difficulty": 3,
+      "question": {
+        "stem": "Po zvýšení o čtvrtinu má Jan 750 Kč. Kolik měl pův...",
+        "context": "Po zvýšení o čtvrtinu má Jan 750 Kč. Kolik měl původně?"
+      },
+      "answer": {
+        "correct": "600",
+        "numeric": 600,
+        "unit": "Kč"
+      },
+      "distractors": [],
+      "hints": [
+        "Po zvýšení o čtvrtinu má 5/4 původní částky.",
+        "750 = původní × 5/4. Původní = 750 : 5 × 4 = 750 × 4/5"
+      ],
+      "solution": {
+        "steps": [
+          "Nová = Původní × 5/4",
+          "750 = Původní × 5/4",
+          "Původní = 750 × 4/5",
+          "Původní = 600"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "ox-008",
+      "topic": "o_x_vice",
+      "difficulty": 3,
+      "question": {
+        "stem": "Cena po slevě o třetinu je 240 Kč. Jaká byla původ...",
+        "context": "Cena po slevě o třetinu je 240 Kč. Jaká byla původní cena?"
+      },
+      "answer": {
+        "correct": "360",
+        "numeric": 360,
+        "unit": "Kč"
+      },
+      "distractors": [],
+      "hints": [
+        "Po slevě o třetinu zbývá 2/3 původní ceny.",
+        "240 = původní × 2/3. Původní = 240 : 2 × 3 = 240 × 3/2"
+      ],
+      "solution": {
+        "steps": [
+          "Nová = Původní × 2/3",
+          "240 = Původní × 2/3",
+          "Původní = 240 × 3/2",
+          "Původní = 360"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "ox-009",
+      "topic": "o_x_vice",
+      "difficulty": 3,
+      "question": {
+        "stem": "Kniha stála 280 Kč. Nejdřív zdražila o čtvrtinu, p...",
+        "context": "Kniha stála 280 Kč. Nejdřív zdražila o čtvrtinu, pak zlevnila o pětinu. Kolik stojí teď?"
+      },
+      "answer": {
+        "correct": "280",
+        "numeric": 280,
+        "unit": "Kč"
+      },
+      "distractors": [],
+      "hints": [
+        "Dvě změny za sebou - jak na to? Tip: rozděl na dva kroky. Nejdřív spočítej cenu po zdražení.",
+        "Po zdražení o čtvrtinu: 280 + 70 = 350 Kč. Teď z této nové ceny spočítej zlevnění o pětinu."
+      ],
+      "solution": {
+        "steps": [
+          "Po zdražení: 280 × 5/4 = 350",
+          "Po zlevnění: 350 × 4/5 = 280",
+          "Zajímavé: vrátila se na původní cenu!"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "original_type": null,
+        "supports_mc": false,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "ox-010",
+      "topic": "o_x_vice",
+      "difficulty": 2,
+      "question": {
+        "stem": "Objem nádrže se zvětšil o polovinu. Původně měla 2...",
+        "context": "Objem nádrže se zvětšil o polovinu. Původně měla 200 litrů. Jaký je nový objem?"
+      },
+      "answer": {
+        "correct": "300 litrů",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "100 litrů",
+        "250 litrů",
+        "400 litrů"
+      ],
+      "hints": [
+        "\"O polovinu více\" = původní + polovina z původního.",
+        "Polovina z 200 je 100. Nový objem = 200 + 100."
+      ],
+      "solution": {
+        "steps": [
+          "Původní: 200 l",
+          "Polovina: 100 l",
+          "Nový objem: 200 + 100 = 300 l"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "WORD-OXVICE",
+        "type_label": "o X více/méně",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": "300 litrů"
+      }
+    },
+    {
+      "id": "TYPE-01",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o třetinu více než x =",
+        "context": null
+      },
+      "answer": {
+        "correct": "x × 4/3",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "o třetinu více = násobit (1 + 1/3) = 4/3"
+      ],
+      "solution": {
+        "steps": [
+          "Přidáváme třetinu Z x, proto násobíme"
+        ],
+        "strategy": "o třetinu více = násobit (1 + 1/3) = 4/3"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "x × 4/3"
+      }
+    },
+    {
+      "id": "TYPE-03",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o třetinu méně než x =",
+        "context": null
+      },
+      "answer": {
+        "correct": "x × 2/3",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "o třetinu méně = násobit (1 - 1/3) = 2/3"
+      ],
+      "solution": {
+        "steps": [
+          "Odebíráme třetinu, zůstávají dvě třetiny"
+        ],
+        "strategy": "o třetinu méně = násobit (1 - 1/3) = 2/3"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "x × 2/3"
+      }
+    },
+    {
+      "id": "TYPE-05",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o čtvrtinu více než x =",
+        "context": null
+      },
+      "answer": {
+        "correct": "x × 5/4",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "o čtvrtinu více = násobit (1 + 1/4) = 5/4"
+      ],
+      "solution": {
+        "steps": [
+          "Přidáváme čtvrtinu Z x, proto násobíme"
+        ],
+        "strategy": "o čtvrtinu více = násobit (1 + 1/4) = 5/4"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "x × 5/4"
+      }
+    },
+    {
+      "id": "TYPE-07",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o čtvrtinu méně než x =",
+        "context": null
+      },
+      "answer": {
+        "correct": "x × 3/4",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "o čtvrtinu méně = násobit (1 - 1/4) = 3/4"
+      ],
+      "solution": {
+        "steps": [
+          "Odebíráme čtvrtinu, zůstávají tři čtvrtiny"
+        ],
+        "strategy": "o čtvrtinu méně = násobit (1 - 1/4) = 3/4"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "x × 3/4"
+      }
+    },
+    {
+      "id": "TYPE-09",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o polovinu více než x =",
+        "context": null
+      },
+      "answer": {
+        "correct": "x × 3/2",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "o polovinu více = násobit (1 + 1/2) = 3/2"
+      ],
+      "solution": {
+        "steps": [
+          "Přidáváme polovinu Z x, proto násobíme"
+        ],
+        "strategy": "o polovinu více = násobit (1 + 1/2) = 3/2"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "x × 3/2"
+      }
+    },
+    {
+      "id": "TYPE-11",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o polovinu méně než x =",
+        "context": null
+      },
+      "answer": {
+        "correct": "x × 1/2",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "o polovinu méně = násobit (1 - 1/2) = 1/2"
+      ],
+      "solution": {
+        "steps": [
+          "Odebíráme polovinu, zůstává polovina"
+        ],
+        "strategy": "o polovinu méně = násobit (1 - 1/2) = 1/2"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "x × 1/2"
+      }
+    },
+    {
+      "id": "TYPE-13",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o pětinu více než x =",
+        "context": null
+      },
+      "answer": {
+        "correct": "x × 6/5",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "o pětinu více = násobit (1 + 1/5) = 6/5"
+      ],
+      "solution": {
+        "steps": [
+          "Přidáváme pětinu Z x, proto násobíme"
+        ],
+        "strategy": "o pětinu více = násobit (1 + 1/5) = 6/5"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "x × 6/5"
+      }
+    },
+    {
+      "id": "TYPE-15",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o pětinu méně než x =",
+        "context": null
+      },
+      "answer": {
+        "correct": "x × 4/5",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "o pětinu méně = násobit (1 - 1/5) = 4/5"
+      ],
+      "solution": {
+        "steps": [
+          "Odebíráme pětinu, zůstávají čtyři pětiny"
+        ],
+        "strategy": "o pětinu méně = násobit (1 - 1/5) = 4/5"
+      },
+      "meta": {
+        "type_id": "OXV-TYPE",
+        "type_label": "o X více/méně",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "x × 4/5"
+      }
+    },
+    {
+      "id": "OXV-01",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o polovinu více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,5",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,5",
+        "2"
+      ],
+      "hints": [
+        "o X více = ×(1 + X)"
+      ],
+      "solution": {
+        "steps": [
+          "o polovinu = o 1/2 → ×(1 + 0,5) = ×1,5"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-02",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o polovinu méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,5",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "1,5",
+        "2"
+      ],
+      "hints": [
+        "o X méně = ×(1 − X)"
+      ],
+      "solution": {
+        "steps": [
+          "o polovinu méně = ×(1 − 0,5) = ×0,5"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,5"
+      }
+    },
+    {
+      "id": "OXV-03",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o třetinu více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "4/3",
+        "numeric": 4,
+        "unit": null
+      },
+      "distractors": [
+        "1/3",
+        "3"
+      ],
+      "hints": [
+        "o X více = ×(1 + X)"
+      ],
+      "solution": {
+        "steps": [
+          "o třetinu = o 1/3 → ×(1 + 1/3) = ×4/3"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-04",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o třetinu méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "2/3",
+        "numeric": 2,
+        "unit": null
+      },
+      "distractors": [
+        "1/3",
+        "4/3"
+      ],
+      "hints": [
+        "o X méně = ×(1 − X)"
+      ],
+      "solution": {
+        "steps": [
+          "o třetinu méně = ×(1 − 1/3) = ×2/3"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-05",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o čtvrtinu více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,25",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,25",
+        "4"
+      ],
+      "hints": [
+        "o X více = ×(1 + X)"
+      ],
+      "solution": {
+        "steps": [
+          "o čtvrtinu = o 0,25 → ×(1 + 0,25) = ×1,25"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-06",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o čtvrtinu méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,75",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0,25",
+        "1,25"
+      ],
+      "hints": [
+        "o X méně = ×(1 − X)"
+      ],
+      "solution": {
+        "steps": [
+          "o čtvrtinu méně = ×(1 − 0,25) = ×0,75"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,75"
+      }
+    },
+    {
+      "id": "OXV-07",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o pětinu více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,2",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,2",
+        "5"
+      ],
+      "hints": [
+        "o X více = ×(1 + X)"
+      ],
+      "solution": {
+        "steps": [
+          "o pětinu = o 0,2 → ×(1 + 0,2) = ×1,2"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-08",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o pětinu méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,8",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0,2",
+        "1,2"
+      ],
+      "hints": [
+        "o X méně = ×(1 − X)"
+      ],
+      "solution": {
+        "steps": [
+          "o pětinu méně = ×(1 − 0,2) = ×0,8"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,8"
+      }
+    },
+    {
+      "id": "OXV-09",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o desetinu více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,1",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,1",
+        "10"
+      ],
+      "hints": [
+        "o X více = ×(1 + X)"
+      ],
+      "solution": {
+        "steps": [
+          "o desetinu = o 0,1 → ×(1 + 0,1) = ×1,1"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-10",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o desetinu méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,9",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0,1",
+        "1,1"
+      ],
+      "hints": [
+        "o X méně = ×(1 − X)"
+      ],
+      "solution": {
+        "steps": [
+          "o desetinu méně = ×(1 − 0,1) = ×0,9"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,9"
+      }
+    },
+    {
+      "id": "OXV-11",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o dvě třetiny více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "5/3",
+        "numeric": 5,
+        "unit": null
+      },
+      "distractors": [
+        "2/3",
+        "3/2"
+      ],
+      "hints": [
+        "o X více = ×(1 + X)"
+      ],
+      "solution": {
+        "steps": [
+          "o 2/3 více → ×(1 + 2/3) = ×5/3"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-12",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o dvě třetiny méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1/3",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "2/3",
+        "5/3"
+      ],
+      "hints": [
+        "o X méně = ×(1 − X)"
+      ],
+      "solution": {
+        "steps": [
+          "o 2/3 méně → ×(1 − 2/3) = ×1/3"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-13",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o tři čtvrtiny více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,75",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,75",
+        "4/3"
+      ],
+      "hints": [
+        "o X více = ×(1 + X)"
+      ],
+      "solution": {
+        "steps": [
+          "o 3/4 více → ×(1 + 0,75) = ×1,75"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-14",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o tři čtvrtiny méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,25",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0,75",
+        "1,75"
+      ],
+      "hints": [
+        "o X méně = ×(1 − X)"
+      ],
+      "solution": {
+        "steps": [
+          "o 3/4 méně → ×(1 − 0,75) = ×0,25"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,25"
+      }
+    },
+    {
+      "id": "OXV-15",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 10 % více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,1",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,1",
+        "10"
+      ],
+      "hints": [
+        "o X % více = ×(1 + X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 10 % více → ×(1 + 0,1) = ×1,1"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-16",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 10 % méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,9",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0,1",
+        "1,1"
+      ],
+      "hints": [
+        "o X % méně = ×(1 − X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 10 % méně → ×(1 − 0,1) = ×0,9"
+        ],
+        "strategy": "o X % méně = ×(1 − X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,9"
+      }
+    },
+    {
+      "id": "OXV-17",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 25 % více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,25",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,25",
+        "25"
+      ],
+      "hints": [
+        "o X % více = ×(1 + X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 25 % více → ×(1 + 0,25) = ×1,25"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-18",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 25 % méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,75",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0,25",
+        "1,25"
+      ],
+      "hints": [
+        "o X % méně = ×(1 − X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 25 % méně → ×(1 − 0,25) = ×0,75"
+        ],
+        "strategy": "o X % méně = ×(1 − X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,75"
+      }
+    },
+    {
+      "id": "OXV-19",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 50 % více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,5",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,5",
+        "50"
+      ],
+      "hints": [
+        "o X % více = ×(1 + X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 50 % více → ×(1 + 0,5) = ×1,5"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-20",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 50 % méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,5",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "1,5",
+        "50"
+      ],
+      "hints": [
+        "o X % méně = ×(1 − X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 50 % méně → ×(1 − 0,5) = ×0,5"
+        ],
+        "strategy": "o X % méně = ×(1 − X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,5"
+      }
+    },
+    {
+      "id": "OXV-21",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 20 % více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,2",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,2",
+        "20"
+      ],
+      "hints": [
+        "o X % více = ×(1 + X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 20 % více → ×(1 + 0,2) = ×1,2"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-22",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 20 % méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,8",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0,2",
+        "1,2"
+      ],
+      "hints": [
+        "o X % méně = ×(1 − X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 20 % méně → ×(1 − 0,2) = ×0,8"
+        ],
+        "strategy": "o X % méně = ×(1 − X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,8"
+      }
+    },
+    {
+      "id": "OXV-23",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 100 % více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "2",
+        "numeric": 2,
+        "unit": null
+      },
+      "distractors": [
+        "1",
+        "100"
+      ],
+      "hints": [
+        "o X % více = ×(1 + X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 100 % více → ×(1 + 1) = ×2 (dvojnásobek)"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-24",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 75 % více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,75",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,75",
+        "75"
+      ],
+      "hints": [
+        "o X % více = ×(1 + X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 75 % více → ×(1 + 0,75) = ×1,75"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-25",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 75 % méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,25",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0,75",
+        "1,75"
+      ],
+      "hints": [
+        "o X % méně = ×(1 − X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 75 % méně → ×(1 − 0,75) = ×0,25"
+        ],
+        "strategy": "o X % méně = ×(1 − X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,25"
+      }
+    },
+    {
+      "id": "OXV-26",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o šestinu více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "7/6",
+        "numeric": 7,
+        "unit": null
+      },
+      "distractors": [
+        "1/6",
+        "6"
+      ],
+      "hints": [
+        "o X více = ×(1 + X)"
+      ],
+      "solution": {
+        "steps": [
+          "o 1/6 více → ×(1 + 1/6) = ×7/6"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-27",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o šestinu méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "5/6",
+        "numeric": 5,
+        "unit": null
+      },
+      "distractors": [
+        "1/6",
+        "7/6"
+      ],
+      "hints": [
+        "o X méně = ×(1 − X)"
+      ],
+      "solution": {
+        "steps": [
+          "o 1/6 méně → ×(1 − 1/6) = ×5/6"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-28",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o dvě pětiny více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,4",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,4",
+        "5/2"
+      ],
+      "hints": [
+        "o X více = ×(1 + X)"
+      ],
+      "solution": {
+        "steps": [
+          "o 2/5 více → ×(1 + 0,4) = ×1,4"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-29",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o dvě pětiny méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,6",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0,4",
+        "1,4"
+      ],
+      "hints": [
+        "o X méně = ×(1 − X)"
+      ],
+      "solution": {
+        "steps": [
+          "o 2/5 méně → ×(1 − 0,4) = ×0,6"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,6"
+      }
+    },
+    {
+      "id": "OXV-30",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o tři pětiny více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,6",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,6",
+        "5/3"
+      ],
+      "hints": [
+        "o X více = ×(1 + X)"
+      ],
+      "solution": {
+        "steps": [
+          "o 3/5 více → ×(1 + 0,6) = ×1,6"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-31",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o tři pětiny méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,4",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0,6",
+        "1,6"
+      ],
+      "hints": [
+        "o X méně = ×(1 − X)"
+      ],
+      "solution": {
+        "steps": [
+          "o 3/5 méně → ×(1 − 0,6) = ×0,4"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,4"
+      }
+    },
+    {
+      "id": "OXV-32",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 5 % více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,05",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,05",
+        "5"
+      ],
+      "hints": [
+        "o X % více = ×(1 + X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 5 % více → ×(1 + 0,05) = ×1,05"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-33",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 5 % méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,95",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0,05",
+        "1,05"
+      ],
+      "hints": [
+        "o X % méně = ×(1 − X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 5 % méně → ×(1 − 0,05) = ×0,95"
+        ],
+        "strategy": "o X % méně = ×(1 − X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,95"
+      }
+    },
+    {
+      "id": "OXV-34",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 30 % více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,3",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,3",
+        "30"
+      ],
+      "hints": [
+        "o X % více = ×(1 + X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 30 % více → ×(1 + 0,3) = ×1,3"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-35",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 30 % méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,7",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0,3",
+        "1,3"
+      ],
+      "hints": [
+        "o X % méně = ×(1 − X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 30 % méně → ×(1 − 0,3) = ×0,7"
+        ],
+        "strategy": "o X % méně = ×(1 − X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,7"
+      }
+    },
+    {
+      "id": "OXV-36",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o čtyři pětiny více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,8",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,8",
+        "5/4"
+      ],
+      "hints": [
+        "o X více = ×(1 + X)"
+      ],
+      "solution": {
+        "steps": [
+          "o 4/5 více → ×(1 + 0,8) = ×1,8"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-37",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o čtyři pětiny méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,2",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0,8",
+        "1,8"
+      ],
+      "hints": [
+        "o X méně = ×(1 − X)"
+      ],
+      "solution": {
+        "steps": [
+          "o 4/5 méně → ×(1 − 0,8) = ×0,2"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,2"
+      }
+    },
+    {
+      "id": "OXV-38",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o osminu více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,125",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,125",
+        "8"
+      ],
+      "hints": [
+        "o X více = ×(1 + X)"
+      ],
+      "solution": {
+        "steps": [
+          "o 1/8 více → ×(1 + 0,125) = ×1,125"
+        ],
+        "strategy": "o X více = ×(1 + X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "OXV-39",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o osminu méně = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "0,875",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0,125",
+        "1,125"
+      ],
+      "hints": [
+        "o X méně = ×(1 − X)"
+      ],
+      "solution": {
+        "steps": [
+          "o 1/8 méně → ×(1 − 0,125) = ×0,875"
+        ],
+        "strategy": "o X méně = ×(1 − X)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "0,875"
+      }
+    },
+    {
+      "id": "OXV-40",
+      "topic": "o_x_vice",
+      "difficulty": 1,
+      "question": {
+        "stem": "o 40 % více = ×?",
+        "context": null
+      },
+      "answer": {
+        "correct": "1,4",
+        "numeric": 1,
+        "unit": null
+      },
+      "distractors": [
+        "0,4",
+        "40"
+      ],
+      "hints": [
+        "o X % více = ×(1 + X/100)"
+      ],
+      "solution": {
+        "steps": [
+          "o 40 % více → ×(1 + 0,4) = ×1,4"
+        ],
+        "strategy": "o X % více = ×(1 + X/100)"
+      },
+      "meta": {
+        "type_id": "OXV-CALC",
+        "type_label": "o X více/méně",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C01",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 3, b = 4, c = ?",
+        "context": null
+      },
+      "answer": {
+        "correct": "5",
+        "numeric": 5,
+        "unit": null
+      },
+      "distractors": [
+        "7",
+        "12"
+      ],
+      "hints": [
+        "c² = a² + b²"
+      ],
+      "solution": {
+        "steps": [
+          "c = √(9 + 16) = √25 = 5"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C02",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 5, b = 12, c = ?",
+        "context": null
+      },
+      "answer": {
+        "correct": "13",
+        "numeric": 13,
+        "unit": null
+      },
+      "distractors": [
+        "17",
+        "60"
+      ],
+      "hints": [
+        "c² = a² + b²"
+      ],
+      "solution": {
+        "steps": [
+          "c = √(25 + 144) = √169 = 13"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C03",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 6, b = 8, c = ?",
+        "context": null
+      },
+      "answer": {
+        "correct": "10",
+        "numeric": 10,
+        "unit": null
+      },
+      "distractors": [
+        "14",
+        "48"
+      ],
+      "hints": [
+        "c² = a² + b²"
+      ],
+      "solution": {
+        "steps": [
+          "c = √(36 + 64) = √100 = 10"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C04",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 8, b = 15, c = ?",
+        "context": null
+      },
+      "answer": {
+        "correct": "17",
+        "numeric": 17,
+        "unit": null
+      },
+      "distractors": [
+        "23",
+        "120"
+      ],
+      "hints": [
+        "c² = a² + b²"
+      ],
+      "solution": {
+        "steps": [
+          "c = √(64 + 225) = √289 = 17"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C05",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 7, b = 24, c = ?",
+        "context": null
+      },
+      "answer": {
+        "correct": "25",
+        "numeric": 25,
+        "unit": null
+      },
+      "distractors": [
+        "31",
+        "168"
+      ],
+      "hints": [
+        "c² = a² + b²"
+      ],
+      "solution": {
+        "steps": [
+          "c = √(49 + 576) = √625 = 25"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C06",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 9, b = 40, c = ?",
+        "context": null
+      },
+      "answer": {
+        "correct": "41",
+        "numeric": 41,
+        "unit": null
+      },
+      "distractors": [
+        "49",
+        "360"
+      ],
+      "hints": [
+        "c² = a² + b²"
+      ],
+      "solution": {
+        "steps": [
+          "c = √(81 + 1600) = √1681 = 41"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C07",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a = ?, b = 4, c = 5",
+        "context": null
+      },
+      "answer": {
+        "correct": "3",
+        "numeric": 3,
+        "unit": null
+      },
+      "distractors": [
+        "1",
+        "9"
+      ],
+      "hints": [
+        "a² = c² - b²"
+      ],
+      "solution": {
+        "steps": [
+          "a = √(25 - 16) = √9 = 3"
+        ],
+        "strategy": "a² = c² - b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C08",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 5, b = ?, c = 13",
+        "context": null
+      },
+      "answer": {
+        "correct": "12",
+        "numeric": 12,
+        "unit": null
+      },
+      "distractors": [
+        "8",
+        "18"
+      ],
+      "hints": [
+        "b² = c² - a²"
+      ],
+      "solution": {
+        "steps": [
+          "b = √(169 - 25) = √144 = 12"
+        ],
+        "strategy": "b² = c² - a²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C09",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a = ?, b = 8, c = 10",
+        "context": null
+      },
+      "answer": {
+        "correct": "6",
+        "numeric": 6,
+        "unit": null
+      },
+      "distractors": [
+        "2",
+        "18"
+      ],
+      "hints": [
+        "a² = c² - b²"
+      ],
+      "solution": {
+        "steps": [
+          "a = √(100 - 64) = √36 = 6"
+        ],
+        "strategy": "a² = c² - b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C10",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 8, b = ?, c = 17",
+        "context": null
+      },
+      "answer": {
+        "correct": "15",
+        "numeric": 15,
+        "unit": null
+      },
+      "distractors": [
+        "9",
+        "25"
+      ],
+      "hints": [
+        "b² = c² - a²"
+      ],
+      "solution": {
+        "steps": [
+          "b = √(289 - 64) = √225 = 15"
+        ],
+        "strategy": "b² = c² - a²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C11",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Odvěsny 3 a 4. Přepona?",
+        "context": null
+      },
+      "answer": {
+        "correct": "5",
+        "numeric": 5,
+        "unit": null
+      },
+      "distractors": [
+        "7",
+        "12"
+      ],
+      "hints": [
+        "c² = a² + b²"
+      ],
+      "solution": {
+        "steps": [
+          "c = √(9 + 16) = √25 = 5"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C12",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Odvěsny 5 a 12. Přepona?",
+        "context": null
+      },
+      "answer": {
+        "correct": "13",
+        "numeric": 13,
+        "unit": null
+      },
+      "distractors": [
+        "17",
+        "60"
+      ],
+      "hints": [
+        "c² = a² + b²"
+      ],
+      "solution": {
+        "steps": [
+          "c = √(25 + 144) = √169 = 13"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C13",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Odvěsna 3, přepona 5. Druhá odvěsna?",
+        "context": null
+      },
+      "answer": {
+        "correct": "4",
+        "numeric": 4,
+        "unit": null
+      },
+      "distractors": [
+        "2",
+        "8"
+      ],
+      "hints": [
+        "b² = c² - a²"
+      ],
+      "solution": {
+        "steps": [
+          "b = √(25 - 9) = √16 = 4"
+        ],
+        "strategy": "b² = c² - a²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C14",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Odvěsna 5, přepona 13. Druhá odvěsna?",
+        "context": null
+      },
+      "answer": {
+        "correct": "12",
+        "numeric": 12,
+        "unit": null
+      },
+      "distractors": [
+        "8",
+        "18"
+      ],
+      "hints": [
+        "b² = c² - a²"
+      ],
+      "solution": {
+        "steps": [
+          "b = √(169 - 25) = √144 = 12"
+        ],
+        "strategy": "b² = c² - a²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "PYTH-C15",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 1, b = 1, c = ?",
+        "context": null
+      },
+      "answer": {
+        "correct": "√2",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "2",
+        "1"
+      ],
+      "hints": [
+        "c² = a² + b²"
+      ],
+      "solution": {
+        "steps": [
+          "c = √(1 + 1) = √2 ≈ 1,41"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "√2"
+      }
+    },
+    {
+      "id": "PYTH-C16",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 2, b = 3, c = ?",
+        "context": null
+      },
+      "answer": {
+        "correct": "√13",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "5",
+        "√5"
+      ],
+      "hints": [
+        "c² = a² + b²"
+      ],
+      "solution": {
+        "steps": [
+          "c = √(4 + 9) = √13 ≈ 3,61"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "√13"
+      }
+    },
+    {
+      "id": "PYTH-C17",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 2, b = 5, c = ?",
+        "context": null
+      },
+      "answer": {
+        "correct": "√29",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "7",
+        "√7"
+      ],
+      "hints": [
+        "c² = a² + b²"
+      ],
+      "solution": {
+        "steps": [
+          "c = √(4 + 25) = √29 ≈ 5,39"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "√29"
+      }
+    },
+    {
+      "id": "PYTH-C18",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a = 4, b = 5, c = ?",
+        "context": null
+      },
+      "answer": {
+        "correct": "√41",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "9",
+        "√9"
+      ],
+      "hints": [
+        "c² = a² + b²"
+      ],
+      "solution": {
+        "steps": [
+          "c = √(16 + 25) = √41 ≈ 6,40"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-CALC",
+        "type_label": "Pythagorova věta",
+        "original_type": "calculation",
+        "supports_mc": true,
+        "supports_open": "√41"
+      }
+    },
+    {
+      "id": "PYTH-T01",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Hledám přeponu c =",
+        "context": null
+      },
+      "answer": {
+        "correct": "√(a² + b²)",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Pythagorova věta: c² = a² + b²"
+      ],
+      "solution": {
+        "steps": [
+          "Přepona = odmocnina ze součtu čtverců odvěsen"
+        ],
+        "strategy": "Pythagorova věta: c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "√(a² + b²)"
+      }
+    },
+    {
+      "id": "PYTH-T02",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Hledám odvěsnu a =",
+        "context": null
+      },
+      "answer": {
+        "correct": "√(c² - b²)",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Pythagorova věta: a² = c² - b²"
+      ],
+      "solution": {
+        "steps": [
+          "Odvěsna = odmocnina z rozdílu čtverců"
+        ],
+        "strategy": "Pythagorova věta: a² = c² - b²"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "√(c² - b²)"
+      }
+    },
+    {
+      "id": "PYTH-T03",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Hledám odvěsnu b =",
+        "context": null
+      },
+      "answer": {
+        "correct": "√(c² - a²)",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Pythagorova věta: b² = c² - a²"
+      ],
+      "solution": {
+        "steps": [
+          "Odvěsna = odmocnina z rozdílu čtverců"
+        ],
+        "strategy": "Pythagorova věta: b² = c² - a²"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "√(c² - a²)"
+      }
+    },
+    {
+      "id": "PYTH-T04",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "c² = a² + b² → c =",
+        "context": null
+      },
+      "answer": {
+        "correct": "√(a² + b²)",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Odmocnina obou stran"
+      ],
+      "solution": {
+        "steps": [
+          "c² = ... → c = √(...)"
+        ],
+        "strategy": "Odmocnina obou stran"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "√(a² + b²)"
+      }
+    },
+    {
+      "id": "PYTH-T05",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "a² = c² - b² → a =",
+        "context": null
+      },
+      "answer": {
+        "correct": "√(c² - b²)",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "Odmocnina obou stran"
+      ],
+      "solution": {
+        "steps": [
+          "a² = ... → a = √(...)"
+        ],
+        "strategy": "Odmocnina obou stran"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "√(c² - b²)"
+      }
+    },
+    {
+      "id": "PYTH-T06",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Přepona z odvěsen 3 a 4:",
+        "context": null
+      },
+      "answer": {
+        "correct": "√(3² + 4²)",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "c = √(a² + b²)"
+      ],
+      "solution": {
+        "steps": [
+          "Dosaď do vzorce: √(9 + 16) = √25 = 5"
+        ],
+        "strategy": "c = √(a² + b²)"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "√(3² + 4²)"
+      }
+    },
+    {
+      "id": "PYTH-T07",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Odvěsna, je-li b=4, c=5:",
+        "context": null
+      },
+      "answer": {
+        "correct": "√(5² - 4²)",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "a = √(c² - b²)"
+      ],
+      "solution": {
+        "steps": [
+          "Dosaď do vzorce: √(25 - 16) = √9 = 3"
+        ],
+        "strategy": "a = √(c² - b²)"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "√(5² - 4²)"
+      }
+    },
+    {
+      "id": "PYTH-T08",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "V Pythagorově větě se počítá s:",
+        "context": null
+      },
+      "answer": {
+        "correct": "čtverci stran",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [],
+      "hints": [
+        "c² = a² + b²"
+      ],
+      "solution": {
+        "steps": [
+          "Všechny strany jsou na druhou!"
+        ],
+        "strategy": "c² = a² + b²"
+      },
+      "meta": {
+        "type_id": "PYTH-TYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "type_recognition",
+        "supports_mc": false,
+        "supports_open": "čtverci stran"
+      }
+    },
+    {
+      "id": "PYTH-P01",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Odvěsny jsou 3 a 4. Jaká je přepona?",
+        "context": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "Obvod trojúhelníku",
+        "Obsah trojúhelníku"
+      ],
+      "hints": [
+        "Hledáme stranu pravoúhlého trojúhelníku"
+      ],
+      "solution": {
+        "steps": [
+          "Známe dvě strany, hledáme třetí → Pythagoras"
+        ],
+        "strategy": "Hledáme stranu pravoúhlého trojúhelníku"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "problem_type",
+        "supports_mc": true,
+        "supports_open": "Pythagorova věta"
+      }
+    },
+    {
+      "id": "PYTH-P02",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Je trojúhelník se stranami 5, 12, 13 pravoúhlý?",
+        "context": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "Obvod/obsah",
+        "Konstrukce"
+      ],
+      "hints": [
+        "Ověřujeme: a² + b² = c²?"
+      ],
+      "solution": {
+        "steps": [
+          "25 + 144 = 169 = 13² ✓ Ano, je pravoúhlý"
+        ],
+        "strategy": "Ověřujeme: a² + b² = c²?"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "problem_type",
+        "supports_mc": true,
+        "supports_open": "Pythagorova věta"
+      }
+    },
+    {
+      "id": "PYTH-P03",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Žebřík délky 5 m opřený o zeď dosahuje do výšky 4 m. Jak daleko je od zdi?",
+        "context": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "Přímá úměrnost",
+        "Rovnice"
+      ],
+      "hints": [
+        "Žebřík = přepona, zeď = odvěsna"
+      ],
+      "solution": {
+        "steps": [
+          "a = √(5² - 4²) = √9 = 3 m"
+        ],
+        "strategy": "Žebřík = přepona, zeď = odvěsna"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "problem_type",
+        "supports_mc": true,
+        "supports_open": "Pythagorova věta"
+      }
+    },
+    {
+      "id": "PYTH-P04",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Úhlopříčka obdélníku 3×4 cm má délku:",
+        "context": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "Obvod obdélníku",
+        "Obsah obdélníku"
+      ],
+      "hints": [
+        "Úhlopříčka = přepona pravoúhlého trojúhelníku"
+      ],
+      "solution": {
+        "steps": [
+          "d = √(3² + 4²) = 5 cm"
+        ],
+        "strategy": "Úhlopříčka = přepona pravoúhlého trojúhelníku"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "problem_type",
+        "supports_mc": true,
+        "supports_open": "Pythagorova věta"
+      }
+    },
+    {
+      "id": "PYTH-P05",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Jaká je délka prostorové úhlopříčky kvádru 3×4×12?",
+        "context": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "Objem kvádru",
+        "Povrch kvádru"
+      ],
+      "hints": [
+        "Dvakrát Pythagoras"
+      ],
+      "solution": {
+        "steps": [
+          "Nejdřív úhlopříčka podstavy, pak prostorová"
+        ],
+        "strategy": "Dvakrát Pythagoras"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "problem_type",
+        "supports_mc": true,
+        "supports_open": "Pythagorova věta"
+      }
+    },
+    {
+      "id": "PYTH-P06",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Vypočítej výšku rovnostranného trojúhelníku se stranou 6 cm.",
+        "context": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "Obsah trojúhelníku",
+        "Obvod trojúhelníku"
+      ],
+      "hints": [
+        "Výška půlí základnu"
+      ],
+      "solution": {
+        "steps": [
+          "v = √(6² - 3²) = √27 = 3√3 cm"
+        ],
+        "strategy": "Výška půlí základnu"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "problem_type",
+        "supports_mc": true,
+        "supports_open": "Pythagorova věta"
+      }
+    },
+    {
+      "id": "PYTH-P07",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Loď pluje 6 km na východ, pak 8 km na sever. Jak daleko je od startu?",
+        "context": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "Součet vzdáleností",
+        "Rychlost/čas/dráha"
+      ],
+      "hints": [
+        "Pravoúhlý trojúhelník na mapě"
+      ],
+      "solution": {
+        "steps": [
+          "d = √(6² + 8²) = 10 km"
+        ],
+        "strategy": "Pravoúhlý trojúhelník na mapě"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "problem_type",
+        "supports_mc": true,
+        "supports_open": "Pythagorova věta"
+      }
+    },
+    {
+      "id": "PYTH-P08",
+      "topic": "pythagorean",
+      "difficulty": 1,
+      "question": {
+        "stem": "Střecha má sklon - výška 3 m, šířka 4 m. Délka střešní plochy?",
+        "context": null
+      },
+      "answer": {
+        "correct": "Pythagorova věta",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "Obsah střechy",
+        "Objem podkroví"
+      ],
+      "hints": [
+        "Délka šikmé strany"
+      ],
+      "solution": {
+        "steps": [
+          "s = √(3² + 4²) = 5 m"
+        ],
+        "strategy": "Délka šikmé strany"
+      },
+      "meta": {
+        "type_id": "PYTH-PTYPE",
+        "type_label": "Pythagorova věta",
+        "original_type": "problem_type",
+        "supports_mc": true,
+        "supports_open": "Pythagorova věta"
+      }
+    }
+  ]
+}
