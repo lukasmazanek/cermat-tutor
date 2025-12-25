@@ -13,6 +13,7 @@ MVP deployed. Analyzing math test mistakes to identify error patterns and create
 ## Available Commands
 - `/psycholog` - Switch to Child Psychologist role (20+ years experience in learning difficulties)
 - `/architect` - Switch to Learning Experience Architect role (app design, UX for anxious learners)
+- `/test` - Switch to Senior QA Tester role (web app testing, UX consistency)
 
 ## Student Profile
 - **Name**: Anezka Mazankova
