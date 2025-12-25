@@ -122,21 +122,8 @@ function TopicSelector({ onSelectTopic, lastSession, onViewProgress, onStartLigh
           </button>
         ))}
 
-        {/* All topics option */}
-        <button
-          onClick={() => onSelectTopic('mixed')}
-          className="col-span-2 bg-safe-blue/10 rounded-xl p-3 sm:p-5 text-left
-            transition-gentle active:scale-[0.98] border-2 border-safe-blue/20
-            hover:bg-safe-blue/20 focus:border-safe-blue focus:outline-none"
-        >
-          <h2 className="text-base sm:text-lg font-medium text-safe-blue mb-0 sm:mb-1 flex items-center gap-2">
-            <SparklesIcon className="w-5 h-5" />
-            Mix všeho
-          </h2>
-          <p className="hidden sm:block text-sm text-slate-500">
-            Náhodný výběr ze všech témat
-          </p>
-        </button>
+        {/* Empty slot if odd number of topics */}
+        {topics.length % 2 === 1 && <div />}
 
         {/* Lightning Round */}
         <button
@@ -170,10 +157,26 @@ function TopicSelector({ onSelectTopic, lastSession, onViewProgress, onStartLigh
           </p>
         </button>
 
+        {/* All topics option */}
+        <button
+          onClick={() => onSelectTopic('mixed')}
+          className="bg-safe-blue/10 rounded-xl p-3 sm:p-5 text-left
+            transition-gentle active:scale-[0.98] border-2 border-safe-blue/20
+            hover:bg-safe-blue/20 focus:border-safe-blue focus:outline-none"
+        >
+          <h2 className="text-base sm:text-lg font-medium text-safe-blue mb-0 sm:mb-1 flex items-center gap-2">
+            <SparklesIcon className="w-5 h-5" />
+            Mix všeho
+          </h2>
+          <p className="hidden sm:block text-sm text-slate-500">
+            Náhodný výběr
+          </p>
+        </button>
+
         {/* Progress tracking - "závod sama se sebou" */}
         <button
           onClick={onViewProgress}
-          className="col-span-2 bg-purple-50 rounded-xl p-3 sm:p-5 text-left
+          className="bg-purple-50 rounded-xl p-3 sm:p-5 text-left
             transition-gentle active:scale-[0.98] border-2 border-purple-200
             hover:bg-purple-100 focus:border-purple-400 focus:outline-none"
         >
