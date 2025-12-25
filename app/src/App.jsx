@@ -224,6 +224,7 @@ function App() {
     return (
       <LightningRound
         onExit={handleNewSession}
+        onViewProgress={handleViewProgress}
       />
     )
   }

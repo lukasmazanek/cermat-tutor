@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import problemBank from '../data/problem_bank.json'
-import { ArrowLeftIcon } from '@heroicons/react/24/outline'
+import BottomBar from './BottomBar'
 
 function ProgressPage({ onBack }) {
   const [selectedTopic, setSelectedTopic] = useState('all')
@@ -53,93 +53,103 @@ function ProgressPage({ onBack }) {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 px-4 py-6">
-      {/* Header */}
-      <div className="flex items-center gap-4 mb-6">
-        <button
-          onClick={onBack}
-          className="p-2 -ml-2 rounded-lg hover:bg-slate-200 transition-gentle"
-        >
-          <ArrowLeftIcon className="w-6 h-6 text-slate-600" />
-        </button>
-        <h1 className="text-2xl font-semibold text-slate-800">
-          Můj pokrok
-        </h1>
-      </div>
+    <div className="h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
+      {/* ADR-010 mobile-safe pattern */}
+      <div className="flex-1 min-h-0 overflow-y-auto max-w-2xl mx-auto w-full px-4 py-6 pb-20">
+        {/* Header */}
+        <div className="mb-6">
+          <h1 className="text-2xl font-semibold text-slate-800">
+            Můj pokrok
+          </h1>
+          <p className="text-slate-500 text-sm mt-1">
+            Závod sama se sebou
+          </p>
+        </div>
 
-      {/* Topic filter */}
-      <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
-        <button
-          onClick={() => setSelectedTopic('all')}
-          className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-gentle
-            ${selectedTopic === 'all'
-              ? 'bg-safe-blue text-white'
-              : 'bg-white text-slate-600 border border-slate-200'
-            }`}
-        >
-          Vše
-        </button>
-        {Object.keys(problemBank.topics).map(topicId => (
+        {/* Topic filter */}
+        <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
           <button
-            key={topicId}
-            onClick={() => setSelectedTopic(topicId)}
-            className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-gentle
-              ${selectedTopic === topicId
+            onClick={() => setSelectedTopic('all')}
+            className={`px-4 py-2 min-h-[44px] rounded-full text-sm font-medium whitespace-nowrap transition-gentle active:scale-[0.98]
+              ${selectedTopic === 'all'
                 ? 'bg-safe-blue text-white'
                 : 'bg-white text-slate-600 border border-slate-200'
               }`}
           >
-            {problemBank.topics[topicId].name_cs}
+            Vše
           </button>
-        ))}
-      </div>
-
-      {/* Summary cards */}
-      <div className="grid grid-cols-2 gap-4 mb-6">
-        <div className="bg-white rounded-xl p-4 shadow-sm">
-          <div className="text-3xl font-bold text-safe-blue">
-            {stats.totalExplored}
-          </div>
-          <div className="text-sm text-slate-500">úloh prozkoumáno</div>
+          {Object.keys(problemBank.topics).map(topicId => (
+            <button
+              key={topicId}
+              onClick={() => setSelectedTopic(topicId)}
+              className={`px-4 py-2 min-h-[44px] rounded-full text-sm font-medium whitespace-nowrap transition-gentle active:scale-[0.98]
+                ${selectedTopic === topicId
+                  ? 'bg-safe-blue text-white'
+                  : 'bg-white text-slate-600 border border-slate-200'
+                }`}
+            >
+              {problemBank.topics[topicId].name_cs}
+            </button>
+          ))}
         </div>
 
-        <div className="bg-white rounded-xl p-4 shadow-sm">
-          <div className="text-3xl font-bold text-purple-600">
-            {stats.totalSessions}
-          </div>
-          <div className="text-sm text-slate-500">cvičení</div>
-        </div>
-
-        {/* Hint independence - key metric */}
-        <div className="col-span-2 bg-green-50 rounded-xl p-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <div className="text-3xl font-bold text-green-600">
-                {stats.totalWithoutHints}
-              </div>
-              <div className="text-sm text-green-700">
-                samostatně vyřešeno
-              </div>
+        {/* Summary cards */}
+        <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="bg-white rounded-xl p-4 shadow-sm">
+            <div className="text-3xl font-bold text-safe-blue">
+              {stats.totalExplored}
             </div>
-            {stats.totalExplored > 0 && (
-              <div className="text-right">
-                <div className="text-2xl font-bold text-green-600">
-                  {stats.hintIndependenceRate}%
+            <div className="text-sm text-slate-500">úloh prozkoumáno</div>
+          </div>
+
+          <div className="bg-white rounded-xl p-4 shadow-sm">
+            <div className="text-3xl font-bold text-purple-600">
+              {stats.totalSessions}
+            </div>
+            <div className="text-sm text-slate-500">cvičení</div>
+          </div>
+
+          {/* Hint independence - key metric */}
+          <div className="col-span-2 bg-green-50 rounded-xl p-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-3xl font-bold text-green-600">
+                  {stats.totalWithoutHints}
                 </div>
-                <div className="text-xs text-green-600">
-                  bez nápovědy
+                <div className="text-sm text-green-700">
+                  samostatně vyřešeno
                 </div>
               </div>
-            )}
+              {stats.totalExplored > 0 && (
+                <div className="text-right">
+                  <div className="text-2xl font-bold text-green-600">
+                    {stats.hintIndependenceRate}%
+                  </div>
+                  <div className="text-xs text-green-600">
+                    bez nápovědy
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
+
+        {/* Progress timeline */}
+        <ProgressTimeline sessions={filteredSessions} />
+
+        {/* Session list */}
+        <SessionList sessions={filteredSessions} getTopicName={getTopicName} formatDate={formatDate} />
       </div>
 
-      {/* Progress timeline */}
-      <ProgressTimeline sessions={filteredSessions} />
-
-      {/* Session list */}
-      <SessionList sessions={filteredSessions} getTopicName={getTopicName} formatDate={formatDate} />
+      {/* Bottom bar - ADR-009 */}
+      <BottomBar
+        slots={{
+          1: { onClick: onBack },
+          // 2: null - we ARE the progress page
+          // 3-4: null
+          // 5: null - no action needed
+        }}
+      />
     </div>
   )
 }

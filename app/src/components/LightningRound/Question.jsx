@@ -1,35 +1,53 @@
 import { FireIcon } from '@heroicons/react/24/solid'
+import { TagIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
 
 function Question({ question, onAnswer, streak }) {
+  const isTypeRecognition = question.type === 'type_recognition'
+  const isProblemType = question.type === 'problem_type'
+
   return (
-    <div className="flex-1 flex flex-col p-4">
+    <div className="p-4">
       {/* Streak indicator - only show when >= 3 */}
       {streak >= 3 && (
-        <div className="flex items-center justify-center gap-1 mb-4">
+        <div className="flex items-center justify-center gap-1 mb-3">
           <FireIcon className="w-5 h-5 text-orange-500" />
           <span className="text-orange-600 font-bold">{streak}</span>
         </div>
       )}
 
-      {/* Question */}
-      <div className="flex-1 flex items-center justify-center">
-        <div className="bg-white rounded-2xl shadow-sm p-6 w-full max-w-sm">
-          <p className="text-xl text-center text-slate-800 font-medium">
-            {question.question}
-          </p>
+      {/* Type recognition badge */}
+      {isTypeRecognition && (
+        <div className="flex items-center justify-center gap-1 mb-3">
+          <TagIcon className="w-4 h-4 text-indigo-500" />
+          <span className="text-indigo-600 text-sm font-medium">Rozpoznej vzorec</span>
         </div>
+      )}
+
+      {/* Problem type badge */}
+      {isProblemType && (
+        <div className="flex items-center justify-center gap-1 mb-3">
+          <QuestionMarkCircleIcon className="w-4 h-4 text-emerald-500" />
+          <span className="text-emerald-600 text-sm font-medium">Rozpoznej typ úlohy</span>
+        </div>
+      )}
+
+      {/* Question */}
+      <div className="bg-white rounded-2xl shadow-sm p-5 mb-4">
+        <p className={`text-lg text-center text-slate-800 font-medium ${isTypeRecognition ? 'font-mono' : ''}`}>
+          {question.question}
+        </p>
       </div>
 
-      {/* Answer buttons */}
-      <div className="space-y-3 mt-6">
+      {/* Answer buttons - key on container forces remount to clear states */}
+      <div key={question.id} className="space-y-2">
         {question.answers.map((answer, index) => (
           <button
-            key={index}
+            key={`${question.id}-${index}`}
             onClick={() => onAnswer(answer)}
-            className="w-full p-4 rounded-xl bg-white border-2 border-slate-200
-              text-lg font-medium text-slate-700
-              transition-gentle active:scale-[0.98] active:border-amber-400
-              hover:border-amber-300 focus:border-amber-500 focus:outline-none"
+            className={`w-full p-3 rounded-xl bg-white border-2 border-slate-200
+              text-base font-medium text-slate-700
+              transition-gentle active:scale-[0.98] active:bg-amber-50
+              focus:outline-none ${isTypeRecognition ? 'font-mono' : ''}`}
           >
             {answer}
           </button>

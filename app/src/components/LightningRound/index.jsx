@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { BoltIcon } from '@heroicons/react/24/solid'
 import lightningData from '../../data/lightning_questions.json'
 import Question from './Question'
@@ -8,35 +8,16 @@ import BottomBar from '../BottomBar'
 
 const QUESTIONS_PER_ROUND = 10
 
-function LightningRound({ onExit }) {
+function LightningRound({ onExit, onViewProgress }) {
   const [phase, setPhase] = useState('playing') // 'playing' | 'feedback' | 'summary'
-  const [questions, setQuestions] = useState([])
+  const [questions, setQuestions] = useState(() => selectMixedQuestions())
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [isCorrect, setIsCorrect] = useState(null)
   const [results, setResults] = useState([])
   const [streak, setStreak] = useState(0)
   const [bestStreak, setBestStreak] = useState(0)
-  const [questionStartTime, setQuestionStartTime] = useState(null)
-
-  // Initialize questions on mount
-  useEffect(() => {
-    const category = lightningData.categories.OXV
-    const allQuestions = [...category.questions]
-
-    // Shuffle and pick 10
-    const shuffled = allQuestions.sort(() => Math.random() - 0.5)
-    const selected = shuffled.slice(0, QUESTIONS_PER_ROUND)
-
-    // Shuffle answer order for each question
-    const withShuffledAnswers = selected.map(q => ({
-      ...q,
-      answers: shuffleAnswers(q.correct, q.distractors)
-    }))
-
-    setQuestions(withShuffledAnswers)
-    setQuestionStartTime(Date.now())
-  }, [])
+  const [questionStartTime, setQuestionStartTime] = useState(() => Date.now())
 
   // Shuffle correct answer with distractors
   function shuffleAnswers(correct, distractors) {
@@ -101,18 +82,44 @@ function LightningRound({ onExit }) {
     advanceToNext()
   }
 
-  // Restart with new questions
-  const handleRestart = () => {
-    const category = lightningData.categories.OXV
-    const allQuestions = [...category.questions]
-    const shuffled = allQuestions.sort(() => Math.random() - 0.5)
-    const selected = shuffled.slice(0, QUESTIONS_PER_ROUND)
-    const withShuffledAnswers = selected.map(q => ({
+  // Select mixed questions from all categories with guaranteed type mix
+  function selectMixedQuestions() {
+    // Collect all questions from all categories
+    const allQuestions = Object.values(lightningData.categories)
+      .flatMap(cat => cat.questions)
+
+    // Separate questions by type to ensure mix
+    const typeQuestions = allQuestions.filter(q =>
+      q.type === 'type_recognition' || q.type === 'problem_type'
+    )
+    const calcQuestions = allQuestions.filter(q =>
+      q.type !== 'type_recognition' && q.type !== 'problem_type'
+    )
+
+    // Shuffle each pool
+    const shuffledType = typeQuestions.sort(() => Math.random() - 0.5)
+    const shuffledCalc = calcQuestions.sort(() => Math.random() - 0.5)
+
+    // Pick 3 type questions and 7 calc questions
+    const typeCount = Math.min(3, shuffledType.length)
+    const calcCount = QUESTIONS_PER_ROUND - typeCount
+
+    const selectedType = shuffledType.slice(0, typeCount)
+    const selectedCalc = shuffledCalc.slice(0, calcCount)
+
+    // Combine and shuffle final selection
+    const selected = [...selectedType, ...selectedCalc].sort(() => Math.random() - 0.5)
+
+    // Shuffle answer order for each question
+    return selected.map(q => ({
       ...q,
       answers: shuffleAnswers(q.correct, q.distractors)
     }))
+  }
 
-    setQuestions(withShuffledAnswers)
+  // Restart with new questions
+  const handleRestart = () => {
+    setQuestions(selectMixedQuestions())
     setCurrentIndex(0)
     setSelectedAnswer(null)
     setIsCorrect(null)
@@ -149,34 +156,36 @@ function LightningRound({ onExit }) {
   const currentQuestion = questions[currentIndex]
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
       {/* Header */}
-      <div className="bg-white border-b border-slate-200 px-4 py-3">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <BoltIcon className="w-5 h-5 text-amber-500" />
-            <span className="font-medium text-slate-700">o X více/méně</span>
+      <div className="bg-white border-b border-slate-200">
+        <div className="max-w-2xl mx-auto px-4 py-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <BoltIcon className="w-5 h-5 text-amber-500" />
+              <span className="font-medium text-slate-700">Bleskové kolo</span>
+            </div>
+            {phase !== 'summary' && (
+              <span className="text-slate-500 text-sm">
+                {currentIndex + 1}/{questions.length}
+              </span>
+            )}
           </div>
+
+          {/* Progress bar */}
           {phase !== 'summary' && (
-            <span className="text-slate-500 text-sm">
-              {currentIndex + 1}/{questions.length}
-            </span>
+            <div className="mt-2 h-1.5 bg-slate-200 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-amber-500 transition-gentle"
+                style={{ width: `${((currentIndex + (phase === 'feedback' ? 1 : 0)) / questions.length) * 100}%` }}
+              />
+            </div>
           )}
         </div>
-
-        {/* Progress bar */}
-        {phase !== 'summary' && (
-          <div className="mt-2 h-1.5 bg-slate-200 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-amber-500 transition-all duration-300"
-              style={{ width: `${((currentIndex + (phase === 'feedback' ? 1 : 0)) / questions.length) * 100}%` }}
-            />
-          </div>
-        )}
       </div>
 
       {/* Main content */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 min-h-0 overflow-y-auto max-w-2xl mx-auto w-full pb-20">
         {phase === 'playing' && (
           <Question
             question={currentQuestion}
@@ -208,7 +217,7 @@ function LightningRound({ onExit }) {
         <BottomBar
           slots={{
             1: { onClick: onExit },
-            // 2: Progress - not available in LightningRound
+            2: { onClick: onViewProgress },
             // 3: Toggle - not applicable
             // 4: Hint - not applicable
             5: phase === 'feedback' && !isCorrect

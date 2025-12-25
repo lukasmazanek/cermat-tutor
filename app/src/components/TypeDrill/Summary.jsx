@@ -101,7 +101,7 @@ function Summary({ results, questions, onExit }) {
       <div className="mt-auto space-y-3">
         <button
           onClick={onExit}
-          className="w-full py-4 px-6 bg-indigo-600 text-white rounded-xl
+          className="w-full py-4 px-6 bg-safe-blue text-white rounded-xl
             font-medium transition-gentle active:scale-[0.98]"
         >
           Zpět na úvod

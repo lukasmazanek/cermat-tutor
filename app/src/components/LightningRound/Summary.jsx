@@ -1,4 +1,5 @@
-import { BoltIcon, ArrowPathIcon, HomeIcon, FireIcon, ClockIcon } from '@heroicons/react/24/solid'
+import { BoltIcon, ArrowPathIcon, FireIcon, ClockIcon } from '@heroicons/react/24/solid'
+import { HomeIcon } from '@heroicons/react/24/outline'
 
 function Summary({ stats, onRestart, onExit }) {
   const percentage = Math.round((stats.correct / stats.total) * 100)
@@ -69,7 +70,7 @@ function Summary({ stats, onRestart, onExit }) {
       <div className="space-y-3 mt-auto">
         <button
           onClick={onRestart}
-          className="w-full p-4 rounded-xl bg-amber-500 text-white font-medium
+          className="w-full py-4 px-6 rounded-xl bg-safe-blue text-white font-medium
             flex items-center justify-center gap-2 transition-gentle active:scale-[0.98]"
         >
           <ArrowPathIcon className="w-5 h-5" />
@@ -77,7 +78,7 @@ function Summary({ stats, onRestart, onExit }) {
         </button>
         <button
           onClick={onExit}
-          className="w-full p-4 rounded-xl bg-slate-200 text-slate-700 font-medium
+          className="w-full py-4 px-6 rounded-xl bg-slate-200 text-slate-700 font-medium
             flex items-center justify-center gap-2 transition-gentle active:scale-[0.98]"
         >
           <HomeIcon className="w-5 h-5" />

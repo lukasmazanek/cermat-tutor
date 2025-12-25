@@ -2,6 +2,8 @@ import { CheckIcon, LightBulbIcon, FireIcon } from '@heroicons/react/24/solid'
 
 // Note: Continue button moved to BottomBar (ADR-009)
 function Feedback({ question, selectedAnswer, isCorrect, streak }) {
+  const isTypeRecognition = question.type === 'type_recognition'
+
   if (isCorrect) {
     // Correct answer - minimal feedback, auto-advances
     return (
@@ -9,7 +11,7 @@ function Feedback({ question, selectedAnswer, isCorrect, streak }) {
         <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
           <CheckIcon className="w-10 h-10 text-green-600" />
         </div>
-        <p className="text-2xl font-bold text-green-700 mb-2">
+        <p className={`text-2xl font-bold text-green-700 mb-2 ${isTypeRecognition ? 'font-mono' : ''}`}>
           {question.correct}
         </p>
         {streak >= 3 && (
@@ -29,11 +31,11 @@ function Feedback({ question, selectedAnswer, isCorrect, streak }) {
       <div className="bg-white rounded-2xl shadow-sm p-6 w-full max-w-sm mb-4">
         <div className="text-center mb-4">
           <p className="text-slate-500 text-sm mb-1">Tvoje odpověď</p>
-          <p className="text-xl text-slate-400 line-through">{selectedAnswer}</p>
+          <p className={`text-xl text-slate-400 line-through ${isTypeRecognition ? 'font-mono' : ''}`}>{selectedAnswer}</p>
         </div>
         <div className="text-center">
           <p className="text-slate-500 text-sm mb-1">Správně</p>
-          <p className="text-2xl font-bold text-green-600">{question.correct}</p>
+          <p className={`text-2xl font-bold text-green-600 ${isTypeRecognition ? 'font-mono' : ''}`}>{question.correct}</p>
         </div>
       </div>
 

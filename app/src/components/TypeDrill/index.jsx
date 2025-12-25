@@ -108,7 +108,7 @@ function TypeDrill({ onExit, onViewProgress }) {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
       {/* ZONE 1: Header (fixed) */}
       <div className="bg-white border-b border-slate-200">
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-center">
@@ -124,13 +124,13 @@ function TypeDrill({ onExit, onViewProgress }) {
       {/* Progress bar */}
       <div className="h-1 bg-slate-200">
         <div
-          className="h-full bg-indigo-500 transition-all duration-300"
+          className="h-full bg-indigo-500 transition-gentle"
           style={{ width: `${((currentIndex + (phase === 'strategy' || phase === 'feedback' ? 0.5 : 0)) / questions.length) * 100}%` }}
         />
       </div>
 
-      {/* ZONE 2: Content (scrollable) */}
-      <div className="flex-1 px-4 py-6 flex flex-col max-w-2xl mx-auto w-full pb-24">
+      {/* ZONE 2: Content (scrollable) - ADR-010 mobile-safe pattern */}
+      <div className="flex-1 min-h-0 overflow-y-auto px-4 py-6 flex flex-col max-w-2xl mx-auto w-full pb-20">
         {/* Problem prompt */}
         <div className="bg-white rounded-2xl shadow-sm p-5 mb-6">
           <p className="text-lg text-slate-800 leading-relaxed">

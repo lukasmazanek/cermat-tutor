@@ -47,12 +47,12 @@ function StrategyQuestion({ question, typeWasCorrect, onAnswer }) {
             key={index}
             onClick={() => handleSelect(option)}
             disabled={selected !== null}
-            className={`w-full p-4 rounded-xl text-left transition-all duration-200
+            className={`w-full p-4 rounded-xl text-left transition-gentle active:scale-[0.98]
               ${selected === option.value
                 ? 'bg-indigo-100 border-2 border-indigo-400 text-indigo-800'
                 : 'bg-white border-2 border-slate-200 text-slate-700 hover:border-indigo-300'
               }
-              disabled:opacity-70`}
+              disabled:opacity-50`}
           >
             <span className="font-mono">{option.value}</span>
           </button>

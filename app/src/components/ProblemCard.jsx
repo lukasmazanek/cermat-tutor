@@ -427,7 +427,7 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
                     ? 'bg-safe-blue text-white'
                     : 'bg-white border border-slate-200 text-slate-700'
                   }
-                  disabled:opacity-70`}
+                  disabled:opacity-50`}
               >
                 <span className="font-medium mr-2">{option.id.toUpperCase()})</span>
                 {option.text}
@@ -499,7 +499,7 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
                   key={key}
                   type="button"
                   onClick={() => setUserAnswer(prev => prev + (key === '√' ? '√(' : key))}
-                  className={`h-10 rounded-xl text-base font-medium transition-gentle active:scale-95
+                  className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
                     ${key === '/' || key === '√' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
                 >
                   {key === '/' ? '÷' : key}
@@ -511,7 +511,7 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
                   key={key}
                   type="button"
                   onClick={() => setUserAnswer(prev => prev + key)}
-                  className={`h-10 rounded-xl text-base font-medium transition-gentle active:scale-95
+                  className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
                     ${key === '*' || key === '^' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
                 >
                   {key === '*' ? '×' : key}
@@ -523,7 +523,7 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
                   key={key}
                   type="button"
                   onClick={() => setUserAnswer(prev => prev + key)}
-                  className={`h-10 rounded-xl text-base font-medium transition-gentle active:scale-95
+                  className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
                     ${key === '-' || key === '(' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
                 >
                   {key === '-' ? '−' : key}
@@ -533,35 +533,35 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
               <button
                 type="button"
                 onClick={() => setUserAnswer(prev => prev + '0')}
-                className="h-10 rounded-xl text-base font-medium bg-slate-100 text-slate-800 transition-gentle active:scale-95"
+                className="h-11 rounded-xl text-base font-medium bg-slate-100 text-slate-800 transition-gentle active:scale-95"
               >
                 0
               </button>
               <button
                 type="button"
                 onClick={() => setUserAnswer(prev => prev + '.')}
-                className="h-10 rounded-xl text-base font-medium bg-slate-100 text-slate-800 transition-gentle active:scale-95"
+                className="h-11 rounded-xl text-base font-medium bg-slate-100 text-slate-800 transition-gentle active:scale-95"
               >
                 ,
               </button>
               <button
                 type="button"
                 onClick={() => setUserAnswer(prev => prev.slice(0, -1))}
-                className="h-10 rounded-xl text-base bg-red-50 text-red-600 transition-gentle active:scale-95"
+                className="h-11 rounded-xl text-base bg-red-50 text-red-600 transition-gentle active:scale-95"
               >
                 ⌫
               </button>
               <button
                 type="button"
                 onClick={() => setUserAnswer(prev => prev + '+')}
-                className="h-10 rounded-xl text-base font-medium bg-purple-100 text-purple-700 transition-gentle active:scale-95"
+                className="h-11 rounded-xl text-base font-medium bg-purple-100 text-purple-700 transition-gentle active:scale-95"
               >
                 +
               </button>
               <button
                 type="button"
                 onClick={() => setUserAnswer(prev => prev + ')')}
-                className="h-10 rounded-xl text-base font-medium bg-purple-100 text-purple-700 transition-gentle active:scale-95"
+                className="h-11 rounded-xl text-base font-medium bg-purple-100 text-purple-700 transition-gentle active:scale-95"
               >
                 )
               </button>
