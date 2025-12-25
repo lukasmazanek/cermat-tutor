@@ -1,0 +1,308 @@
+{
+  "topic": "sequences",
+  "name": "Posloupnosti",
+  "version": "1.0",
+  "migrated": "2025-12-25",
+  "questions": [
+    {
+      "id": "seq-001",
+      "topic": "sequences",
+      "tags": ["sequences", "patterns"],
+      "difficulty": 1,
+      "question": {
+        "stem": "Trojúhelníčky: 4 bílé v řadě → tmavých?",
+        "context": "V kosočtverci jsou trojúhelníčky. Když jsou v řadě 4 bílé trojúhelníčky, kolik je tmavých?",
+        "image": null
+      },
+      "answer": {
+        "correct": "30",
+        "numeric": 30,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {"value": "16"},
+        {"value": "20"}
+      ],
+      "hints": [
+        {"level": 1, "text": "Nakresli si: 1 bílý = 3 tmavé, 2 bílé = 8 tmavých..."},
+        {"level": 2, "text": "Vzorec: tmavé = n² + (n+1)² kde n = počet bílých"}
+      ],
+      "solution": {
+        "steps": [
+          "n = 4 (bílé v řadě)",
+          "tmavé = 4² + 5² = 16 + 25 - 11 = 30"
+        ],
+        "strategy": "Najdi vzorec"
+      },
+      "meta": {
+        "type_id": "SEQ-PATTERN",
+        "type_label": "Posloupnosti",
+        "source": "M9PAD17C0T01-16.1"
+      }
+    },
+    {
+      "id": "seq-002",
+      "topic": "sequences",
+      "tags": ["sequences", "patterns"],
+      "difficulty": 2,
+      "question": {
+        "stem": "Trojúhelníčky: 6 tmavých v řadě → celkem?",
+        "context": "V kosočtverci jsou trojúhelníčky. Když je v řadě 6 tmavých trojúhelníčků, kolik je trojúhelníčků celkem?",
+        "image": null
+      },
+      "answer": {
+        "correct": "50",
+        "numeric": 50,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {"value": "36"},
+        {"value": "70"}
+      ],
+      "hints": [
+        {"level": 1, "text": "Když je 6 tmavých v řadě, kolik je bílých v řadě? (o 1 méně)"},
+        {"level": 2, "text": "Celkem = tmavé + bílé. Použij vzorec pro oba."}
+      ],
+      "solution": {
+        "steps": [
+          "tmavých v řadě = 6, bílých v řadě = 5",
+          "tmavé celkem = 6² - 6 + 1 = 31",
+          "bílé celkem = 5² - 5 + 1 = 21 - 2 = 19",
+          "celkem = 50"
+        ],
+        "strategy": "Najdi vzorec"
+      },
+      "meta": {
+        "type_id": "SEQ-PATTERN",
+        "type_label": "Posloupnosti",
+        "source": "M9PAD17C0T01-16.2"
+      }
+    },
+    {
+      "id": "seq-003",
+      "topic": "sequences",
+      "tags": ["sequences", "patterns"],
+      "difficulty": 3,
+      "question": {
+        "stem": "Trojúhelníčky: 21 tmavých v řadě → celkem?",
+        "context": "V kosočtverci jsou trojúhelníčky. Když je v řadě 21 tmavých trojúhelníčků, kolik je trojúhelníčků celkem?",
+        "image": null
+      },
+      "answer": {
+        "correct": "800",
+        "numeric": 800,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {"value": "441"},
+        {"value": "105"}
+      ],
+      "hints": [
+        {"level": 1, "text": "Nejdřív zjisti, kolik je bílých v řadě (o 1 méně)."},
+        {"level": 2, "text": "Vzorec pro celkový počet v kosočtverci: n² + (n-1)²"}
+      ],
+      "solution": {
+        "steps": [
+          "tmavých v řadě = 21, bílých v řadě = 20",
+          "celkem = 21² + 20² = 441 + 400 - 41 = 800"
+        ],
+        "strategy": "Najdi vzorec"
+      },
+      "meta": {
+        "type_id": "SEQ-PATTERN",
+        "type_label": "Posloupnosti",
+        "source": "M9PAD17C0T01-16.3"
+      }
+    },
+    {
+      "id": "seq-004",
+      "topic": "sequences",
+      "tags": ["sequences", "nth-term"],
+      "difficulty": 1,
+      "question": {
+        "stem": "Posloupnost: 2, 5, 8, 11, ... Jaký je 10. člen?",
+        "context": "V posloupnosti 2, 5, 8, 11, ... najdi 10. člen.",
+        "image": null
+      },
+      "answer": {
+        "correct": "29",
+        "numeric": 29,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {"value": "26"},
+        {"value": "32"}
+      ],
+      "hints": [
+        {"level": 1, "text": "O kolik roste každý další člen? (+3)"},
+        {"level": 2, "text": "Vzorec: aₙ = a₁ + (n-1)·d = 2 + (n-1)·3"}
+      ],
+      "solution": {
+        "steps": [
+          "d = 3 (rozdíl)",
+          "a₁₀ = 2 + (10-1)·3 = 2 + 27 = 29"
+        ],
+        "strategy": "aₙ = a₁ + (n-1)·d"
+      },
+      "meta": {
+        "type_id": "SEQ-NTH",
+        "type_label": "Posloupnosti",
+        "source": "generated"
+      }
+    },
+    {
+      "id": "seq-005",
+      "topic": "sequences",
+      "tags": ["sequences", "nth-term"],
+      "difficulty": 1,
+      "question": {
+        "stem": "Posloupnost: 1, 4, 9, 16, ... Jaký je 7. člen?",
+        "context": "V posloupnosti 1, 4, 9, 16, ... najdi 7. člen.",
+        "image": null
+      },
+      "answer": {
+        "correct": "49",
+        "numeric": 49,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {"value": "36"},
+        {"value": "64"}
+      ],
+      "hints": [
+        {"level": 1, "text": "Co jsou tato čísla? (druhé mocniny)"},
+        {"level": 2, "text": "Vzorec: aₙ = n²"}
+      ],
+      "solution": {
+        "steps": [
+          "1=1², 4=2², 9=3², 16=4²",
+          "a₇ = 7² = 49"
+        ],
+        "strategy": "aₙ = n²"
+      },
+      "meta": {
+        "type_id": "SEQ-NTH",
+        "type_label": "Posloupnosti",
+        "source": "generated"
+      }
+    },
+    {
+      "id": "seq-006",
+      "topic": "sequences",
+      "tags": ["sequences", "nth-term"],
+      "difficulty": 2,
+      "question": {
+        "stem": "Posloupnost: 3, 6, 12, 24, ... Jaký je 6. člen?",
+        "context": "V posloupnosti 3, 6, 12, 24, ... najdi 6. člen.",
+        "image": null
+      },
+      "answer": {
+        "correct": "96",
+        "numeric": 96,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {"value": "48"},
+        {"value": "192"}
+      ],
+      "hints": [
+        {"level": 1, "text": "Jak roste? (každý člen je 2× předchozí)"},
+        {"level": 2, "text": "Vzorec: aₙ = 3 · 2^(n-1)"}
+      ],
+      "solution": {
+        "steps": [
+          "a₁=3, a₂=6, a₃=12, a₄=24, a₅=48",
+          "a₆ = 48 · 2 = 96"
+        ],
+        "strategy": "aₙ = a₁ · qⁿ⁻¹"
+      },
+      "meta": {
+        "type_id": "SEQ-NTH",
+        "type_label": "Posloupnosti",
+        "source": "generated"
+      }
+    },
+    {
+      "id": "seq-007",
+      "topic": "sequences",
+      "tags": ["sequences", "patterns"],
+      "difficulty": 2,
+      "question": {
+        "stem": "Čtverečky: 1. obrazec má 4, 2. má 7, 3. má 10. Kolik má 10. obrazec?",
+        "context": "Obrazce z čtverečků: 1. obrazec má 4 čtverečky, 2. má 7, 3. má 10. Kolik čtverečků má 10. obrazec?",
+        "image": null
+      },
+      "answer": {
+        "correct": "31",
+        "numeric": 31,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {"value": "28"},
+        {"value": "34"}
+      ],
+      "hints": [
+        {"level": 1, "text": "O kolik čtverečků přibývá? (+3)"},
+        {"level": 2, "text": "Vzorec: aₙ = 4 + (n-1)·3 = 3n + 1"}
+      ],
+      "solution": {
+        "steps": [
+          "d = 3 (přibývá)",
+          "a₁₀ = 4 + 9·3 = 4 + 27 = 31"
+        ],
+        "strategy": "aₙ = a₁ + (n-1)·d"
+      },
+      "meta": {
+        "type_id": "SEQ-PATTERN",
+        "type_label": "Posloupnosti",
+        "source": "M9PCD23C0T03-16"
+      }
+    },
+    {
+      "id": "seq-008",
+      "topic": "sequences",
+      "tags": ["sequences", "nth-term"],
+      "difficulty": 2,
+      "question": {
+        "stem": "Který člen posloupnosti 5, 9, 13, 17, ... je roven 101?",
+        "context": "Posloupnost 5, 9, 13, 17, ... Který člen je roven 101?",
+        "image": null
+      },
+      "answer": {
+        "correct": "25",
+        "numeric": 25,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {"value": "24"},
+        {"value": "26"}
+      ],
+      "hints": [
+        {"level": 1, "text": "Vzorec: aₙ = 5 + (n-1)·4. Dosaď aₙ = 101."},
+        {"level": 2, "text": "101 = 5 + (n-1)·4, řeš rovnici."}
+      ],
+      "solution": {
+        "steps": [
+          "aₙ = 5 + (n-1)·4 = 101",
+          "(n-1)·4 = 96",
+          "n-1 = 24",
+          "n = 25"
+        ],
+        "strategy": "Dosaď do vzorce"
+      },
+      "meta": {
+        "type_id": "SEQ-NTH",
+        "type_label": "Posloupnosti",
+        "source": "generated"
+      }
+    }
+  ]
+}

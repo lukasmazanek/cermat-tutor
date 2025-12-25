@@ -1,0 +1,305 @@
+{
+  "topic": "binomial_squares",
+  "name": "Umocňování (a±b)²",
+  "version": "1.0",
+  "migrated": "2025-12-25",
+  "questions": [
+    {
+      "id": "bin-001",
+      "topic": "binomial_squares",
+      "tags": ["binomial", "algebra"],
+      "difficulty": 1,
+      "question": {
+        "stem": "(x + 3)² = ?",
+        "context": "Rozviň: (x + 3)²",
+        "image": null
+      },
+      "answer": {
+        "correct": "x² + 6x + 9",
+        "numeric": null,
+        "unit": null,
+        "variants": ["x^2 + 6x + 9"]
+      },
+      "distractors": [
+        {"value": "x² + 9"},
+        {"value": "x² + 3x + 9"}
+      ],
+      "hints": [
+        {"level": 1, "text": "Vzorec: (a+b)² = a² + 2ab + b²"},
+        {"level": 2, "text": "a=x, b=3: x² + 2·x·3 + 3² = x² + 6x + 9"}
+      ],
+      "solution": {
+        "steps": [
+          "(x + 3)² = x² + 2·x·3 + 3²",
+          "= x² + 6x + 9"
+        ],
+        "strategy": "(a+b)² = a² + 2ab + b²"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "source": "generated"
+      }
+    },
+    {
+      "id": "bin-002",
+      "topic": "binomial_squares",
+      "tags": ["binomial", "algebra"],
+      "difficulty": 1,
+      "question": {
+        "stem": "(x - 5)² = ?",
+        "context": "Rozviň: (x - 5)²",
+        "image": null
+      },
+      "answer": {
+        "correct": "x² - 10x + 25",
+        "numeric": null,
+        "unit": null,
+        "variants": ["x^2 - 10x + 25"]
+      },
+      "distractors": [
+        {"value": "x² + 25"},
+        {"value": "x² - 5x + 25"}
+      ],
+      "hints": [
+        {"level": 1, "text": "Vzorec: (a-b)² = a² - 2ab + b²"},
+        {"level": 2, "text": "a=x, b=5: x² - 2·x·5 + 5² = x² - 10x + 25"}
+      ],
+      "solution": {
+        "steps": [
+          "(x - 5)² = x² - 2·x·5 + 5²",
+          "= x² - 10x + 25"
+        ],
+        "strategy": "(a-b)² = a² - 2ab + b²"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "source": "generated"
+      }
+    },
+    {
+      "id": "bin-003",
+      "topic": "binomial_squares",
+      "tags": ["binomial", "algebra"],
+      "difficulty": 2,
+      "question": {
+        "stem": "(2x + 1)² = ?",
+        "context": "Rozviň: (2x + 1)²",
+        "image": null
+      },
+      "answer": {
+        "correct": "4x² + 4x + 1",
+        "numeric": null,
+        "unit": null,
+        "variants": ["4x^2 + 4x + 1"]
+      },
+      "distractors": [
+        {"value": "4x² + 1"},
+        {"value": "2x² + 2x + 1"}
+      ],
+      "hints": [
+        {"level": 1, "text": "a = 2x, b = 1"},
+        {"level": 2, "text": "(2x)² + 2·(2x)·1 + 1² = 4x² + 4x + 1"}
+      ],
+      "solution": {
+        "steps": [
+          "(2x + 1)² = (2x)² + 2·(2x)·1 + 1²",
+          "= 4x² + 4x + 1"
+        ],
+        "strategy": "(a+b)² = a² + 2ab + b²"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "source": "generated"
+      }
+    },
+    {
+      "id": "bin-004",
+      "topic": "binomial_squares",
+      "tags": ["binomial", "algebra"],
+      "difficulty": 2,
+      "question": {
+        "stem": "(3a - 2)² = ?",
+        "context": "Rozviň: (3a - 2)²",
+        "image": null
+      },
+      "answer": {
+        "correct": "9a² - 12a + 4",
+        "numeric": null,
+        "unit": null,
+        "variants": ["9a^2 - 12a + 4"]
+      },
+      "distractors": [
+        {"value": "9a² + 4"},
+        {"value": "9a² - 6a + 4"}
+      ],
+      "hints": [
+        {"level": 1, "text": "a = 3a, b = 2, vzorec (a-b)²"},
+        {"level": 2, "text": "(3a)² - 2·(3a)·2 + 2² = 9a² - 12a + 4"}
+      ],
+      "solution": {
+        "steps": [
+          "(3a - 2)² = (3a)² - 2·(3a)·2 + 2²",
+          "= 9a² - 12a + 4"
+        ],
+        "strategy": "(a-b)² = a² - 2ab + b²"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "source": "generated"
+      }
+    },
+    {
+      "id": "bin-005",
+      "topic": "binomial_squares",
+      "tags": ["binomial", "algebra", "fractions"],
+      "difficulty": 3,
+      "question": {
+        "stem": "(1/3 - 4b)² = ?",
+        "context": "Rozviň: (1/3 - 4b)²",
+        "image": null
+      },
+      "answer": {
+        "correct": "1/9 - 8b/3 + 16b²",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {"value": "1/9 + 16b²"},
+        {"value": "1/9 - 4b/3 + 16b²"}
+      ],
+      "hints": [
+        {"level": 1, "text": "a = 1/3, b = 4b. Nezapomeň na prostřední člen!"},
+        {"level": 2, "text": "(1/3)² - 2·(1/3)·(4b) + (4b)² = 1/9 - 8b/3 + 16b²"}
+      ],
+      "solution": {
+        "steps": [
+          "(1/3 - 4b)² = (1/3)² - 2·(1/3)·(4b) + (4b)²",
+          "= 1/9 - 8b/3 + 16b²"
+        ],
+        "strategy": "(a-b)² = a² - 2ab + b²"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "source": "M9PDD24C0T04-4.2"
+      }
+    },
+    {
+      "id": "bin-006",
+      "topic": "binomial_squares",
+      "tags": ["binomial", "algebra"],
+      "difficulty": 2,
+      "question": {
+        "stem": "(4n - 3)² = ?",
+        "context": "Rozviň: (4n - 3)²",
+        "image": null
+      },
+      "answer": {
+        "correct": "16n² - 24n + 9",
+        "numeric": null,
+        "unit": null,
+        "variants": ["16n^2 - 24n + 9"]
+      },
+      "distractors": [
+        {"value": "16n² + 9"},
+        {"value": "16n² - 12n + 9"}
+      ],
+      "hints": [
+        {"level": 1, "text": "a = 4n, b = 3"},
+        {"level": 2, "text": "(4n)² - 2·(4n)·3 + 3² = 16n² - 24n + 9"}
+      ],
+      "solution": {
+        "steps": [
+          "(4n - 3)² = (4n)² - 2·(4n)·3 + 3²",
+          "= 16n² - 24n + 9"
+        ],
+        "strategy": "(a-b)² = a² - 2ab + b²"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "source": "M9PCD23C0T03-4.3"
+      }
+    },
+    {
+      "id": "bin-007",
+      "topic": "binomial_squares",
+      "tags": ["binomial", "algebra"],
+      "difficulty": 2,
+      "question": {
+        "stem": "Jaký je prostřední člen v (x + 7)²?",
+        "context": "Rozviň (x + 7)² a urči prostřední člen.",
+        "image": null
+      },
+      "answer": {
+        "correct": "14x",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {"value": "7x"},
+        {"value": "49x"}
+      ],
+      "hints": [
+        {"level": 1, "text": "Prostřední člen = 2ab"},
+        {"level": 2, "text": "2·x·7 = 14x"}
+      ],
+      "solution": {
+        "steps": [
+          "(x + 7)² = x² + 2·x·7 + 49",
+          "prostřední člen = 14x"
+        ],
+        "strategy": "2ab"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "source": "generated"
+      }
+    },
+    {
+      "id": "bin-008",
+      "topic": "binomial_squares",
+      "tags": ["binomial", "algebra"],
+      "difficulty": 3,
+      "question": {
+        "stem": "(x + 2)² - (x - 2)² = ?",
+        "context": "Zjednodušte: (x + 2)² - (x - 2)²",
+        "image": null
+      },
+      "answer": {
+        "correct": "8x",
+        "numeric": null,
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [
+        {"value": "0"},
+        {"value": "4x"}
+      ],
+      "hints": [
+        {"level": 1, "text": "Rozviň oba členy zvlášť."},
+        {"level": 2, "text": "(x²+4x+4) - (x²-4x+4) = 8x"}
+      ],
+      "solution": {
+        "steps": [
+          "(x + 2)² = x² + 4x + 4",
+          "(x - 2)² = x² - 4x + 4",
+          "rozdíl = x² + 4x + 4 - x² + 4x - 4 = 8x"
+        ],
+        "strategy": "Rozviň a odečti"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "source": "generated"
+      }
+    }
+  ]
+}

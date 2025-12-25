@@ -30,6 +30,46 @@
         {"id": "NUM-ZLOM", "label": "Zlomky"}
       ],
       "distractors_strategy": ["+ zlomek", "÷ jmenovatelem"]
+    },
+    "pythagorean": {
+      "type_id": "GEOM-PYTH",
+      "type_label": "Pythagorova věta",
+      "strategy": "c² = a² + b²",
+      "distractors_type": [
+        {"id": "GEOM-OBSAH", "label": "Obsah/obvod"},
+        {"id": "ALG-EQ", "label": "Rovnice"}
+      ],
+      "distractors_strategy": ["a + b", "a × b"]
+    },
+    "sequences": {
+      "type_id": "SEQ-PATTERN",
+      "type_label": "Posloupnosti",
+      "strategy": "Najdi vzorec pro n-tý člen",
+      "distractors_type": [
+        {"id": "ALG-EQ", "label": "Rovnice"},
+        {"id": "NUM-ZLOM", "label": "Zlomky"}
+      ],
+      "distractors_strategy": ["Sečti členy", "Vynásob členy"]
+    },
+    "binomial_squares": {
+      "type_id": "ALG-BINOM",
+      "type_label": "Umocňování (a±b)²",
+      "strategy": "(a±b)² = a² ± 2ab + b²",
+      "distractors_type": [
+        {"id": "ALG-EXPR", "label": "Úprava výrazu"},
+        {"id": "ALG-EQ", "label": "Rovnice"}
+      ],
+      "distractors_strategy": ["a² + b²", "a² - b²"]
+    },
+    "unit_conversions": {
+      "type_id": "UNIT-CONV",
+      "type_label": "Převody jednotek",
+      "strategy": "Umocni/odmocni převodní koeficient",
+      "distractors_type": [
+        {"id": "NUM-ZLOM", "label": "Zlomky"},
+        {"id": "NUM-PROC", "label": "Procenta"}
+      ],
+      "distractors_strategy": ["Násob přímo", "Děl přímo"]
     }
   }
 }

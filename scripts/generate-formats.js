@@ -73,7 +73,10 @@ function extractTopics(questions) {
     'equations': 'Lineární rovnice',
     'fractions': 'Zlomky',
     'o_x_vice': 'o X více/méně',
-    'pythagorean': 'Pythagorova věta'
+    'pythagorean': 'Pythagorova věta',
+    'sequences': 'Posloupnosti',
+    'binomial_squares': 'Umocňování (a±b)²',
+    'unit_conversions': 'Převody jednotek'
   };
 
   questions.forEach(q => {
@@ -82,7 +85,7 @@ function extractTopics(questions) {
         id: q.topic,
         name_cs: topicNames[q.topic] || q.meta?.type_label || q.topic,
         is_strength: ['equations', 'fractions', 'pythagorean'].includes(q.topic),
-        is_critical: q.topic === 'o_x_vice'
+        is_critical: ['o_x_vice', 'sequences', 'binomial_squares', 'unit_conversions'].includes(q.topic)
       };
     }
   });

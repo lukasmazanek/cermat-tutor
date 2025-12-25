@@ -1,8 +1,14 @@
 {
   "version": "3.0",
-  "generated": "2025-12-25T12:16:53.720Z",
+  "generated": "2025-12-25T12:40:03.784Z",
   "description": "Unified question format - presentation layer decides MC vs open answer",
   "topics": {
+    "binomial_squares": {
+      "id": "binomial_squares",
+      "name_cs": "Umocňování (a±b)²",
+      "is_strength": false,
+      "is_critical": true
+    },
     "equations": {
       "id": "equations",
       "name_cs": "Lineární rovnice",
@@ -26,9 +32,310 @@
       "name_cs": "Pythagorova věta",
       "is_strength": true,
       "is_critical": false
+    },
+    "sequences": {
+      "id": "sequences",
+      "name_cs": "Posloupnosti",
+      "is_strength": false,
+      "is_critical": true
+    },
+    "unit_conversions": {
+      "id": "unit_conversions",
+      "name_cs": "Převody jednotek",
+      "is_strength": false,
+      "is_critical": true
     }
   },
   "questions": [
+    {
+      "id": "bin-001",
+      "topic": "binomial_squares",
+      "difficulty": 1,
+      "question": {
+        "stem": "(x + 3)² = ?",
+        "context": "Rozviň: (x + 3)²"
+      },
+      "answer": {
+        "correct": "x² + 6x + 9",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "x² + 9",
+        "x² + 3x + 9"
+      ],
+      "hints": [
+        "Vzorec: (a+b)² = a² + 2ab + b²",
+        "a=x, b=3: x² + 2·x·3 + 3² = x² + 6x + 9"
+      ],
+      "solution": {
+        "steps": [
+          "(x + 3)² = x² + 2·x·3 + 3²",
+          "= x² + 6x + 9"
+        ],
+        "strategy": "(a+b)² = a² + 2ab + b²"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": "x² + 6x + 9"
+      }
+    },
+    {
+      "id": "bin-002",
+      "topic": "binomial_squares",
+      "difficulty": 1,
+      "question": {
+        "stem": "(x - 5)² = ?",
+        "context": "Rozviň: (x - 5)²"
+      },
+      "answer": {
+        "correct": "x² - 10x + 25",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "x² + 25",
+        "x² - 5x + 25"
+      ],
+      "hints": [
+        "Vzorec: (a-b)² = a² - 2ab + b²",
+        "a=x, b=5: x² - 2·x·5 + 5² = x² - 10x + 25"
+      ],
+      "solution": {
+        "steps": [
+          "(x - 5)² = x² - 2·x·5 + 5²",
+          "= x² - 10x + 25"
+        ],
+        "strategy": "(a-b)² = a² - 2ab + b²"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": "x² - 10x + 25"
+      }
+    },
+    {
+      "id": "bin-003",
+      "topic": "binomial_squares",
+      "difficulty": 2,
+      "question": {
+        "stem": "(2x + 1)² = ?",
+        "context": "Rozviň: (2x + 1)²"
+      },
+      "answer": {
+        "correct": "4x² + 4x + 1",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "4x² + 1",
+        "2x² + 2x + 1"
+      ],
+      "hints": [
+        "a = 2x, b = 1",
+        "(2x)² + 2·(2x)·1 + 1² = 4x² + 4x + 1"
+      ],
+      "solution": {
+        "steps": [
+          "(2x + 1)² = (2x)² + 2·(2x)·1 + 1²",
+          "= 4x² + 4x + 1"
+        ],
+        "strategy": "(a+b)² = a² + 2ab + b²"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": "4x² + 4x + 1"
+      }
+    },
+    {
+      "id": "bin-004",
+      "topic": "binomial_squares",
+      "difficulty": 2,
+      "question": {
+        "stem": "(3a - 2)² = ?",
+        "context": "Rozviň: (3a - 2)²"
+      },
+      "answer": {
+        "correct": "9a² - 12a + 4",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "9a² + 4",
+        "9a² - 6a + 4"
+      ],
+      "hints": [
+        "a = 3a, b = 2, vzorec (a-b)²",
+        "(3a)² - 2·(3a)·2 + 2² = 9a² - 12a + 4"
+      ],
+      "solution": {
+        "steps": [
+          "(3a - 2)² = (3a)² - 2·(3a)·2 + 2²",
+          "= 9a² - 12a + 4"
+        ],
+        "strategy": "(a-b)² = a² - 2ab + b²"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": "9a² - 12a + 4"
+      }
+    },
+    {
+      "id": "bin-005",
+      "topic": "binomial_squares",
+      "difficulty": 3,
+      "question": {
+        "stem": "(1/3 - 4b)² = ?",
+        "context": "Rozviň: (1/3 - 4b)²"
+      },
+      "answer": {
+        "correct": "1/9 - 8b/3 + 16b²",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "1/9 + 16b²",
+        "1/9 - 4b/3 + 16b²"
+      ],
+      "hints": [
+        "a = 1/3, b = 4b. Nezapomeň na prostřední člen!",
+        "(1/3)² - 2·(1/3)·(4b) + (4b)² = 1/9 - 8b/3 + 16b²"
+      ],
+      "solution": {
+        "steps": [
+          "(1/3 - 4b)² = (1/3)² - 2·(1/3)·(4b) + (4b)²",
+          "= 1/9 - 8b/3 + 16b²"
+        ],
+        "strategy": "(a-b)² = a² - 2ab + b²"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": "1/9 - 8b/3 + 16b²"
+      }
+    },
+    {
+      "id": "bin-006",
+      "topic": "binomial_squares",
+      "difficulty": 2,
+      "question": {
+        "stem": "(4n - 3)² = ?",
+        "context": "Rozviň: (4n - 3)²"
+      },
+      "answer": {
+        "correct": "16n² - 24n + 9",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "16n² + 9",
+        "16n² - 12n + 9"
+      ],
+      "hints": [
+        "a = 4n, b = 3",
+        "(4n)² - 2·(4n)·3 + 3² = 16n² - 24n + 9"
+      ],
+      "solution": {
+        "steps": [
+          "(4n - 3)² = (4n)² - 2·(4n)·3 + 3²",
+          "= 16n² - 24n + 9"
+        ],
+        "strategy": "(a-b)² = a² - 2ab + b²"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": "16n² - 24n + 9"
+      }
+    },
+    {
+      "id": "bin-007",
+      "topic": "binomial_squares",
+      "difficulty": 2,
+      "question": {
+        "stem": "Jaký je prostřední člen v (x + 7)²?",
+        "context": "Rozviň (x + 7)² a urči prostřední člen."
+      },
+      "answer": {
+        "correct": "14x",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "7x",
+        "49x"
+      ],
+      "hints": [
+        "Prostřední člen = 2ab",
+        "2·x·7 = 14x"
+      ],
+      "solution": {
+        "steps": [
+          "(x + 7)² = x² + 2·x·7 + 49",
+          "prostřední člen = 14x"
+        ],
+        "strategy": "2ab"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": "14x"
+      }
+    },
+    {
+      "id": "bin-008",
+      "topic": "binomial_squares",
+      "difficulty": 3,
+      "question": {
+        "stem": "(x + 2)² - (x - 2)² = ?",
+        "context": "Zjednodušte: (x + 2)² - (x - 2)²"
+      },
+      "answer": {
+        "correct": "8x",
+        "numeric": null,
+        "unit": null
+      },
+      "distractors": [
+        "0",
+        "4x"
+      ],
+      "hints": [
+        "Rozviň oba členy zvlášť.",
+        "(x²+4x+4) - (x²-4x+4) = 8x"
+      ],
+      "solution": {
+        "steps": [
+          "(x + 2)² = x² + 4x + 4",
+          "(x - 2)² = x² - 4x + 4",
+          "rozdíl = x² + 4x + 4 - x² + 4x - 4 = 8x"
+        ],
+        "strategy": "Rozviň a odečti"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM",
+        "type_label": "Umocňování",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": "8x"
+      }
+    },
     {
       "id": "eq-001",
       "topic": "equations",
@@ -3811,6 +4118,588 @@
         "original_type": "problem_type",
         "supports_mc": true,
         "supports_open": "Pythagorova věta"
+      }
+    },
+    {
+      "id": "seq-001",
+      "topic": "sequences",
+      "difficulty": 1,
+      "question": {
+        "stem": "Trojúhelníčky: 4 bílé v řadě → tmavých?",
+        "context": "V kosočtverci jsou trojúhelníčky. Když jsou v řadě 4 bílé trojúhelníčky, kolik je tmavých?"
+      },
+      "answer": {
+        "correct": "30",
+        "numeric": 30,
+        "unit": null
+      },
+      "distractors": [
+        "16",
+        "20"
+      ],
+      "hints": [
+        "Nakresli si: 1 bílý = 3 tmavé, 2 bílé = 8 tmavých...",
+        "Vzorec: tmavé = n² + (n+1)² kde n = počet bílých"
+      ],
+      "solution": {
+        "steps": [
+          "n = 4 (bílé v řadě)",
+          "tmavé = 4² + 5² = 16 + 25 - 11 = 30"
+        ],
+        "strategy": "Najdi vzorec"
+      },
+      "meta": {
+        "type_id": "SEQ-PATTERN",
+        "type_label": "Posloupnosti",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "seq-002",
+      "topic": "sequences",
+      "difficulty": 2,
+      "question": {
+        "stem": "Trojúhelníčky: 6 tmavých v řadě → celkem?",
+        "context": "V kosočtverci jsou trojúhelníčky. Když je v řadě 6 tmavých trojúhelníčků, kolik je trojúhelníčků celkem?"
+      },
+      "answer": {
+        "correct": "50",
+        "numeric": 50,
+        "unit": null
+      },
+      "distractors": [
+        "36",
+        "70"
+      ],
+      "hints": [
+        "Když je 6 tmavých v řadě, kolik je bílých v řadě? (o 1 méně)",
+        "Celkem = tmavé + bílé. Použij vzorec pro oba."
+      ],
+      "solution": {
+        "steps": [
+          "tmavých v řadě = 6, bílých v řadě = 5",
+          "tmavé celkem = 6² - 6 + 1 = 31",
+          "bílé celkem = 5² - 5 + 1 = 21 - 2 = 19",
+          "celkem = 50"
+        ],
+        "strategy": "Najdi vzorec"
+      },
+      "meta": {
+        "type_id": "SEQ-PATTERN",
+        "type_label": "Posloupnosti",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "seq-003",
+      "topic": "sequences",
+      "difficulty": 3,
+      "question": {
+        "stem": "Trojúhelníčky: 21 tmavých v řadě → celkem?",
+        "context": "V kosočtverci jsou trojúhelníčky. Když je v řadě 21 tmavých trojúhelníčků, kolik je trojúhelníčků celkem?"
+      },
+      "answer": {
+        "correct": "800",
+        "numeric": 800,
+        "unit": null
+      },
+      "distractors": [
+        "441",
+        "105"
+      ],
+      "hints": [
+        "Nejdřív zjisti, kolik je bílých v řadě (o 1 méně).",
+        "Vzorec pro celkový počet v kosočtverci: n² + (n-1)²"
+      ],
+      "solution": {
+        "steps": [
+          "tmavých v řadě = 21, bílých v řadě = 20",
+          "celkem = 21² + 20² = 441 + 400 - 41 = 800"
+        ],
+        "strategy": "Najdi vzorec"
+      },
+      "meta": {
+        "type_id": "SEQ-PATTERN",
+        "type_label": "Posloupnosti",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "seq-004",
+      "topic": "sequences",
+      "difficulty": 1,
+      "question": {
+        "stem": "Posloupnost: 2, 5, 8, 11, ... Jaký je 10. člen?",
+        "context": "V posloupnosti 2, 5, 8, 11, ... najdi 10. člen."
+      },
+      "answer": {
+        "correct": "29",
+        "numeric": 29,
+        "unit": null
+      },
+      "distractors": [
+        "26",
+        "32"
+      ],
+      "hints": [
+        "O kolik roste každý další člen? (+3)",
+        "Vzorec: aₙ = a₁ + (n-1)·d = 2 + (n-1)·3"
+      ],
+      "solution": {
+        "steps": [
+          "d = 3 (rozdíl)",
+          "a₁₀ = 2 + (10-1)·3 = 2 + 27 = 29"
+        ],
+        "strategy": "aₙ = a₁ + (n-1)·d"
+      },
+      "meta": {
+        "type_id": "SEQ-NTH",
+        "type_label": "Posloupnosti",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "seq-005",
+      "topic": "sequences",
+      "difficulty": 1,
+      "question": {
+        "stem": "Posloupnost: 1, 4, 9, 16, ... Jaký je 7. člen?",
+        "context": "V posloupnosti 1, 4, 9, 16, ... najdi 7. člen."
+      },
+      "answer": {
+        "correct": "49",
+        "numeric": 49,
+        "unit": null
+      },
+      "distractors": [
+        "36",
+        "64"
+      ],
+      "hints": [
+        "Co jsou tato čísla? (druhé mocniny)",
+        "Vzorec: aₙ = n²"
+      ],
+      "solution": {
+        "steps": [
+          "1=1², 4=2², 9=3², 16=4²",
+          "a₇ = 7² = 49"
+        ],
+        "strategy": "aₙ = n²"
+      },
+      "meta": {
+        "type_id": "SEQ-NTH",
+        "type_label": "Posloupnosti",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "seq-006",
+      "topic": "sequences",
+      "difficulty": 2,
+      "question": {
+        "stem": "Posloupnost: 3, 6, 12, 24, ... Jaký je 6. člen?",
+        "context": "V posloupnosti 3, 6, 12, 24, ... najdi 6. člen."
+      },
+      "answer": {
+        "correct": "96",
+        "numeric": 96,
+        "unit": null
+      },
+      "distractors": [
+        "48",
+        "192"
+      ],
+      "hints": [
+        "Jak roste? (každý člen je 2× předchozí)",
+        "Vzorec: aₙ = 3 · 2^(n-1)"
+      ],
+      "solution": {
+        "steps": [
+          "a₁=3, a₂=6, a₃=12, a₄=24, a₅=48",
+          "a₆ = 48 · 2 = 96"
+        ],
+        "strategy": "aₙ = a₁ · qⁿ⁻¹"
+      },
+      "meta": {
+        "type_id": "SEQ-NTH",
+        "type_label": "Posloupnosti",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "seq-007",
+      "topic": "sequences",
+      "difficulty": 2,
+      "question": {
+        "stem": "Čtverečky: 1. obrazec má 4, 2. má 7, 3. má 10. Kolik má 10. obrazec?",
+        "context": "Obrazce z čtverečků: 1. obrazec má 4 čtverečky, 2. má 7, 3. má 10. Kolik čtverečků má 10. obrazec?"
+      },
+      "answer": {
+        "correct": "31",
+        "numeric": 31,
+        "unit": null
+      },
+      "distractors": [
+        "28",
+        "34"
+      ],
+      "hints": [
+        "O kolik čtverečků přibývá? (+3)",
+        "Vzorec: aₙ = 4 + (n-1)·3 = 3n + 1"
+      ],
+      "solution": {
+        "steps": [
+          "d = 3 (přibývá)",
+          "a₁₀ = 4 + 9·3 = 4 + 27 = 31"
+        ],
+        "strategy": "aₙ = a₁ + (n-1)·d"
+      },
+      "meta": {
+        "type_id": "SEQ-PATTERN",
+        "type_label": "Posloupnosti",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "seq-008",
+      "topic": "sequences",
+      "difficulty": 2,
+      "question": {
+        "stem": "Který člen posloupnosti 5, 9, 13, 17, ... je roven 101?",
+        "context": "Posloupnost 5, 9, 13, 17, ... Který člen je roven 101?"
+      },
+      "answer": {
+        "correct": "25",
+        "numeric": 25,
+        "unit": null
+      },
+      "distractors": [
+        "24",
+        "26"
+      ],
+      "hints": [
+        "Vzorec: aₙ = 5 + (n-1)·4. Dosaď aₙ = 101.",
+        "101 = 5 + (n-1)·4, řeš rovnici."
+      ],
+      "solution": {
+        "steps": [
+          "aₙ = 5 + (n-1)·4 = 101",
+          "(n-1)·4 = 96",
+          "n-1 = 24",
+          "n = 25"
+        ],
+        "strategy": "Dosaď do vzorce"
+      },
+      "meta": {
+        "type_id": "SEQ-NTH",
+        "type_label": "Posloupnosti",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "unit-001",
+      "topic": "unit_conversions",
+      "difficulty": 1,
+      "question": {
+        "stem": "1 m² = ? cm²",
+        "context": "Převeď: 1 m² = ? cm²"
+      },
+      "answer": {
+        "correct": "10000",
+        "numeric": 10000,
+        "unit": "cm²"
+      },
+      "distractors": [
+        "100",
+        "1000"
+      ],
+      "hints": [
+        "1 m = 100 cm. Ale pozor - jde o plochu!",
+        "1 m² = (100 cm)² = 10 000 cm²"
+      ],
+      "solution": {
+        "steps": [
+          "1 m = 100 cm",
+          "1 m² = (1 m)² = (100 cm)² = 10 000 cm²"
+        ],
+        "strategy": "Umocni převodní koeficient"
+      },
+      "meta": {
+        "type_id": "UNIT-AREA",
+        "type_label": "Převody jednotek",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "unit-002",
+      "topic": "unit_conversions",
+      "difficulty": 2,
+      "question": {
+        "stem": "0,75 m² = 25 cm² + ? cm²",
+        "context": "Doplň: 0,75 m² = 25 cm² + ? cm²"
+      },
+      "answer": {
+        "correct": "7475",
+        "numeric": 7475,
+        "unit": "cm²"
+      },
+      "distractors": [
+        "70",
+        "750"
+      ],
+      "hints": [
+        "Nejdřív převeď 0,75 m² na cm².",
+        "0,75 m² = 7500 cm². Pak 7500 - 25 = 7475 cm²"
+      ],
+      "solution": {
+        "steps": [
+          "0,75 m² = 0,75 · 10000 cm² = 7500 cm²",
+          "7500 - 25 = 7475 cm²"
+        ],
+        "strategy": "Převeď a odečti"
+      },
+      "meta": {
+        "type_id": "UNIT-AREA",
+        "type_label": "Převody jednotek",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "unit-003",
+      "topic": "unit_conversions",
+      "difficulty": 1,
+      "question": {
+        "stem": "1 dm³ = ? cm³",
+        "context": "Převeď: 1 dm³ = ? cm³"
+      },
+      "answer": {
+        "correct": "1000",
+        "numeric": 1000,
+        "unit": "cm³"
+      },
+      "distractors": [
+        "100",
+        "10"
+      ],
+      "hints": [
+        "1 dm = 10 cm. Ale jde o objem!",
+        "1 dm³ = (10 cm)³ = 1000 cm³"
+      ],
+      "solution": {
+        "steps": [
+          "1 dm = 10 cm",
+          "1 dm³ = (10 cm)³ = 1000 cm³"
+        ],
+        "strategy": "Umocni na třetí"
+      },
+      "meta": {
+        "type_id": "UNIT-VOL",
+        "type_label": "Převody jednotek",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "unit-004",
+      "topic": "unit_conversions",
+      "difficulty": 2,
+      "question": {
+        "stem": "0,2 dm³ + ? cm³ = 1 litr",
+        "context": "Doplň: 0,2 dm³ + ? cm³ = 1 litr"
+      },
+      "answer": {
+        "correct": "800",
+        "numeric": 800,
+        "unit": "cm³"
+      },
+      "distractors": [
+        "80",
+        "200"
+      ],
+      "hints": [
+        "1 litr = 1 dm³ = 1000 cm³",
+        "0,2 dm³ = 200 cm³. Pak 1000 - 200 = 800 cm³"
+      ],
+      "solution": {
+        "steps": [
+          "1 litr = 1000 cm³",
+          "0,2 dm³ = 200 cm³",
+          "1000 - 200 = 800 cm³"
+        ],
+        "strategy": "Převeď na stejné jednotky"
+      },
+      "meta": {
+        "type_id": "UNIT-VOL",
+        "type_label": "Převody jednotek",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "unit-005",
+      "topic": "unit_conversions",
+      "difficulty": 1,
+      "question": {
+        "stem": "? · 20 minut = 8 · 0,75 hodiny",
+        "context": "Doplň: ? · 20 minut = 8 · 0,75 hodiny"
+      },
+      "answer": {
+        "correct": "18",
+        "numeric": 18,
+        "unit": null
+      },
+      "distractors": [
+        "6",
+        "24"
+      ],
+      "hints": [
+        "Převeď pravou stranu na minuty.",
+        "8 · 0,75 h = 6 h = 360 min. Pak 360 : 20 = 18"
+      ],
+      "solution": {
+        "steps": [
+          "8 · 0,75 h = 6 h = 360 min",
+          "? · 20 = 360",
+          "? = 18"
+        ],
+        "strategy": "Převeď na minuty"
+      },
+      "meta": {
+        "type_id": "UNIT-TIME",
+        "type_label": "Převody jednotek",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "unit-006",
+      "topic": "unit_conversions",
+      "difficulty": 2,
+      "question": {
+        "stem": "2,5 m² = ? dm²",
+        "context": "Převeď: 2,5 m² = ? dm²"
+      },
+      "answer": {
+        "correct": "250",
+        "numeric": 250,
+        "unit": "dm²"
+      },
+      "distractors": [
+        "25",
+        "2500"
+      ],
+      "hints": [
+        "1 m = 10 dm",
+        "1 m² = 100 dm². Pak 2,5 · 100 = 250 dm²"
+      ],
+      "solution": {
+        "steps": [
+          "1 m² = (10 dm)² = 100 dm²",
+          "2,5 m² = 2,5 · 100 = 250 dm²"
+        ],
+        "strategy": "Umocni převodní koeficient"
+      },
+      "meta": {
+        "type_id": "UNIT-AREA",
+        "type_label": "Převody jednotek",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "unit-007",
+      "topic": "unit_conversions",
+      "difficulty": 2,
+      "question": {
+        "stem": "0,5 m³ = ? litrů",
+        "context": "Převeď: 0,5 m³ = ? litrů"
+      },
+      "answer": {
+        "correct": "500",
+        "numeric": 500,
+        "unit": "l"
+      },
+      "distractors": [
+        "50",
+        "5000"
+      ],
+      "hints": [
+        "1 m³ = 1000 dm³ = 1000 litrů",
+        "0,5 m³ = 0,5 · 1000 = 500 litrů"
+      ],
+      "solution": {
+        "steps": [
+          "1 m³ = 1000 litrů",
+          "0,5 m³ = 500 litrů"
+        ],
+        "strategy": "1 m³ = 1000 l"
+      },
+      "meta": {
+        "type_id": "UNIT-VOL",
+        "type_label": "Převody jednotek",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
+      }
+    },
+    {
+      "id": "unit-008",
+      "topic": "unit_conversions",
+      "difficulty": 3,
+      "question": {
+        "stem": "450 cm² = ? m²",
+        "context": "Převeď: 450 cm² = ? m²"
+      },
+      "answer": {
+        "correct": "0,045",
+        "numeric": 0.045,
+        "unit": "m²"
+      },
+      "distractors": [
+        "0,45",
+        "4,5"
+      ],
+      "hints": [
+        "1 m² = 10 000 cm², takže dělíme 10 000",
+        "450 : 10000 = 0,045 m²"
+      ],
+      "solution": {
+        "steps": [
+          "1 m² = 10 000 cm²",
+          "450 cm² = 450 : 10000 = 0,045 m²"
+        ],
+        "strategy": "Děl převodním koeficientem"
+      },
+      "meta": {
+        "type_id": "UNIT-AREA",
+        "type_label": "Převody jednotek",
+        "original_type": null,
+        "supports_mc": true,
+        "supports_open": true
       }
     }
   ]
