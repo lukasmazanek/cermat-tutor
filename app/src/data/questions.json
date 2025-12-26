@@ -1,6 +1,6 @@
 {
   "version": "3.0",
-  "generated": "2025-12-26T06:39:01.389Z",
+  "generated": "2025-12-26T07:03:31.107Z",
   "description": "Unified question format - presentation layer decides MC vs open answer",
   "topics": {
     "binomial_squares": {
@@ -1175,7 +1175,7 @@
         "context": "Co znamená \"o třetinu více\"?"
       },
       "answer": {
-        "value": "× 4/3 (neboli původní + třetina)",
+        "value": "4/3x",
         "unit": null
       },
       "distractors": [
@@ -1201,7 +1201,7 @@
         "type_label": "o X více/méně",
         "original_type": null,
         "supports_mc": true,
-        "supports_open": "× 4/3 (neboli původní + třetina)"
+        "supports_open": "4/3x"
       }
     },
     {
@@ -1314,13 +1314,13 @@
         "context": "Objem nádrže se zvětšil o polovinu. Původně měla 200 litrů. Jaký je nový objem?"
       },
       "answer": {
-        "value": "300 litrů",
-        "unit": null
+        "value": 300,
+        "unit": "l"
       },
       "distractors": [
-        "100 litrů",
-        "250 litrů",
-        "400 litrů"
+        "100",
+        "250",
+        "400"
       ],
       "hints": [
         "\"O polovinu více\" = původní + polovina z původního.",
@@ -1339,7 +1339,7 @@
         "type_label": "o X více/méně",
         "original_type": null,
         "supports_mc": true,
-        "supports_open": "300 litrů"
+        "supports_open": true
       }
     },
     {
@@ -1612,7 +1612,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,5x"
       }
     },
     {
@@ -1645,7 +1645,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,5x"
       }
     },
     {
@@ -1678,7 +1678,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "4/3x"
       }
     },
     {
@@ -1711,7 +1711,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "2/3x"
       }
     },
     {
@@ -1744,7 +1744,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,25x"
       }
     },
     {
@@ -1777,7 +1777,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,75x"
       }
     },
     {
@@ -1810,7 +1810,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,2x"
       }
     },
     {
@@ -1843,7 +1843,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,8x"
       }
     },
     {
@@ -1876,7 +1876,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,1x"
       }
     },
     {
@@ -1909,7 +1909,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,9x"
       }
     },
     {
@@ -1942,7 +1942,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "5/3x"
       }
     },
     {
@@ -1975,7 +1975,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1/3x"
       }
     },
     {
@@ -2008,7 +2008,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,75x"
       }
     },
     {
@@ -2041,7 +2041,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,25x"
       }
     },
     {
@@ -2074,7 +2074,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,1x"
       }
     },
     {
@@ -2107,7 +2107,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,9x"
       }
     },
     {
@@ -2140,7 +2140,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,25x"
       }
     },
     {
@@ -2173,7 +2173,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,75x"
       }
     },
     {
@@ -2206,7 +2206,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,5x"
       }
     },
     {
@@ -2239,7 +2239,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,5x"
       }
     },
     {
@@ -2272,7 +2272,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,2x"
       }
     },
     {
@@ -2305,7 +2305,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,8x"
       }
     },
     {
@@ -2338,7 +2338,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "2x"
       }
     },
     {
@@ -2371,7 +2371,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,75x"
       }
     },
     {
@@ -2404,7 +2404,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,25x"
       }
     },
     {
@@ -2437,7 +2437,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "7/6x"
       }
     },
     {
@@ -2470,7 +2470,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "5/6x"
       }
     },
     {
@@ -2503,7 +2503,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,4x"
       }
     },
     {
@@ -2536,7 +2536,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,6x"
       }
     },
     {
@@ -2569,7 +2569,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,6x"
       }
     },
     {
@@ -2602,7 +2602,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,4x"
       }
     },
     {
@@ -2635,7 +2635,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,05x"
       }
     },
     {
@@ -2668,7 +2668,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,95x"
       }
     },
     {
@@ -2701,7 +2701,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,3x"
       }
     },
     {
@@ -2734,7 +2734,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,7x"
       }
     },
     {
@@ -2767,7 +2767,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,8x"
       }
     },
     {
@@ -2800,7 +2800,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,2x"
       }
     },
     {
@@ -2833,7 +2833,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,125x"
       }
     },
     {
@@ -2866,7 +2866,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "0,875x"
       }
     },
     {
@@ -2899,7 +2899,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": true
+        "supports_open": "1,4x"
       }
     },
     {

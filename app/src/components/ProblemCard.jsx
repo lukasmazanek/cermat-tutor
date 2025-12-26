@@ -439,14 +439,14 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
             {/* Virtual keyboard - only on mobile, hidden when solution revealed or multiple choice */}
             {isMobile && !solutionRevealed && problem.type !== 'multiple_choice' && (
               <div className="grid grid-cols-5 gap-1 mb-2">
-                {/* Row 1: 7 8 9 ÷ √ */}
-                {['7', '8', '9', '/', '√'].map((key) => (
+                {/* Row 1: 7 8 9 ÷ [unit or √] */}
+                {['7', '8', '9', '/', problem.answer_unit || '√'].map((key) => (
                   <button
                     key={key}
                     type="button"
                     onClick={() => setUserAnswer(prev => prev + (key === '√' ? '√(' : key))}
                     className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
-                      ${key === '/' || key === '√' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
+                      ${key === '/' || key === '√' || key === problem.answer_unit ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
                   >
                     {key === '/' ? '÷' : key}
                   </button>
@@ -522,7 +522,9 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
                   { symbol: '√(', display: '√(' },
                   { symbol: '^', display: '^' },
                   { symbol: '(', display: '(' },
-                  { symbol: ')', display: ')' }
+                  { symbol: ')', display: ')' },
+                  // Add unit button if required
+                  ...(problem.answer_unit ? [{ symbol: problem.answer_unit, display: problem.answer_unit }] : [])
                 ].map(({ symbol, display }) => (
                   <button
                     key={symbol}

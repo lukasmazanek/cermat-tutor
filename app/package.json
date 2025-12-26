@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "validate": "node ../scripts/validate-data.js",
     "sync-data": "bash ../scripts/sync-data.sh",
     "predev": "npm run sync-data",
     "dev": "vite",
-    "prebuild": "npm run sync-data",
+    "prebuild": "npm run validate && npm run sync-data",
     "build": "vite build",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
