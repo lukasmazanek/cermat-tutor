@@ -19,7 +19,6 @@
       },
       "answer": {
         "correct": "29",
-        "numeric": 29,
         "unit": null,
         "variants": []
       },
@@ -70,7 +69,6 @@
       },
       "answer": {
         "correct": "49",
-        "numeric": 49,
         "unit": null,
         "variants": []
       },
@@ -121,7 +119,6 @@
       },
       "answer": {
         "correct": "96",
-        "numeric": 96,
         "unit": null,
         "variants": []
       },
@@ -172,7 +169,6 @@
       },
       "answer": {
         "correct": "31",
-        "numeric": 31,
         "unit": null,
         "variants": []
       },
@@ -223,7 +219,6 @@
       },
       "answer": {
         "correct": "25",
-        "numeric": 25,
         "unit": null,
         "variants": []
       },

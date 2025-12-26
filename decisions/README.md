@@ -2,7 +2,7 @@
 
 This directory contains all Educational Decision Records (EDRs) for the Tutor project.
 
-**Total:** 4 EDRs + 8 ADRs + 2 PDRs | **Format:** One file per record | **Naming:** `EDR-XXX-slug.md`, `ADR-XXX-slug.md`, or `PDR-XXX-slug.md`
+**Total:** 4 EDRs + 20 ADRs + 2 PDRs | **Format:** One file per record | **Naming:** `EDR-XXX-slug.md`, `ADR-XXX-slug.md`, or `PDR-XXX-slug.md`
 
 ---
 
@@ -51,6 +51,16 @@ This directory contains all Educational Decision Records (EDRs) for the Tutor pr
 | [ADR-006](ADR-006-ui-zones-layout.md) | UI Zones Layout | Accepted | 3 zones: Header + Content + Bottom bar (fixed) |
 | [ADR-007](ADR-007-lightning-round-implementation.md) | Lightning Round Implementation | Accepted | QAR decisions for Bleskové kolo MVP |
 | [ADR-008](ADR-008-type-recognition-drill.md) | Type Recognition Drill | Accepted | Problem type + strategy recognition training |
+| [ADR-009](ADR-009-centralized-bottombar.md) | Centralized BottomBar | Accepted | 5-slot bottom bar system |
+| [ADR-010](ADR-010-mobile-safe-layout.md) | Mobile-Safe Layout | Accepted | h-[100dvh], pb-20, min-h-0 pattern |
+| [ADR-013](ADR-013-single-source-data.md) | Single Source Data | Accepted | Source → Generated → App pipeline |
+| [ADR-014](ADR-014-unified-content-format.md) | Unified Content Format | Accepted | Standardized question JSON schema |
+| [ADR-015](ADR-015-page-categories.md) | Page Categories | Accepted | HOME/PROBLEM/SELECTION/CENTERED/DASHBOARD |
+| [ADR-016](ADR-016-unified-answer-field.md) | Unified Answer Field | Accepted | answer.value + numeric + unit |
+| [ADR-017](ADR-017-math-input-language.md) | Math Input Language | Accepted | Parser rules for math expressions |
+| [ADR-018](ADR-018-math-keyboard-component.md) | MathKeyboard Component | Proposed | Extracted 6-column keyboard |
+| [ADR-019](ADR-019-component-architecture.md) | Component Architecture | Proposed | Atomic Design + state + data flow |
+| [ADR-020](ADR-020-evaluatable-expected-values.md) | Evaluatable Expected Values | Accepted | Parser evaluates string fractions |
 
 ---
 

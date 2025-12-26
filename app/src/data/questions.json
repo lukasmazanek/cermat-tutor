@@ -1,6 +1,6 @@
 {
   "version": "3.0",
-  "generated": "2025-12-26T07:03:31.107Z",
+  "generated": "2025-12-26T18:14:18.309Z",
   "description": "Unified question format - presentation layer decides MC vs open answer",
   "topics": {
     "binomial_squares": {
@@ -79,7 +79,7 @@
         "type_label": "Umocňování",
         "original_type": null,
         "supports_mc": true,
-        "supports_open": "x² + 6x + 9"
+        "supports_open": true
       }
     },
     {
@@ -114,7 +114,7 @@
         "type_label": "Umocňování",
         "original_type": null,
         "supports_mc": true,
-        "supports_open": "x² - 10x + 25"
+        "supports_open": true
       }
     },
     {
@@ -149,7 +149,7 @@
         "type_label": "Umocňování",
         "original_type": null,
         "supports_mc": true,
-        "supports_open": "4x² + 4x + 1"
+        "supports_open": true
       }
     },
     {
@@ -184,7 +184,7 @@
         "type_label": "Umocňování",
         "original_type": null,
         "supports_mc": true,
-        "supports_open": "9a² - 12a + 4"
+        "supports_open": true
       }
     },
     {
@@ -219,7 +219,7 @@
         "type_label": "Umocňování",
         "original_type": null,
         "supports_mc": true,
-        "supports_open": "1/9 - 8b/3 + 16b²"
+        "supports_open": true
       }
     },
     {
@@ -254,7 +254,7 @@
         "type_label": "Umocňování",
         "original_type": null,
         "supports_mc": true,
-        "supports_open": "16n² - 24n + 9"
+        "supports_open": true
       }
     },
     {
@@ -289,7 +289,7 @@
         "type_label": "Umocňování",
         "original_type": null,
         "supports_mc": true,
-        "supports_open": "14x"
+        "supports_open": true
       }
     },
     {
@@ -325,7 +325,7 @@
         "type_label": "Umocňování",
         "original_type": null,
         "supports_mc": true,
-        "supports_open": "8x"
+        "supports_open": true
       }
     },
     {
@@ -337,7 +337,7 @@
         "context": "Vyřeš rovnici: 2x + 5 = 13"
       },
       "answer": {
-        "value": 4,
+        "value": "4",
         "unit": null
       },
       "distractors": [],
@@ -371,7 +371,7 @@
         "context": "Vyřeš rovnici: 3x - 7 = 11"
       },
       "answer": {
-        "value": 6,
+        "value": "6",
         "unit": null
       },
       "distractors": [],
@@ -405,7 +405,7 @@
         "context": "Vyřeš rovnici: x/4 = 5"
       },
       "answer": {
-        "value": 20,
+        "value": "20",
         "unit": null
       },
       "distractors": [],
@@ -438,7 +438,7 @@
         "context": "Vyřeš rovnici: 5x + 3 = 2x + 15"
       },
       "answer": {
-        "value": 4,
+        "value": "4",
         "unit": null
       },
       "distractors": [],
@@ -472,7 +472,7 @@
         "context": "Vyřeš rovnici: 4(x - 2) = 20"
       },
       "answer": {
-        "value": 7,
+        "value": "7",
         "unit": null
       },
       "distractors": [],
@@ -505,7 +505,7 @@
         "context": "Vyřeš rovnici: 2(3x + 1) = 14"
       },
       "answer": {
-        "value": 2,
+        "value": "2",
         "unit": null
       },
       "distractors": [],
@@ -539,7 +539,7 @@
         "context": "Vyřeš rovnici: x/3 + 2 = 5"
       },
       "answer": {
-        "value": 9,
+        "value": "9",
         "unit": null
       },
       "distractors": [],
@@ -572,7 +572,7 @@
         "context": "Vyřeš rovnici: (x + 3)/2 = (x - 1)/4 + 3"
       },
       "answer": {
-        "value": 5,
+        "value": "5",
         "unit": null
       },
       "distractors": [],
@@ -606,7 +606,7 @@
         "context": "Vyřeš rovnici: 3(2x - 1) - 2(x + 3) = 7"
       },
       "answer": {
-        "value": 4,
+        "value": "4",
         "unit": null
       },
       "distractors": [],
@@ -641,7 +641,7 @@
         "context": "Vyřeš rovnici: 0,5x + 1,5 = 2x - 3"
       },
       "answer": {
-        "value": 3,
+        "value": "3",
         "unit": null
       },
       "distractors": [],
@@ -675,7 +675,7 @@
         "context": "Vypočítej: 1/2 + 1/4"
       },
       "answer": {
-        "value": 0.75,
+        "value": "3/4",
         "unit": null
       },
       "distractors": [],
@@ -708,7 +708,7 @@
         "context": "Vypočítej: 2/3 - 1/6"
       },
       "answer": {
-        "value": 0.5,
+        "value": "1/2",
         "unit": null
       },
       "distractors": [],
@@ -742,7 +742,7 @@
         "context": "Vypočítej: 3/4 × 2/5"
       },
       "answer": {
-        "value": 0.3,
+        "value": "3/10",
         "unit": null
       },
       "distractors": [],
@@ -775,7 +775,7 @@
         "context": "Vypočítej: 2/3 : 4"
       },
       "answer": {
-        "value": 0.167,
+        "value": "1/6",
         "unit": null
       },
       "distractors": [],
@@ -809,7 +809,7 @@
         "context": "Vypočítej: 5/6 - 1/4 + 1/3"
       },
       "answer": {
-        "value": 0.917,
+        "value": "11/12",
         "unit": null
       },
       "distractors": [],
@@ -842,7 +842,7 @@
         "context": "Vypočítej: (2/5) : (4/15)"
       },
       "answer": {
-        "value": 1.5,
+        "value": "3/2",
         "unit": null
       },
       "distractors": [],
@@ -876,7 +876,7 @@
         "context": "Kolik je 3/4 z 80?"
       },
       "answer": {
-        "value": 60,
+        "value": "60",
         "unit": null
       },
       "distractors": [],
@@ -909,7 +909,7 @@
         "context": "Zjednodušte: 24/36"
       },
       "answer": {
-        "value": 0.667,
+        "value": "2/3",
         "unit": null
       },
       "distractors": [],
@@ -943,7 +943,7 @@
         "context": "Vypočítej: 1 - 2/3 × 3/4"
       },
       "answer": {
-        "value": 0.5,
+        "value": "1/2",
         "unit": null
       },
       "distractors": [],
@@ -977,7 +977,7 @@
         "context": "Třetina čísla je 15. Jaké je to číslo?"
       },
       "answer": {
-        "value": 45,
+        "value": "45",
         "unit": null
       },
       "distractors": [],
@@ -1010,7 +1010,7 @@
         "context": "Měl jsem 100 Kč. Teď mám o polovinu více. Kolik mám?"
       },
       "answer": {
-        "value": 150,
+        "value": "150",
         "unit": "Kč"
       },
       "distractors": [],
@@ -1043,7 +1043,7 @@
         "context": "Cena byla 80 Kč. Zlevnila o čtvrtinu. Jaká je nová cena?"
       },
       "answer": {
-        "value": 60,
+        "value": "60",
         "unit": "Kč"
       },
       "distractors": [],
@@ -1076,7 +1076,7 @@
         "context": "Táta vydělává 30 000 Kč měsíčně. Dostal přidáno o třetinu. Kolik vydělává teď?"
       },
       "answer": {
-        "value": 40000,
+        "value": "40000",
         "unit": "Kč"
       },
       "distractors": [],
@@ -1109,7 +1109,7 @@
         "context": "Obchod má slevu: cena je o pětinu nižší. Původní cena byla 500 Kč. Kolik zaplatíš?"
       },
       "answer": {
-        "value": 400,
+        "value": "400",
         "unit": "Kč"
       },
       "distractors": [],
@@ -1142,7 +1142,7 @@
         "context": "Délka tyče je 120 cm. Prodloužili ji o čtvrtinu. Jaká je nová délka?"
       },
       "answer": {
-        "value": 150,
+        "value": "150",
         "unit": "cm"
       },
       "distractors": [],
@@ -1201,7 +1201,7 @@
         "type_label": "o X více/méně",
         "original_type": null,
         "supports_mc": true,
-        "supports_open": "4/3x"
+        "supports_open": true
       }
     },
     {
@@ -1213,7 +1213,7 @@
         "context": "Po zvýšení o čtvrtinu má Jan 750 Kč. Kolik měl původně?"
       },
       "answer": {
-        "value": 600,
+        "value": "600",
         "unit": "Kč"
       },
       "distractors": [],
@@ -1247,7 +1247,7 @@
         "context": "Cena po slevě o třetinu je 240 Kč. Jaká byla původní cena?"
       },
       "answer": {
-        "value": 360,
+        "value": "360",
         "unit": "Kč"
       },
       "distractors": [],
@@ -1281,7 +1281,7 @@
         "context": "Kniha stála 280 Kč. Nejdřív zdražila o čtvrtinu, pak zlevnila o pětinu. Kolik stojí teď?"
       },
       "answer": {
-        "value": 280,
+        "value": "280",
         "unit": "Kč"
       },
       "distractors": [],
@@ -1314,7 +1314,7 @@
         "context": "Objem nádrže se zvětšil o polovinu. Původně měla 200 litrů. Jaký je nový objem?"
       },
       "answer": {
-        "value": 300,
+        "value": "300",
         "unit": "l"
       },
       "distractors": [
@@ -1369,7 +1369,7 @@
         "type_label": "o X více/méně",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "x × 4/3"
+        "supports_open": true
       }
     },
     {
@@ -1399,7 +1399,7 @@
         "type_label": "o X více/méně",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "x × 2/3"
+        "supports_open": true
       }
     },
     {
@@ -1429,7 +1429,7 @@
         "type_label": "o X více/méně",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "x × 5/4"
+        "supports_open": true
       }
     },
     {
@@ -1459,7 +1459,7 @@
         "type_label": "o X více/méně",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "x × 3/4"
+        "supports_open": true
       }
     },
     {
@@ -1489,7 +1489,7 @@
         "type_label": "o X více/méně",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "x × 3/2"
+        "supports_open": true
       }
     },
     {
@@ -1519,7 +1519,7 @@
         "type_label": "o X více/méně",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "x × 1/2"
+        "supports_open": true
       }
     },
     {
@@ -1549,7 +1549,7 @@
         "type_label": "o X více/méně",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "x × 6/5"
+        "supports_open": true
       }
     },
     {
@@ -1579,7 +1579,7 @@
         "type_label": "o X více/méně",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "x × 4/5"
+        "supports_open": true
       }
     },
     {
@@ -1612,7 +1612,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,5x"
+        "supports_open": true
       }
     },
     {
@@ -1645,7 +1645,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,5x"
+        "supports_open": true
       }
     },
     {
@@ -1678,7 +1678,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "4/3x"
+        "supports_open": true
       }
     },
     {
@@ -1711,7 +1711,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "2/3x"
+        "supports_open": true
       }
     },
     {
@@ -1744,7 +1744,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,25x"
+        "supports_open": true
       }
     },
     {
@@ -1777,7 +1777,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,75x"
+        "supports_open": true
       }
     },
     {
@@ -1810,7 +1810,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,2x"
+        "supports_open": true
       }
     },
     {
@@ -1843,7 +1843,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,8x"
+        "supports_open": true
       }
     },
     {
@@ -1876,7 +1876,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,1x"
+        "supports_open": true
       }
     },
     {
@@ -1909,7 +1909,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,9x"
+        "supports_open": true
       }
     },
     {
@@ -1942,7 +1942,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "5/3x"
+        "supports_open": true
       }
     },
     {
@@ -1975,7 +1975,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1/3x"
+        "supports_open": true
       }
     },
     {
@@ -2008,7 +2008,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,75x"
+        "supports_open": true
       }
     },
     {
@@ -2041,7 +2041,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,25x"
+        "supports_open": true
       }
     },
     {
@@ -2074,7 +2074,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,1x"
+        "supports_open": true
       }
     },
     {
@@ -2107,7 +2107,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,9x"
+        "supports_open": true
       }
     },
     {
@@ -2140,7 +2140,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,25x"
+        "supports_open": true
       }
     },
     {
@@ -2173,7 +2173,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,75x"
+        "supports_open": true
       }
     },
     {
@@ -2206,7 +2206,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,5x"
+        "supports_open": true
       }
     },
     {
@@ -2239,7 +2239,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,5x"
+        "supports_open": true
       }
     },
     {
@@ -2272,7 +2272,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,2x"
+        "supports_open": true
       }
     },
     {
@@ -2305,7 +2305,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,8x"
+        "supports_open": true
       }
     },
     {
@@ -2338,7 +2338,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "2x"
+        "supports_open": true
       }
     },
     {
@@ -2371,7 +2371,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,75x"
+        "supports_open": true
       }
     },
     {
@@ -2404,7 +2404,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,25x"
+        "supports_open": true
       }
     },
     {
@@ -2437,7 +2437,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "7/6x"
+        "supports_open": true
       }
     },
     {
@@ -2470,7 +2470,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "5/6x"
+        "supports_open": true
       }
     },
     {
@@ -2503,7 +2503,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,4x"
+        "supports_open": true
       }
     },
     {
@@ -2536,7 +2536,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,6x"
+        "supports_open": true
       }
     },
     {
@@ -2569,7 +2569,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,6x"
+        "supports_open": true
       }
     },
     {
@@ -2602,7 +2602,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,4x"
+        "supports_open": true
       }
     },
     {
@@ -2635,7 +2635,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,05x"
+        "supports_open": true
       }
     },
     {
@@ -2668,7 +2668,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,95x"
+        "supports_open": true
       }
     },
     {
@@ -2701,7 +2701,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,3x"
+        "supports_open": true
       }
     },
     {
@@ -2734,7 +2734,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,7x"
+        "supports_open": true
       }
     },
     {
@@ -2767,7 +2767,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,8x"
+        "supports_open": true
       }
     },
     {
@@ -2800,7 +2800,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,2x"
+        "supports_open": true
       }
     },
     {
@@ -2833,7 +2833,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,125x"
+        "supports_open": true
       }
     },
     {
@@ -2866,7 +2866,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "0,875x"
+        "supports_open": true
       }
     },
     {
@@ -2899,7 +2899,7 @@
         "type_label": "o X více/méně",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "1,4x"
+        "supports_open": true
       }
     },
     {
@@ -2911,7 +2911,7 @@
         "context": null
       },
       "answer": {
-        "value": 5,
+        "value": "5",
         "unit": null
       },
       "distractors": [
@@ -2944,7 +2944,7 @@
         "context": null
       },
       "answer": {
-        "value": 13,
+        "value": "13",
         "unit": null
       },
       "distractors": [
@@ -2977,7 +2977,7 @@
         "context": null
       },
       "answer": {
-        "value": 10,
+        "value": "10",
         "unit": null
       },
       "distractors": [
@@ -3010,7 +3010,7 @@
         "context": null
       },
       "answer": {
-        "value": 17,
+        "value": "17",
         "unit": null
       },
       "distractors": [
@@ -3043,7 +3043,7 @@
         "context": null
       },
       "answer": {
-        "value": 25,
+        "value": "25",
         "unit": null
       },
       "distractors": [
@@ -3076,7 +3076,7 @@
         "context": null
       },
       "answer": {
-        "value": 41,
+        "value": "41",
         "unit": null
       },
       "distractors": [
@@ -3109,7 +3109,7 @@
         "context": null
       },
       "answer": {
-        "value": 3,
+        "value": "3",
         "unit": null
       },
       "distractors": [
@@ -3142,7 +3142,7 @@
         "context": null
       },
       "answer": {
-        "value": 12,
+        "value": "12",
         "unit": null
       },
       "distractors": [
@@ -3175,7 +3175,7 @@
         "context": null
       },
       "answer": {
-        "value": 6,
+        "value": "6",
         "unit": null
       },
       "distractors": [
@@ -3208,7 +3208,7 @@
         "context": null
       },
       "answer": {
-        "value": 15,
+        "value": "15",
         "unit": null
       },
       "distractors": [
@@ -3241,7 +3241,7 @@
         "context": null
       },
       "answer": {
-        "value": 5,
+        "value": "5",
         "unit": null
       },
       "distractors": [
@@ -3274,7 +3274,7 @@
         "context": null
       },
       "answer": {
-        "value": 13,
+        "value": "13",
         "unit": null
       },
       "distractors": [
@@ -3307,7 +3307,7 @@
         "context": null
       },
       "answer": {
-        "value": 4,
+        "value": "4",
         "unit": null
       },
       "distractors": [
@@ -3340,7 +3340,7 @@
         "context": null
       },
       "answer": {
-        "value": 12,
+        "value": "12",
         "unit": null
       },
       "distractors": [
@@ -3394,7 +3394,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "√2"
+        "supports_open": true
       }
     },
     {
@@ -3427,7 +3427,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "√13"
+        "supports_open": true
       }
     },
     {
@@ -3460,7 +3460,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "√29"
+        "supports_open": true
       }
     },
     {
@@ -3493,7 +3493,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "calculation",
         "supports_mc": true,
-        "supports_open": "√41"
+        "supports_open": true
       }
     },
     {
@@ -3523,7 +3523,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "√(a² + b²)"
+        "supports_open": true
       }
     },
     {
@@ -3553,7 +3553,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "√(c² - b²)"
+        "supports_open": true
       }
     },
     {
@@ -3583,7 +3583,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "√(c² - a²)"
+        "supports_open": true
       }
     },
     {
@@ -3613,7 +3613,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "√(a² + b²)"
+        "supports_open": true
       }
     },
     {
@@ -3643,7 +3643,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "√(c² - b²)"
+        "supports_open": true
       }
     },
     {
@@ -3673,7 +3673,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "√(3² + 4²)"
+        "supports_open": true
       }
     },
     {
@@ -3703,7 +3703,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "√(5² - 4²)"
+        "supports_open": true
       }
     },
     {
@@ -3733,7 +3733,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "type_recognition",
         "supports_mc": false,
-        "supports_open": "čtverci stran"
+        "supports_open": true
       }
     },
     {
@@ -3766,7 +3766,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "problem_type",
         "supports_mc": true,
-        "supports_open": "Pythagorova věta"
+        "supports_open": true
       }
     },
     {
@@ -3799,7 +3799,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "problem_type",
         "supports_mc": true,
-        "supports_open": "Pythagorova věta"
+        "supports_open": true
       }
     },
     {
@@ -3832,7 +3832,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "problem_type",
         "supports_mc": true,
-        "supports_open": "Pythagorova věta"
+        "supports_open": true
       }
     },
     {
@@ -3865,7 +3865,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "problem_type",
         "supports_mc": true,
-        "supports_open": "Pythagorova věta"
+        "supports_open": true
       }
     },
     {
@@ -3898,7 +3898,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "problem_type",
         "supports_mc": true,
-        "supports_open": "Pythagorova věta"
+        "supports_open": true
       }
     },
     {
@@ -3931,7 +3931,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "problem_type",
         "supports_mc": true,
-        "supports_open": "Pythagorova věta"
+        "supports_open": true
       }
     },
     {
@@ -3964,7 +3964,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "problem_type",
         "supports_mc": true,
-        "supports_open": "Pythagorova věta"
+        "supports_open": true
       }
     },
     {
@@ -3997,7 +3997,7 @@
         "type_label": "Pythagorova věta",
         "original_type": "problem_type",
         "supports_mc": true,
-        "supports_open": "Pythagorova věta"
+        "supports_open": true
       }
     },
     {
@@ -4009,7 +4009,7 @@
         "context": "V posloupnosti 2, 5, 8, 11, ... najdi 10. člen."
       },
       "answer": {
-        "value": 29,
+        "value": "29",
         "unit": null
       },
       "distractors": [
@@ -4045,7 +4045,7 @@
         "context": "V posloupnosti 1, 4, 9, 16, ... najdi 7. člen."
       },
       "answer": {
-        "value": 49,
+        "value": "49",
         "unit": null
       },
       "distractors": [
@@ -4081,7 +4081,7 @@
         "context": "V posloupnosti 3, 6, 12, 24, ... najdi 6. člen."
       },
       "answer": {
-        "value": 96,
+        "value": "96",
         "unit": null
       },
       "distractors": [
@@ -4117,7 +4117,7 @@
         "context": "Obrazce z čtverečků: 1. obrazec má 4 čtverečky, 2. má 7, 3. má 10. Kolik čtverečků má 10. obrazec?"
       },
       "answer": {
-        "value": 31,
+        "value": "31",
         "unit": null
       },
       "distractors": [
@@ -4153,7 +4153,7 @@
         "context": "Posloupnost 5, 9, 13, 17, ... Který člen je roven 101?"
       },
       "answer": {
-        "value": 25,
+        "value": "25",
         "unit": null
       },
       "distractors": [
@@ -4190,7 +4190,7 @@
         "context": "Převeď: 1 m² = ? cm²"
       },
       "answer": {
-        "value": 10000,
+        "value": "10000",
         "unit": "cm²"
       },
       "distractors": [
@@ -4225,7 +4225,7 @@
         "context": "Doplň: 0,75 m² = 25 cm² + ? cm²"
       },
       "answer": {
-        "value": 7475,
+        "value": "7475",
         "unit": "cm²"
       },
       "distractors": [
@@ -4260,7 +4260,7 @@
         "context": "Převeď: 1 dm³ = ? cm³"
       },
       "answer": {
-        "value": 1000,
+        "value": "1000",
         "unit": "cm³"
       },
       "distractors": [
@@ -4295,7 +4295,7 @@
         "context": "Doplň: 0,2 dm³ + ? cm³ = 1 litr"
       },
       "answer": {
-        "value": 800,
+        "value": "800",
         "unit": "cm³"
       },
       "distractors": [
@@ -4331,7 +4331,7 @@
         "context": "Doplň: ? · 20 minut = 8 · 0,75 hodiny"
       },
       "answer": {
-        "value": 18,
+        "value": "18",
         "unit": null
       },
       "distractors": [
@@ -4367,7 +4367,7 @@
         "context": "Převeď: 2,5 m² = ? dm²"
       },
       "answer": {
-        "value": 250,
+        "value": "250",
         "unit": "dm²"
       },
       "distractors": [
@@ -4402,7 +4402,7 @@
         "context": "Převeď: 0,5 m³ = ? litrů"
       },
       "answer": {
-        "value": 500,
+        "value": "500",
         "unit": "l"
       },
       "distractors": [
@@ -4437,7 +4437,7 @@
         "context": "Převeď: 450 cm² = ? m²"
       },
       "answer": {
-        "value": 0.045,
+        "value": "0,045",
         "unit": "m²"
       },
       "distractors": [

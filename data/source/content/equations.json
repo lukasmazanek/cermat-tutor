@@ -18,7 +18,6 @@
       },
       "answer": {
         "correct": "4",
-        "numeric": 4,
         "unit": null,
         "variants": []
       },
@@ -63,7 +62,6 @@
       },
       "answer": {
         "correct": "6",
-        "numeric": 6,
         "unit": null,
         "variants": []
       },
@@ -108,7 +106,6 @@
       },
       "answer": {
         "correct": "20",
-        "numeric": 20,
         "unit": null,
         "variants": []
       },
@@ -152,7 +149,6 @@
       },
       "answer": {
         "correct": "4",
-        "numeric": 4,
         "unit": null,
         "variants": []
       },
@@ -197,7 +193,6 @@
       },
       "answer": {
         "correct": "7",
-        "numeric": 7,
         "unit": null,
         "variants": []
       },
@@ -241,7 +236,6 @@
       },
       "answer": {
         "correct": "2",
-        "numeric": 2,
         "unit": null,
         "variants": []
       },
@@ -286,7 +280,6 @@
       },
       "answer": {
         "correct": "9",
-        "numeric": 9,
         "unit": null,
         "variants": []
       },
@@ -330,7 +323,6 @@
       },
       "answer": {
         "correct": "5",
-        "numeric": 5,
         "unit": null,
         "variants": []
       },
@@ -375,7 +367,6 @@
       },
       "answer": {
         "correct": "4",
-        "numeric": 4,
         "unit": null,
         "variants": []
       },
@@ -421,7 +412,6 @@
       },
       "answer": {
         "correct": "3",
-        "numeric": 3,
         "unit": null,
         "variants": []
       },

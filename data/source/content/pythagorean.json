@@ -19,7 +19,6 @@
       },
       "answer": {
         "correct": "5",
-        "numeric": 5,
         "unit": null,
         "variants": []
       },
@@ -70,7 +69,6 @@
       },
       "answer": {
         "correct": "13",
-        "numeric": 13,
         "unit": null,
         "variants": []
       },
@@ -121,7 +119,6 @@
       },
       "answer": {
         "correct": "10",
-        "numeric": 10,
         "unit": null,
         "variants": []
       },
@@ -172,7 +169,6 @@
       },
       "answer": {
         "correct": "17",
-        "numeric": 17,
         "unit": null,
         "variants": []
       },
@@ -223,7 +219,6 @@
       },
       "answer": {
         "correct": "25",
-        "numeric": 25,
         "unit": null,
         "variants": []
       },
@@ -274,7 +269,6 @@
       },
       "answer": {
         "correct": "41",
-        "numeric": 41,
         "unit": null,
         "variants": []
       },
@@ -325,7 +319,6 @@
       },
       "answer": {
         "correct": "3",
-        "numeric": 3,
         "unit": null,
         "variants": []
       },
@@ -376,7 +369,6 @@
       },
       "answer": {
         "correct": "12",
-        "numeric": 12,
         "unit": null,
         "variants": []
       },
@@ -427,7 +419,6 @@
       },
       "answer": {
         "correct": "6",
-        "numeric": 6,
         "unit": null,
         "variants": []
       },
@@ -478,7 +469,6 @@
       },
       "answer": {
         "correct": "15",
-        "numeric": 15,
         "unit": null,
         "variants": []
       },
@@ -529,7 +519,6 @@
       },
       "answer": {
         "correct": "5",
-        "numeric": 5,
         "unit": null,
         "variants": []
       },
@@ -580,7 +569,6 @@
       },
       "answer": {
         "correct": "13",
-        "numeric": 13,
         "unit": null,
         "variants": []
       },
@@ -631,7 +619,6 @@
       },
       "answer": {
         "correct": "4",
-        "numeric": 4,
         "unit": null,
         "variants": []
       },
@@ -682,7 +669,6 @@
       },
       "answer": {
         "correct": "12",
-        "numeric": 12,
         "unit": null,
         "variants": []
       },
@@ -733,7 +719,6 @@
       },
       "answer": {
         "correct": "√2",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -784,7 +769,6 @@
       },
       "answer": {
         "correct": "√13",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -835,7 +819,6 @@
       },
       "answer": {
         "correct": "√29",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -886,7 +869,6 @@
       },
       "answer": {
         "correct": "√41",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -937,7 +919,6 @@
       },
       "answer": {
         "correct": "√(a² + b²)",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -983,7 +964,6 @@
       },
       "answer": {
         "correct": "√(c² - b²)",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -1029,7 +1009,6 @@
       },
       "answer": {
         "correct": "√(c² - a²)",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -1075,7 +1054,6 @@
       },
       "answer": {
         "correct": "√(a² + b²)",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -1121,7 +1099,6 @@
       },
       "answer": {
         "correct": "√(c² - b²)",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -1167,7 +1144,6 @@
       },
       "answer": {
         "correct": "√(3² + 4²)",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -1213,7 +1189,6 @@
       },
       "answer": {
         "correct": "√(5² - 4²)",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -1259,7 +1234,6 @@
       },
       "answer": {
         "correct": "čtverci stran",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -1305,7 +1279,6 @@
       },
       "answer": {
         "correct": "Pythagorova věta",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -1356,7 +1329,6 @@
       },
       "answer": {
         "correct": "Pythagorova věta",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -1407,7 +1379,6 @@
       },
       "answer": {
         "correct": "Pythagorova věta",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -1458,7 +1429,6 @@
       },
       "answer": {
         "correct": "Pythagorova věta",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -1509,7 +1479,6 @@
       },
       "answer": {
         "correct": "Pythagorova věta",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -1560,7 +1529,6 @@
       },
       "answer": {
         "correct": "Pythagorova věta",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -1611,7 +1579,6 @@
       },
       "answer": {
         "correct": "Pythagorova věta",
-        "numeric": null,
         "unit": null,
         "variants": []
       },
@@ -1662,7 +1629,6 @@
       },
       "answer": {
         "correct": "Pythagorova věta",
-        "numeric": null,
         "unit": null,
         "variants": []
       },

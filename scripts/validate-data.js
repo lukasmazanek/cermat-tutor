@@ -106,36 +106,6 @@ function validateAnswerFormat(q, file) {
   if (q.answer.unit !== undefined && q.answer.unit !== null && typeof q.answer.unit !== 'string') {
     error(file, q.id, `answer.unit must be string or null, got ${typeof q.answer.unit}`)
   }
-
-  // Check numeric field type
-  if (q.answer.numeric !== undefined && q.answer.numeric !== null && typeof q.answer.numeric !== 'number') {
-    error(file, q.id, `answer.numeric must be number or null, got ${typeof q.answer.numeric}`)
-  }
-}
-
-/**
- * ADR-017: Symbolic vs Numeric answer consistency
- */
-function validateAnswerType(q, file) {
-  if (!q.answer) return
-
-  const correct = String(q.answer.correct).toLowerCase()
-  const hasVariable = correct.includes('x')
-  const hasNumeric = q.answer.numeric !== null && q.answer.numeric !== undefined
-
-  // Symbolic answer (contains x) should not have misleading numeric value
-  if (hasVariable && hasNumeric) {
-    // This is okay for questions like "o třetinu více = ?" where:
-    // correct: "4/3x" (symbolic)
-    // numeric: 4 (coefficient, but this might be confusing)
-    // Let's warn about this
-    const numericValue = q.answer.numeric
-    if (!Number.isInteger(numericValue) || numericValue > 10) {
-      // Probably fine - it's a real numeric value for context problems
-    } else {
-      warn(file, q.id, `Symbolic answer "${q.answer.correct}" has numeric=${numericValue} - verify this is intentional`)
-    }
-  }
 }
 
 /**
@@ -186,7 +156,6 @@ function validateMeta(q, file) {
 function validateQuestion(q, file) {
   validateRequiredFields(q, file)
   validateAnswerFormat(q, file)
-  validateAnswerType(q, file)
   validateDistractors(q, file)
   validateHints(q, file)
   validateMeta(q, file)

@@ -46,7 +46,11 @@ function adaptProblemForParser(problem) {
   let answerType, answerValue
 
   if (problem.type === 'text') {
-    answerType = 'symbolic'
+    // Check if this is actually a numeric expression vs symbolic
+    // "2/3" is numeric, but "x+1" is symbolic (contains variable x)
+    const containsVariable = typeof problem.answer === 'string' &&
+      problem.answer.toLowerCase().includes('x')
+    answerType = containsVariable ? 'symbolic' : 'numeric'
     answerValue = problem.answer
   } else if (problem.type === 'fraction') {
     answerType = 'numeric'

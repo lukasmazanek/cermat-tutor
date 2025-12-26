@@ -7,7 +7,10 @@
     {
       "id": "unit-001",
       "topic": "unit_conversions",
-      "tags": ["units", "area"],
+      "tags": [
+        "units",
+        "area"
+      ],
       "difficulty": 1,
       "question": {
         "stem": "1 m² = ? cm²",
@@ -16,17 +19,28 @@
       },
       "answer": {
         "correct": "10000",
-        "numeric": 10000,
         "unit": "cm²",
-        "variants": ["10 000"]
+        "variants": [
+          "10 000"
+        ]
       },
       "distractors": [
-        {"value": "100"},
-        {"value": "1000"}
+        {
+          "value": "100"
+        },
+        {
+          "value": "1000"
+        }
       ],
       "hints": [
-        {"level": 1, "text": "1 m = 100 cm. Ale pozor - jde o plochu!"},
-        {"level": 2, "text": "1 m² = (100 cm)² = 10 000 cm²"}
+        {
+          "level": 1,
+          "text": "1 m = 100 cm. Ale pozor - jde o plochu!"
+        },
+        {
+          "level": 2,
+          "text": "1 m² = (100 cm)² = 10 000 cm²"
+        }
       ],
       "solution": {
         "steps": [
@@ -44,7 +58,10 @@
     {
       "id": "unit-002",
       "topic": "unit_conversions",
-      "tags": ["units", "area"],
+      "tags": [
+        "units",
+        "area"
+      ],
       "difficulty": 2,
       "question": {
         "stem": "0,75 m² = 25 cm² + ? cm²",
@@ -53,17 +70,28 @@
       },
       "answer": {
         "correct": "7475",
-        "numeric": 7475,
         "unit": "cm²",
-        "variants": ["7 475"]
+        "variants": [
+          "7 475"
+        ]
       },
       "distractors": [
-        {"value": "70"},
-        {"value": "750"}
+        {
+          "value": "70"
+        },
+        {
+          "value": "750"
+        }
       ],
       "hints": [
-        {"level": 1, "text": "Nejdřív převeď 0,75 m² na cm²."},
-        {"level": 2, "text": "0,75 m² = 7500 cm². Pak 7500 - 25 = 7475 cm²"}
+        {
+          "level": 1,
+          "text": "Nejdřív převeď 0,75 m² na cm²."
+        },
+        {
+          "level": 2,
+          "text": "0,75 m² = 7500 cm². Pak 7500 - 25 = 7475 cm²"
+        }
       ],
       "solution": {
         "steps": [
@@ -81,7 +109,10 @@
     {
       "id": "unit-003",
       "topic": "unit_conversions",
-      "tags": ["units", "volume"],
+      "tags": [
+        "units",
+        "volume"
+      ],
       "difficulty": 1,
       "question": {
         "stem": "1 dm³ = ? cm³",
@@ -90,17 +121,28 @@
       },
       "answer": {
         "correct": "1000",
-        "numeric": 1000,
         "unit": "cm³",
-        "variants": ["1 000"]
+        "variants": [
+          "1 000"
+        ]
       },
       "distractors": [
-        {"value": "100"},
-        {"value": "10"}
+        {
+          "value": "100"
+        },
+        {
+          "value": "10"
+        }
       ],
       "hints": [
-        {"level": 1, "text": "1 dm = 10 cm. Ale jde o objem!"},
-        {"level": 2, "text": "1 dm³ = (10 cm)³ = 1000 cm³"}
+        {
+          "level": 1,
+          "text": "1 dm = 10 cm. Ale jde o objem!"
+        },
+        {
+          "level": 2,
+          "text": "1 dm³ = (10 cm)³ = 1000 cm³"
+        }
       ],
       "solution": {
         "steps": [
@@ -118,7 +160,10 @@
     {
       "id": "unit-004",
       "topic": "unit_conversions",
-      "tags": ["units", "volume"],
+      "tags": [
+        "units",
+        "volume"
+      ],
       "difficulty": 2,
       "question": {
         "stem": "0,2 dm³ + ? cm³ = 1 litr",
@@ -127,17 +172,26 @@
       },
       "answer": {
         "correct": "800",
-        "numeric": 800,
         "unit": "cm³",
         "variants": []
       },
       "distractors": [
-        {"value": "80"},
-        {"value": "200"}
+        {
+          "value": "80"
+        },
+        {
+          "value": "200"
+        }
       ],
       "hints": [
-        {"level": 1, "text": "1 litr = 1 dm³ = 1000 cm³"},
-        {"level": 2, "text": "0,2 dm³ = 200 cm³. Pak 1000 - 200 = 800 cm³"}
+        {
+          "level": 1,
+          "text": "1 litr = 1 dm³ = 1000 cm³"
+        },
+        {
+          "level": 2,
+          "text": "0,2 dm³ = 200 cm³. Pak 1000 - 200 = 800 cm³"
+        }
       ],
       "solution": {
         "steps": [
@@ -156,7 +210,10 @@
     {
       "id": "unit-005",
       "topic": "unit_conversions",
-      "tags": ["units", "time"],
+      "tags": [
+        "units",
+        "time"
+      ],
       "difficulty": 1,
       "question": {
         "stem": "? · 20 minut = 8 · 0,75 hodiny",
@@ -165,17 +222,26 @@
       },
       "answer": {
         "correct": "18",
-        "numeric": 18,
         "unit": null,
         "variants": []
       },
       "distractors": [
-        {"value": "6"},
-        {"value": "24"}
+        {
+          "value": "6"
+        },
+        {
+          "value": "24"
+        }
       ],
       "hints": [
-        {"level": 1, "text": "Převeď pravou stranu na minuty."},
-        {"level": 2, "text": "8 · 0,75 h = 6 h = 360 min. Pak 360 : 20 = 18"}
+        {
+          "level": 1,
+          "text": "Převeď pravou stranu na minuty."
+        },
+        {
+          "level": 2,
+          "text": "8 · 0,75 h = 6 h = 360 min. Pak 360 : 20 = 18"
+        }
       ],
       "solution": {
         "steps": [
@@ -194,7 +260,10 @@
     {
       "id": "unit-006",
       "topic": "unit_conversions",
-      "tags": ["units", "area"],
+      "tags": [
+        "units",
+        "area"
+      ],
       "difficulty": 2,
       "question": {
         "stem": "2,5 m² = ? dm²",
@@ -203,17 +272,26 @@
       },
       "answer": {
         "correct": "250",
-        "numeric": 250,
         "unit": "dm²",
         "variants": []
       },
       "distractors": [
-        {"value": "25"},
-        {"value": "2500"}
+        {
+          "value": "25"
+        },
+        {
+          "value": "2500"
+        }
       ],
       "hints": [
-        {"level": 1, "text": "1 m = 10 dm"},
-        {"level": 2, "text": "1 m² = 100 dm². Pak 2,5 · 100 = 250 dm²"}
+        {
+          "level": 1,
+          "text": "1 m = 10 dm"
+        },
+        {
+          "level": 2,
+          "text": "1 m² = 100 dm². Pak 2,5 · 100 = 250 dm²"
+        }
       ],
       "solution": {
         "steps": [
@@ -231,7 +309,10 @@
     {
       "id": "unit-007",
       "topic": "unit_conversions",
-      "tags": ["units", "volume"],
+      "tags": [
+        "units",
+        "volume"
+      ],
       "difficulty": 2,
       "question": {
         "stem": "0,5 m³ = ? litrů",
@@ -240,17 +321,26 @@
       },
       "answer": {
         "correct": "500",
-        "numeric": 500,
         "unit": "l",
         "variants": []
       },
       "distractors": [
-        {"value": "50"},
-        {"value": "5000"}
+        {
+          "value": "50"
+        },
+        {
+          "value": "5000"
+        }
       ],
       "hints": [
-        {"level": 1, "text": "1 m³ = 1000 dm³ = 1000 litrů"},
-        {"level": 2, "text": "0,5 m³ = 0,5 · 1000 = 500 litrů"}
+        {
+          "level": 1,
+          "text": "1 m³ = 1000 dm³ = 1000 litrů"
+        },
+        {
+          "level": 2,
+          "text": "0,5 m³ = 0,5 · 1000 = 500 litrů"
+        }
       ],
       "solution": {
         "steps": [
@@ -268,7 +358,10 @@
     {
       "id": "unit-008",
       "topic": "unit_conversions",
-      "tags": ["units", "area"],
+      "tags": [
+        "units",
+        "area"
+      ],
       "difficulty": 3,
       "question": {
         "stem": "450 cm² = ? m²",
@@ -277,17 +370,28 @@
       },
       "answer": {
         "correct": "0,045",
-        "numeric": 0.045,
         "unit": "m²",
-        "variants": ["0.045"]
+        "variants": [
+          "0.045"
+        ]
       },
       "distractors": [
-        {"value": "0,45"},
-        {"value": "4,5"}
+        {
+          "value": "0,45"
+        },
+        {
+          "value": "4,5"
+        }
       ],
       "hints": [
-        {"level": 1, "text": "1 m² = 10 000 cm², takže dělíme 10 000"},
-        {"level": 2, "text": "450 : 10000 = 0,045 m²"}
+        {
+          "level": 1,
+          "text": "1 m² = 10 000 cm², takže dělíme 10 000"
+        },
+        {
+          "level": 2,
+          "text": "450 : 10000 = 0,045 m²"
+        }
       ],
       "solution": {
         "steps": [

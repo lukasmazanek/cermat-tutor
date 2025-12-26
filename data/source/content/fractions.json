@@ -18,7 +18,6 @@
       },
       "answer": {
         "correct": "3/4",
-        "numeric": 0.75,
         "unit": null,
         "variants": []
       },
@@ -62,7 +61,6 @@
       },
       "answer": {
         "correct": "1/2",
-        "numeric": 0.5,
         "unit": null,
         "variants": []
       },
@@ -107,7 +105,6 @@
       },
       "answer": {
         "correct": "3/10",
-        "numeric": 0.3,
         "unit": null,
         "variants": []
       },
@@ -151,7 +148,6 @@
       },
       "answer": {
         "correct": "1/6",
-        "numeric": 0.167,
         "unit": null,
         "variants": []
       },
@@ -196,7 +192,6 @@
       },
       "answer": {
         "correct": "11/12",
-        "numeric": 0.917,
         "unit": null,
         "variants": []
       },
@@ -240,7 +235,6 @@
       },
       "answer": {
         "correct": "3/2",
-        "numeric": 1.5,
         "unit": null,
         "variants": []
       },
@@ -285,7 +279,6 @@
       },
       "answer": {
         "correct": "60",
-        "numeric": 60,
         "unit": null,
         "variants": []
       },
@@ -329,7 +322,6 @@
       },
       "answer": {
         "correct": "2/3",
-        "numeric": 0.667,
         "unit": null,
         "variants": []
       },
@@ -374,7 +366,6 @@
       },
       "answer": {
         "correct": "1/2",
-        "numeric": 0.5,
         "unit": null,
         "variants": []
       },
@@ -419,7 +410,6 @@
       },
       "answer": {
         "correct": "45",
-        "numeric": 45,
         "unit": null,
         "variants": []
       },

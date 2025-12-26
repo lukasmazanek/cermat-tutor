@@ -31,17 +31,14 @@ function loadAllQuestions() {
   return questions;
 }
 
-// Transform to unified output format (ADR-016: single value field)
+// Transform to unified output format (ADR-016, ADR-020)
 function toUnifiedFormat(q) {
   const hasDistractors = q.distractors && q.distractors.length >= 2;
   const hasQuestion = !!(q.question.context || q.question.stem);
-  const hasNumericAnswer = q.answer.numeric !== null && q.answer.numeric !== undefined;
-  const isSymbolicAnswer = q.answer.correct && q.answer.correct.toString().toLowerCase().includes('x');
+  const hasAnswer = !!q.answer.correct;
 
-  // ADR-016: Use single value field
-  // - Symbolic answers (containing x): use correct string
-  // - Numeric answers: use numeric if available, else correct
-  const answerValue = isSymbolicAnswer ? q.answer.correct : (hasNumericAnswer ? q.answer.numeric : q.answer.correct);
+  // ADR-020: Always use correct - parser can evaluate expressions like "1/6"
+  const answerValue = q.answer.correct;
 
   return {
     id: q.id,
@@ -66,7 +63,7 @@ function toUnifiedFormat(q) {
       type_label: q.meta?.type_label || null,
       original_type: q.meta?.original_type || null,
       supports_mc: hasDistractors,
-      supports_open: hasQuestion && (hasNumericAnswer || q.answer.correct)
+      supports_open: hasQuestion && hasAnswer
     }
   };
 }
