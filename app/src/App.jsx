@@ -8,6 +8,7 @@ import VisualExplainer from './components/VisualExplainer'
 import ProgressPage from './components/ProgressPage'
 import LightningRound from './components/LightningRound'
 import TypeDrill from './components/TypeDrill'
+import BottomBar from './components/BottomBar'
 
 // Helper to get last session from localStorage
 function getLastSession() {
@@ -46,9 +47,9 @@ function toProblemCardFormat(q) {
     id: q.id,
     topic: q.topic,
     difficulty: q.difficulty,
-    type: q.answer.numeric !== null ? 'number' : 'text',
+    type: typeof q.answer.value === 'number' ? 'number' : 'text',
     problem_cs: q.question.context || q.question.stem,
-    answer: q.answer.numeric !== null ? q.answer.numeric : q.answer.correct,
+    answer: q.answer.value,
     answer_unit: q.answer.unit,
     hints: q.hints,
     solution_steps: q.solution.steps
@@ -130,6 +131,9 @@ function App() {
     }
   })
 
+  // Track which topic's strategy has been answered (to avoid repeating)
+  const [answeredStrategyTopic, setAnsweredStrategyTopic] = useState(null)
+
   const handleToggleTypePrompt = () => {
     const newValue = !typePromptEnabled
     setTypePromptEnabled(newValue)
@@ -164,6 +168,7 @@ function App() {
     setSessionProblems(generateSessionProblems(topicId))
     setCurrentProblemIndex(0)
     setAttempts([])
+    setAnsweredStrategyTopic(null) // Reset strategy tracking for new session
     setAppState('session')
   }
 
@@ -308,36 +313,47 @@ function App() {
   if (shouldShowExplainer() && !showExplainer && !explainerShownFor.has(currentProblem?.id)) {
     // First time seeing an o_x_vice problem - ask if they want help
     return (
-      <div className="min-h-screen bg-slate-50 px-4 py-6 flex flex-col items-center justify-center">
-        <div className="bg-white rounded-2xl shadow-sm p-6 max-w-sm w-full text-center">
-          <div className="flex justify-center mb-4">
-            <LightBulbIcon className="w-12 h-12 text-purple-500" />
-          </div>
-          <h2 className="text-xl font-semibold text-slate-800 mb-2">
-            Téma: "O X více/méně"
-          </h2>
-          <p className="text-slate-600 mb-6">
-            Chceš nejdřív vidět vizuální vysvětlení, jak tyto úlohy fungují?
-          </p>
-          <div className="flex gap-3">
-            <button
-              onClick={() => {
-                setExplainerShownFor(new Set([...explainerShownFor, currentProblem.id]))
-              }}
-              className="flex-1 py-3 px-4 rounded-xl bg-slate-200 text-slate-700
-                font-medium transition-gentle active:scale-[0.98]"
-            >
-              Zkusím to
-            </button>
-            <button
-              onClick={() => setShowExplainer(true)}
-              className="flex-1 py-3 px-4 rounded-xl bg-safe-blue text-white
-                font-medium transition-gentle active:scale-[0.98]"
-            >
-              Ukaž mi
-            </button>
+      <div className="h-screen h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
+        {/* Scrollable centered content - ADR-015 CENTERED template */}
+        <div className="flex-1 min-h-0 overflow-y-auto flex items-center justify-center px-4 py-6 pb-20">
+          <div className="bg-white rounded-2xl shadow-sm p-6 max-w-sm w-full text-center">
+            <div className="flex justify-center mb-4">
+              <LightBulbIcon className="w-12 h-12 text-purple-500" />
+            </div>
+            <h2 className="text-xl font-semibold text-slate-800 mb-2">
+              Téma: "O X více/méně"
+            </h2>
+            <p className="text-slate-600 mb-6">
+              Chceš nejdřív vidět vizuální vysvětlení, jak tyto úlohy fungují?
+            </p>
+            <div className="flex gap-3">
+              <button
+                onClick={() => {
+                  setExplainerShownFor(new Set([...explainerShownFor, currentProblem.id]))
+                }}
+                className="flex-1 py-3 px-4 rounded-xl bg-slate-200 text-slate-700
+                  font-medium transition-gentle active:scale-[0.98]"
+              >
+                Zkusím to
+              </button>
+              <button
+                onClick={() => setShowExplainer(true)}
+                className="flex-1 py-3 px-4 rounded-xl bg-safe-blue text-white
+                  font-medium transition-gentle active:scale-[0.98]"
+              >
+                Ukaž mi
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* BottomBar - ADR-015 */}
+        <BottomBar
+          slots={{
+            1: { onClick: handleNewSession },
+            2: { onClick: handleViewProgress }
+          }}
+        />
       </div>
     )
   }
@@ -347,25 +363,28 @@ function App() {
       <VisualExplainer
         problem={currentProblem}
         onContinue={handleContinueFromExplainer}
+        onHome={handleNewSession}
+        onViewProgress={handleViewProgress}
       />
     )
   }
 
+  // Session view - ProblemCard is full-screen, no wrapper needed
+  // Skip strategy prompt if same topic's strategy was already answered
+  const skipStrategyPrompt = answeredStrategyTopic === currentProblem?.topic
+
   return (
-    <div className="min-h-screen bg-slate-50 px-4 pt-2 pb-6 flex flex-col">
-      {/* Problem card - progress is shown inside ProblemCard's fixed header */}
-      {currentProblem && (
-        <ProblemCard
-          problem={currentProblem}
-          onAnswer={handleAnswer}
-          progress={{ current: currentProblemIndex + 1, total: sessionProblems.length }}
-          onExit={handleNewSession}
-          onViewProgress={handleViewProgress}
-          typePromptEnabled={typePromptEnabled}
-          onToggleTypePrompt={handleToggleTypePrompt}
-        />
-      )}
-    </div>
+    <ProblemCard
+      problem={currentProblem}
+      onAnswer={handleAnswer}
+      progress={{ current: currentProblemIndex + 1, total: sessionProblems.length }}
+      onExit={handleNewSession}
+      onViewProgress={handleViewProgress}
+      typePromptEnabled={typePromptEnabled}
+      onToggleTypePrompt={handleToggleTypePrompt}
+      skipStrategyPrompt={skipStrategyPrompt}
+      onStrategyAnswered={(topic) => setAnsweredStrategyTopic(topic)}
+    />
   )
 }
 

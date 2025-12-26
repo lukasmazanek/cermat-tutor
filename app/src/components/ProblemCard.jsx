@@ -68,7 +68,7 @@ function adaptProblemForParser(problem) {
   }
 }
 
-function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, typePromptEnabled, onToggleTypePrompt }) {
+function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, typePromptEnabled, onToggleTypePrompt, skipStrategyPrompt, onStrategyAnswered }) {
   const [userAnswer, setUserAnswer] = useState('')
   const [revealedSteps, setRevealedSteps] = useState([]) // Progressive hints - array of revealed step indices
   const [solutionRevealed, setSolutionRevealed] = useState(false) // All steps shown
@@ -80,20 +80,22 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
 
   // Strategy prompt state (when typePromptEnabled AND mapping exists)
   // Phase: 'strategy' | 'done' (type phase removed - user already knows type from topic selection)
+  // Skip if same strategy was already answered in this session
+  const shouldShowStrategy = typePromptEnabled && typeMapping && !skipStrategyPrompt
   const [promptPhase, setPromptPhase] = useState(
-    (typePromptEnabled && typeMapping) ? 'strategy' : 'done'
+    shouldShowStrategy ? 'strategy' : 'done'
   )
   const [strategyPromptResult, setStrategyPromptResult] = useState(null) // true/false/null
 
   // Reset prompt phase when problem changes
   useEffect(() => {
-    if (typePromptEnabled && typeMapping) {
+    if (shouldShowStrategy) {
       setPromptPhase('strategy')
       setStrategyPromptResult(null)
     } else {
       setPromptPhase('done')
     }
-  }, [problem.id, typePromptEnabled, typeMapping])
+  }, [problem.id, shouldShowStrategy])
 
   // Get hint source: prefer solution_steps, fallback to hints
   const hintSource = problem.solution_steps?.length > 0 ? problem.solution_steps : (problem.hints || [])
@@ -170,6 +172,10 @@ function ProblemCard({ problem, onAnswer, progress, onExit, onViewProgress, type
   // Handle strategy prompt answer
   const handleStrategyPromptAnswer = (answer, isCorrect) => {
     setStrategyPromptResult(isCorrect)
+    // Notify parent so it can skip strategy for subsequent problems with same topic
+    if (onStrategyAnswered) {
+      onStrategyAnswered(problem.topic)
+    }
     setTimeout(() => setPromptPhase('done'), 300)
   }
 
