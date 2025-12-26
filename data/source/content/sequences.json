@@ -43,8 +43,9 @@
       ],
       "solution": {
         "steps": [
-          "d = 3 (rozdíl)",
-          "a₁₀ = 2 + (10-1)·3 = 2 + 27 = 29"
+          "Aritmetická: d = 3 (rozdíl mezi členy)",
+          "Vzorec: aₙ = 2 + (n-1)·3",
+          "a₁₀ = 2 + 9·3 = 2 + 27 = 29"
         ],
         "strategy": "aₙ = a₁ + (n-1)·d"
       },
@@ -93,7 +94,8 @@
       ],
       "solution": {
         "steps": [
-          "1=1², 4=2², 9=3², 16=4²",
+          "Druhé mocniny: 1=1², 4=2², 9=3², 16=4²",
+          "Vzorec: aₙ = n²",
           "a₇ = 7² = 49"
         ],
         "strategy": "aₙ = n²"
@@ -143,8 +145,9 @@
       ],
       "solution": {
         "steps": [
-          "a₁=3, a₂=6, a₃=12, a₄=24, a₅=48",
-          "a₆ = 48 · 2 = 96"
+          "Geometrická: q = 2 (každý člen je 2× předchozí)",
+          "Vzorec: aₙ = 3 · 2^(n-1)",
+          "a₆ = 3 · 2⁵ = 3 · 32 = 96"
         ],
         "strategy": "aₙ = a₁ · qⁿ⁻¹"
       },
@@ -193,8 +196,9 @@
       ],
       "solution": {
         "steps": [
-          "d = 3 (přibývá)",
-          "a₁₀ = 4 + 9·3 = 4 + 27 = 31"
+          "Aritmetická: d = 3 (přibývají 3 čtverečky)",
+          "Vzorec: aₙ = 4 + (n-1)·3 = 3n + 1",
+          "a₁₀ = 3·10 + 1 = 31"
         ],
         "strategy": "aₙ = a₁ + (n-1)·d"
       },
