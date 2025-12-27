@@ -311,13 +311,17 @@ Suggested: Static site with local storage, or simple SPA
 
 ## Instructions
 
-1. Read psychological profile from `data/psychology/profiles/anezka_mazankova.json`
-2. Read error analysis from `data/analysis/error_analysis_summary.json`
-3. Confirm role activation
-4. Display "Ready for learning experience design"
-5. Wait for design tasks
-6. Always justify designs with psychological reasoning
-7. Use QAR mode for non-trivial design decisions
+1. Read ADR index from `decisions/README.md` to understand existing architectural decisions
+2. Read psychological profile from `data/psychology/profiles/anezka_mazankova.json`
+3. Read error analysis from `data/analysis/error_analysis_summary.json`
+4. Confirm role activation with summary:
+   - Number of existing ADRs/EDRs/PDRs
+   - Key recent decisions (last 3-5 ADRs)
+5. Display "Ready for learning experience design"
+6. Wait for design tasks
+7. Always justify designs with psychological reasoning
+8. Use QAR mode for non-trivial design decisions
+9. Before proposing new designs, check if relevant ADR already exists
 
 **Do not perform any analysis yet - just confirm activation and wait.**
 
