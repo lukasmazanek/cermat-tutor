@@ -1,7 +1,8 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import questionsData from '../data/questions.json'
 import BottomBar from './BottomBar'
 import { Session, QuestionsData } from '../types'
+import { getAttempts, getTopicStats, AttemptRecord, TopicStats } from '../hooks/useAttempts'
 
 const data = questionsData as QuestionsData
 
@@ -11,6 +12,19 @@ interface ProgressPageProps {
 
 function ProgressPage({ onBack }: ProgressPageProps) {
   const [selectedTopic, setSelectedTopic] = useState('all')
+  const [topicStats, setTopicStats] = useState<TopicStats[]>([])
+  const [recentAttempts, setRecentAttempts] = useState<AttemptRecord[]>([])
+
+  // ADR-023: Load attempt data
+  useEffect(() => {
+    const loadAttemptData = async () => {
+      const stats = await getTopicStats()
+      const attempts = await getAttempts()
+      setTopicStats(stats)
+      setRecentAttempts(attempts.slice(-20).reverse()) // Last 20, newest first
+    }
+    loadAttemptData()
+  }, [])
 
   // Load progress data from localStorage
   const progressData = useMemo((): Session[] => {
@@ -146,6 +160,16 @@ function ProgressPage({ onBack }: ProgressPageProps) {
 
         {/* Session list */}
         <SessionList sessions={filteredSessions} getTopicName={getTopicName} formatDate={formatDate} />
+
+        {/* ADR-023: Topic accuracy breakdown */}
+        {topicStats.length > 0 && (
+          <TopicAccuracySection stats={topicStats} getTopicName={getTopicName} />
+        )}
+
+        {/* ADR-023: Recent attempts */}
+        {recentAttempts.length > 0 && (
+          <RecentAttemptsSection attempts={recentAttempts} getTopicName={getTopicName} />
+        )}
       </div>
 
       {/* Bottom bar - ADR-009 */}
@@ -269,6 +293,155 @@ function SessionList({ sessions, getTopicName, formatDate }: SessionListProps) {
           </div>
         </div>
       ))}
+    </div>
+  )
+}
+
+// ADR-023: Topic accuracy visualization
+interface TopicAccuracySectionProps {
+  stats: TopicStats[]
+  getTopicName: (topicId: string) => string
+}
+
+function TopicAccuracySection({ stats, getTopicName }: TopicAccuracySectionProps) {
+  // Sort by accuracy (lowest first to highlight problem areas)
+  const sortedStats = [...stats].sort((a, b) => a.accuracy - b.accuracy)
+
+  return (
+    <div className="mt-6">
+      <h3 className="text-sm font-medium text-slate-600 mb-3">
+        Úspěšnost podle tématu
+      </h3>
+      <div className="space-y-3">
+        {sortedStats.map(stat => {
+          const accuracyPercent = Math.round(stat.accuracy * 100)
+          const isStruggling = accuracyPercent < 50
+          const isStrong = accuracyPercent >= 80
+
+          return (
+            <div key={stat.topic} className="bg-white rounded-xl p-4 shadow-sm">
+              <div className="flex justify-between items-center mb-2">
+                <span className="font-medium text-slate-800">
+                  {getTopicName(stat.topic)}
+                </span>
+                <span className={`text-sm font-medium ${
+                  isStrong ? 'text-green-600' : isStruggling ? 'text-amber-600' : 'text-slate-600'
+                }`}>
+                  {accuracyPercent}%
+                </span>
+              </div>
+
+              {/* Progress bar */}
+              <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                <div
+                  className={`h-full transition-all ${
+                    isStrong ? 'bg-green-500' : isStruggling ? 'bg-amber-500' : 'bg-safe-blue'
+                  }`}
+                  style={{ width: `${accuracyPercent}%` }}
+                />
+              </div>
+
+              {/* Stats row */}
+              <div className="flex gap-4 mt-2 text-xs text-slate-500">
+                <span>{stat.total_attempts} pokusů</span>
+                <span>{stat.correct_count} správně</span>
+                {stat.avg_hints > 0 && (
+                  <span>⌀ {stat.avg_hints.toFixed(1)} nápověd</span>
+                )}
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+// ADR-023: Recent attempts list
+interface RecentAttemptsSectionProps {
+  attempts: AttemptRecord[]
+  getTopicName: (topicId: string) => string
+}
+
+function RecentAttemptsSection({ attempts, getTopicName }: RecentAttemptsSectionProps) {
+  const formatTime = (ms: number): string => {
+    if (ms < 1000) return '<1s'
+    const seconds = Math.round(ms / 1000)
+    if (seconds < 60) return `${seconds}s`
+    const minutes = Math.floor(seconds / 60)
+    const remainingSeconds = seconds % 60
+    return `${minutes}m ${remainingSeconds}s`
+  }
+
+  const formatDateTime = (isoString: string): string => {
+    const date = new Date(isoString)
+    return date.toLocaleString('cs-CZ', {
+      day: 'numeric',
+      month: 'short',
+      hour: '2-digit',
+      minute: '2-digit'
+    })
+  }
+
+  const getModeLabel = (mode: string): string => {
+    switch (mode) {
+      case 'numeric': return 'Výpočet'
+      case 'lightning': return 'Blesk'
+      case 'type_recognition': return 'Rozpoznání'
+      default: return mode
+    }
+  }
+
+  return (
+    <div className="mt-6">
+      <h3 className="text-sm font-medium text-slate-600 mb-3">
+        Poslední pokusy
+      </h3>
+      <div className="space-y-2">
+        {attempts.map(attempt => (
+          <div
+            key={attempt.id}
+            className={`bg-white rounded-xl p-3 shadow-sm border-l-4 ${
+              attempt.is_correct ? 'border-green-500' : 'border-amber-500'
+            }`}
+          >
+            <div className="flex justify-between items-start">
+              <div className="flex-1 min-w-0">
+                <div className="text-sm text-slate-800 truncate">
+                  {attempt.question_stem.substring(0, 60)}
+                  {attempt.question_stem.length > 60 ? '...' : ''}
+                </div>
+                <div className="flex gap-2 mt-1 text-xs text-slate-500">
+                  <span className="bg-slate-100 px-2 py-0.5 rounded">
+                    {getTopicName(attempt.topic)}
+                  </span>
+                  <span className="bg-slate-100 px-2 py-0.5 rounded">
+                    {getModeLabel(attempt.mode)}
+                  </span>
+                </div>
+              </div>
+              <div className="text-right ml-3 flex-shrink-0">
+                <div className={`text-sm font-medium ${
+                  attempt.is_correct ? 'text-green-600' : 'text-amber-600'
+                }`}>
+                  {attempt.is_correct ? '✓' : '○'}
+                </div>
+                <div className="text-xs text-slate-400">
+                  {formatTime(attempt.time_spent_ms)}
+                </div>
+              </div>
+            </div>
+
+            {/* Details row */}
+            <div className="flex justify-between items-center mt-2 pt-2 border-t border-slate-100 text-xs text-slate-400">
+              <span>
+                {attempt.hints_used > 0 ? `${attempt.hints_used} nápověd` : 'Bez nápovědy'}
+              </span>
+              <span>{formatDateTime(attempt.created_at)}</span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
