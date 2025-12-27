@@ -6,6 +6,7 @@ import Summary from './Summary'
 import BottomBar from '../BottomBar'
 import { UnifiedQuestion, QuestionsData } from '../../types'
 import { TypeDrillQuestion, TypeDrillResult, TypeOption } from './types'
+import { saveAttempt, startSession, endSession } from '../../hooks/useAttempts'
 
 const data = questionsData as QuestionsData
 
@@ -70,6 +71,9 @@ function TypeDrill({ onExit, onViewProgress }: TypeDrillProps) {
 
   // Initialize questions
   const initQuestions = (): TypeDrillQuestion[] => {
+    // ADR-023: Start session when type drill begins
+    startSession('typedrill')
+
     // ADR-022: Filter questions that support type_recognition mode
     const typeDrillQuestions = data.questions
       .filter(q => q.modes.type_recognition && q.question.context)
@@ -121,6 +125,21 @@ function TypeDrill({ onExit, onViewProgress }: TypeDrillProps) {
       timeSpent: Date.now() - questionStartTime
     }
 
+    // ADR-023: Save attempt after both type and strategy are answered
+    saveAttempt({
+      question_id: currentQuestion.id,
+      question_stem: currentQuestion.question.context || '',
+      correct_answer: currentQuestion.meta.type_label || '',
+      topic: currentQuestion.topic,
+      difficulty: currentQuestion.difficulty,
+      user_answer: `type:${currentResult!.typeAnswer || 'skipped'}|strategy:${answer}`,
+      is_correct: currentResult!.typeCorrect && isCorrect,
+      mode: 'type_recognition',
+      hints_used: 0,
+      hints_shown: [],
+      time_spent_ms: Date.now() - questionStartTime
+    })
+
     setCurrentResult(finalResult)
     setResults([...results, finalResult])
     setPhase('feedback')
@@ -134,6 +153,8 @@ function TypeDrill({ onExit, onViewProgress }: TypeDrillProps) {
       setCurrentResult(null)
       setQuestionStartTime(Date.now())
     } else {
+      // ADR-023: End session when type drill completes
+      endSession()
       setPhase('summary')
     }
   }
@@ -149,6 +170,22 @@ function TypeDrill({ onExit, onViewProgress }: TypeDrillProps) {
       timeSpent: Date.now() - questionStartTime,
       skipped: true
     }
+
+    // ADR-023: Save skipped attempt
+    saveAttempt({
+      question_id: currentQuestion.id,
+      question_stem: currentQuestion.question.context || '',
+      correct_answer: currentQuestion.meta.type_label || '',
+      topic: currentQuestion.topic,
+      difficulty: currentQuestion.difficulty,
+      user_answer: 'skipped',
+      is_correct: false,
+      mode: 'type_recognition',
+      hints_used: 0,
+      hints_shown: [],
+      time_spent_ms: Date.now() - questionStartTime
+    })
+
     setResults([...results, skippedResult])
     handleContinue()
   }

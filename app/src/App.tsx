@@ -11,6 +11,7 @@ import TypeDrill from './components/TypeDrill'
 import BottomBar from './components/BottomBar'
 import { UnifiedQuestion, QuestionsData } from './types'
 import { Session, SessionAttempt, AttemptResult, SessionMetrics } from './types'
+import { startSession, endSession } from './hooks/useAttempts'
 
 // Type the imported JSON data
 const data = questionsData as QuestionsData
@@ -159,6 +160,8 @@ function App() {
     setCurrentProblemIndex(0)
     setAttempts([])
     setAnsweredStrategyTopic(null) // Reset strategy tracking for new session
+    // ADR-023: Start a new session for attempt tracking
+    startSession(topicId)
     setAppState('session')
   }
 
@@ -208,6 +211,9 @@ function App() {
 
       existing.push(newSession)
       localStorage.setItem('tutor_progress', JSON.stringify(existing))
+
+      // ADR-023: End session for attempt tracking
+      endSession()
     } catch (e) {
       console.error('Failed to save progress:', e)
     }

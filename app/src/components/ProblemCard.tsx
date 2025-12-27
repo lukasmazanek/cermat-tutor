@@ -6,6 +6,7 @@ import topicTypeMapping from '../data/topic_type_mapping.json'
 import { evaluateAnswer } from '@lib/mathParser'
 import { UnifiedQuestion, TopicTypeMappingData } from '../types'
 import { AttemptResult, ProgressIndicator } from '../types'
+import { saveAttempt } from '../hooks/useAttempts'
 
 // Type the imported JSON
 const mappingData = topicTypeMapping as TopicTypeMappingData
@@ -113,6 +114,20 @@ function ProblemCard({
 
     if (result.isCorrect) {
       setFeedback('correct')
+      // ADR-023: Save attempt to local cache
+      saveAttempt({
+        question_id: problem.id,
+        question_stem: problemText,
+        correct_answer: String(problem.modes.numeric.answer),
+        topic: problem.topic,
+        difficulty: problem.difficulty,
+        user_answer: userAnswer,
+        is_correct: true,
+        mode: 'numeric',
+        hints_used: revealedSteps.length,
+        hints_shown: revealedSteps.map(i => hintSource[i]),
+        time_spent_ms: Date.now() - problemStartTime
+      })
       setTimeout(() => {
         onAnswer({
           correct: true,

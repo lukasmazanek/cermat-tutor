@@ -7,6 +7,7 @@ import Summary from './Summary'
 import BottomBar from '../BottomBar'
 import { UnifiedQuestion, QuestionsData } from '../../types'
 import { LightningQuestion, LightningResult, LightningStats } from './types'
+import { saveAttempt, startSession, endSession } from '../../hooks/useAttempts'
 
 const data = questionsData as QuestionsData
 const QUESTIONS_PER_ROUND = 10
@@ -45,7 +46,11 @@ interface LightningRoundProps {
 
 function LightningRound({ onExit, onViewProgress }: LightningRoundProps) {
   const [phase, setPhase] = useState<'playing' | 'feedback' | 'summary'>('playing')
-  const [questions, setQuestions] = useState<LightningQuestion[]>(() => selectMixedQuestions())
+  const [questions, setQuestions] = useState<LightningQuestion[]>(() => {
+    // ADR-023: Start session when lightning round begins
+    startSession('lightning')
+    return selectMixedQuestions()
+  })
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null)
@@ -74,6 +79,21 @@ function LightningRound({ onExit, onViewProgress }: LightningRoundProps) {
       setStreak(0)
     }
 
+    // ADR-023: Save attempt to local cache
+    saveAttempt({
+      question_id: currentQuestion.id,
+      question_stem: currentQuestion.question.context || currentQuestion.question.stem || '',
+      correct_answer: currentQuestion.displayCorrect,
+      topic: currentQuestion.topic,
+      difficulty: currentQuestion.difficulty,
+      user_answer: answer,
+      is_correct: correct,
+      mode: 'lightning',
+      hints_used: 0,
+      hints_shown: [],
+      time_spent_ms: timeMs
+    })
+
     // Record result
     setResults(prev => [...prev, {
       questionId: currentQuestion.id,
@@ -96,6 +116,8 @@ function LightningRound({ onExit, onViewProgress }: LightningRoundProps) {
   // Move to next question or summary
   const advanceToNext = () => {
     if (currentIndex + 1 >= questions.length) {
+      // ADR-023: End session when lightning round completes
+      endSession()
       setPhase('summary')
     } else {
       setCurrentIndex(prev => prev + 1)
@@ -125,6 +147,8 @@ function LightningRound({ onExit, onViewProgress }: LightningRoundProps) {
 
   // Restart with new questions
   const handleRestart = () => {
+    // ADR-023: Start new session for restart
+    startSession('lightning')
     setQuestions(selectMixedQuestions())
     setCurrentIndex(0)
     setSelectedAnswer(null)
