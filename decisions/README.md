@@ -2,7 +2,7 @@
 
 This directory contains all Educational Decision Records (EDRs) for the Tutor project.
 
-**Total:** 4 EDRs + 20 ADRs + 2 PDRs | **Format:** One file per record | **Naming:** `EDR-XXX-slug.md`, `ADR-XXX-slug.md`, or `PDR-XXX-slug.md`
+**Total:** 4 EDRs + 22 ADRs + 2 PDRs | **Format:** One file per record | **Naming:** `EDR-XXX-slug.md`, `ADR-XXX-slug.md`, or `PDR-XXX-slug.md`
 
 ---
 
@@ -61,6 +61,8 @@ This directory contains all Educational Decision Records (EDRs) for the Tutor pr
 | [ADR-018](ADR-018-math-keyboard-component.md) | MathKeyboard Component | Proposed | Extracted 6-column keyboard |
 | [ADR-019](ADR-019-component-architecture.md) | Component Architecture | Proposed | Atomic Design + state + data flow |
 | [ADR-020](ADR-020-evaluatable-expected-values.md) | Evaluatable Expected Values | Accepted | Parser evaluates string fractions |
+| [ADR-021](ADR-021-automatic-geometry-diagrams.md) | Automatic Geometry Diagrams | Accepted | Auto-generate diagrams for pythagorean questions |
+| [ADR-022](ADR-022-multi-mode-questions.md) | Multi-Mode Questions | Accepted | modes.numeric + modes.type_recognition + auto labels |
 
 ---
 
