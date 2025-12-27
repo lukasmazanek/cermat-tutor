@@ -13,7 +13,7 @@ interface ProgressPageProps {
 function ProgressPage({ onBack }: ProgressPageProps) {
   const [selectedTopic, setSelectedTopic] = useState('all')
   const [topicStats, setTopicStats] = useState<TopicStats[]>([])
-  const [recentAttempts, setRecentAttempts] = useState<AttemptRecord[]>([])
+  const [allAttempts, setAllAttempts] = useState<AttemptRecord[]>([])
 
   // ADR-023: Load attempt data
   useEffect(() => {
@@ -21,10 +21,13 @@ function ProgressPage({ onBack }: ProgressPageProps) {
       const stats = await getTopicStats()
       const attempts = await getAttempts()
       setTopicStats(stats)
-      setRecentAttempts(attempts.slice(-20).reverse()) // Last 20, newest first
+      setAllAttempts(attempts)
     }
     loadAttemptData()
   }, [])
+
+  // Recent attempts for display (last 20, newest first)
+  const recentAttempts = allAttempts.slice(-20).reverse()
 
   // Load progress data from localStorage
   const progressData = useMemo((): Session[] => {
@@ -42,24 +45,42 @@ function ProgressPage({ onBack }: ProgressPageProps) {
     return progressData.filter(s => s.topic === selectedTopic)
   }, [progressData, selectedTopic])
 
-  // Calculate stats
+  // Calculate stats - combine old session data with new attempt data
   const stats = useMemo(() => {
+    // Old session-based stats
     const sessions = filteredSessions
-    const totalExplored = sessions.reduce((sum, s) => sum + (s.problemsExplored || 0), 0)
-    const totalWithoutHints = sessions.reduce(
+    const oldExplored = sessions.reduce((sum, s) => sum + (s.problemsExplored || 0), 0)
+    const oldWithoutHints = sessions.reduce(
       (sum, s) => sum + (s.sessionMetrics?.problemsWithoutHints || 0), 0
     )
+
+    // New attempt-based stats (ADR-023) - use ALL attempts, not just recent
+    const filteredAttempts = selectedTopic === 'all'
+      ? allAttempts
+      : allAttempts.filter(a => a.topic === selectedTopic)
+
+    // Use attempt data if available, otherwise fall back to old data
+    const totalExplored = filteredAttempts.length > 0
+      ? filteredAttempts.length
+      : oldExplored
+    const totalWithoutHints = filteredAttempts.length > 0
+      ? filteredAttempts.filter(a => a.hints_used === 0).length
+      : oldWithoutHints
+
     const hintIndependenceRate = totalExplored > 0
       ? Math.round((totalWithoutHints / totalExplored) * 100)
       : 0
 
+    // Count unique sessions from attempts
+    const uniqueSessions = new Set(filteredAttempts.map(a => a.session_id))
+
     return {
-      totalSessions: sessions.length,
+      totalSessions: filteredAttempts.length > 0 ? uniqueSessions.size : sessions.length,
       totalExplored,
       totalWithoutHints,
       hintIndependenceRate
     }
-  }, [filteredSessions])
+  }, [filteredSessions, allAttempts, selectedTopic])
 
   // Get topic name
   const getTopicName = (topicId: string): string => {
