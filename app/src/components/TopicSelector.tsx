@@ -83,6 +83,73 @@ function TopicSelector({ onSelectTopic, lastSession, onViewProgress, onStartLigh
         </p>
       </div>
 
+      {/* ADR-026: Action buttons at top - 2x2 grid */}
+      <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-4">
+        {/* 1. Progress tracking - "závod sama se sebou" (first position) */}
+        <button
+          onClick={onViewProgress}
+          className="bg-purple-50 rounded-xl p-3 sm:p-5 text-left
+            transition-gentle active:scale-[0.98] border-2 border-purple-200
+            hover:bg-purple-100 focus:border-purple-400 focus:outline-none"
+        >
+          <h2 className="text-base sm:text-lg font-medium text-purple-700 mb-0 sm:mb-1 flex items-center gap-2">
+            <ChartBarIcon className="w-5 h-5" />
+            Můj pokrok
+          </h2>
+          <p className="hidden sm:block text-sm text-purple-500">
+            Závod sama se sebou
+          </p>
+        </button>
+
+        {/* 2. Mix všeho */}
+        <button
+          onClick={() => onSelectTopic('mixed')}
+          className="bg-safe-blue/10 rounded-xl p-3 sm:p-5 text-left
+            transition-gentle active:scale-[0.98] border-2 border-safe-blue/20
+            hover:bg-safe-blue/20 focus:border-safe-blue focus:outline-none"
+        >
+          <h2 className="text-base sm:text-lg font-medium text-safe-blue mb-0 sm:mb-1 flex items-center gap-2">
+            <SparklesIcon className="w-5 h-5" />
+            Mix všeho
+          </h2>
+          <p className="hidden sm:block text-sm text-slate-500">
+            Náhodný výběr
+          </p>
+        </button>
+
+        {/* 3. Lightning Round */}
+        <button
+          onClick={onStartLightning}
+          className="bg-amber-50 rounded-xl p-3 sm:p-5 text-left
+            transition-gentle active:scale-[0.98] border-2 border-amber-200
+            hover:bg-amber-100 focus:border-amber-400 focus:outline-none"
+        >
+          <h2 className="text-base sm:text-lg font-medium text-amber-700 mb-0 sm:mb-1 flex items-center gap-2">
+            <BoltIcon className="w-5 h-5" />
+            Bleskové kolo
+          </h2>
+          <p className="hidden sm:block text-sm text-amber-600">
+            o X více/méně
+          </p>
+        </button>
+
+        {/* 4. Type Recognition Drill */}
+        <button
+          onClick={onStartTypeDrill}
+          className="bg-indigo-50 rounded-xl p-3 sm:p-5 text-left
+            transition-gentle active:scale-[0.98] border-2 border-indigo-200
+            hover:bg-indigo-100 focus:border-indigo-400 focus:outline-none"
+        >
+          <h2 className="text-base sm:text-lg font-medium text-indigo-700 mb-0 sm:mb-1 flex items-center gap-2">
+            <AcademicCapIcon className="w-5 h-5" />
+            Rozpoznej typ
+          </h2>
+          <p className="hidden sm:block text-sm text-indigo-600">
+            Typ + strategie
+          </p>
+        </button>
+      </div>
+
       {/* Topic cards - 2 columns on all screens */}
       <div className="grid grid-cols-2 gap-2 sm:gap-4 flex-1">
         {topics.map((topic) => (
@@ -141,70 +208,6 @@ function TopicSelector({ onSelectTopic, lastSession, onViewProgress, onStartLigh
 
         {/* Empty slot if odd number of topics */}
         {topics.length % 2 === 1 && <div />}
-
-        {/* Lightning Round */}
-        <button
-          onClick={onStartLightning}
-          className="bg-amber-50 rounded-xl p-3 sm:p-5 text-left
-            transition-gentle active:scale-[0.98] border-2 border-amber-200
-            hover:bg-amber-100 focus:border-amber-400 focus:outline-none"
-        >
-          <h2 className="text-base sm:text-lg font-medium text-amber-700 mb-0 sm:mb-1 flex items-center gap-2">
-            <BoltIcon className="w-5 h-5" />
-            Bleskové kolo
-          </h2>
-          <p className="hidden sm:block text-sm text-amber-600">
-            o X více/méně
-          </p>
-        </button>
-
-        {/* Type Recognition Drill */}
-        <button
-          onClick={onStartTypeDrill}
-          className="bg-indigo-50 rounded-xl p-3 sm:p-5 text-left
-            transition-gentle active:scale-[0.98] border-2 border-indigo-200
-            hover:bg-indigo-100 focus:border-indigo-400 focus:outline-none"
-        >
-          <h2 className="text-base sm:text-lg font-medium text-indigo-700 mb-0 sm:mb-1 flex items-center gap-2">
-            <AcademicCapIcon className="w-5 h-5" />
-            Rozpoznej typ
-          </h2>
-          <p className="hidden sm:block text-sm text-indigo-600">
-            Typ + strategie
-          </p>
-        </button>
-
-        {/* All topics option */}
-        <button
-          onClick={() => onSelectTopic('mixed')}
-          className="bg-safe-blue/10 rounded-xl p-3 sm:p-5 text-left
-            transition-gentle active:scale-[0.98] border-2 border-safe-blue/20
-            hover:bg-safe-blue/20 focus:border-safe-blue focus:outline-none"
-        >
-          <h2 className="text-base sm:text-lg font-medium text-safe-blue mb-0 sm:mb-1 flex items-center gap-2">
-            <SparklesIcon className="w-5 h-5" />
-            Mix všeho
-          </h2>
-          <p className="hidden sm:block text-sm text-slate-500">
-            Náhodný výběr
-          </p>
-        </button>
-
-        {/* Progress tracking - "závod sama se sebou" */}
-        <button
-          onClick={onViewProgress}
-          className="bg-purple-50 rounded-xl p-3 sm:p-5 text-left
-            transition-gentle active:scale-[0.98] border-2 border-purple-200
-            hover:bg-purple-100 focus:border-purple-400 focus:outline-none"
-        >
-          <h2 className="text-base sm:text-lg font-medium text-purple-700 mb-0 sm:mb-1 flex items-center gap-2">
-            <ChartBarIcon className="w-5 h-5" />
-            Můj pokrok
-          </h2>
-          <p className="hidden sm:block text-sm text-purple-500">
-            Závod sama se sebou
-          </p>
-        </button>
       </div>
     </div>
   )
