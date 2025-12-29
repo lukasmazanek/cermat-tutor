@@ -1,6 +1,8 @@
-import { useState } from 'react'
+import { useMemo } from 'react'
 import { CheckCircleIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline'
+import AnswerOptions, { AnswerOption } from '../AnswerOptions'
 import { TypeDrillQuestion } from './types'
+import { STATUS } from '../../constants/styles'
 
 interface StrategyQuestionProps {
   question: TypeDrillQuestion
@@ -9,33 +11,27 @@ interface StrategyQuestionProps {
 }
 
 function StrategyQuestion({ question, typeWasCorrect, onAnswer }: StrategyQuestionProps) {
-  const [selected, setSelected] = useState<string | null>(null)
-
   // UNIFIED FORMAT: Get strategy from solution
   const correctStrategy = question.solution.strategy || ''
   const typeLabel = question.meta.type_label || ''
 
   // Build options: correct + distractors, shuffled
-  const options = [
-    { value: correctStrategy, isCorrect: true },
-    ...question.strategyDistractors.map(d => ({ value: d, isCorrect: false }))
-  ].sort(() => Math.random() - 0.5)
+  const options: AnswerOption[] = useMemo(() => {
+    return [
+      { id: correctStrategy, label: correctStrategy, isCorrect: true },
+      ...question.strategyDistractors.map(d => ({ id: d, label: d, isCorrect: false }))
+    ].sort(() => Math.random() - 0.5)
+  }, [question.id])
 
-  const handleSelect = (option: { value: string; isCorrect: boolean }) => {
-    setSelected(option.value)
-
-    // Brief delay to show selection
-    setTimeout(() => {
-      onAnswer(option.value, option.isCorrect)
-      setSelected(null)
-    }, 300)
+  const handleSelect = (option: AnswerOption) => {
+    onAnswer(option.label, option.isCorrect)
   }
 
   return (
     <div className="flex-1 flex flex-col">
-      {/* Type result indicator */}
+      {/* Type result indicator - ADR-029: Use STATUS constants */}
       <div className={`flex items-center gap-2 mb-4 px-3 py-2 rounded-lg ${
-        typeWasCorrect ? 'bg-green-50 text-green-700' : 'bg-amber-50 text-amber-700'
+        typeWasCorrect ? STATUS.success : STATUS.warning
       }`}>
         {typeWasCorrect ? (
           <CheckCircleIcon className="w-5 h-5" />
@@ -52,23 +48,14 @@ function StrategyQuestion({ question, typeWasCorrect, onAnswer }: StrategyQuesti
         Jaká je správná strategie?
       </h3>
 
-      <div className="space-y-3">
-        {options.map((option, index) => (
-          <button
-            key={index}
-            onClick={() => handleSelect(option)}
-            disabled={selected !== null}
-            className={`w-full p-4 rounded-xl text-left transition-gentle active:scale-[0.98]
-              ${selected === option.value
-                ? 'bg-indigo-100 border-2 border-indigo-400 text-indigo-800'
-                : 'bg-white border-2 border-slate-200 text-slate-700 hover:border-indigo-300'
-              }
-              disabled:opacity-50`}
-          >
-            <span className="font-mono">{option.value}</span>
-          </button>
-        ))}
-      </div>
+      {/* ADR-029: Centralized AnswerOptions component */}
+      <AnswerOptions
+        options={options}
+        questionId={question.id}
+        onSelect={handleSelect}
+        mode="delayed"
+        mono
+      />
     </div>
   )
 }
