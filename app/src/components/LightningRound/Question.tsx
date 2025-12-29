@@ -1,6 +1,6 @@
 import { FireIcon } from '@heroicons/react/24/solid'
 import { TagIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
-import DiagramRenderer from '../diagrams/DiagramRenderer'
+import QuestionDisplay from '../QuestionDisplay'
 import { LightningQuestion } from './types'
 
 interface QuestionProps {
@@ -13,9 +13,6 @@ function Question({ question, onAnswer, streak }: QuestionProps) {
   const originalType = question.meta.type_id || ''
   const isTypeRecognition = originalType === 'type_recognition'
   const isProblemType = originalType === 'problem_type'
-
-  // UNIFIED FORMAT: Get question text
-  const questionText = question.question.stem || question.question.context || ''
 
   return (
     <div className="p-4">
@@ -43,15 +40,13 @@ function Question({ question, onAnswer, streak }: QuestionProps) {
         </div>
       )}
 
-      {/* Question */}
-      <div className="bg-white rounded-2xl shadow-sm p-5 mb-4">
-        {question.diagram && (
-          <DiagramRenderer diagram={question.diagram} />
-        )}
-        <p className={`text-lg text-center text-slate-800 font-medium ${isTypeRecognition ? 'font-mono' : ''}`}>
-          {questionText}
-        </p>
-      </div>
+      {/* Question - ADR-028 */}
+      <QuestionDisplay
+        question={question}
+        className="bg-white rounded-2xl shadow-sm p-5 mb-4"
+        textClassName="text-lg text-center text-slate-800 font-medium"
+        mono={isTypeRecognition}
+      />
 
       {/* Answer buttons - key on container forces remount to clear states */}
       <div key={question.id} className="space-y-2">

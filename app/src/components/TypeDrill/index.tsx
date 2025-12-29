@@ -6,6 +6,7 @@ import Summary from './Summary'
 import BottomBar from '../BottomBar'
 import { UnifiedQuestion, QuestionsData } from '../../types'
 import { TypeDrillQuestion, TypeDrillResult, TypeOption } from './types'
+import { getQuestionText, getSolutionData } from '../../lib/questionUtils'
 import { saveAttempt, startSession, endSession } from '../../hooks/useAttempts'
 
 const data = questionsData as QuestionsData
@@ -227,11 +228,11 @@ function TypeDrill({ onExit, onViewProgress }: TypeDrillProps) {
     )
   }
 
-  // UNIFIED FORMAT: Get question context (context OR stem)
-  const questionContext = currentQuestion.question.context || currentQuestion.question.stem || ''
+  // ADR-029: Use centralized utilities
+  const questionContext = getQuestionText(currentQuestion)
+  const { strategy: correctStrategy, hints } = getSolutionData(currentQuestion)
   const typeLabel = currentQuestion.meta.type_label || ''
-  const correctStrategy = currentQuestion.solution.strategy || ''
-  const explanation = currentQuestion.hints[0] || ''
+  const explanation = hints[0] || ''
 
   return (
     <div className="h-screen h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">

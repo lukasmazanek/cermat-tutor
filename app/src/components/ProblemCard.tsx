@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { LightBulbIcon, TagIcon } from '@heroicons/react/24/outline'
-import DiagramRenderer from './diagrams/DiagramRenderer'
+import QuestionDisplay from './QuestionDisplay'
 import BottomBar from './BottomBar'
+import { getQuestionText } from '../lib/questionUtils'
 import topicTypeMapping from '../data/topic_type_mapping.json'
 import { evaluateAnswer } from '@lib/mathParser'
 import { UnifiedQuestion, TopicTypeMappingData } from '../types'
@@ -205,8 +206,8 @@ function ProblemCard({
     resetState()
   }
 
-  // ADR-022: Get display text and keyboard config
-  const problemText = problem.question.context || problem.question.stem || ''
+  // ADR-022/029: Get display text and keyboard config
+  const problemText = getQuestionText(problem)
   const answerUnit = problem.modes.numeric?.unit || null
   const variableKey = problem.keyboard.variable // From data, null = no variable key
 
@@ -224,16 +225,12 @@ function ProblemCard({
         </div>
       )}
 
-      {/* Problem text and diagram */}
-      <div className="bg-white rounded-2xl shadow-sm p-5 mb-4 mx-4">
-        {problem.diagram && (
-          <DiagramRenderer diagram={problem.diagram} />
-        )}
-
-        <p className="text-lg text-slate-800 leading-relaxed">
-          {problemText}
-        </p>
-      </div>
+      {/* Problem text and diagram - ADR-028 */}
+      <QuestionDisplay
+        question={problem}
+        className="bg-white rounded-2xl shadow-sm p-5 mb-4 mx-4"
+        textClassName="text-lg text-slate-800 leading-relaxed"
+      />
 
       {/* Strategy prompt phase */}
       {promptPhase === 'strategy' && typeMapping && (

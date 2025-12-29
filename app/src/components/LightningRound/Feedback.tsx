@@ -1,5 +1,6 @@
 import { CheckIcon, LightBulbIcon, FireIcon } from '@heroicons/react/24/solid'
-import DiagramRenderer from '../diagrams/DiagramRenderer'
+import QuestionDisplay from '../QuestionDisplay'
+import { getSolutionData } from '../../lib/questionUtils'
 import { LightningQuestion } from './types'
 
 interface FeedbackProps {
@@ -14,9 +15,8 @@ function Feedback({ question, selectedAnswer, isCorrect, streak }: FeedbackProps
   const originalType = question.meta.type_id || ''
   const isTypeRecognition = originalType === 'type_recognition'
 
-  // UNIFIED FORMAT: Get hint data
-  const hintRule = question.solution.strategy || ''
-  const solutionSteps = question.solution.steps || []
+  // ADR-029: Get solution data from utility
+  const { strategy, steps } = getSolutionData(question)
 
   if (isCorrect) {
     // Correct answer - minimal feedback, auto-advances
@@ -39,19 +39,15 @@ function Feedback({ question, selectedAnswer, isCorrect, streak }: FeedbackProps
   }
 
   // Wrong answer - show question + hint (Continue button in BottomBar)
-  const questionText = question.question.stem || question.question.context || ''
-
   return (
     <div className="flex-1 flex flex-col items-center p-4 pb-24 overflow-y-auto">
-      {/* Original question + diagram */}
-      <div className="bg-white rounded-2xl shadow-sm p-5 w-full max-w-sm mb-4">
-        {question.diagram && (
-          <DiagramRenderer diagram={question.diagram} />
-        )}
-        <p className={`text-lg text-center text-slate-800 font-medium ${isTypeRecognition ? 'font-mono' : ''}`}>
-          {questionText}
-        </p>
-      </div>
+      {/* Original question + diagram - ADR-028 */}
+      <QuestionDisplay
+        question={question}
+        className="bg-white rounded-2xl shadow-sm p-5 w-full max-w-sm mb-4"
+        textClassName="text-lg text-center text-slate-800 font-medium"
+        mono={isTypeRecognition}
+      />
 
       {/* What was answered vs correct */}
       <div className="bg-white rounded-2xl shadow-sm p-6 w-full max-w-sm mb-4">
@@ -71,9 +67,9 @@ function Feedback({ question, selectedAnswer, isCorrect, streak }: FeedbackProps
           <LightBulbIcon className="w-6 h-6 text-purple-600 flex-shrink-0 mt-0.5" />
           <div>
             <p className="text-purple-800 font-medium mb-1">
-              {hintRule}
+              {strategy}
             </p>
-            {solutionSteps.map((step, idx) => (
+            {steps.map((step, idx) => (
               <p key={idx} className="text-purple-600 text-sm">
                 {step}
               </p>

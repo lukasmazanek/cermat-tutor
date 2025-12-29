@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { LightBulbIcon } from '@heroicons/react/24/outline'
 import BottomBar from './BottomBar'
 import { UnifiedQuestion } from '../types'
+import { getQuestionText } from '../lib/questionUtils'
 
 interface VisualExplainerProps {
   problem: UnifiedQuestion
@@ -28,8 +29,8 @@ interface Step {
 function VisualExplainer({ problem, onContinue, onHome, onViewProgress }: VisualExplainerProps) {
   const [step, setStep] = useState(0)
 
-  // UNIFIED FORMAT: Get problem text
-  const problemText = problem.question.context || problem.question.stem || ''
+  // ADR-029: Get problem text from utility
+  const problemText = getQuestionText(problem)
 
   // Parse the problem to extract key info
   const isIncrease = problemText.includes('více') ||
