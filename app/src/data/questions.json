@@ -1,6 +1,6 @@
 {
   "version": "4.0",
-  "generated": "2025-12-27T07:06:51.501Z",
+  "generated": "2025-12-29T05:00:47.211Z",
   "description": "ADR-022: Multi-mode questions with keyboard config",
   "topics": {
     "binomial_squares": {
@@ -44,6 +44,12 @@
       "name_cs": "Převody jednotek",
       "is_strength": false,
       "is_critical": true
+    },
+    "work_problems": {
+      "id": "work_problems",
+      "name_cs": "Úlohy o práci",
+      "is_strength": false,
+      "is_critical": false
     }
   },
   "questions": [
@@ -5252,6 +5258,324 @@
       "meta": {
         "type_id": "UNIT-AREA",
         "type_label": "Převody jednotek",
+        "original_type": null
+      }
+    },
+    {
+      "id": "work-001",
+      "topic": "work_problems",
+      "difficulty": 1,
+      "question": {
+        "stem": "3 dělníci udělají práci za 6 hodin. Za kolik hodin ji udělá 9 dělníků?",
+        "context": "3 dělníci udělají práci za 6 hodin. Za kolik hodin ji udělá 9 dělníků?"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "2",
+          "unit": "h",
+          "variants": [],
+          "distractors": [
+            "18",
+            "3"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "Více dělníků = méně času. Jde o nepřímou úměrnost.",
+        "Celková práce = 3 × 6 = 18 člověkohodin. Pak 18 ÷ 9 = 2 h."
+      ],
+      "solution": {
+        "steps": [
+          "Celková práce = 3 dělníci × 6 h = 18 člověkohodin",
+          "Čas pro 9 dělníků = 18 ÷ 9 = 2 h"
+        ],
+        "strategy": "Nepřímá úměrnost: více lidí = méně času"
+      },
+      "meta": {
+        "type_id": "WORD-WORK",
+        "type_label": "Úlohy o práci",
+        "original_type": null
+      }
+    },
+    {
+      "id": "work-002",
+      "topic": "work_problems",
+      "difficulty": 1,
+      "question": {
+        "stem": "5 pracovníků vykoná práci za 12 dní. Za kolik dní ji vykoná 10 pracovníků?",
+        "context": "5 pracovníků vykoná práci za 12 dní. Za kolik dní ji vykoná 10 pracovníků?"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "6",
+          "unit": "d",
+          "variants": [],
+          "distractors": [
+            "24",
+            "3"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "Dvakrát více pracovníků = poloviční čas.",
+        "Práce = 5 × 12 = 60 člověkodní. Pak 60 ÷ 10 = 6 d."
+      ],
+      "solution": {
+        "steps": [
+          "Celková práce = 5 × 12 = 60 člověkodní",
+          "Čas pro 10 pracovníků = 60 ÷ 10 = 6 d"
+        ],
+        "strategy": "Nepřímá úměrnost: 2× více lidí = 2× méně času"
+      },
+      "meta": {
+        "type_id": "WORD-WORK",
+        "type_label": "Úlohy o práci",
+        "original_type": null
+      }
+    },
+    {
+      "id": "work-003",
+      "topic": "work_problems",
+      "difficulty": 2,
+      "question": {
+        "stem": "4 malíři vymalují byt za 15 hodin. Kolik malířů je potřeba, aby práci zvládli za 5 hodin?",
+        "context": "4 malíři vymalují byt za 15 hodin. Kolik malířů je potřeba, aby práci zvládli za 5 hodin?"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "12",
+          "unit": null,
+          "variants": [],
+          "distractors": [
+            "20",
+            "8"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "Třikrát méně času = třikrát více lidí.",
+        "Práce = 4 × 15 = 60 člověkohodin. Pak 60 ÷ 5 = 12 malířů."
+      ],
+      "solution": {
+        "steps": [
+          "Celková práce = 4 × 15 = 60 člověkohodin",
+          "Počet malířů = 60 ÷ 5 = 12"
+        ],
+        "strategy": "Nepřímá úměrnost: 3× méně času = 3× více lidí"
+      },
+      "meta": {
+        "type_id": "WORD-WORK",
+        "type_label": "Úlohy o práci",
+        "original_type": null
+      }
+    },
+    {
+      "id": "work-004",
+      "topic": "work_problems",
+      "difficulty": 2,
+      "question": {
+        "stem": "Bagr vykope jámu za 8 hodin. Dva stejné bagry by jámu vykopaly za kolik hodin?",
+        "context": "Bagr vykope jámu za 8 hodin. Dva stejné bagry by jámu vykopaly za kolik hodin?"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "4",
+          "unit": "h",
+          "variants": [],
+          "distractors": [
+            "16",
+            "2"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "Dva bagry = dvojnásobná rychlost = poloviční čas.",
+        "8 ÷ 2 = 4 h."
+      ],
+      "solution": {
+        "steps": [
+          "2× více bagrů = 2× rychlejší práce",
+          "Čas = 8 ÷ 2 = 4 h"
+        ],
+        "strategy": "Nepřímá úměrnost: 2× více = poloviční čas"
+      },
+      "meta": {
+        "type_id": "WORD-WORK",
+        "type_label": "Úlohy o práci",
+        "original_type": null
+      }
+    },
+    {
+      "id": "work-005",
+      "topic": "work_problems",
+      "difficulty": 2,
+      "question": {
+        "stem": "6 strojů vyrobí díly za 10 hodin. Za kolik hodin vyrobí díly 15 strojů?",
+        "context": "6 strojů vyrobí díly za 10 hodin. Za kolik hodin vyrobí díly 15 strojů?"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "4",
+          "unit": "h",
+          "variants": [],
+          "distractors": [
+            "25",
+            "6"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "15 strojů je 2,5× více než 6 strojů.",
+        "Práce = 6 × 10 = 60 strojhodin. Pak 60 ÷ 15 = 4 h."
+      ],
+      "solution": {
+        "steps": [
+          "Celková práce = 6 × 10 = 60 strojhodin",
+          "Čas = 60 ÷ 15 = 4 h"
+        ],
+        "strategy": "Nepřímá úměrnost"
+      },
+      "meta": {
+        "type_id": "WORD-WORK",
+        "type_label": "Úlohy o práci",
+        "original_type": null
+      }
+    },
+    {
+      "id": "work-006",
+      "topic": "work_problems",
+      "difficulty": 3,
+      "question": {
+        "stem": "2 pumpy vyčerpají bazén za 6 hodin. Jedna pumpa se pokazila. Za kolik hodin vyčerpá bazén zbývající pumpa?",
+        "context": "2 pumpy vyčerpají bazén za 6 hodin. Jedna pumpa se pokazila. Za kolik hodin vyčerpá bazén zbývající pumpa?"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "12",
+          "unit": "h",
+          "variants": [],
+          "distractors": [
+            "3",
+            "8"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "Poloviční počet pump = dvojnásobný čas.",
+        "Práce = 2 × 6 = 12 pumphodin. Jedna pumpa: 12 ÷ 1 = 12 h."
+      ],
+      "solution": {
+        "steps": [
+          "Celková práce = 2 × 6 = 12 pumphodin",
+          "Jedna pumpa: 12 ÷ 1 = 12 h"
+        ],
+        "strategy": "Nepřímá úměrnost: poloviční výkon = dvojnásobný čas"
+      },
+      "meta": {
+        "type_id": "WORD-WORK",
+        "type_label": "Úlohy o práci",
+        "original_type": null
+      }
+    },
+    {
+      "id": "work-007",
+      "topic": "work_problems",
+      "difficulty": 3,
+      "question": {
+        "stem": "8 pracovníků postaví zeď za 3 dny. Po 1 dni odešli 2 pracovníci. Za kolik dalších dní zeď dokončí?",
+        "context": "8 pracovníků postaví zeď za 3 dny. Po 1 dni odešli 2 pracovníci. Za kolik dalších dní zeď dokončí?"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "2,67",
+          "unit": "d",
+          "variants": [
+            "8/3",
+            "2.67",
+            "2,7"
+          ],
+          "distractors": [
+            "2",
+            "3"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "Za první den udělali 8 pracovníků 1/3 práce. Zbývá 2/3.",
+        "Zbylá práce = 16 člověkodní. 6 pracovníků: 16 ÷ 6 = 8/3 ≈ 2,67 d."
+      ],
+      "solution": {
+        "steps": [
+          "Celková práce = 8 × 3 = 24 člověkodní",
+          "Za 1 den: 8 pracovníků = 8 člověkodní hotovo",
+          "Zbývá: 24 - 8 = 16 člověkodní",
+          "6 pracovníků: 16 ÷ 6 = 8/3 ≈ 2,67 d"
+        ],
+        "strategy": "Rozděl práci na části"
+      },
+      "meta": {
+        "type_id": "WORD-WORK",
+        "type_label": "Úlohy o práci",
+        "original_type": null
+      }
+    },
+    {
+      "id": "work-008",
+      "topic": "work_problems",
+      "difficulty": 1,
+      "question": {
+        "stem": "Jeden kuchař uvaří oběd pro 20 lidí za 4 hodiny. Kolik kuchařů potřebujeme, aby oběd byl hotov za 1 hodinu?",
+        "context": "Jeden kuchař uvaří oběd pro 20 lidí za 4 hodiny. Kolik kuchařů potřebujeme, aby oběd byl hotov za 1 hodinu?"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "4",
+          "unit": null,
+          "variants": [],
+          "distractors": [
+            "5",
+            "20"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "4× méně času = 4× více kuchařů.",
+        "Práce = 1 × 4 = 4 kuchařohodiny. Za 1 hodinu: 4 kuchaři."
+      ],
+      "solution": {
+        "steps": [
+          "Práce = 1 kuchař × 4 hodiny = 4 kuchařohodiny",
+          "Za 1 hodinu potřebujeme: 4 ÷ 1 = 4"
+        ],
+        "strategy": "Nepřímá úměrnost: 4× rychlejší = 4× více lidí"
+      },
+      "meta": {
+        "type_id": "WORD-WORK",
+        "type_label": "Úlohy o práci",
         "original_type": null
       }
     }

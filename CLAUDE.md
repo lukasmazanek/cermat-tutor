@@ -252,12 +252,14 @@ All teaching, feature, and curriculum decisions are documented in `decisions/` f
 - **NEVER save to Roam Research** - all data stays in project files
 - Use `/psycholog` for Child Psychologist mode
 - All session data goes to `data/psychology/` folder
-- **`/architect` role**: NEVER start implementing without explicit user approval - design and propose first, wait for confirmation
 - **Document decisions** in `decisions/` folder using EDR template
-- **QAR Process**: Po dokončení QAR MUSÍ vždy následovat ADR záznam. Implementace POUZE po explicitním souhlasu uživatele!
-  ```
-  QAR dokončen → Vytvořit ADR → Získat souhlas → Implementovat
-  ```
+
+### CRITICAL: No Implementation Without Approval
+**ALL ROLES** (`/architect`, `/test`, `/psycholog`, `/tutor`) must follow this rule:
+- **NEVER start implementing** code, fixes, interventions, or materials without explicit user approval
+- **Always propose first** - design, analyze, diagnose, report findings
+- **Wait for confirmation** before writing any code or making changes
+- **QAR Process**: QAR complete → Create ADR → Get approval → Implement
 
 ## App Design Principles (from psychological analysis)
 - Never say "Wrong" - use "Let's see what happened"

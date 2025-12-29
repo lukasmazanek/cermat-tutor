@@ -377,79 +377,72 @@ function ProblemCard({
       {promptPhase === 'done' && (
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 safe-area-pb">
           <div className="max-w-2xl mx-auto px-4 pt-2 pb-2">
-            {/* Virtual keyboard - mobile */}
-            {isMobile && !solutionRevealed && (
-              <div className="grid grid-cols-5 gap-1 mb-2">
-                {['7', '8', '9', '/', answerUnit || '√'].map((key) => (
-                  <button
-                    key={key}
-                    type="button"
-                    onClick={() => setUserAnswer(prev => prev + (key === '√' ? '√(' : key))}
-                    className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
-                      ${key === '/' || key === '√' || key === answerUnit ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
-                  >
-                    {key === '/' ? '÷' : key}
-                  </button>
-                ))}
-                {['4', '5', '6', '*', ...(variableKey ? [variableKey] : [])].map((key) => (
-                  <button
-                    key={key}
-                    type="button"
-                    onClick={() => setUserAnswer(prev => prev + key)}
-                    className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
-                      ${key === '*' || key === variableKey ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
-                  >
-                    {key === '*' ? '×' : key}
-                  </button>
-                ))}
-                {['1', '2', '3', '-', '('].map((key) => (
-                  <button
-                    key={key}
-                    type="button"
-                    onClick={() => setUserAnswer(prev => prev + key)}
-                    className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
-                      ${key === '-' || key === '(' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
-                  >
-                    {key === '-' ? '−' : key}
-                  </button>
-                ))}
-                <button
-                  type="button"
-                  onClick={() => setUserAnswer(prev => prev + '0')}
-                  className="h-11 rounded-xl text-base font-medium bg-slate-100 text-slate-800 transition-gentle active:scale-95"
-                >
-                  0
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setUserAnswer(prev => prev + '.')}
-                  className="h-11 rounded-xl text-base font-medium bg-slate-100 text-slate-800 transition-gentle active:scale-95"
-                >
-                  ,
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setUserAnswer(prev => prev.slice(0, -1))}
-                  className="h-11 rounded-xl text-base bg-red-50 text-red-600 transition-gentle active:scale-95"
-                >
-                  ⌫
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setUserAnswer(prev => prev + '+')}
-                  className="h-11 rounded-xl text-base font-medium bg-purple-100 text-purple-700 transition-gentle active:scale-95"
-                >
-                  +
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setUserAnswer(prev => prev + ')')}
-                  className="h-11 rounded-xl text-base font-medium bg-purple-100 text-purple-700 transition-gentle active:scale-95"
-                >
-                  )
-                </button>
-              </div>
-            )}
+            {/* Virtual keyboard - mobile (4 rows, 5-6 columns based on extras) */}
+            {isMobile && !solutionRevealed && (() => {
+              const hasExtras = variableKey || answerUnit
+              return (
+                <div className={`grid gap-1 mb-2 ${hasExtras ? 'grid-cols-6' : 'grid-cols-5'}`}>
+                  {/* Row 1: 7 8 9 / ⌫ [var?] */}
+                  {['7', '8', '9', '/', '⌫', ...(hasExtras ? [variableKey || ''] : [])].map((key, i) => (
+                    key === '' ? <div key={`empty-${i}`} /> : (
+                      <button
+                        key={key}
+                        type="button"
+                        onClick={() => key === '⌫'
+                          ? setUserAnswer(prev => prev.slice(0, -1))
+                          : setUserAnswer(prev => prev + key)}
+                        className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
+                          ${key === '/' || key === variableKey ? 'bg-purple-100 text-purple-700' : key === '⌫' ? 'bg-red-50 text-red-600' : 'bg-slate-100 text-slate-800'}`}
+                      >
+                        {key === '/' ? '÷' : key}
+                      </button>
+                    )
+                  ))}
+                  {/* Row 2: 4 5 6 * ^ [unit?] */}
+                  {['4', '5', '6', '*', '^', ...(hasExtras ? [answerUnit || ''] : [])].map((key, i) => (
+                    key === '' ? <div key={`empty-${i}`} /> : (
+                      <button
+                        key={key}
+                        type="button"
+                        onClick={() => setUserAnswer(prev => prev + key)}
+                        className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
+                          ${key === '*' || key === '^' || key === answerUnit ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
+                      >
+                        {key === '*' ? '×' : key}
+                      </button>
+                    )
+                  ))}
+                  {/* Row 3: 1 2 3 - + [empty?] */}
+                  {['1', '2', '3', '-', '+', ...(hasExtras ? [''] : [])].map((key, i) => (
+                    key === '' ? <div key={`empty-${i}`} /> : (
+                      <button
+                        key={key}
+                        type="button"
+                        onClick={() => setUserAnswer(prev => prev + key)}
+                        className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
+                          ${key === '-' || key === '+' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
+                      >
+                        {key === '-' ? '−' : key}
+                      </button>
+                    )
+                  ))}
+                  {/* Row 4: 0 , √ ( ) [empty?] */}
+                  {['0', ',', '√', '(', ')', ...(hasExtras ? [''] : [])].map((key, i) => (
+                    key === '' ? <div key={`empty-${i}`} /> : (
+                      <button
+                        key={key}
+                        type="button"
+                        onClick={() => setUserAnswer(prev => prev + (key === ',' ? '.' : key === '√' ? '√(' : key))}
+                        className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
+                          ${key === '√' || key === '(' || key === ')' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
+                      >
+                        {key}
+                      </button>
+                    )
+                  ))}
+                </div>
+              )
+            })()}
 
             {/* Desktop symbol bar - ADR-022: variableKey from data */}
             {!isMobile && !solutionRevealed && (

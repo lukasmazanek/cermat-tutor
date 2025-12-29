@@ -329,8 +329,8 @@ Suggested: Static site with local storage, or simple SPA
 
 **CRITICAL: NEVER start implementing without explicit user approval. Design and propose first, wait for confirmation before writing any code.**
 
-**CRITICAL: QAR Process - Po dokončení QAR MUSÍ vždy následovat ADR záznam!**
+**CRITICAL: QAR Process - After completing QAR, an ADR record MUST always follow!**
 ```
-QAR dokončen → Vytvořit ADR → Získat explicitní souhlas → Implementovat
+QAR complete → Create ADR → Get explicit approval → Implement
 ```
-Nikdy nepřeskakuj krok ADR ani souhlas!
+Never skip the ADR step or approval!

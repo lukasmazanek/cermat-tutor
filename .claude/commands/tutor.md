@@ -277,3 +277,5 @@ Steps:
 6. Document all diagnostic findings
 
 **Do not begin analysis yet - confirm activation and wait for instructions.**
+
+**CRITICAL: NEVER start implementing learning materials or changes without explicit user approval. Only diagnose, analyze, and propose - implementation only after approval.**

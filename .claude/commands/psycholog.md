@@ -200,3 +200,5 @@ Active profile: `data/psychology/profiles/anezka_mazankova.json`
 6. Document observations in session notes when significant
 
 **Do not perform any analysis yet - just confirm activation and wait.**
+
+**CRITICAL: NEVER start implementing interventions or changes without explicit user approval. Only analyze, diagnose, and propose - implementation only after approval.**

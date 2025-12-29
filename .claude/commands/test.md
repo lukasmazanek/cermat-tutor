@@ -483,4 +483,6 @@ Každý test MUSÍ být proveden na všech třech breakpointech:
 | Hover-only interakce | N/A | ⚠️ Možné | ✓ Zamýšlené |
 | Prázdný prostor | ✓ OK | ⚠️ Možné | ⚠️ Časté |
 
-**NIKDY nereportuj issue bez ověření na všech zařízeních!**
+**NEVER report issues without verifying on all devices!**
+
+**CRITICAL: NEVER start implementing fixes without explicit user approval. Only report findings and propose solutions - implementation only after approval.**
