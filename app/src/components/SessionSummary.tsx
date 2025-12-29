@@ -1,3 +1,13 @@
+/**
+ * ADR-030: Session Summary with Psychological Safety
+ *
+ * Key principles:
+ * - Main metric = total explored (effort)
+ * - Hints reframed as positive learning tool
+ * - No emphasis on "bez nápovědy" as success metric
+ * - Only positive comparisons shown
+ */
+
 import questionsData from '../data/questions.json'
 import { TrophyIcon } from '@heroicons/react/24/outline'
 import BottomBar from './BottomBar'
@@ -15,64 +25,54 @@ interface SessionSummaryProps {
   onHome?: () => void
 }
 
-function SessionSummary({ attempts, totalProblems: _totalProblems, topic, sessionMetrics, onNewSession, onViewProgress, onHome }: SessionSummaryProps) {
-  // Calculate total explored (not "correct" - that's judgmental)
+function SessionSummary({ attempts, totalProblems: _totalProblems, topic, sessionMetrics: _sessionMetrics, onNewSession, onViewProgress, onHome }: SessionSummaryProps) {
+  // Calculate metrics - focus on exploration, not correctness
   const totalExplored = attempts.length
-  const problemsWithoutHints = sessionMetrics?.problemsWithoutHints || 0
+  const hintsUsedCount = attempts.filter(a => a.hintsUsed > 0).length
+  const correctWithHints = attempts.filter(a => a.hintsUsed > 0 && a.correct).length
 
   // Get topic name for display
   const topicName = topic === 'mixed'
     ? 'Mix všeho'
     : (topic && data.topics[topic]?.name_cs) || topic
 
-  // Get comparison with previous same-topic session
-  const getComparison = (): { previousSame: Session | null; totalSessions: number } => {
+  // Get comparison with previous same-topic session (only positive!)
+  const getComparisonMessage = (): string | null => {
     try {
       const progress = JSON.parse(localStorage.getItem('tutor_progress') || '[]') as Session[]
-      // Get previous sessions of same topic (excluding current which was just saved)
       const sameTopic = progress.filter(s => s.topic === topic)
-      // The last one in array is the current session, so get second to last
       const previousSame = sameTopic.length >= 2 ? sameTopic[sameTopic.length - 2] : null
-      return { previousSame, totalSessions: progress.length }
+
+      if (!previousSame) return null
+
+      const prevExplored = previousSame.problemsExplored || 0
+      const diff = totalExplored - prevExplored
+
+      if (diff > 0) {
+        return `+${diff} více než minule!`
+      } else if (diff === 0 && prevExplored > 0) {
+        return 'Stejně jako minule - stabilní!'
+      }
+      // If less, return nothing - no negative comparisons
+      return null
     } catch {
-      return { previousSame: null, totalSessions: 0 }
+      return null
     }
-  }
-
-  const comparison = getComparison()
-
-  // Calculate comparison with previous session (only show positive)
-  const getComparisonMessage = (): string | null => {
-    if (!comparison.previousSame?.sessionMetrics) return null
-    const prevWithoutHints = comparison.previousSame.sessionMetrics.problemsWithoutHints || 0
-    const diff = problemsWithoutHints - prevWithoutHints
-
-    if (diff > 0) {
-      return `+${diff} více samostatně než minule`
-    } else if (diff === 0 && prevWithoutHints > 0) {
-      return 'Stejně jako minule - stabilní!'
-    }
-    // If worse, return nothing - no negative comparisons
-    return null
   }
 
   const comparisonMessage = getComparisonMessage()
 
-  // Calculate total sessions from localStorage
-  const getTotalStats = (): { sessions: number; problems: number; withoutHints: number } => {
+  // Calculate total stats from localStorage
+  const getTotalStats = (): { sessions: number; problems: number } => {
     try {
       const progress = JSON.parse(localStorage.getItem('tutor_progress') || '[]') as Session[]
       const totalProblemsEver = progress.reduce((sum, s) => sum + (s.problemsExplored || 0), 0)
-      const totalWithoutHints = progress.reduce(
-        (sum, s) => sum + (s.sessionMetrics?.problemsWithoutHints || 0), 0
-      )
       return {
         sessions: progress.length,
-        problems: totalProblemsEver,
-        withoutHints: totalWithoutHints
+        problems: totalProblemsEver
       }
     } catch {
-      return { sessions: 0, problems: 0, withoutHints: 0 }
+      return { sessions: 0, problems: 0 }
     }
   }
 
@@ -97,13 +97,13 @@ function SessionSummary({ attempts, totalProblems: _totalProblems, topic, sessio
             {topicName && <span className="text-slate-400"> z tématu {topicName}</span>}
           </p>
 
-          {/* Hint independence - key "závod sama se sebou" metric */}
-          <div className="bg-green-50 rounded-xl p-4 mb-4">
-            <div className="text-4xl font-bold text-green-600">
-              {problemsWithoutHints}
+          {/* Main metric: Total explored (effort-based) */}
+          <div className="bg-safe-blue/10 rounded-xl p-4 mb-4">
+            <div className="text-4xl font-bold text-safe-blue">
+              {totalExplored}
             </div>
-            <div className="text-sm text-green-700">
-              samostatně (bez nápovědy)
+            <div className="text-sm text-blue-700">
+              úloh prozkoumáno
             </div>
             {comparisonMessage && (
               <div className="text-sm text-green-600 mt-2 font-medium">
@@ -112,30 +112,33 @@ function SessionSummary({ attempts, totalProblems: _totalProblems, topic, sessio
             )}
           </div>
 
-          {/* Session stats */}
-          <div className="bg-slate-50 rounded-xl p-4 mb-4">
-            <div className="text-4xl font-bold text-safe-blue">
-              {totalExplored}
+          {/* Hints helped - positive framing */}
+          {hintsUsedCount > 0 && (
+            <div className="bg-purple-50 rounded-xl p-4 mb-4">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <span className="text-xl">💡</span>
+                <span className="font-medium text-purple-800">
+                  Nápovědy ti pomohly
+                </span>
+              </div>
+              <div className="text-sm text-purple-600">
+                {correctWithHints > 0
+                  ? `${correctWithHints}× ses díky nim naučila správný postup`
+                  : `${hintsUsedCount}× jsi je použila k učení`
+                }
+              </div>
             </div>
-            <div className="text-sm text-slate-500">
-              prozkoumáno dnes
-            </div>
-          </div>
+          )}
 
           {/* Total progress - "race against yourself" */}
           {stats.problems > 0 && (
-            <div className="bg-purple-50 rounded-xl p-4">
-              <div className="text-lg font-medium text-purple-700">
+            <div className="bg-slate-50 rounded-xl p-4">
+              <div className="text-lg font-medium text-slate-700">
                 {stats.problems} úloh celkem
               </div>
-              <div className="text-sm text-purple-500">
+              <div className="text-sm text-slate-500">
                 za {stats.sessions} cvičení
               </div>
-              {stats.withoutHints > 0 && (
-                <div className="text-sm text-purple-600 mt-1">
-                  {stats.withoutHints} samostatně
-                </div>
-              )}
             </div>
           )}
         </div>

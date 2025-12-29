@@ -17,6 +17,8 @@ MVP deployed. Analyzing math test mistakes to identify error patterns and create
 
 > **CRITICAL - `/architect` role:** Upon activation, MUST load `decisions/README.md` (ADR/EDR index) to understand existing architectural and educational decisions. When the task relates to a specific decision topic, load the full ADR/EDR/PDR file(s). Never propose changes that contradict existing decisions without explicitly acknowledging the conflict.
 
+> **CRITICAL - After autocompact:** Automatically activate `/architect` role to restore architectural and educational decision context. This ensures ADR/EDR/PDR awareness is maintained across context resets.
+
 ## Student Profile
 - **Name**: Anezka Mazankova
 - **Grade**: 9th (preparing for high school entrance exams)
