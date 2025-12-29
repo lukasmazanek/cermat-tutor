@@ -1,7 +1,7 @@
 # ADR-023: Answer Persistence with Supabase
 
 **Date:** 2024-12-27
-**Status:** Implemented (Phase 1 + Phase 2)
+**Status:** Implemented (Phase 1 + Phase 2 + Multi-user)
 **Role:** Architect
 
 ## Context
@@ -10,22 +10,22 @@ Pro analýzu problémových oblastí a sledování pokroku potřebujeme ukládat
 
 ## Decision
 
-### 1. Storage: Supabase (Simplified)
+### 1. Storage: Supabase (Multi-user)
 
 - **Proč**: Centrální úložiště pro sledování pokroku
-- **Zjednodušení**: Single-user setup, hardcoded `user_id = 'anezka'`
-- **Bez autentizace**: Není potřeba login - appka prostě ukládá
+- **Multi-user**: Dynamic `user_id` from profile selection (see [ADR-032](ADR-032-multi-user-profiles.md))
+- **Bez autentizace**: Není potřeba login - appka prostě ukládá pod vybraným profilem
 
 ### 2. Storage strategie: Direct to Supabase
 
 ```
-Supabase configured? → Ano → Ukládá do Supabase
-                     → Ne  → Fallback na localStorage
+Supabase configured? → Ano → Ukládá do Supabase (filtered by user_id)
+                     → Ne  → Fallback na localStorage (filtered by user_id)
 ```
 
 - Env vars určují zda použít Supabase
 - Bez složité sync logiky
-- Otec vidí pokrok v Supabase dashboardu
+- Otec vidí pokrok v Supabase dashboardu (může filtrovat podle user_id)
 
 ### 3. Data struktura: Maximum pro analýzu
 
@@ -58,13 +58,13 @@ interface AttemptRecord {
 }
 ```
 
-### 4. Supabase schema (Simplified)
+### 4. Supabase schema (Multi-user)
 
 ```sql
 -- Sessions table
 CREATE TABLE sessions (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  user_id TEXT NOT NULL,  -- hardcoded 'anezka'
+  user_id TEXT NOT NULL,  -- profile ID from config (anezka, emilka, host, ...)
   topic TEXT NOT NULL,
   started_at TIMESTAMPTZ DEFAULT NOW(),
   ended_at TIMESTAMPTZ,
@@ -74,7 +74,7 @@ CREATE TABLE sessions (
 -- Attempts table
 CREATE TABLE attempts (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  user_id TEXT NOT NULL,  -- hardcoded 'anezka'
+  user_id TEXT NOT NULL,  -- profile ID from config (anezka, emilka, host, ...)
   session_id UUID REFERENCES sessions(id),
   question_id TEXT NOT NULL,
   question_stem TEXT NOT NULL,
@@ -90,7 +90,11 @@ CREATE TABLE attempts (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- RLS policies (allow all for single-user app)
+-- Indexes for user filtering
+CREATE INDEX idx_sessions_user_id ON sessions(user_id);
+CREATE INDEX idx_attempts_user_id ON attempts(user_id);
+
+-- RLS policies (allow all - no auth required)
 ALTER TABLE sessions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE attempts ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Allow all" ON sessions FOR ALL USING (true);
@@ -102,18 +106,24 @@ Full schema: `lib/supabase/schema.sql`
 ## Implementation
 
 ### Phase 1: Local cache ✅
-- `lib/storage/localStorage.ts` - localStorage provider
+- `lib/storage/localStorage.ts` - localStorage provider with user filtering
 - `lib/storage/types.ts` - shared TypeScript types
 - Fallback když Supabase není configured
 
 ### Phase 2: Supabase integration ✅ (2024-12-29)
-- `lib/supabase/client.ts` - Supabase client (hardcoded USER_ID)
-- `lib/storage/supabase.ts` - Supabase provider
+- `lib/supabase/client.ts` - Supabase client
+- `lib/storage/supabase.ts` - Supabase provider with user filtering
 - `lib/storage/index.ts` - auto-select provider based on config
 - `lib/supabase/schema.sql` - database schema
 - `app/.env.local` - credentials (not in git)
 
-### Phase 3: Analytics views (TODO)
+### Phase 3: Multi-user support ✅ (2024-12-29)
+- `app/src/config/profiles.ts` - profile definitions
+- `lib/storage/localStorage.ts` - `setCurrentUserId()`, `getCurrentUserId()`
+- `lib/storage/supabase.ts` - uses `getCurrentUserId()` for all queries
+- All storage operations filter by `user_id`
+
+### Phase 4: Analytics views (TODO)
 - Dashboard pro rodiče/tutora
 - SQL queries pro analýzu v Supabase dashboard
 
@@ -138,23 +148,25 @@ Full schema: `lib/supabase/schema.sql`
 
 **Positive:**
 - Kompletní data pro analýzu problémových oblastí
-- Otec vidí pokrok v Supabase dashboardu
-- Anežka nic nepozná - prostě cvičí
+- Otec vidí pokrok v Supabase dashboardu (může filtrovat podle user_id)
+- Děti nic nepoznají - prostě cvičí pod svým profilem
 - Jednoduchá implementace bez auth komplexity
+- Multi-user podpora s izolací dat
 
 **Negative:**
 - Závislost na externím service (Supabase)
-- Single-user only (hardcoded user_id)
 - Credentials v env vars (musí být při buildu)
+- Profily definovány v kódu (potřeba redeploy pro změnu)
 
 ## Resolved Questions
 
-1. ~~Auth flow~~ → Bez auth, hardcoded user_id = 'anezka'
-2. ~~Multi-user~~ → Single-user pro teď, rozšířitelné později
-3. Dashboard → Supabase Table Editor + SQL queries
+1. ~~Auth flow~~ → Bez auth, profile selection only
+2. ~~Multi-user~~ → ✅ Implemented via [ADR-032](ADR-032-multi-user-profiles.md)
+3. Dashboard → Supabase Table Editor + SQL queries (filter by user_id)
 
 ## Related
 
 - [ADR-014](ADR-014-unified-content-format.md) - Question format (question_id, topic)
 - [ADR-022](ADR-022-multi-mode-questions.md) - Modes (numeric, type_recognition)
+- [ADR-032](ADR-032-multi-user-profiles.md) - Multi-user profiles (user_id source)
 - [PDR-001](PDR-001-psychological-safety-review.md) - No scores in UI

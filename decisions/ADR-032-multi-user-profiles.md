@@ -1,7 +1,7 @@
 # ADR-032: Multi-user Profiles
 
 **Date:** 2024-12-29
-**Status:** Accepted
+**Status:** Implemented
 **Role:** Architect
 
 ## Context
@@ -21,9 +21,12 @@ The app is currently single-user (implicitly Anežka). We need to support multip
 │                                         │
 │     "Kdo dnes prozkoumává?"            │
 │                                         │
-│  ┌─────────┐ ┌─────────┐ ┌─────────┐   │
-│  │ Anežka  │ │  Petr   │ │  Marie  │   │
-│  └─────────┘ └─────────┘ └─────────┘   │
+│  ┌─────────┐ ┌─────────┐               │
+│  │ Anežka  │ │ Emilka  │               │
+│  └─────────┘ └─────────┘               │
+│       ┌─────────┐                       │
+│       │  Host   │                       │
+│       └─────────┘                       │
 │                                         │
 └─────────────────────────────────────────┘
           │
@@ -50,12 +53,13 @@ Profiles are defined in app configuration (not created in UI):
 
 ```typescript
 // src/config/profiles.ts
-export const PROFILES = [
+export const PROFILES: Profile[] = [
   { id: 'anezka', name: 'Anežka' },
-  { id: 'petr', name: 'Petr' },
-] as const
+  { id: 'emilka', name: 'Emilka' },
+  { id: 'host', name: 'Host' },
+]
 
-export type ProfileId = typeof PROFILES[number]['id']
+export type ProfileId = string
 ```
 
 ### User Context
@@ -102,22 +106,27 @@ After:
 - Explicit "switch user" action clears localStorage and returns to ProfilePicker
 - "Hard reset" = clear localStorage or use "Změnit uživatele" option
 
-## Implementation Plan
+## Implementation
 
-### Phase 1: Core Infrastructure
-1. Create `src/config/profiles.ts` with profile definitions
-2. Create `ProfilePicker` component (HOME template variant)
-3. Add user context to App.tsx
-4. Update App routing: ProfilePicker → TopicSelector
+### Phase 1: Core Infrastructure ✅
+1. Created `src/config/profiles.ts` with profile definitions
+2. Created `ProfilePicker` component (HOME template variant)
+3. Added user context to App.tsx
+4. Updated App routing: ProfilePicker → TopicSelector
 
-### Phase 2: Storage Integration
-1. Pass `user_id` to all storage operations
-2. Update `useAttempts` hook to accept user context
-3. Migrate existing data to first profile (anezka)
+### Phase 2: Storage Integration ✅
+1. `setCurrentUserId()` called when profile selected
+2. `lib/storage/localStorage.ts` filters by `currentUserId`
+3. `lib/storage/supabase.ts` uses `getCurrentUserId()` for all queries
+4. Existing data remains under 'anezka' user_id
 
-### Phase 3: UI Polish
-1. Add "Změnit uživatele" option (accessible from somewhere)
-2. Optional: Add profile avatars/colors
+### Phase 3: UI Polish ✅
+1. "Změnit" button in TopicSelector header (top-right)
+2. Current user name displayed next to switch button
+
+### Phase 4: Future Enhancements (TODO)
+1. Optional: Add profile avatars/colors
+2. Optional: Add profile-specific theme colors
 
 ## New Components
 
@@ -137,12 +146,11 @@ After:
 
 ## Migration
 
-Existing localStorage data will be associated with first configured profile:
+Existing Supabase data remains under `user_id = 'anezka'`:
 
-```
-tutor_progress → tutor_progress_anezka
-tutor_attempts → tutor_attempts_anezka
-```
+- No schema changes needed (user_id column already exists)
+- New profiles start fresh (no existing data)
+- Anežka's historical data preserved
 
 ## Future Considerations
 
@@ -153,5 +161,5 @@ tutor_attempts → tutor_attempts_anezka
 
 ## Related ADRs
 
+- [ADR-023](ADR-023-answer-persistence.md) - Storage layer with user_id support
 - [ADR-031](ADR-031-unified-page-layout.md) - Page templates (ProfilePicker uses HOME variant)
-- Storage ADR (TBD) - Data persistence layer with user_id support

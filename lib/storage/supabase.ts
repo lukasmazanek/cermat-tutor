@@ -1,11 +1,13 @@
 /**
  * ADR-023 Phase 2: Supabase Storage Provider (Simplified)
+ * ADR-032: Multi-user support
  *
- * Single-user setup - uses hardcoded USER_ID.
+ * Uses dynamic currentUserId from localStorage module.
  * No authentication required.
  */
 
-import { getSupabaseClient, USER_ID } from '../supabase'
+import { getSupabaseClient } from '../supabase'
+import { getCurrentUserId } from './localStorage'
 import {
   AttemptRecord,
   SessionRecord,
@@ -31,7 +33,7 @@ class SupabaseStorageProvider implements StorageProvider {
     const { data, error } = await client
       .from('attempts')
       .select('*')
-      .eq('user_id', USER_ID)
+      .eq('user_id', getCurrentUserId())
       .order('created_at', { ascending: false })
 
     if (error) throw error
@@ -42,7 +44,7 @@ class SupabaseStorageProvider implements StorageProvider {
     const client = this.getClient()
 
     const attempt = {
-      user_id: USER_ID,
+      user_id: getCurrentUserId(),
       session_id: this.currentSessionId,
       ...input,
       created_at: new Date().toISOString()
@@ -64,7 +66,7 @@ class SupabaseStorageProvider implements StorageProvider {
     const { data, error } = await client
       .from('attempts')
       .select('*')
-      .eq('user_id', USER_ID)
+      .eq('user_id', getCurrentUserId())
       .eq('question_id', questionId)
       .order('created_at', { ascending: false })
 
@@ -78,7 +80,7 @@ class SupabaseStorageProvider implements StorageProvider {
     const { data, error } = await client
       .from('attempts')
       .select('*')
-      .eq('user_id', USER_ID)
+      .eq('user_id', getCurrentUserId())
       .eq('topic', topic)
       .order('created_at', { ascending: false })
 
@@ -94,7 +96,7 @@ class SupabaseStorageProvider implements StorageProvider {
     const { data, error } = await client
       .from('attempts')
       .select('*')
-      .eq('user_id', USER_ID)
+      .eq('user_id', getCurrentUserId())
       .gte('created_at', cutoff.toISOString())
       .order('created_at', { ascending: false })
 
@@ -110,7 +112,7 @@ class SupabaseStorageProvider implements StorageProvider {
     const { data, error } = await client
       .from('sessions')
       .select('*')
-      .eq('user_id', USER_ID)
+      .eq('user_id', getCurrentUserId())
       .order('started_at', { ascending: false })
 
     if (error) throw error
@@ -121,7 +123,7 @@ class SupabaseStorageProvider implements StorageProvider {
     const client = this.getClient()
 
     const session = {
-      user_id: USER_ID,
+      user_id: getCurrentUserId(),
       topic,
       started_at: new Date().toISOString(),
       ended_at: null,
@@ -182,7 +184,7 @@ class SupabaseStorageProvider implements StorageProvider {
     const { data: attempts, error } = await client
       .from('attempts')
       .select('topic, is_correct, hints_used, time_spent_ms')
-      .eq('user_id', USER_ID)
+      .eq('user_id', getCurrentUserId())
 
     if (error) throw error
     if (!attempts || attempts.length === 0) return []
