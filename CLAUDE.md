@@ -15,6 +15,8 @@ MVP deployed. Analyzing math test mistakes to identify error patterns and create
 - `/architect` - Switch to Learning Experience Architect role (app design, UX for anxious learners)
 - `/test` - Switch to Senior QA Tester role (web app testing, UX consistency)
 
+> **CRITICAL - `/architect` role:** Upon activation, MUST load `decisions/README.md` (ADR/EDR index) to understand existing architectural and educational decisions. When the task relates to a specific decision topic, load the full ADR/EDR/PDR file(s). Never propose changes that contradict existing decisions without explicitly acknowledging the conflict.
+
 ## Student Profile
 - **Name**: Anezka Mazankova
 - **Grade**: 9th (preparing for high school entrance exams)

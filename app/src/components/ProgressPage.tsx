@@ -1,8 +1,19 @@
+/**
+ * ADR-030: Progress Page with Psychological Safety Design
+ *
+ * Key principles:
+ * - Lead with GROWTH, not state
+ * - Sort by EFFORT, not accuracy
+ * - Celebrate CONSISTENCY
+ * - Normalize HINTS as learning tools
+ * - Remove PERCENTAGES (trigger school anxiety)
+ */
+
 import { useState, useMemo, useEffect } from 'react'
 import questionsData from '../data/questions.json'
 import BottomBar from './BottomBar'
-import { Session, QuestionsData } from '../types'
-import { getAttempts, getTopicStats, AttemptRecord, TopicStats } from '../hooks/useAttempts'
+import { QuestionsData } from '../types'
+import { getAttempts, AttemptRecord } from '../hooks/useAttempts'
 
 const data = questionsData as QuestionsData
 
@@ -11,93 +22,121 @@ interface ProgressPageProps {
 }
 
 function ProgressPage({ onBack }: ProgressPageProps) {
-  const [selectedTopic, setSelectedTopic] = useState('all')
-  const [topicStats, setTopicStats] = useState<TopicStats[]>([])
   const [allAttempts, setAllAttempts] = useState<AttemptRecord[]>([])
+  const [isLoading, setIsLoading] = useState(true)
 
-  // ADR-023: Load attempt data
   useEffect(() => {
-    const loadAttemptData = async () => {
-      const stats = await getTopicStats()
+    const loadData = async () => {
       const attempts = await getAttempts()
-      setTopicStats(stats)
       setAllAttempts(attempts)
+      setIsLoading(false)
     }
-    loadAttemptData()
+    loadData()
   }, [])
 
-  // Recent attempts for display (last 20, newest first)
-  const recentAttempts = allAttempts.slice(-20).reverse()
+  // Calculate streak (consecutive days with activity)
+  const streak = useMemo(() => {
+    if (allAttempts.length === 0) return 0
 
-  // Load progress data from localStorage
-  const progressData = useMemo((): Session[] => {
-    try {
-      const raw = JSON.parse(localStorage.getItem('tutor_progress') || '[]') as Session[]
-      return raw
-    } catch {
-      return []
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+
+    // Get unique days with activity
+    const activeDays = new Set<string>()
+    allAttempts.forEach(a => {
+      const date = new Date(a.created_at)
+      date.setHours(0, 0, 0, 0)
+      activeDays.add(date.toISOString())
+    })
+
+    // Count consecutive days from today backwards
+    let count = 0
+    const checkDate = new Date(today)
+
+    while (true) {
+      const dateStr = checkDate.toISOString()
+      if (activeDays.has(dateStr)) {
+        count++
+        checkDate.setDate(checkDate.getDate() - 1)
+      } else if (count === 0) {
+        // If today has no activity, check if yesterday started a streak
+        checkDate.setDate(checkDate.getDate() - 1)
+        if (!activeDays.has(checkDate.toISOString())) break
+      } else {
+        break
+      }
     }
-  }, [])
 
-  // Filter sessions by topic
-  const filteredSessions = useMemo(() => {
-    if (selectedTopic === 'all') return progressData
-    return progressData.filter(s => s.topic === selectedTopic)
-  }, [progressData, selectedTopic])
+    return count
+  }, [allAttempts])
 
-  // Calculate stats - combine old session data with new attempt data
-  const stats = useMemo(() => {
-    // Old session-based stats
-    const sessions = filteredSessions
-    const oldExplored = sessions.reduce((sum, s) => sum + (s.problemsExplored || 0), 0)
-    const oldWithoutHints = sessions.reduce(
-      (sum, s) => sum + (s.sessionMetrics?.problemsWithoutHints || 0), 0
-    )
+  // Weekly comparison
+  const weeklyStats = useMemo(() => {
+    const now = new Date()
+    const thisWeekStart = new Date(now)
+    thisWeekStart.setDate(now.getDate() - now.getDay())
+    thisWeekStart.setHours(0, 0, 0, 0)
 
-    // New attempt-based stats (ADR-023) - use ALL attempts, not just recent
-    const filteredAttempts = selectedTopic === 'all'
-      ? allAttempts
-      : allAttempts.filter(a => a.topic === selectedTopic)
+    const lastWeekStart = new Date(thisWeekStart)
+    lastWeekStart.setDate(lastWeekStart.getDate() - 7)
 
-    // Use attempt data if available, otherwise fall back to old data
-    const totalExplored = filteredAttempts.length > 0
-      ? filteredAttempts.length
-      : oldExplored
-    const totalWithoutHints = filteredAttempts.length > 0
-      ? filteredAttempts.filter(a => a.hints_used === 0).length
-      : oldWithoutHints
-
-    const hintIndependenceRate = totalExplored > 0
-      ? Math.round((totalWithoutHints / totalExplored) * 100)
-      : 0
-
-    // Count unique sessions from attempts
-    const uniqueSessions = new Set(filteredAttempts.map(a => a.session_id))
+    const thisWeek = allAttempts.filter(a => new Date(a.created_at) >= thisWeekStart)
+    const lastWeek = allAttempts.filter(a => {
+      const date = new Date(a.created_at)
+      return date >= lastWeekStart && date < thisWeekStart
+    })
 
     return {
-      totalSessions: filteredAttempts.length > 0 ? uniqueSessions.size : sessions.length,
-      totalExplored,
-      totalWithoutHints,
-      hintIndependenceRate
+      thisWeek: thisWeek.length,
+      lastWeek: lastWeek.length,
+      difference: thisWeek.length - lastWeek.length,
+      total: allAttempts.length
     }
-  }, [filteredSessions, allAttempts, selectedTopic])
+  }, [allAttempts])
+
+  // Topic activity stats (sorted by activity, not accuracy)
+  const topicActivity = useMemo(() => {
+    const byTopic = new Map<string, AttemptRecord[]>()
+
+    allAttempts.forEach(a => {
+      const list = byTopic.get(a.topic) || []
+      list.push(a)
+      byTopic.set(a.topic, list)
+    })
+
+    const stats = Array.from(byTopic.entries()).map(([topic, attempts]) => {
+      // Calculate trend (improving, stable, exploring)
+      const trend = calculateTrend(attempts)
+      const hintsHelped = attempts.filter(a => a.hints_used > 0 && a.is_correct).length
+
+      return {
+        topic,
+        count: attempts.length,
+        trend,
+        hintsHelped
+      }
+    })
+
+    // Sort by activity (most practiced first)
+    return stats.sort((a, b) => b.count - a.count)
+  }, [allAttempts])
 
   // Get topic name
   const getTopicName = (topicId: string): string => {
-    if (topicId === 'mixed') return 'Mix'
     return data.topics[topicId]?.name_cs || topicId
   }
 
-  // Format date for display
-  const formatDate = (dateString: string): string => {
-    const date = new Date(dateString)
-    return date.toLocaleDateString('cs-CZ', { day: 'numeric', month: 'short' })
+  if (isLoading) {
+    return (
+      <div className="h-screen h-[100dvh] bg-slate-50 flex items-center justify-center">
+        <div className="text-slate-400">Načítám...</div>
+      </div>
+    )
   }
 
   return (
     <div className="h-screen h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
-      {/* ADR-010 mobile-safe pattern */}
-      <div className="flex-1 min-h-0 overflow-y-auto max-w-2xl mx-auto w-full px-4 py-6 pb-20">
+      <div className="flex-1 min-h-0 overflow-y-auto max-w-2xl mx-auto w-full px-4 py-6 pb-24">
         {/* Header */}
         <div className="mb-6">
           <h1 className="text-2xl font-semibold text-slate-800">
@@ -108,92 +147,33 @@ function ProgressPage({ onBack }: ProgressPageProps) {
           </p>
         </div>
 
-        {/* Topic filter */}
-        <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
-          <button
-            onClick={() => setSelectedTopic('all')}
-            className={`px-4 py-2 min-h-[44px] rounded-full text-sm font-medium whitespace-nowrap transition-gentle active:scale-[0.98]
-              ${selectedTopic === 'all'
-                ? 'bg-safe-blue text-white'
-                : 'bg-white text-slate-600 border border-slate-200'
-              }`}
-          >
-            Vše
-          </button>
-          {Object.keys(data.topics).map(topicId => (
-            <button
-              key={topicId}
-              onClick={() => setSelectedTopic(topicId)}
-              className={`px-4 py-2 min-h-[44px] rounded-full text-sm font-medium whitespace-nowrap transition-gentle active:scale-[0.98]
-                ${selectedTopic === topicId
-                  ? 'bg-safe-blue text-white'
-                  : 'bg-white text-slate-600 border border-slate-200'
-                }`}
-            >
-              {data.topics[topicId].name_cs}
-            </button>
-          ))}
-        </div>
-
-        {/* Summary cards */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
-          <div className="bg-white rounded-xl p-4 shadow-sm">
-            <div className="text-3xl font-bold text-safe-blue">
-              {stats.totalExplored}
-            </div>
-            <div className="text-sm text-slate-500">úloh prozkoumáno</div>
-          </div>
-
-          <div className="bg-white rounded-xl p-4 shadow-sm">
-            <div className="text-3xl font-bold text-purple-600">
-              {stats.totalSessions}
-            </div>
-            <div className="text-sm text-slate-500">cvičení</div>
-          </div>
-
-          {/* Hint independence - key metric */}
-          <div className="col-span-2 bg-green-50 rounded-xl p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-3xl font-bold text-green-600">
-                  {stats.totalWithoutHints}
-                </div>
-                <div className="text-sm text-green-700">
-                  samostatně vyřešeno
-                </div>
-              </div>
-              {stats.totalExplored > 0 && (
-                <div className="text-right">
-                  <div className="text-2xl font-bold text-green-600">
-                    {stats.hintIndependenceRate}%
-                  </div>
-                  <div className="text-xs text-green-600">
-                    bez nápovědy
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* Progress timeline */}
-        <ProgressTimeline sessions={filteredSessions} />
-
-        {/* Session list */}
-        <SessionList sessions={filteredSessions} getTopicName={getTopicName} formatDate={formatDate} />
-
-        {/* ADR-023: Topic accuracy breakdown */}
-        {topicStats.length > 0 && (
-          <TopicAccuracySection stats={topicStats} getTopicName={getTopicName} />
+        {/* Streak - only show if active */}
+        {streak > 0 && (
+          <StreakBanner streak={streak} />
         )}
 
-        {/* ADR-023: Recent attempts */}
-        {recentAttempts.length > 0 && (
-          <RecentAttemptsSection attempts={recentAttempts} getTopicName={getTopicName} />
+        {/* Weekly comparison */}
+        <WeeklyComparison stats={weeklyStats} />
+
+        {/* Topic activity */}
+        {topicActivity.length > 0 && (
+          <TopicActivitySection
+            topics={topicActivity}
+            getTopicName={getTopicName}
+          />
+        )}
+
+        {/* Hints helped */}
+        {allAttempts.length > 0 && (
+          <HintsHelpedCard attempts={allAttempts} />
+        )}
+
+        {/* Empty state */}
+        {allAttempts.length === 0 && (
+          <EmptyState />
         )}
       </div>
 
-      {/* Bottom bar - ADR-009 */}
       <BottomBar
         slots={{
           1: { onClick: onBack },
@@ -203,266 +183,197 @@ function ProgressPage({ onBack }: ProgressPageProps) {
   )
 }
 
-// Progress timeline showing last 10 sessions
-interface ProgressTimelineProps {
-  sessions: Session[]
-}
+// Calculate trend without using "declining" - reframe as "exploring"
+function calculateTrend(attempts: AttemptRecord[]): 'improving' | 'stable' | 'exploring' {
+  if (attempts.length < 3) return 'exploring'
 
-function ProgressTimeline({ sessions }: ProgressTimelineProps) {
-  const recentSessions = sessions.slice(-10)
-
-  if (recentSessions.length < 2) {
-    return (
-      <div className="bg-white rounded-xl p-4 mb-6 shadow-sm text-center">
-        <p className="text-slate-500">
-          Pokračuj v práci a sleduj svůj růst!
-        </p>
-      </div>
-    )
-  }
-
-  const maxProblems = Math.max(...recentSessions.map(s => s.problemsExplored || 0))
-
-  return (
-    <div className="bg-white rounded-xl p-4 mb-6 shadow-sm">
-      <h3 className="text-sm font-medium text-slate-600 mb-4">
-        Poslední cvičení
-      </h3>
-      <div className="flex items-end gap-1 h-24">
-        {recentSessions.map((session, i) => {
-          const total = session.problemsExplored || 0
-          const withoutHints = session.sessionMetrics?.problemsWithoutHints || 0
-          const height = maxProblems > 0 ? (total / maxProblems) * 100 : 0
-          const hintHeight = total > 0 ? (withoutHints / total) * height : 0
-
-          return (
-            <div key={i} className="flex-1 flex flex-col justify-end">
-              <div
-                className="w-full bg-safe-blue/30 rounded-t relative"
-                style={{ height: `${height}%`, minHeight: height > 0 ? '4px' : '0' }}
-              >
-                <div
-                  className="absolute bottom-0 w-full bg-green-500 rounded-t"
-                  style={{ height: `${hintHeight}%` }}
-                />
-              </div>
-            </div>
-          )
-        })}
-      </div>
-      <div className="flex justify-between mt-2 text-xs text-slate-400">
-        <span>Starší</span>
-        <span>Dnes</span>
-      </div>
-      <div className="flex gap-4 mt-3 text-xs">
-        <div className="flex items-center gap-1">
-          <div className="w-3 h-3 bg-green-500 rounded" />
-          <span className="text-slate-500">Samostatně</span>
-        </div>
-        <div className="flex items-center gap-1">
-          <div className="w-3 h-3 bg-safe-blue/30 rounded" />
-          <span className="text-slate-500">S nápovědou</span>
-        </div>
-      </div>
-    </div>
+  // Sort by date, newest first
+  const sorted = [...attempts].sort(
+    (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
   )
+
+  const recent = sorted.slice(0, 5)
+  const older = sorted.slice(5, 10)
+
+  if (older.length < 2) return 'exploring'
+
+  const recentCorrect = recent.filter(a => a.is_correct).length / recent.length
+  const olderCorrect = older.filter(a => a.is_correct).length / older.length
+
+  if (recentCorrect > olderCorrect + 0.15) return 'improving'
+  if (recentCorrect < olderCorrect - 0.15) return 'exploring' // NOT "declining"!
+  return 'stable'
 }
 
-// Session list
-interface SessionListProps {
-  sessions: Session[]
-  getTopicName: (topicId: string) => string
-  formatDate: (dateString: string) => string
-}
-
-function SessionList({ sessions, getTopicName, formatDate }: SessionListProps) {
-  // Reverse to show newest first
-  const orderedSessions = [...sessions].reverse()
-
-  if (orderedSessions.length === 0) {
-    return (
-      <div className="text-center py-8 text-slate-500">
-        Zatím žádná cvičení. Začni prozkoumávat!
-      </div>
-    )
-  }
-
+// Streak banner component
+function StreakBanner({ streak }: { streak: number }) {
   return (
-    <div className="space-y-3">
-      <h3 className="text-sm font-medium text-slate-600">
-        Historie cvičení
-      </h3>
-      {orderedSessions.map((session, i) => (
-        <div key={i} className="bg-white rounded-xl p-4 shadow-sm">
-          <div className="flex justify-between items-start">
-            <div>
-              <div className="font-medium text-slate-800">
-                {session.problemsExplored} úloh
-              </div>
-              <div className="text-sm text-slate-500">
-                {getTopicName(session.topic)}
-              </div>
-            </div>
-            <div className="text-right">
-              <div className="text-sm text-green-600 font-medium">
-                {session.sessionMetrics?.problemsWithoutHints || 0} samostatně
-              </div>
-              <div className="text-xs text-slate-400">
-                {formatDate(session.date)}
-              </div>
-            </div>
+    <div className="bg-gradient-to-r from-amber-100 to-orange-100 rounded-2xl p-4 mb-4">
+      <div className="flex items-center gap-3">
+        <span className="text-3xl">🔥</span>
+        <div>
+          <div className="text-xl font-bold text-amber-800">
+            {streak} {streak === 1 ? 'den' : streak < 5 ? 'dny' : 'dní'} v řadě!
+          </div>
+          <div className="text-sm text-amber-700">
+            Skvělá práce, pokračuj!
           </div>
         </div>
-      ))}
-    </div>
-  )
-}
-
-// ADR-023: Topic accuracy visualization
-interface TopicAccuracySectionProps {
-  stats: TopicStats[]
-  getTopicName: (topicId: string) => string
-}
-
-function TopicAccuracySection({ stats, getTopicName }: TopicAccuracySectionProps) {
-  // Sort by accuracy (lowest first to highlight problem areas)
-  const sortedStats = [...stats].sort((a, b) => a.accuracy - b.accuracy)
-
-  return (
-    <div className="mt-6">
-      <h3 className="text-sm font-medium text-slate-600 mb-3">
-        Úspěšnost podle tématu
-      </h3>
-      <div className="space-y-3">
-        {sortedStats.map(stat => {
-          const accuracyPercent = Math.round(stat.accuracy * 100)
-          const isStruggling = accuracyPercent < 50
-          const isStrong = accuracyPercent >= 80
-
-          return (
-            <div key={stat.topic} className="bg-white rounded-xl p-4 shadow-sm">
-              <div className="flex justify-between items-center mb-2">
-                <span className="font-medium text-slate-800">
-                  {getTopicName(stat.topic)}
-                </span>
-                <span className={`text-sm font-medium ${
-                  isStrong ? 'text-green-600' : isStruggling ? 'text-amber-600' : 'text-slate-600'
-                }`}>
-                  {accuracyPercent}%
-                </span>
-              </div>
-
-              {/* Progress bar */}
-              <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-                <div
-                  className={`h-full transition-all ${
-                    isStrong ? 'bg-green-500' : isStruggling ? 'bg-amber-500' : 'bg-safe-blue'
-                  }`}
-                  style={{ width: `${accuracyPercent}%` }}
-                />
-              </div>
-
-              {/* Stats row */}
-              <div className="flex gap-4 mt-2 text-xs text-slate-500">
-                <span>{stat.total_attempts} pokusů</span>
-                <span>{stat.correct_count} správně</span>
-                {stat.avg_hints > 0 && (
-                  <span>⌀ {stat.avg_hints.toFixed(1)} nápověd</span>
-                )}
-              </div>
-            </div>
-          )
-        })}
       </div>
     </div>
   )
 }
 
-// ADR-023: Recent attempts list
-interface RecentAttemptsSectionProps {
-  attempts: AttemptRecord[]
-  getTopicName: (topicId: string) => string
+// Weekly comparison component
+interface WeeklyStats {
+  thisWeek: number
+  lastWeek: number
+  difference: number
+  total: number
 }
 
-function RecentAttemptsSection({ attempts, getTopicName }: RecentAttemptsSectionProps) {
-  const formatTime = (ms: number): string => {
-    if (ms < 1000) return '<1s'
-    const seconds = Math.round(ms / 1000)
-    if (seconds < 60) return `${seconds}s`
-    const minutes = Math.floor(seconds / 60)
-    const remainingSeconds = seconds % 60
-    return `${minutes}m ${remainingSeconds}s`
-  }
+function WeeklyComparison({ stats }: { stats: WeeklyStats }) {
+  const showComparison = stats.lastWeek > 0
 
-  const formatDateTime = (isoString: string): string => {
-    const date = new Date(isoString)
-    return date.toLocaleString('cs-CZ', {
-      day: 'numeric',
-      month: 'short',
-      hour: '2-digit',
-      minute: '2-digit'
-    })
-  }
+  return (
+    <div className="grid grid-cols-2 gap-3 mb-6">
+      {/* This week with growth indicator */}
+      <div className="bg-white rounded-2xl p-4 shadow-sm">
+        {showComparison && stats.difference !== 0 && (
+          <div className={`text-sm font-medium mb-1 ${
+            stats.difference > 0 ? 'text-green-600' : 'text-slate-400'
+          }`}>
+            {stats.difference > 0 ? `+${stats.difference} ↑` : `${stats.difference}`}
+          </div>
+        )}
+        <div className="text-3xl font-bold text-safe-blue">
+          {stats.thisWeek}
+        </div>
+        <div className="text-sm text-slate-500">
+          tento týden
+        </div>
+      </div>
 
-  const getModeLabel = (mode: string): string => {
-    switch (mode) {
-      case 'numeric': return 'Výpočet'
-      case 'lightning': return 'Blesk'
-      case 'type_recognition': return 'Rozpoznání'
-      default: return mode
+      {/* Total explored */}
+      <div className="bg-white rounded-2xl p-4 shadow-sm">
+        <div className="text-3xl font-bold text-purple-600">
+          {stats.total}
+        </div>
+        <div className="text-sm text-slate-500">
+          celkem prozkoumáno
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// Topic activity section (sorted by effort, not accuracy)
+interface TopicStat {
+  topic: string
+  count: number
+  trend: 'improving' | 'stable' | 'exploring'
+  hintsHelped: number
+}
+
+function TopicActivitySection({
+  topics,
+  getTopicName
+}: {
+  topics: TopicStat[]
+  getTopicName: (id: string) => string
+}) {
+  const maxCount = Math.max(...topics.map(t => t.count))
+
+  const getTrendDisplay = (trend: string) => {
+    switch (trend) {
+      case 'improving':
+        return { text: 'Zlepšuješ se', icon: '↑', color: 'text-green-600' }
+      case 'stable':
+        return { text: 'Stabilní', icon: '→', color: 'text-blue-600' }
+      case 'exploring':
+        return { text: 'Objevuješ', icon: '🔍', color: 'text-purple-600' }
+      default:
+        return { text: '', icon: '', color: '' }
     }
   }
 
   return (
-    <div className="mt-6">
-      <h3 className="text-sm font-medium text-slate-600 mb-3">
-        Poslední pokusy
-      </h3>
-      <div className="space-y-2">
-        {attempts.map(attempt => (
-          <div
-            key={attempt.id}
-            className={`bg-white rounded-xl p-3 shadow-sm border-l-4 ${
-              attempt.is_correct ? 'border-green-500' : 'border-amber-500'
-            }`}
-          >
-            <div className="flex justify-between items-start">
-              <div className="flex-1 min-w-0">
-                <div className="text-sm text-slate-800 truncate">
-                  {attempt.question_stem.substring(0, 60)}
-                  {attempt.question_stem.length > 60 ? '...' : ''}
-                </div>
-                <div className="flex gap-2 mt-1 text-xs text-slate-500">
-                  <span className="bg-slate-100 px-2 py-0.5 rounded">
-                    {getTopicName(attempt.topic)}
-                  </span>
-                  <span className="bg-slate-100 px-2 py-0.5 rounded">
-                    {getModeLabel(attempt.mode)}
-                  </span>
-                </div>
-              </div>
-              <div className="text-right ml-3 flex-shrink-0">
-                <div className={`text-sm font-medium ${
-                  attempt.is_correct ? 'text-green-600' : 'text-amber-600'
-                }`}>
-                  {attempt.is_correct ? '✓' : '○'}
-                </div>
-                <div className="text-xs text-slate-400">
-                  {formatTime(attempt.time_spent_ms)}
-                </div>
-              </div>
-            </div>
+    <div className="mb-6">
+      <h2 className="text-sm font-medium text-slate-600 mb-3">
+        Co prozkoumáváš
+      </h2>
+      <div className="space-y-3">
+        {topics.map(topic => {
+          const trend = getTrendDisplay(topic.trend)
+          const barWidth = (topic.count / maxCount) * 100
 
-            {/* Details row */}
-            <div className="flex justify-between items-center mt-2 pt-2 border-t border-slate-100 text-xs text-slate-400">
-              <span>
-                {attempt.hints_used > 0 ? `${attempt.hints_used} nápověd` : 'Bez nápovědy'}
-              </span>
-              <span>{formatDateTime(attempt.created_at)}</span>
+          return (
+            <div key={topic.topic} className="bg-white rounded-2xl p-4 shadow-sm">
+              <div className="flex justify-between items-start mb-2">
+                <div className="font-medium text-slate-800">
+                  {getTopicName(topic.topic)}
+                </div>
+                <div className={`text-sm font-medium ${trend.color}`}>
+                  {trend.icon} {trend.text}
+                </div>
+              </div>
+
+              {/* Activity bar (not accuracy!) */}
+              <div className="h-2 bg-slate-100 rounded-full overflow-hidden mb-2">
+                <div
+                  className="h-full bg-safe-blue rounded-full transition-all"
+                  style={{ width: `${barWidth}%` }}
+                />
+              </div>
+
+              <div className="text-xs text-slate-500">
+                {topic.count}× prozkoumáno
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
+    </div>
+  )
+}
+
+// Hints helped card - reframe hints as positive
+function HintsHelpedCard({ attempts }: { attempts: AttemptRecord[] }) {
+  const hintsHelped = attempts.filter(a => a.hints_used > 0 && a.is_correct).length
+  const totalWithHints = attempts.filter(a => a.hints_used > 0).length
+
+  if (totalWithHints === 0) return null
+
+  return (
+    <div className="bg-purple-50 rounded-2xl p-4 mb-6">
+      <div className="flex items-center gap-3">
+        <div className="text-2xl">💡</div>
+        <div>
+          <div className="font-medium text-purple-800">
+            Nápovědy ti pomohly
+          </div>
+          <div className="text-sm text-purple-600">
+            {hintsHelped}× ses díky nim naučila správný postup
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// Empty state
+function EmptyState() {
+  return (
+    <div className="text-center py-12">
+      <div className="text-4xl mb-4">🚀</div>
+      <h2 className="text-lg font-medium text-slate-700 mb-2">
+        Začni objevovat!
+      </h2>
+      <p className="text-slate-500">
+        Vyber si téma a prozkoumej první úlohy.
+        <br />
+        Tvůj pokrok se bude zobrazovat tady.
+      </p>
     </div>
   )
 }
