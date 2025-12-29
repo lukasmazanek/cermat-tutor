@@ -377,69 +377,82 @@ function ProblemCard({
       {promptPhase === 'done' && (
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 safe-area-pb">
           <div className="max-w-2xl mx-auto px-4 pt-2 pb-2">
-            {/* Virtual keyboard - mobile (4 rows, 5-6 columns based on extras) */}
+            {/* Virtual keyboard - mobile (ADR-025: 3-block layout) */}
             {isMobile && !solutionRevealed && (() => {
               const hasExtras = variableKey || answerUnit
+
+              // ADR-025: Block definitions
+              // Block 1 (gray): Numbers + comma + delete - FIXED position
+              // Block 2 (purple): Operators - FIXED position
+              // Block 3 (teal): Extras (unit, variable) - OPTIONAL
+
+              const handleKey = (key: string) => {
+                if (key === '⌫') {
+                  setUserAnswer(prev => prev.slice(0, -1))
+                } else if (key === ',') {
+                  setUserAnswer(prev => prev + '.')
+                } else if (key === '√') {
+                  setUserAnswer(prev => prev + '√(')
+                } else if (key === '÷') {
+                  setUserAnswer(prev => prev + '/')
+                } else if (key === '×') {
+                  setUserAnswer(prev => prev + '*')
+                } else if (key === '−') {
+                  setUserAnswer(prev => prev + '-')
+                } else {
+                  setUserAnswer(prev => prev + key)
+                }
+              }
+
+              // Key style based on block
+              const getKeyStyle = (key: string, block: 1 | 2 | 3) => {
+                const base = 'h-11 rounded-xl text-base font-medium transition-gentle active:scale-95'
+                if (key === '⌫') return `${base} bg-red-50 text-red-600`
+                if (block === 1) return `${base} bg-slate-100 text-slate-800`
+                if (block === 2) return `${base} bg-purple-100 text-purple-700`
+                if (block === 3) return `${base} bg-teal-100 text-teal-700`
+                return base
+              }
+
               return (
                 <div className={`grid gap-1 mb-2 ${hasExtras ? 'grid-cols-6' : 'grid-cols-5'}`}>
-                  {/* Row 1: 7 8 9 / ⌫ [var?] */}
-                  {['7', '8', '9', '/', '⌫', ...(hasExtras ? [variableKey || ''] : [])].map((key, i) => (
-                    key === '' ? <div key={`empty-${i}`} /> : (
-                      <button
-                        key={key}
-                        type="button"
-                        onClick={() => key === '⌫'
-                          ? setUserAnswer(prev => prev.slice(0, -1))
-                          : setUserAnswer(prev => prev + key)}
-                        className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
-                          ${key === '/' || key === variableKey ? 'bg-purple-100 text-purple-700' : key === '⌫' ? 'bg-red-50 text-red-600' : 'bg-slate-100 text-slate-800'}`}
-                      >
-                        {key === '/' ? '÷' : key}
-                      </button>
-                    )
-                  ))}
-                  {/* Row 2: 4 5 6 * ^ [unit?] */}
-                  {['4', '5', '6', '*', '^', ...(hasExtras ? [answerUnit || ''] : [])].map((key, i) => (
-                    key === '' ? <div key={`empty-${i}`} /> : (
-                      <button
-                        key={key}
-                        type="button"
-                        onClick={() => setUserAnswer(prev => prev + key)}
-                        className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
-                          ${key === '*' || key === '^' || key === answerUnit ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
-                      >
-                        {key === '*' ? '×' : key}
-                      </button>
-                    )
-                  ))}
-                  {/* Row 3: 1 2 3 - + [empty?] */}
-                  {['1', '2', '3', '-', '+', ...(hasExtras ? [''] : [])].map((key, i) => (
-                    key === '' ? <div key={`empty-${i}`} /> : (
-                      <button
-                        key={key}
-                        type="button"
-                        onClick={() => setUserAnswer(prev => prev + key)}
-                        className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
-                          ${key === '-' || key === '+' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
-                      >
-                        {key === '-' ? '−' : key}
-                      </button>
-                    )
-                  ))}
-                  {/* Row 4: 0 , √ ( ) [empty?] */}
-                  {['0', ',', '√', '(', ')', ...(hasExtras ? [''] : [])].map((key, i) => (
-                    key === '' ? <div key={`empty-${i}`} /> : (
-                      <button
-                        key={key}
-                        type="button"
-                        onClick={() => setUserAnswer(prev => prev + (key === ',' ? '.' : key === '√' ? '√(' : key))}
-                        className={`h-11 rounded-xl text-base font-medium transition-gentle active:scale-95
-                          ${key === '√' || key === '(' || key === ')' ? 'bg-purple-100 text-purple-700' : 'bg-slate-100 text-slate-800'}`}
-                      >
-                        {key}
-                      </button>
-                    )
-                  ))}
+                  {/* Row 1: Block1(7,8,9) Block2(÷,^) Block3([unit]) */}
+                  <button type="button" onClick={() => handleKey('7')} className={getKeyStyle('7', 1)}>7</button>
+                  <button type="button" onClick={() => handleKey('8')} className={getKeyStyle('8', 1)}>8</button>
+                  <button type="button" onClick={() => handleKey('9')} className={getKeyStyle('9', 1)}>9</button>
+                  <button type="button" onClick={() => handleKey('÷')} className={getKeyStyle('÷', 2)}>÷</button>
+                  <button type="button" onClick={() => handleKey('^')} className={getKeyStyle('^', 2)}>^</button>
+                  {hasExtras && (answerUnit
+                    ? <button type="button" onClick={() => handleKey(answerUnit)} className={getKeyStyle(answerUnit, 3)}>{answerUnit}</button>
+                    : <div />
+                  )}
+
+                  {/* Row 2: Block1(4,5,6) Block2(×,√) Block3([var]) */}
+                  <button type="button" onClick={() => handleKey('4')} className={getKeyStyle('4', 1)}>4</button>
+                  <button type="button" onClick={() => handleKey('5')} className={getKeyStyle('5', 1)}>5</button>
+                  <button type="button" onClick={() => handleKey('6')} className={getKeyStyle('6', 1)}>6</button>
+                  <button type="button" onClick={() => handleKey('×')} className={getKeyStyle('×', 2)}>×</button>
+                  <button type="button" onClick={() => handleKey('√')} className={getKeyStyle('√', 2)}>√</button>
+                  {hasExtras && (variableKey
+                    ? <button type="button" onClick={() => handleKey(variableKey)} className={getKeyStyle(variableKey, 3)}>{variableKey}</button>
+                    : <div />
+                  )}
+
+                  {/* Row 3: Block1(1,2,3) Block2(−,+) Block3(empty) */}
+                  <button type="button" onClick={() => handleKey('1')} className={getKeyStyle('1', 1)}>1</button>
+                  <button type="button" onClick={() => handleKey('2')} className={getKeyStyle('2', 1)}>2</button>
+                  <button type="button" onClick={() => handleKey('3')} className={getKeyStyle('3', 1)}>3</button>
+                  <button type="button" onClick={() => handleKey('−')} className={getKeyStyle('−', 2)}>−</button>
+                  <button type="button" onClick={() => handleKey('+')} className={getKeyStyle('+', 2)}>+</button>
+                  {hasExtras && <div />}
+
+                  {/* Row 4: Block1(0,,,⌫) Block2((,)) Block3(empty) */}
+                  <button type="button" onClick={() => handleKey('0')} className={getKeyStyle('0', 1)}>0</button>
+                  <button type="button" onClick={() => handleKey(',')} className={getKeyStyle(',', 1)}>,</button>
+                  <button type="button" onClick={() => handleKey('⌫')} className={getKeyStyle('⌫', 1)}>⌫</button>
+                  <button type="button" onClick={() => handleKey('(')} className={getKeyStyle('(', 2)}>(</button>
+                  <button type="button" onClick={() => handleKey(')')} className={getKeyStyle(')', 2)}>)</button>
+                  {hasExtras && <div />}
                 </div>
               )
             })()}

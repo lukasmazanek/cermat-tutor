@@ -1,6 +1,6 @@
 {
   "version": "4.0",
-  "generated": "2025-12-29T05:00:47.211Z",
+  "generated": "2025-12-29T05:17:43.905Z",
   "description": "ADR-022: Multi-mode questions with keyboard config",
   "topics": {
     "binomial_squares": {
