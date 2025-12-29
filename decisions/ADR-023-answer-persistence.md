@@ -1,7 +1,7 @@
 # ADR-023: Answer Persistence with Supabase
 
 **Date:** 2024-12-27
-**Status:** Implemented (2024-12-27)
+**Status:** Partially Implemented (Phase 1 only - localStorage cache)
 **Role:** Architect
 
 ## Context
