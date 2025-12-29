@@ -76,7 +76,7 @@ function TypeDrill({ onExit, onViewProgress }: TypeDrillProps) {
 
     // ADR-022: Filter questions that support type_recognition mode
     const typeDrillQuestions = data.questions
-      .filter(q => q.modes.type_recognition && q.question.context)
+      .filter(q => q.modes.type_recognition && (q.question.context || q.question.stem))
       .map(prepareTypeDrillQuestion)
 
     const shuffled = [...typeDrillQuestions].sort(() => Math.random() - 0.5)
@@ -218,8 +218,8 @@ function TypeDrill({ onExit, onViewProgress }: TypeDrillProps) {
     )
   }
 
-  // UNIFIED FORMAT: Get question context
-  const questionContext = currentQuestion.question.context || ''
+  // UNIFIED FORMAT: Get question context (context OR stem)
+  const questionContext = currentQuestion.question.context || currentQuestion.question.stem || ''
   const typeLabel = currentQuestion.meta.type_label || ''
   const correctStrategy = currentQuestion.solution.strategy || ''
   const explanation = currentQuestion.hints[0] || ''
