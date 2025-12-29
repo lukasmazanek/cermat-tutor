@@ -1,6 +1,7 @@
 import { BoltIcon, FireIcon, ClockIcon } from '@heroicons/react/24/solid'
 import BottomBar from '../BottomBar'
 import { LightningStats } from './types'
+import { calculatePercentage, formatTimeSeconds } from '../../lib/mathUtils'
 
 interface SummaryProps {
   stats: LightningStats
@@ -10,8 +11,9 @@ interface SummaryProps {
 }
 
 function Summary({ stats, onRestart, onExit, onViewProgress }: SummaryProps) {
-  const percentage = Math.round((stats.correct / stats.total) * 100)
-  const avgTimeSeconds = (stats.avgTimeMs / 1000).toFixed(1)
+  // ADR-029: Use centralized math utilities
+  const percentage = calculatePercentage(stats.correct, stats.total)
+  const avgTimeSeconds = formatTimeSeconds(stats.avgTimeMs)
 
   return (
     <div className="h-screen h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">

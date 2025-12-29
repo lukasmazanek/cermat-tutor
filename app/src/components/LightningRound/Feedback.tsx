@@ -1,5 +1,6 @@
-import { CheckIcon, LightBulbIcon, FireIcon } from '@heroicons/react/24/solid'
+import { CheckIcon, LightBulbIcon } from '@heroicons/react/24/solid'
 import QuestionDisplay from '../QuestionDisplay'
+import StreakBadge from '../StreakBadge'
 import { getSolutionData } from '../../lib/questionUtils'
 import { LightningQuestion } from './types'
 
@@ -28,12 +29,8 @@ function Feedback({ question, selectedAnswer, isCorrect, streak }: FeedbackProps
         <p className={`text-2xl font-bold text-green-700 mb-2 ${isTypeRecognition ? 'font-mono' : ''}`}>
           {question.displayCorrect}
         </p>
-        {streak >= 3 && (
-          <div className="flex items-center gap-1 text-orange-500">
-            <FireIcon className="w-5 h-5" />
-            <span className="font-bold">{streak}</span>
-          </div>
-        )}
+        {/* ADR-029: Centralized StreakBadge */}
+        <StreakBadge streak={streak} />
       </div>
     )
   }

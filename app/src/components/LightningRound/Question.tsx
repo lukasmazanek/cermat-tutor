@@ -1,6 +1,6 @@
-import { FireIcon } from '@heroicons/react/24/solid'
 import { TagIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
 import QuestionDisplay from '../QuestionDisplay'
+import StreakBadge from '../StreakBadge'
 import { LightningQuestion } from './types'
 
 interface QuestionProps {
@@ -16,13 +16,8 @@ function Question({ question, onAnswer, streak }: QuestionProps) {
 
   return (
     <div className="p-4">
-      {/* Streak indicator - only show when >= 3 */}
-      {streak >= 3 && (
-        <div className="flex items-center justify-center gap-1 mb-3">
-          <FireIcon className="w-5 h-5 text-orange-500" />
-          <span className="text-orange-600 font-bold">{streak}</span>
-        </div>
-      )}
+      {/* Streak indicator - ADR-029: Centralized StreakBadge */}
+      <StreakBadge streak={streak} className="mb-3" />
 
       {/* Type recognition badge */}
       {isTypeRecognition && (

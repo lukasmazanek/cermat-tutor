@@ -1,6 +1,7 @@
 import { AcademicCapIcon } from '@heroicons/react/24/outline'
 import BottomBar from '../BottomBar'
 import { TypeDrillResult, TypeDrillQuestion } from './types'
+import { calculatePercentage, calculateAverage, formatTimeSeconds } from '../../lib/mathUtils'
 
 interface SummaryProps {
   results: TypeDrillResult[]
@@ -17,12 +18,13 @@ function Summary({ results, questions: _questions, onExit, onViewProgress, onRes
   const strategyCorrect = results.filter(r => r.strategyCorrect).length
   const bothCorrect = results.filter(r => r.typeCorrect && r.strategyCorrect).length
 
-  const typePercentage = Math.round((typeCorrect / totalQuestions) * 100)
-  const strategyPercentage = Math.round((strategyCorrect / totalQuestions) * 100)
-  const overallPercentage = Math.round((bothCorrect / totalQuestions) * 100)
+  // ADR-029: Use centralized math utilities
+  const typePercentage = calculatePercentage(typeCorrect, totalQuestions)
+  const strategyPercentage = calculatePercentage(strategyCorrect, totalQuestions)
+  const overallPercentage = calculatePercentage(bothCorrect, totalQuestions)
 
   // Average time
-  const avgTime = Math.round(results.reduce((sum, r) => sum + r.timeSpent, 0) / totalQuestions / 1000 * 10) / 10
+  const avgTime = formatTimeSeconds(calculateAverage(results.map(r => r.timeSpent)))
 
   // Encouraging message based on performance
   const getMessage = (): string => {
