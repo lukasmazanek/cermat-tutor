@@ -1,7 +1,7 @@
 # ADR-016: Unified Answer Field
 
 ## Status
-Accepted
+Implemented (2024-12-25)
 
 ## Date
 2024-12-25

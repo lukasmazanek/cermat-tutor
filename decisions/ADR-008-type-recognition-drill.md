@@ -1,7 +1,7 @@
 # ADR-008: Type Recognition Drill
 
 **Date:** 2024-12-25
-**Status:** Accepted
+**Status:** Implemented (2024-12-25)
 **Type:** Feature/Training
 **Related:** [EDR-004](EDR-004-problem-taxonomy.md)
 

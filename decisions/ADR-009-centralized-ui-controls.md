@@ -1,7 +1,7 @@
 # ADR-009: Centralized UI Controls
 
 **Date:** 2024-12-25
-**Status:** Accepted
+**Status:** Implemented (2024-12-25)
 **Type:** Architecture/UI
 **Related:** [ADR-006](ADR-006-ui-zones-layout.md), [ADR-008](ADR-008-type-recognition-drill.md)
 

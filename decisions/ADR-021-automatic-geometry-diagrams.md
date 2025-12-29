@@ -1,7 +1,7 @@
 # ADR-021: Automatic Geometry Diagrams
 
 ## Status
-Accepted
+Implemented (2024-12-27)
 
 ## Date
 2024-12-27

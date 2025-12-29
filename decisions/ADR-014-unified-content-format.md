@@ -1,7 +1,7 @@
 # ADR-014: Unified Content Format
 
 ## Status
-Accepted
+Implemented (2024-12-25)
 
 ## Date
 2024-12-25

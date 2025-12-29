@@ -1,7 +1,7 @@
 # ADR-013: Single Source of Truth for Data
 
 ## Status
-Accepted
+Implemented (2024-12-25)
 
 ## Date
 2024-12-25

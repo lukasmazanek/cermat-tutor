@@ -1,7 +1,7 @@
 # ADR-010: Mobile-Safe Layout Pattern
 
 ## Status
-Accepted
+Implemented (2024-12-25)
 
 ## Date
 2024-12-25

@@ -1,7 +1,7 @@
 # ADR-006: UI Zones Layout
 
 **Date:** 2024-12-24
-**Status:** Accepted
+**Status:** Implemented (2024-12-24)
 **Type:** UI/UX
 **Component:** ProblemCard.jsx
 

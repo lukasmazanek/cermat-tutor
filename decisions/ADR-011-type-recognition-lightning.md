@@ -1,7 +1,7 @@
 # ADR-011: Type Recognition Questions in Lightning Round
 
 ## Status
-Accepted
+Implemented (2024-12-25)
 
 ## Date
 2024-12-25

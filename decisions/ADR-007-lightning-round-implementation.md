@@ -1,7 +1,7 @@
 # ADR-007: Lightning Round Implementation
 
 **Date:** 2024-12-24
-**Status:** Accepted
+**Status:** Implemented (2024-12-24)
 **Type:** Feature/UX
 **Related:** [EDR-002](EDR-002-lightning-round.md)
 

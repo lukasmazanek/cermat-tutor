@@ -1,7 +1,7 @@
 # ADR-005: Progressive Hints System
 
 **Date:** 2024-12-24
-**Status:** Accepted
+**Status:** Implemented (2024-12-24)
 **Type:** UX/Educational
 **Component:** ProblemCard.jsx
 

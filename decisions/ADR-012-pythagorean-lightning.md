@@ -1,7 +1,7 @@
 # ADR-012: Pythagorean Theorem in Lightning Round
 
 ## Status
-Accepted
+Implemented (2024-12-25)
 
 ## Date
 2024-12-25

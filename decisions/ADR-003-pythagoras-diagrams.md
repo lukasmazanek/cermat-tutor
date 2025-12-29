@@ -1,7 +1,7 @@
 # ADR-003: Pythagoras Diagrams
 
 **Date:** 2024-12-24
-**Status:** Accepted
+**Status:** Implemented (2024-12-24)
 **Type:** UI/Content
 **Component:** ProblemCard, new DiagramRenderer
 

@@ -1,7 +1,7 @@
 # ADR-004: Compact Mobile Keyboard
 
 **Date:** 2024-12-24
-**Status:** Accepted
+**Status:** Implemented (2024-12-24)
 **Type:** UI/UX
 **Component:** ProblemCard.jsx
 

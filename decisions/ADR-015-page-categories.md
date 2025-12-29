@@ -1,7 +1,7 @@
 # ADR-015: Page Categories and Layout Templates
 
 ## Status
-Accepted
+Implemented (2024-12-25)
 
 ## Date
 2024-12-25

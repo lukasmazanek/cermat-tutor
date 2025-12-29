@@ -1,7 +1,7 @@
 # ADR-002: Desktop Math Symbol Input
 
 **Date:** 2024-12-24
-**Status:** Accepted
+**Status:** Implemented (2024-12-24)
 **Type:** UI/UX
 **Component:** ProblemCard
 

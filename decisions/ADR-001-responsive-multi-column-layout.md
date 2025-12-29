@@ -1,7 +1,7 @@
 # ADR-001: Responsive Multi-Column Layout
 
 **Date:** 2024-12-24
-**Status:** Accepted
+**Status:** Implemented (2024-12-24)
 **Type:** UI/Architecture
 **Component:** ProblemCard, LightningRound
 
