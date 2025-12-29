@@ -2,7 +2,7 @@
 
 This directory contains all Educational Decision Records (EDRs) for the Tutor project.
 
-**Total:** 4 EDRs + 23 ADRs + 2 PDRs | **Format:** One file per record | **Naming:** `EDR-XXX-slug.md`, `ADR-XXX-slug.md`, or `PDR-XXX-slug.md`
+**Total:** 4 EDRs + 25 ADRs + 2 PDRs | **Format:** One file per record | **Naming:** `EDR-XXX-slug.md`, `ADR-XXX-slug.md`, or `PDR-XXX-slug.md`
 
 ---
 
@@ -64,6 +64,8 @@ This directory contains all Educational Decision Records (EDRs) for the Tutor pr
 | [ADR-021](ADR-021-automatic-geometry-diagrams.md) | Automatic Geometry Diagrams | Accepted | Auto-generate diagrams for pythagorean questions |
 | [ADR-022](ADR-022-multi-mode-questions.md) | Multi-Mode Questions | Accepted | modes.numeric + modes.type_recognition + auto labels |
 | [ADR-023](ADR-023-answer-persistence.md) | Answer Persistence | Accepted | Supabase + local-first sync for multi-user analytics |
+| [ADR-024](ADR-024-si-units.md) | SI Units | Accepted | Standardized units (h, d, cm², m²) for answers |
+| [ADR-025](ADR-025-keyboard-block-layout.md) | Keyboard Block Layout | Accepted | 3-block keyboard: Numbers (fixed) + Operators (fixed) + Extras (optional) |
 
 ---
 

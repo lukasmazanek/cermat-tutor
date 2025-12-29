@@ -131,19 +131,52 @@ Full profile: `data/psychology/profiles/anezka_mazankova.json`
 |------|------|--------------|
 | 2024-12-24 | Parent consultation (Father) | Pressure internal, not external. Verbatim self-critical statements obtained. Assigned "Chyba dne" + comparison interventions. |
 
+## Current Topics & Question Bank
+
+**Total: 152 questions** across 9 topics (as of 2025-12-29)
+
+| Topic | Name (CS) | Questions | Type | Notes |
+|-------|-----------|-----------|------|-------|
+| `averages` | Průměry | 11 | Practice | Basic + weighted average |
+| `binomial_squares` | Umocňování (a±b)² | 8 | Critical | Middle term errors |
+| `equations` | Lineární rovnice | 10 | Strength | ~70-80% success |
+| `fractions` | Zlomky | 10 | Strength | Basic operations |
+| `o_x_vice` | o X více/méně | 58 | Critical | Misconception focus |
+| `pythagorean` | Pythagorova věta | 34 | Strength | With diagrams |
+| `sequences` | Posloupnosti | 5 | Critical | Pattern recognition |
+| `unit_conversions` | Převody jednotek | 8 | Critical | m²↔cm², etc. |
+| `work_problems` | Úlohy o práci | 8 | Practice | Inverse proportion |
+
+**Data location:** `data/source/content/*.json` → `data/generated/questions.json` → `app/src/data/questions.json`
+
 ## File Structure
 ```
 .claude/
   commands/
     psycholog.md     # Child psychologist role (20+ years)
+    architect.md     # Learning Experience Architect
+    test.md          # Senior QA Tester
+    tutor.md         # Expert Tutor
 
 decisions/           # Educational Decision Records (EDRs)
   README.md          # Index with categories and template
   EDR-001-*.md       # Individual decision records
+  ADR-001-*.md       # Architecture Decision Records
+  PDR-001-*.md       # Psychological Decision Records
 
 data/
-  problems/          # Problem bank for MVP
-    problem_bank.json  # 30 problems: equations, fractions, "o X více"
+  source/content/    # Source JSON files (single source of truth)
+    averages.json
+    binomial_squares.json
+    equations.json
+    fractions.json
+    o_x_vice.json
+    pythagorean.json
+    sequences.json
+    unit_conversions.json
+    work_problems.json
+  generated/         # Pipeline output (auto-generated)
+    questions.json
   tests/             # JSON files with detailed test analysis
     M9PAD17C0T01.json
     M9PAD22C0T01.json
