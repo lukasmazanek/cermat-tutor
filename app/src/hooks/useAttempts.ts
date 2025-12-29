@@ -19,6 +19,7 @@ export {
 
   // Functions
   storage,
+  getActiveStorage,
   saveAttempt,
   getAttempts,
   startSession,
