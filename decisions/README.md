@@ -2,7 +2,7 @@
 
 This directory contains all Educational Decision Records (EDRs) for the Tutor project.
 
-**Total:** 4 EDRs + 27 ADRs + 2 PDRs | **Format:** One file per record | **Naming:** `EDR-XXX-slug.md`, `ADR-XXX-slug.md`, or `PDR-XXX-slug.md`
+**Total:** 4 EDRs + 29 ADRs + 2 PDRs | **Format:** One file per record | **Naming:** `EDR-XXX-slug.md`, `ADR-XXX-slug.md`, or `PDR-XXX-slug.md`
 
 ---
 
@@ -68,6 +68,8 @@ This directory contains all Educational Decision Records (EDRs) for the Tutor pr
 | [ADR-025](ADR-025-keyboard-block-layout.md) | Keyboard Block Layout | Accepted | 3-block keyboard: Numbers (fixed) + Operators (fixed) + Extras (optional) |
 | [ADR-026](ADR-026-action-buttons-top.md) | Action Buttons at Top | Accepted | Action buttons (Pokrok, Mix, Bleskové, Typ) above topic grid |
 | [ADR-027](ADR-027-feedback-shows-question.md) | Feedback Shows Question | Accepted | Show original question + diagram on wrong answer feedback |
+| [ADR-028](ADR-028-question-display-component.md) | QuestionDisplay Component | Accepted | Centralized component for question + diagram rendering |
+| [ADR-029](ADR-029-component-consolidation.md) | Component Consolidation | Accepted | Master plan for eliminating code duplication |
 
 ---
 
