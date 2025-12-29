@@ -1,6 +1,6 @@
 {
   "version": "4.0",
-  "generated": "2025-12-29T16:39:46.905Z",
+  "generated": "2025-12-29T17:00:44.697Z",
   "description": "ADR-022: Multi-mode questions with keyboard config",
   "topics": {
     "angles": {
@@ -424,6 +424,11 @@
         "type_id": "TEST-31",
         "type_label": "Obsah a obvod",
         "original_type": null
+      },
+      "diagram": {
+        "type": "rectangle",
+        "highlight": null,
+        "labels": {}
       }
     },
     {
@@ -456,6 +461,11 @@
         "type_id": "TEST-31",
         "type_label": "Obsah a obvod",
         "original_type": null
+      },
+      "diagram": {
+        "type": "square",
+        "highlight": null,
+        "labels": {}
       }
     },
     {
@@ -488,6 +498,13 @@
         "type_id": "TEST-31",
         "type_label": "Obsah a obvod",
         "original_type": "open"
+      },
+      "diagram": {
+        "type": "square",
+        "highlight": null,
+        "labels": {
+          "a": "9"
+        }
       }
     },
     {
@@ -520,6 +537,11 @@
         "type_id": "TEST-31",
         "type_label": "Obsah a obvod",
         "original_type": null
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "highlight": null,
+        "labels": {}
       }
     },
     {
@@ -550,6 +572,11 @@
         "type_id": "TEST-31",
         "type_label": "Obsah a obvod",
         "original_type": null
+      },
+      "diagram": {
+        "type": "trapezoid",
+        "highlight": null,
+        "labels": {}
       }
     },
     {
@@ -582,6 +609,11 @@
         "type_id": "TEST-31",
         "type_label": "Obsah a obvod",
         "original_type": "open"
+      },
+      "diagram": {
+        "type": "rectangle",
+        "highlight": null,
+        "labels": {}
       }
     },
     {
@@ -8272,7 +8304,7 @@
       },
       "diagram": {
         "type": "right_triangle",
-        "highlight": "c",
+        "highlight": "a",
         "labels": {
           "a": "?",
           "b": "4",
@@ -8318,7 +8350,7 @@
       },
       "diagram": {
         "type": "right_triangle",
-        "highlight": "c",
+        "highlight": "b",
         "labels": {
           "a": "5",
           "b": "?",
@@ -8364,7 +8396,7 @@
       },
       "diagram": {
         "type": "right_triangle",
-        "highlight": "c",
+        "highlight": "a",
         "labels": {
           "a": "?",
           "b": "8",
@@ -8410,7 +8442,7 @@
       },
       "diagram": {
         "type": "right_triangle",
-        "highlight": "c",
+        "highlight": "b",
         "labels": {
           "a": "8",
           "b": "?",
@@ -8548,7 +8580,7 @@
       },
       "diagram": {
         "type": "right_triangle",
-        "highlight": "c",
+        "highlight": "b",
         "labels": {
           "a": "3",
           "b": "?",
@@ -8594,7 +8626,7 @@
       },
       "diagram": {
         "type": "right_triangle",
-        "highlight": "c",
+        "highlight": "b",
         "labels": {
           "a": "5",
           "b": "?",
@@ -9139,7 +9171,11 @@
       "diagram": {
         "type": "right_triangle",
         "highlight": "c",
-        "labels": null
+        "labels": {
+          "a": "3",
+          "b": "4",
+          "c": "?"
+        }
       }
     },
     {
@@ -9178,8 +9214,12 @@
       },
       "diagram": {
         "type": "right_triangle",
-        "highlight": "c",
-        "labels": null
+        "highlight": null,
+        "labels": {
+          "a": "5",
+          "b": "12",
+          "c": "13"
+        }
       }
     },
     {
@@ -9261,9 +9301,13 @@
         "original_type": "problem_type"
       },
       "diagram": {
-        "type": "right_triangle",
-        "highlight": "c",
-        "labels": null
+        "type": "rectangle",
+        "highlight": "d",
+        "labels": {
+          "a": "3",
+          "b": "4",
+          "d": "?"
+        }
       }
     },
     {
@@ -9301,9 +9345,14 @@
         "original_type": "problem_type"
       },
       "diagram": {
-        "type": "right_triangle",
-        "highlight": "c",
-        "labels": null
+        "type": "cube",
+        "highlight": "d",
+        "labels": {
+          "a": "3",
+          "b": "4",
+          "c": "12",
+          "d": "?"
+        }
       }
     },
     {
@@ -9341,9 +9390,11 @@
         "original_type": "problem_type"
       },
       "diagram": {
-        "type": "right_triangle",
-        "highlight": "c",
-        "labels": null
+        "type": "equilateral_triangle",
+        "highlight": "h",
+        "labels": {
+          "a": "6 cm"
+        }
       }
     },
     {
@@ -9467,8 +9518,12 @@
       },
       "diagram": {
         "type": "right_triangle",
-        "highlight": "c",
-        "labels": null
+        "highlight": "b",
+        "labels": {
+          "a": "9 cm",
+          "b": "?",
+          "c": "15 cm"
+        }
       }
     },
     {
@@ -11196,6 +11251,14 @@
         "type_id": "TEST-undefined",
         "type_label": "Tělesa - válec",
         "original_type": null
+      },
+      "diagram": {
+        "type": "cylinder",
+        "highlight": null,
+        "labels": {
+          "r": "?",
+          "h": "?"
+        }
       }
     },
     {
@@ -11228,6 +11291,14 @@
         "type_id": "TEST-undefined",
         "type_label": "Objem válce",
         "original_type": null
+      },
+      "diagram": {
+        "type": "cylinder",
+        "highlight": null,
+        "labels": {
+          "r": "?",
+          "h": "?"
+        }
       }
     },
     {
@@ -11258,6 +11329,11 @@
         "type_id": "TEST-undefined",
         "type_label": "Objem hranolu",
         "original_type": null
+      },
+      "diagram": {
+        "type": "prism",
+        "highlight": null,
+        "labels": {}
       }
     },
     {
@@ -11290,6 +11366,15 @@
         "type_id": "TEST-32",
         "type_label": "Objem těles",
         "original_type": null
+      },
+      "diagram": {
+        "type": "cube",
+        "highlight": null,
+        "labels": {
+          "a": "6",
+          "b": "4",
+          "c": "5"
+        }
       }
     },
     {
@@ -11322,6 +11407,14 @@
         "type_id": "TEST-36",
         "type_label": "Válec",
         "original_type": null
+      },
+      "diagram": {
+        "type": "cylinder",
+        "highlight": null,
+        "labels": {
+          "r": "5",
+          "h": "20"
+        }
       }
     },
     {
@@ -11354,6 +11447,11 @@
         "type_id": "TEST-32",
         "type_label": "Objem těles",
         "original_type": "true_false"
+      },
+      "diagram": {
+        "type": "prism",
+        "highlight": null,
+        "labels": {}
       }
     },
     {
@@ -11386,6 +11484,11 @@
         "type_id": "TEST-32",
         "type_label": "Objem těles",
         "original_type": "true_false"
+      },
+      "diagram": {
+        "type": "cube",
+        "highlight": null,
+        "labels": {}
       }
     },
     {
@@ -11418,6 +11521,11 @@
         "type_id": "TEST-32",
         "type_label": "Objem těles",
         "original_type": "true_false"
+      },
+      "diagram": {
+        "type": "prism",
+        "highlight": null,
+        "labels": {}
       }
     },
     {
@@ -11450,6 +11558,14 @@
         "type_id": "TEST-36",
         "type_label": "Válec",
         "original_type": "multiple_choice"
+      },
+      "diagram": {
+        "type": "cylinder",
+        "highlight": null,
+        "labels": {
+          "r": "50",
+          "h": "?"
+        }
       }
     },
     {
@@ -11482,6 +11598,11 @@
         "type_id": "TEST-32",
         "type_label": "Objem těles",
         "original_type": null
+      },
+      "diagram": {
+        "type": "cube",
+        "highlight": null,
+        "labels": {}
       }
     },
     {
@@ -11578,6 +11699,11 @@
         "type_id": "TEST-32",
         "type_label": "Objem těles",
         "original_type": "open"
+      },
+      "diagram": {
+        "type": "prism",
+        "highlight": null,
+        "labels": {}
       }
     },
     {
@@ -11610,6 +11736,11 @@
         "type_id": "TEST-32",
         "type_label": "Objem těles",
         "original_type": "open"
+      },
+      "diagram": {
+        "type": "prism",
+        "highlight": null,
+        "labels": {}
       }
     },
     {

@@ -1,8 +1,8 @@
 {
   "topic": "pythagorean",
   "name": "Pythagorova věta",
-  "version": "1.0",
-  "migrated": "2025-12-25",
+  "version": "1.1",
+  "migrated": "2025-12-29",
   "questions": [
     {
       "id": "PYTH-C01",
@@ -52,6 +52,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "3",
+          "b": "4",
+          "c": "?"
+        },
+        "highlight": "c"
       }
     },
     {
@@ -102,6 +111,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "5",
+          "b": "12",
+          "c": "?"
+        },
+        "highlight": "c"
       }
     },
     {
@@ -152,6 +170,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "6",
+          "b": "8",
+          "c": "?"
+        },
+        "highlight": "c"
       }
     },
     {
@@ -202,6 +229,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "8",
+          "b": "15",
+          "c": "?"
+        },
+        "highlight": "c"
       }
     },
     {
@@ -252,6 +288,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "7",
+          "b": "24",
+          "c": "?"
+        },
+        "highlight": "c"
       }
     },
     {
@@ -302,6 +347,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "9",
+          "b": "40",
+          "c": "?"
+        },
+        "highlight": "c"
       }
     },
     {
@@ -352,6 +406,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "?",
+          "b": "4",
+          "c": "5"
+        },
+        "highlight": "a"
       }
     },
     {
@@ -402,6 +465,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "5",
+          "b": "?",
+          "c": "13"
+        },
+        "highlight": "b"
       }
     },
     {
@@ -452,6 +524,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "?",
+          "b": "8",
+          "c": "10"
+        },
+        "highlight": "a"
       }
     },
     {
@@ -502,6 +583,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "8",
+          "b": "?",
+          "c": "17"
+        },
+        "highlight": "b"
       }
     },
     {
@@ -552,6 +642,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "3",
+          "b": "4",
+          "c": "?"
+        },
+        "highlight": "c"
       }
     },
     {
@@ -602,6 +701,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "5",
+          "b": "12",
+          "c": "?"
+        },
+        "highlight": "c"
       }
     },
     {
@@ -652,6 +760,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "3",
+          "b": "?",
+          "c": "5"
+        },
+        "highlight": "b"
       }
     },
     {
@@ -702,6 +819,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "5",
+          "b": "?",
+          "c": "13"
+        },
+        "highlight": "b"
       }
     },
     {
@@ -752,6 +878,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "1",
+          "b": "1",
+          "c": "?"
+        },
+        "highlight": "c"
       }
     },
     {
@@ -802,6 +937,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "2",
+          "b": "3",
+          "c": "?"
+        },
+        "highlight": "c"
       }
     },
     {
@@ -852,6 +996,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "2",
+          "b": "5",
+          "c": "?"
+        },
+        "highlight": "c"
       }
     },
     {
@@ -902,6 +1055,15 @@
         "source": "lightning_questions",
         "original_type": "calculation",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "4",
+          "b": "5",
+          "c": "?"
+        },
+        "highlight": "c"
       }
     },
     {
@@ -1312,6 +1474,15 @@
         "source": "lightning_questions",
         "original_type": "problem_type",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "3",
+          "b": "4",
+          "c": "?"
+        },
+        "highlight": "c"
       }
     },
     {
@@ -1362,6 +1533,15 @@
         "source": "lightning_questions",
         "original_type": "problem_type",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "5",
+          "b": "12",
+          "c": "13"
+        },
+        "highlight": null
       }
     },
     {
@@ -1471,6 +1651,15 @@
         "source": "lightning_questions",
         "original_type": "problem_type",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "rectangle",
+        "labels": {
+          "a": "3",
+          "b": "4",
+          "d": "?"
+        },
+        "highlight": "d"
       }
     },
     {
@@ -1521,6 +1710,16 @@
         "source": "lightning_questions",
         "original_type": "problem_type",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "cube",
+        "labels": {
+          "a": "3",
+          "b": "4",
+          "c": "12",
+          "d": "?"
+        },
+        "highlight": "d"
       }
     },
     {
@@ -1571,6 +1770,13 @@
         "source": "lightning_questions",
         "original_type": "problem_type",
         "migrated": "2025-12-25"
+      },
+      "diagram": {
+        "type": "equilateral_triangle",
+        "labels": {
+          "a": "6 cm"
+        },
+        "highlight": "h"
       }
     },
     {
@@ -1689,6 +1895,169 @@
         "source": "lightning_questions",
         "original_type": "problem_type",
         "migrated": "2025-12-25"
+      }
+    },
+    {
+      "id": "pyt-test-035",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorova-věta"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Pravoúhlý trojúhelník, odvěsna 9cm, přepona 15cm. Obsah?",
+        "context": "Pravoúhlý trojúhelník, odvěsna 9cm, přepona 15cm. Obsah?",
+        "image": null
+      },
+      "answer": {
+        "correct": "54",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [
+          "b²=225-81=144, b=12, S=12·9:2=54cm²"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-35",
+        "type_label": "Pythagorova věta",
+        "source": "M9PCD22C0T03"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {
+          "a": "9 cm",
+          "b": "?",
+          "c": "15 cm"
+        },
+        "highlight": "b"
+      }
+    },
+    {
+      "id": "pyt-test-036",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorova-věta"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Rovnoběžník ABCD, |AE|=12cm, |BE|=8cm, |EC|=6cm. Obsah trojúhelníku ABE?",
+        "context": "Rovnoběžník ABCD, |AE|=12cm, |BE|=8cm, |EC|=6cm. Obsah trojúhelníku ABE?",
+        "image": null
+      },
+      "answer": {
+        "correct": "84 cm²",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Častá chyba: I když výsledek vypadá správně, postup nebo mezivýpočty mohou být chybné"
+        }
+      ],
+      "solution": {
+        "steps": [],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-35",
+        "type_label": "Pythagorova věta",
+        "source": "M9PBD24C0T02"
+      }
+    },
+    {
+      "id": "pyt-test-037",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorova-věta"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Délka lomené čáry ACFHA v kvádru",
+        "context": "Délka lomené čáry ACFHA v kvádru",
+        "image": null
+      },
+      "answer": {
+        "correct": "54",
+        "unit": "m",
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-35",
+        "type_label": "Pythagorova věta",
+        "source": "M9PAD23C0T01"
+      }
+    },
+    {
+      "id": "pyt-test-038",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorova-věta"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Délka strany AB",
+        "context": "Délka strany AB",
+        "image": null
+      },
+      "answer": {
+        "correct": "4",
+        "unit": "cm",
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-undefined",
+        "type_label": "Pythagorova věta",
+        "source": "M9PAD17C0T01"
+      }
+    },
+    {
+      "id": "pyt-test-039",
+      "topic": "pythagorean",
+      "tags": [
+        "pythagorova-věta"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Délka strany CD",
+        "context": "Délka strany CD",
+        "image": null
+      },
+      "answer": {
+        "correct": "13",
+        "unit": "cm",
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [
+          "√169 = 13"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-undefined",
+        "type_label": "Pythagorova věta",
+        "source": "M9PAD17C0T01"
       }
     }
   ]

@@ -1,0 +1,258 @@
+{
+  "topic": "area_perimeter",
+  "name": "Obsah a obvod",
+  "version": "1.1",
+  "migrated": "2025-12-29",
+  "questions": [
+    {
+      "id": "are-test-001",
+      "topic": "area_perimeter",
+      "tags": [
+        "obsah-a-obvod"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Obdélník S=270cm², kratší strana 9cm. Obvod?",
+        "context": "Obdélník S=270cm², kratší strana 9cm. Obvod?",
+        "image": null
+      },
+      "answer": {
+        "correct": "78",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [
+          "270:9=30, o=2·(30+9)=78cm"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-31",
+        "type_label": "Obsah a obvod",
+        "source": "M9PCD22C0T03"
+      },
+      "diagram": {
+        "type": "rectangle",
+        "labels": {},
+        "highlight": null
+      }
+    },
+    {
+      "id": "are-test-002",
+      "topic": "area_perimeter",
+      "tags": [
+        "obsah-a-obvod"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Obvod čtverce ABCD",
+        "context": "Obvod čtverce ABCD",
+        "image": null
+      },
+      "answer": {
+        "correct": "48",
+        "unit": "cm",
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [
+          "Správný výpočet obvodu"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-31",
+        "type_label": "Obsah a obvod",
+        "source": "M9PBD24C0T02"
+      },
+      "diagram": {
+        "type": "square",
+        "labels": {},
+        "highlight": null
+      }
+    },
+    {
+      "id": "are-test-003",
+      "topic": "area_perimeter",
+      "tags": [
+        "obsah-a-obvod"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Délka strany KL (vnořené čtverce: bílý 9cm², černý 16cm², šedá 56cm²)",
+        "context": "Délka strany KL (vnořené čtverce: bílý 9cm², černý 16cm², šedá 56cm²)",
+        "image": null
+      },
+      "answer": {
+        "correct": "5",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [
+          "√(9+16) = √25 = 5"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-31",
+        "type_label": "Obsah a obvod",
+        "source": "M9PBD22C0T02",
+        "original_type": "open"
+      },
+      "diagram": {
+        "type": "square",
+        "labels": {
+          "a": "9"
+        },
+        "highlight": null
+      }
+    },
+    {
+      "id": "are-test-004",
+      "topic": "area_perimeter",
+      "tags": [
+        "obsah-a-obvod"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Obsah trojúhelníku ABD v lichoběžníku",
+        "context": "Obsah trojúhelníku ABD v lichoběžníku",
+        "image": null
+      },
+      "answer": {
+        "correct": "24 nebo jiný",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Častá chyba: Potřeba ověřit výpočet"
+        }
+      ],
+      "solution": {
+        "steps": [],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-31",
+        "type_label": "Obsah a obvod",
+        "source": "M9PAD23C0T01"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {},
+        "highlight": null
+      }
+    },
+    {
+      "id": "are-test-005",
+      "topic": "area_perimeter",
+      "tags": [
+        "obsah-a-obvod"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Obsah lichoběžníku ABCD",
+        "context": "Obsah lichoběžníku ABCD",
+        "image": null
+      },
+      "answer": {
+        "correct": "64",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-31",
+        "type_label": "Obsah a obvod",
+        "source": "M9PAD23C0T01"
+      },
+      "diagram": {
+        "type": "trapezoid",
+        "labels": {},
+        "highlight": null
+      }
+    },
+    {
+      "id": "are-test-006",
+      "topic": "area_perimeter",
+      "tags": [
+        "obsah-a-obvod"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Obdélník má šířku 8 cm a obsah 4 dm². Vypočtěte, o kolik cm se liší délka a šířka.",
+        "context": "Obdélník má šířku 8 cm a obsah 4 dm². Vypočtěte, o kolik cm se liší délka a šířka.",
+        "image": null
+      },
+      "answer": {
+        "correct": "42",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [
+          "4 dm² = 400 cm², délka = 400/8 = 50 cm, rozdíl = 50 - 8 = 42"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-31",
+        "type_label": "Obsah a obvod",
+        "source": "M9PAD22C0T01",
+        "original_type": "open"
+      },
+      "diagram": {
+        "type": "rectangle",
+        "labels": {},
+        "highlight": null
+      }
+    },
+    {
+      "id": "are-test-007",
+      "topic": "area_perimeter",
+      "tags": [
+        "obsah-čtyřúhelníku"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Obsah čtyřúhelníku ABCD",
+        "context": "Obsah čtyřúhelníku ABCD",
+        "image": null
+      },
+      "answer": {
+        "correct": "36 cm²",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-undefined",
+        "type_label": "Obsah čtyřúhelníku",
+        "source": "M9PAD17C0T01"
+      }
+    }
+  ]
+}

@@ -1,0 +1,570 @@
+{
+  "topic": "volume",
+  "name": "Objem těles",
+  "version": "1.1",
+  "migrated": "2025-12-29",
+  "questions": [
+    {
+      "id": "vol-test-001",
+      "topic": "volume",
+      "tags": [
+        "tělesa---válec"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Poloměr podstavy válce",
+        "context": "Poloměr podstavy válce",
+        "image": null
+      },
+      "answer": {
+        "correct": "5",
+        "unit": "cm",
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Častá chyba: Nepochopila, že poloměr = polovina úhlopříčky čtverce 6x8 (√100/2 = 5)"
+        }
+      ],
+      "solution": {
+        "steps": [],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-undefined",
+        "type_label": "Tělesa - válec",
+        "source": "M9PCD23C0T03"
+      },
+      "diagram": {
+        "type": "cylinder",
+        "labels": {
+          "r": "?",
+          "h": "?"
+        },
+        "highlight": null
+      }
+    },
+    {
+      "id": "vol-test-002",
+      "topic": "volume",
+      "tags": [
+        "objem-válce"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Objem válce v cm³",
+        "context": "Objem válce v cm³",
+        "image": null
+      },
+      "answer": {
+        "correct": "942",
+        "unit": "cm³",
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Častá chyba: Navazující chyba z 7.1 - použila špatný poloměr"
+        }
+      ],
+      "solution": {
+        "steps": [],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-undefined",
+        "type_label": "Objem válce",
+        "source": "M9PCD23C0T03"
+      },
+      "diagram": {
+        "type": "cylinder",
+        "labels": {
+          "r": "?",
+          "h": "?"
+        },
+        "highlight": null
+      }
+    },
+    {
+      "id": "vol-test-003",
+      "topic": "volume",
+      "tags": [
+        "objem-hranolu"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Objem pravidelného čtyřbokého hranolu",
+        "context": "Objem pravidelného čtyřbokého hranolu",
+        "image": null
+      },
+      "answer": {
+        "correct": "B (108 cm³)",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-undefined",
+        "type_label": "Objem hranolu",
+        "source": "M9PCD23C0T03"
+      },
+      "diagram": {
+        "type": "prism",
+        "labels": {},
+        "highlight": null
+      }
+    },
+    {
+      "id": "vol-test-004",
+      "topic": "volume",
+      "tags": [
+        "objem-těles"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Kvádr 6×4×5 rozřezán na 3 trojboké hranoly. Největší objem?",
+        "context": "Kvádr 6×4×5 rozřezán na 3 trojboké hranoly. Největší objem?",
+        "image": null
+      },
+      "answer": {
+        "correct": "60",
+        "unit": "cm³",
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [
+          "6·5·4:2=60cm³"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-32",
+        "type_label": "Objem těles",
+        "source": "M9PCD22C0T03"
+      },
+      "diagram": {
+        "type": "cube",
+        "labels": {
+          "a": "6",
+          "b": "4",
+          "c": "5"
+        },
+        "highlight": null
+      }
+    },
+    {
+      "id": "vol-test-005",
+      "topic": "volume",
+      "tags": [
+        "válec"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Válec r=5cm, v=20cm. Kolikrát je plášť větší než podstava?",
+        "context": "Válec r=5cm, v=20cm. Kolikrát je plášť větší než podstava?",
+        "image": null
+      },
+      "answer": {
+        "correct": "C) 8krát",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [
+          "Plášť=2πrv=628, Podstava=πr²=78,5, 628:78,5=8"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-36",
+        "type_label": "Válec",
+        "source": "M9PCD22C0T03"
+      },
+      "diagram": {
+        "type": "cylinder",
+        "labels": {
+          "r": "5",
+          "h": "20"
+        },
+        "highlight": null
+      }
+    },
+    {
+      "id": "vol-test-006",
+      "topic": "volume",
+      "tags": [
+        "objem-těles"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Povrch hranolu je 14krát větší než obsah stěny jedné krychle. A/N?",
+        "context": "Povrch hranolu je 14krát větší než obsah stěny jedné krychle. A/N?",
+        "image": null
+      },
+      "answer": {
+        "correct": "N",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [
+          "126:14 ≠ 9"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-32",
+        "type_label": "Objem těles",
+        "source": "M9PBD22C0T02",
+        "original_type": "true_false"
+      },
+      "diagram": {
+        "type": "prism",
+        "labels": {},
+        "highlight": null
+      }
+    },
+    {
+      "id": "vol-test-007",
+      "topic": "volume",
+      "tags": [
+        "objem-těles"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Síť krychle má obsah 42 cm². A/N?",
+        "context": "Síť krychle má obsah 42 cm². A/N?",
+        "image": null
+      },
+      "answer": {
+        "correct": "N",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Častá chyba: Zaměnila síť hranolu a síť krychle. Síť krychle = 6·a², ne obsah hranolu/3"
+        }
+      ],
+      "solution": {
+        "steps": [],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-32",
+        "type_label": "Objem těles",
+        "source": "M9PBD22C0T02",
+        "original_type": "true_false"
+      },
+      "diagram": {
+        "type": "cube",
+        "labels": {},
+        "highlight": null
+      }
+    },
+    {
+      "id": "vol-test-008",
+      "topic": "volume",
+      "tags": [
+        "objem-těles"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Nejkratší hrana hranolu měří 3 cm. A/N?",
+        "context": "Nejkratší hrana hranolu měří 3 cm. A/N?",
+        "image": null
+      },
+      "answer": {
+        "correct": "A",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Častá chyba: Hrana krychle a = √(126/14) = 3cm, ale studentka odpověděla N"
+        }
+      ],
+      "solution": {
+        "steps": [],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-32",
+        "type_label": "Objem těles",
+        "source": "M9PBD22C0T02",
+        "original_type": "true_false"
+      },
+      "diagram": {
+        "type": "prism",
+        "labels": {},
+        "highlight": null
+      }
+    },
+    {
+      "id": "vol-test-009",
+      "topic": "volume",
+      "tags": [
+        "válec"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Výška válce s poloměrem 50cm, plášť = čtverec",
+        "context": "Výška válce s poloměrem 50cm, plášť = čtverec",
+        "image": null
+      },
+      "answer": {
+        "correct": "C",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [
+          "2·3,14·50 = 314 cm"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-36",
+        "type_label": "Válec",
+        "source": "M9PBD22C0T02",
+        "original_type": "multiple_choice"
+      },
+      "diagram": {
+        "type": "cylinder",
+        "labels": {
+          "r": "50",
+          "h": "?"
+        },
+        "highlight": null
+      }
+    },
+    {
+      "id": "vol-test-010",
+      "topic": "volume",
+      "tags": [
+        "objem-těles"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Kvádr = 200 krychlí po 8dm³. Na kolik krychlí 1cm³?",
+        "context": "Kvádr = 200 krychlí po 8dm³. Na kolik krychlí 1cm³?",
+        "image": null
+      },
+      "answer": {
+        "correct": "1 600 000 000",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Častá chyba: Chyba v převodu jednotek. 8dm³ = 8000cm³, ne 8cm³"
+        }
+      ],
+      "solution": {
+        "steps": [],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-32",
+        "type_label": "Objem těles",
+        "source": "M9PAD23C0T01"
+      },
+      "diagram": {
+        "type": "cube",
+        "labels": {},
+        "highlight": null
+      }
+    },
+    {
+      "id": "vol-test-011",
+      "topic": "volume",
+      "tags": [
+        "válec"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Plášť = 3× podstava, r=10cm. Povrch?",
+        "context": "Plášť = 3× podstava, r=10cm. Povrch?",
+        "image": null
+      },
+      "answer": {
+        "correct": "D) 1570cm²",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [
+          "Plášť = 3·π·100 = 942, Povrch = 942 + 2·314 = 1570"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-36",
+        "type_label": "Válec",
+        "source": "M9PAD23C0T01"
+      }
+    },
+    {
+      "id": "vol-test-012",
+      "topic": "volume",
+      "tags": [
+        "objem-těles"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Vypočtěte, kolikrát větší je objem 1,2 dm³ než objem 300 mm³.",
+        "context": "Vypočtěte, kolikrát větší je objem 1,2 dm³ než objem 300 mm³.",
+        "image": null
+      },
+      "answer": {
+        "correct": "4000",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [
+          "1,2 dm³ = 1200000 mm³, 1200000/300 = 4000"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-32",
+        "type_label": "Objem těles",
+        "source": "M9PAD22C0T01",
+        "original_type": "open"
+      }
+    },
+    {
+      "id": "vol-test-013",
+      "topic": "volume",
+      "tags": [
+        "objem-těles"
+      ],
+      "difficulty": 1,
+      "question": {
+        "stem": "Vypočtěte objem trojbokého hranolu (podstava: pravoúhlý trojúhelník 6x8 cm)",
+        "context": "Vypočtěte objem trojbokého hranolu (podstava: pravoúhlý trojúhelník 6x8 cm)",
+        "image": null
+      },
+      "answer": {
+        "correct": "480",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Častá chyba: Špatný výpočet objemu. Správně: (6·8/2)·20 = 24·20 = 480 cm³"
+        }
+      ],
+      "solution": {
+        "steps": [],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-32",
+        "type_label": "Objem těles",
+        "source": "M9PAD22C0T01",
+        "original_type": "open"
+      },
+      "diagram": {
+        "type": "prism",
+        "labels": {},
+        "highlight": null
+      }
+    },
+    {
+      "id": "vol-test-014",
+      "topic": "volume",
+      "tags": [
+        "objem-těles"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Vypočtěte objem čtyřbokého hranolu (rozměry x, x, 20 cm kde x=10)",
+        "context": "Vypočtěte objem čtyřbokého hranolu (rozměry x, x, 20 cm kde x=10)",
+        "image": null
+      },
+      "answer": {
+        "correct": "2000",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [
+          "10·10·20 = 2000"
+        ],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-32",
+        "type_label": "Objem těles",
+        "source": "M9PAD22C0T01",
+        "original_type": "open"
+      },
+      "diagram": {
+        "type": "prism",
+        "labels": {},
+        "highlight": null
+      }
+    },
+    {
+      "id": "vol-test-015",
+      "topic": "volume",
+      "tags": [
+        "objem---kvádr"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "O kolik cm klesla hladina v nádrži",
+        "context": "O kolik cm klesla hladina v nádrži",
+        "image": null
+      },
+      "answer": {
+        "correct": "B (o 9 cm)",
+        "unit": null,
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [],
+      "solution": {
+        "steps": [],
+        "strategy": null
+      },
+      "meta": {
+        "type_id": "TEST-undefined",
+        "type_label": "Objem - kvádr",
+        "source": "M9PAD17C0T01"
+      }
+    }
+  ]
+}
