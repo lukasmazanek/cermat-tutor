@@ -4,7 +4,8 @@ import questionsData from '../../data/questions.json'
 import Question from './Question'
 import Feedback from './Feedback'
 import Summary from './Summary'
-import BottomBar from '../BottomBar'
+import PageLayout from '../PageLayout'
+import PageHeader from '../PageHeader'
 import { UnifiedQuestion, QuestionsData } from '../../types'
 import { LightningQuestion, LightningResult, LightningStats } from './types'
 import { saveAttempt, startSession, endSession } from '../../hooks/useAttempts'
@@ -185,77 +186,55 @@ function LightningRound({ onExit, onViewProgress }: LightningRoundProps) {
 
   const currentQuestion = questions[currentIndex]
 
+  // ADR-031: Summary uses CENTERED template (SummaryCard has its own layout)
+  if (phase === 'summary') {
+    return (
+      <Summary
+        stats={getSummaryStats()}
+        onRestart={handleRestart}
+        onExit={onExit}
+        onViewProgress={onViewProgress}
+      />
+    )
+  }
+
+  // ADR-031: Playing/Feedback use HEADER template
   return (
-    <div className="h-screen h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
-      {/* Header */}
-      <div className="bg-white border-b border-slate-200">
-        <div className="max-w-2xl mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <BoltIcon className="w-5 h-5 text-amber-500" />
-              <span className="font-medium text-slate-700">Bleskové kolo</span>
-            </div>
-            {phase !== 'summary' && (
-              <span className="text-slate-500 text-sm">
-                {currentIndex + 1}/{questions.length}
-              </span>
-            )}
-          </div>
-
-          {/* Progress bar */}
-          {phase !== 'summary' && (
-            <div className="mt-2 h-1.5 bg-slate-200 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-amber-500 transition-gentle"
-                style={{ width: `${((currentIndex + (phase === 'feedback' ? 1 : 0)) / questions.length) * 100}%` }}
-              />
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Main content */}
-      <div className="flex-1 min-h-0 overflow-y-auto max-w-2xl mx-auto w-full pb-20">
-        {phase === 'playing' && (
-          <Question
-            question={currentQuestion}
-            onAnswer={handleAnswer}
-            streak={streak}
-          />
-        )}
-
-        {phase === 'feedback' && selectedAnswer !== null && isCorrect !== null && (
-          <Feedback
-            question={currentQuestion}
-            selectedAnswer={selectedAnswer}
-            isCorrect={isCorrect}
-            streak={streak}
-          />
-        )}
-
-        {phase === 'summary' && (
-          <Summary
-            stats={getSummaryStats()}
-            onRestart={handleRestart}
-            onExit={onExit}
-            onViewProgress={onViewProgress}
-          />
-        )}
-      </div>
-
-      {/* Bottom bar - ADR-009 centralized (except in summary - it has its own) */}
-      {phase !== 'summary' && (
-        <BottomBar
-          slots={{
-            1: { onClick: onExit },
-            2: { onClick: onViewProgress },
-            5: phase === 'feedback' && !isCorrect
-              ? { action: 'continue', onClick: handleContinue }
-              : undefined
-          }}
+    <PageLayout
+      header={
+        <PageHeader
+          icon={BoltIcon}
+          title="Bleskové kolo"
+          progress={{ current: currentIndex + 1, total: questions.length }}
+          iconColor="text-amber-500"
+          progressColor="bg-amber-500"
+        />
+      }
+      bottomBar={{
+        1: { onClick: onExit },
+        2: { onClick: onViewProgress },
+        5: phase === 'feedback' && !isCorrect
+          ? { action: 'continue', onClick: handleContinue }
+          : undefined
+      }}
+    >
+      {phase === 'playing' && (
+        <Question
+          question={currentQuestion}
+          onAnswer={handleAnswer}
+          streak={streak}
         />
       )}
-    </div>
+
+      {phase === 'feedback' && selectedAnswer !== null && isCorrect !== null && (
+        <Feedback
+          question={currentQuestion}
+          selectedAnswer={selectedAnswer}
+          isCorrect={isCorrect}
+          streak={streak}
+        />
+      )}
+    </PageLayout>
   )
 }
 

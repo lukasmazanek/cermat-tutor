@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { AcademicCapIcon } from '@heroicons/react/24/outline'
 import questionsData from '../../data/questions.json'
 import TypeQuestion from './TypeQuestion'
 import StrategyQuestion from './StrategyQuestion'
 import Summary from './Summary'
-import BottomBar from '../BottomBar'
+import PageLayout from '../PageLayout'
+import PageHeader from '../PageHeader'
 import { UnifiedQuestion, QuestionsData } from '../../types'
 import { TypeDrillQuestion, TypeDrillResult, TypeOption } from './types'
 import { getQuestionText, getSolutionData } from '../../lib/questionUtils'
@@ -234,112 +236,97 @@ function TypeDrill({ onExit, onViewProgress }: TypeDrillProps) {
   const typeLabel = currentQuestion.meta.type_label || ''
   const explanation = hints[0] || ''
 
+  // ADR-031: HEADER template with PageLayout + PageHeader
   return (
-    <div className="h-screen h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
-      {/* ZONE 1: Header (fixed) */}
-      <div className="bg-white border-b border-slate-200">
-        <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-center">
-          <div className="flex items-center gap-3">
-            <span className="text-indigo-600 font-semibold">Rozpoznej typ</span>
-            <span className="text-slate-400 text-sm">
-              {currentIndex + 1} / {questions.length}
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Progress bar */}
-      <div className="h-1 bg-slate-200">
-        <div
-          className="h-full bg-indigo-500 transition-gentle"
-          style={{ width: `${((currentIndex + (phase === 'strategy' || phase === 'feedback' ? 0.5 : 0)) / questions.length) * 100}%` }}
+    <PageLayout
+      header={
+        <PageHeader
+          icon={AcademicCapIcon}
+          title="Rozpoznej typ"
+          progress={{ current: currentIndex + 1, total: questions.length }}
+          iconColor="text-indigo-600"
+          progressColor="bg-indigo-500"
         />
+      }
+      bottomBar={{
+        1: { onClick: onExit },
+        2: { onClick: onViewProgress },
+        5: {
+          action: phase === 'feedback' ? 'continue' : 'skip',
+          onClick: phase === 'feedback' ? handleContinue : handleSkip
+        }
+      }}
+      contentClassName="px-4 py-6"
+    >
+      {/* Problem prompt */}
+      <div className="bg-white rounded-2xl shadow-sm p-5 mb-6">
+        <p className="text-lg text-slate-800 leading-relaxed">
+          {questionContext}
+        </p>
       </div>
 
-      {/* ZONE 2: Content (scrollable) - ADR-010 mobile-safe pattern */}
-      <div className="flex-1 min-h-0 overflow-y-auto px-4 py-6 flex flex-col max-w-2xl mx-auto w-full pb-20">
-        {/* Problem prompt */}
-        <div className="bg-white rounded-2xl shadow-sm p-5 mb-6">
-          <p className="text-lg text-slate-800 leading-relaxed">
-            {questionContext}
-          </p>
-        </div>
+      {/* Question phases */}
+      {phase === 'type' && (
+        <TypeQuestion
+          question={currentQuestion}
+          onAnswer={handleTypeAnswer}
+        />
+      )}
 
-        {/* Question phases */}
-        {phase === 'type' && (
-          <TypeQuestion
-            question={currentQuestion}
-            onAnswer={handleTypeAnswer}
-          />
-        )}
+      {phase === 'strategy' && currentResult && (
+        <StrategyQuestion
+          question={currentQuestion}
+          typeWasCorrect={currentResult.typeCorrect}
+          onAnswer={handleStrategyAnswer}
+        />
+      )}
 
-        {phase === 'strategy' && currentResult && (
-          <StrategyQuestion
-            question={currentQuestion}
-            typeWasCorrect={currentResult.typeCorrect}
-            onAnswer={handleStrategyAnswer}
-          />
-        )}
-
-        {phase === 'feedback' && currentResult && (
-          <div className="flex-1 flex flex-col">
-            {/* Feedback display */}
-            <div className={`rounded-xl p-4 ${
-              currentResult.typeCorrect && currentResult.strategyCorrect
-                ? 'bg-green-50 border border-green-200'
-                : 'bg-amber-50 border border-amber-200'
-            }`}>
-              <div className="space-y-3">
-                {/* Type result */}
-                <div className="flex items-start gap-2">
-                  <span className={currentResult.typeCorrect ? 'text-green-600' : 'text-amber-600'}>
-                    {currentResult.typeCorrect ? '✓' : '○'}
+      {phase === 'feedback' && currentResult && (
+        <div className="flex-1 flex flex-col">
+          {/* Feedback display */}
+          <div className={`rounded-xl p-4 ${
+            currentResult.typeCorrect && currentResult.strategyCorrect
+              ? 'bg-green-50 border border-green-200'
+              : 'bg-amber-50 border border-amber-200'
+          }`}>
+            <div className="space-y-3">
+              {/* Type result */}
+              <div className="flex items-start gap-2">
+                <span className={currentResult.typeCorrect ? 'text-green-600' : 'text-amber-600'}>
+                  {currentResult.typeCorrect ? '✓' : '○'}
+                </span>
+                <div>
+                  <span className="font-medium text-slate-700">Typ: </span>
+                  <span className={currentResult.typeCorrect ? 'text-green-700' : 'text-amber-700'}>
+                    {typeLabel}
                   </span>
-                  <div>
-                    <span className="font-medium text-slate-700">Typ: </span>
-                    <span className={currentResult.typeCorrect ? 'text-green-700' : 'text-amber-700'}>
-                      {typeLabel}
-                    </span>
-                  </div>
                 </div>
+              </div>
 
-                {/* Strategy result */}
-                <div className="flex items-start gap-2">
-                  <span className={currentResult.strategyCorrect ? 'text-green-600' : 'text-amber-600'}>
-                    {currentResult.strategyCorrect ? '✓' : '○'}
+              {/* Strategy result */}
+              <div className="flex items-start gap-2">
+                <span className={currentResult.strategyCorrect ? 'text-green-600' : 'text-amber-600'}>
+                  {currentResult.strategyCorrect ? '✓' : '○'}
+                </span>
+                <div>
+                  <span className="font-medium text-slate-700">Strategie: </span>
+                  <span className={currentResult.strategyCorrect ? 'text-green-700' : 'text-amber-700'}>
+                    {correctStrategy}
                   </span>
-                  <div>
-                    <span className="font-medium text-slate-700">Strategie: </span>
-                    <span className={currentResult.strategyCorrect ? 'text-green-700' : 'text-amber-700'}>
-                      {correctStrategy}
-                    </span>
-                  </div>
                 </div>
+              </div>
 
-                {/* Explanation */}
-                <div className="pt-2 border-t border-slate-200 mt-2">
-                  <p className="text-slate-600 text-sm">
-                    {explanation}
-                  </p>
-                </div>
+              {/* Explanation */}
+              <div className="pt-2 border-t border-slate-200 mt-2">
+                <p className="text-slate-600 text-sm">
+                  {explanation}
+                </p>
               </div>
             </div>
           </div>
-        )}
-      </div>
-
-      {/* ZONE 3: Bottom bar - ADR-009 centralized */}
-      <BottomBar
-        slots={{
-          1: { onClick: onExit },
-          2: { onClick: onViewProgress },
-          5: {
-            action: phase === 'feedback' ? 'continue' : 'skip',
-            onClick: phase === 'feedback' ? handleContinue : handleSkip
-          }
-        }}
-      />
-    </div>
+        </div>
+      )}
+    </PageLayout>
   )
 }
 

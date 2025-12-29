@@ -1,13 +1,25 @@
 import { useState, useEffect } from 'react'
-import { LightBulbIcon, TagIcon } from '@heroicons/react/24/outline'
+import { LightBulbIcon, TagIcon, CalculatorIcon } from '@heroicons/react/24/outline'
 import QuestionDisplay from './QuestionDisplay'
 import BottomBar from './BottomBar'
+import PageHeader from './PageHeader'
 import { getQuestionText } from '../lib/questionUtils'
 import topicTypeMapping from '../data/topic_type_mapping.json'
 import { evaluateAnswer } from '@lib/mathParser'
 import { UnifiedQuestion, TopicTypeMappingData } from '../types'
 import { AttemptResult, ProgressIndicator } from '../types'
 import { saveAttempt } from '../hooks/useAttempts'
+
+// ADR-031: Topic display names for header
+const TOPIC_LABELS: Record<string, string> = {
+  'o_x_vice': 'O X více/méně',
+  'equations': 'Rovnice',
+  'fractions': 'Zlomky',
+  'pythagorean': 'Pythagorova věta',
+  'sequences': 'Posloupnosti',
+  'percents': 'Procenta',
+  'geometry': 'Geometrie'
+}
 
 // Type the imported JSON
 const mappingData = topicTypeMapping as TopicTypeMappingData
@@ -211,24 +223,26 @@ function ProblemCard({
   const answerUnit = problem.modes.numeric?.unit || null
   const variableKey = problem.keyboard.variable // From data, null = no variable key
 
+  // ADR-031: Get topic display name for header
+  const topicLabel = TOPIC_LABELS[problem.topic] || problem.topic
+
   return (
     <div className="h-screen h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
-      {/* Progress bar */}
-      {progress && (
-        <div className="mb-3 px-4 pt-2">
-          <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-safe-blue transition-all duration-500"
-              style={{ width: `${(progress.current / progress.total) * 100}%` }}
-            />
-          </div>
+      {/* ADR-031: HEADER template - PageHeader with topic name */}
+      <div className="bg-white border-b border-slate-200 flex-shrink-0">
+        <div className="max-w-2xl mx-auto">
+          <PageHeader
+            icon={CalculatorIcon}
+            title={topicLabel}
+            progress={progress ? { current: progress.current, total: progress.total } : undefined}
+          />
         </div>
-      )}
+      </div>
 
       {/* Problem text and diagram - ADR-028 */}
       <QuestionDisplay
         question={problem}
-        className="bg-white rounded-2xl shadow-sm p-5 mb-4 mx-4"
+        className="bg-white rounded-2xl shadow-sm p-5 mb-4 mx-4 mt-4"
         textClassName="text-lg text-slate-800 leading-relaxed"
       />
 

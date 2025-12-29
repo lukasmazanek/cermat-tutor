@@ -10,8 +10,10 @@
  */
 
 import { useState, useMemo, useEffect } from 'react'
+import { ChartBarIcon } from '@heroicons/react/24/outline'
 import questionsData from '../data/questions.json'
-import BottomBar from './BottomBar'
+import PageLayout from './PageLayout'
+import PageHeader from './PageHeader'
 import { QuestionsData } from '../types'
 import { getAttempts, AttemptRecord } from '../hooks/useAttempts'
 
@@ -134,52 +136,53 @@ function ProgressPage({ onBack }: ProgressPageProps) {
     )
   }
 
+  // ADR-031: HEADER template with PageLayout + PageHeader
   return (
-    <div className="h-screen h-[100dvh] bg-slate-50 flex flex-col overflow-hidden">
-      <div className="flex-1 min-h-0 overflow-y-auto max-w-2xl mx-auto w-full px-4 py-6 pb-24">
-        {/* Header */}
-        <div className="mb-6">
-          <h1 className="text-2xl font-semibold text-slate-800">
-            Můj pokrok
-          </h1>
-          <p className="text-slate-500 text-sm mt-1">
-            Závod sama se sebou
-          </p>
-        </div>
+    <PageLayout
+      header={
+        <PageHeader
+          icon={ChartBarIcon}
+          title="Můj pokrok"
+          iconColor="text-purple-600"
+          progressColor="bg-purple-500"
+        />
+      }
+      bottomBar={{
+        1: { onClick: onBack },
+      }}
+      contentClassName="px-4 py-6"
+    >
+      {/* Subtitle */}
+      <p className="text-slate-500 text-sm mb-6 -mt-4">
+        Závod sama se sebou
+      </p>
 
-        {/* Streak - only show if active */}
-        {streak > 0 && (
-          <StreakBanner streak={streak} />
-        )}
+      {/* Streak - only show if active */}
+      {streak > 0 && (
+        <StreakBanner streak={streak} />
+      )}
 
-        {/* Weekly comparison */}
-        <WeeklyComparison stats={weeklyStats} />
+      {/* Weekly comparison */}
+      <WeeklyComparison stats={weeklyStats} />
 
-        {/* Topic activity */}
-        {topicActivity.length > 0 && (
-          <TopicActivitySection
-            topics={topicActivity}
-            getTopicName={getTopicName}
-          />
-        )}
+      {/* Topic activity */}
+      {topicActivity.length > 0 && (
+        <TopicActivitySection
+          topics={topicActivity}
+          getTopicName={getTopicName}
+        />
+      )}
 
-        {/* Hints helped */}
-        {allAttempts.length > 0 && (
-          <HintsHelpedCard attempts={allAttempts} />
-        )}
+      {/* Hints helped */}
+      {allAttempts.length > 0 && (
+        <HintsHelpedCard attempts={allAttempts} />
+      )}
 
-        {/* Empty state */}
-        {allAttempts.length === 0 && (
-          <EmptyState />
-        )}
-      </div>
-
-      <BottomBar
-        slots={{
-          1: { onClick: onBack },
-        }}
-      />
-    </div>
+      {/* Empty state */}
+      {allAttempts.length === 0 && (
+        <EmptyState />
+      )}
+    </PageLayout>
   )
 }
 
