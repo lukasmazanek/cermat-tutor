@@ -158,7 +158,7 @@ function TopicSelector({ onSelectTopic, lastSession, onViewProgress, onStartLigh
             onClick={() => onSelectTopic(topic.id)}
             className="bg-white rounded-xl p-3 sm:p-5 shadow-sm text-left relative
               transition-gentle active:scale-[0.98] border-2 border-transparent
-              hover:border-safe-blue/20 focus:border-safe-blue focus:outline-none"
+              md:hover:border-safe-blue/20 focus:outline-none"
           >
             {/* Labels - top right corner */}
             {(topic.is_strength || topic.is_critical) && (

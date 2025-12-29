@@ -250,7 +250,7 @@ function ProblemCard({
                   key={index}
                   onClick={() => handleStrategyPromptAnswer(option.value, option.isCorrect)}
                   className="w-full p-4 rounded-xl text-left transition-all duration-200
-                    bg-white border-2 border-slate-200 text-slate-700 hover:border-indigo-300
+                    bg-white border-2 border-slate-200 text-slate-700 md:hover:border-indigo-300
                     active:scale-[0.98]"
                 >
                   <span className="font-mono">{option.value}</span>
@@ -270,7 +270,7 @@ function ProblemCard({
 
       {/* Content area */}
       {promptPhase === 'done' && (
-      <div className="flex-1 flex flex-col overflow-auto px-4 pb-64">
+      <div className="flex-1 min-h-0 flex flex-col overflow-auto px-4 pb-64">
         {/* Strategy result */}
         {typePromptEnabled && typeMapping && strategyPromptResult !== null && (
           <div className="bg-indigo-50 border border-indigo-100 rounded-xl p-4 mb-4 flex-shrink-0">

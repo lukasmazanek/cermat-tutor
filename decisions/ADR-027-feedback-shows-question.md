@@ -1,7 +1,7 @@
 # ADR-027: Feedback Shows Original Question
 
 ## Status
-Accepted
+Implemented (2025-12-29)
 
 ## Date
 2025-12-29

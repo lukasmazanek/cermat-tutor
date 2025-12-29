@@ -1,7 +1,7 @@
 # ADR-028: QuestionDisplay Component
 
 ## Status
-Accepted
+Implemented (2025-12-29)
 
 ## Date
 2025-12-29
