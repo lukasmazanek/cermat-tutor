@@ -12,7 +12,8 @@ export interface Profile {
 
 export const PROFILES: Profile[] = [
   { id: 'anezka', name: 'Anežka' },
-  { id: 'petr', name: 'Petr' },
+  { id: 'emilka', name: 'Emilka' },
+  { id: 'host', name: 'Host' },
 ]
 
 export type ProfileId = string
