@@ -4,6 +4,7 @@ import questionsData from './data/questions.json'
 import ProblemCard from './components/ProblemCard'
 import SessionSummary from './components/SessionSummary'
 import TopicSelector from './components/TopicSelector'
+import ProfilePicker from './components/ProfilePicker'
 import VisualExplainer from './components/VisualExplainer'
 import ProgressPage from './components/ProgressPage'
 import LightningRound from './components/LightningRound'
@@ -11,13 +12,14 @@ import TypeDrill from './components/TypeDrill'
 import BottomBar from './components/BottomBar'
 import { UnifiedQuestion, QuestionsData } from './types'
 import { Session, SessionAttempt, AttemptResult, SessionMetrics } from './types'
-import { startSession, endSession } from './hooks/useAttempts'
+import { startSession, endSession, setCurrentUserId } from './hooks/useAttempts'
+import { ProfileId, getStoredUser, setStoredUser, clearStoredUser } from './config/profiles'
 
 // Type the imported JSON data
 const data = questionsData as QuestionsData
 
-// App states
-type AppState = 'topic_select' | 'session' | 'summary' | 'progress' | 'lightning' | 'typedrill'
+// App states - ADR-032: profile_select added for multi-user support
+type AppState = 'profile_select' | 'topic_select' | 'session' | 'summary' | 'progress' | 'lightning' | 'typedrill'
 
 // Helper to get last session from localStorage
 function getLastSession(): Session | null {
@@ -102,7 +104,9 @@ function generateSessionProblems(topicId: string): UnifiedQuestion[] {
 }
 
 function App() {
-  const [appState, setAppState] = useState<AppState>('topic_select')
+  // ADR-032: Multi-user support - check for stored user on init
+  const [_currentUser, setCurrentUser] = useState<ProfileId | null>(() => getStoredUser())
+  const [appState, setAppState] = useState<AppState>(() => getStoredUser() ? 'topic_select' : 'profile_select')
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null)
   const [sessionProblems, setSessionProblems] = useState<UnifiedQuestion[]>([])
   const [currentProblemIndex, setCurrentProblemIndex] = useState(0)
@@ -249,7 +253,28 @@ function App() {
     setAppState('typedrill')
   }
 
+  // ADR-032: Profile selection handler
+  const handleSelectProfile = (profileId: ProfileId) => {
+    setCurrentUser(profileId)
+    setStoredUser(profileId)
+    setCurrentUserId(profileId) // Update storage layer
+    setLastSession(getLastSession()) // Reload last session for this user
+    setAppState('topic_select')
+  }
+
+  // ADR-032: Switch user handler
+  const handleSwitchUser = () => {
+    clearStoredUser()
+    setCurrentUser(null)
+    setAppState('profile_select')
+  }
+
   // Render based on app state
+  // ADR-032: Profile selection screen
+  if (appState === 'profile_select') {
+    return <ProfilePicker onSelectProfile={handleSelectProfile} />
+  }
+
   if (appState === 'lightning') {
     return (
       <LightningRound
@@ -287,6 +312,7 @@ function App() {
         onViewProgress={handleViewProgress}
         onStartLightning={handleStartLightning}
         onStartTypeDrill={handleStartTypeDrill}
+        onSwitchUser={handleSwitchUser}
       />
     )
   }

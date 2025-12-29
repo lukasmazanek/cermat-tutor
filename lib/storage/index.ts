@@ -1,27 +1,34 @@
 /**
  * ADR-023: Storage Layer (Simplified)
+ * ADR-032: Multi-user support
  *
  * Unified storage interface for attempt persistence.
  * - Uses Supabase when configured (env variables set)
  * - Falls back to localStorage otherwise
  *
- * Single-user setup - no authentication required.
+ * Multi-user setup via setCurrentUserId().
  *
  * Usage:
- *   import { storage, getActiveStorage } from '@lib/storage'
+ *   import { storage, getActiveStorage, setCurrentUserId } from '@lib/storage'
+ *
+ *   // Set current user (called when profile is selected)
+ *   setCurrentUserId('anezka')
  *
  *   // Get active provider (Supabase if configured, else localStorage)
  *   const activeStorage = await getActiveStorage()
  *   await activeStorage.saveAttempt({ ... })
  */
 
-import { localStorageProvider } from './localStorage'
+import { localStorageProvider, setCurrentUserId, getCurrentUserId } from './localStorage'
 import { supabaseStorageProvider } from './supabase'
 import { isConfigured } from '../supabase'
 import type { StorageProvider } from './types'
 
 // Re-export types for convenience
 export * from './types'
+
+// ADR-032: Re-export user ID functions
+export { setCurrentUserId, getCurrentUserId }
 
 /**
  * Get the active storage provider.

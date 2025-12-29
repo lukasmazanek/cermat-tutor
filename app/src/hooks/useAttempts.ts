@@ -28,7 +28,11 @@ export {
   getTopicStats,
   getAttemptsForQuestion,
   getAttemptsForTopic,
-  getRecentAttempts
+  getRecentAttempts,
+
+  // ADR-032: User ID management
+  setCurrentUserId,
+  getCurrentUserId
 } from '@lib/storage'
 
 // Future: Add React hooks with state management

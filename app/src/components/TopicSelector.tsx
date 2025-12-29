@@ -1,6 +1,7 @@
 import questionsData from '../data/questions.json'
-import { SparklesIcon, LightBulbIcon, ChartBarIcon, CheckCircleIcon, BoltIcon, AcademicCapIcon } from '@heroicons/react/24/outline'
+import { SparklesIcon, LightBulbIcon, ChartBarIcon, CheckCircleIcon, BoltIcon, AcademicCapIcon, UserCircleIcon } from '@heroicons/react/24/outline'
 import { Session, QuestionsData, TopicMeta } from '../types'
+import { PROFILES, getStoredUser } from '../config/profiles'
 
 const data = questionsData as QuestionsData
 
@@ -30,6 +31,7 @@ interface TopicSelectorProps {
   onViewProgress: () => void
   onStartLightning: () => void
   onStartTypeDrill: () => void
+  onSwitchUser?: () => void  // ADR-032: Switch user handler
 }
 
 interface ProblemCount {
@@ -38,9 +40,13 @@ interface ProblemCount {
   remaining: number
 }
 
-function TopicSelector({ onSelectTopic, lastSession, onViewProgress, onStartLightning, onStartTypeDrill }: TopicSelectorProps) {
+function TopicSelector({ onSelectTopic, lastSession, onViewProgress, onStartLightning, onStartTypeDrill, onSwitchUser }: TopicSelectorProps) {
   const topics = Object.values(data.topics) as TopicMeta[]
   const mastered = getMasteredProblemIds()
+
+  // ADR-032: Get current user name
+  const currentUserId = getStoredUser()
+  const currentUserName = PROFILES.find(p => p.id === currentUserId)?.name || 'Uživatel'
 
   // ADR-022: Get numeric problems for counting (problems that support open answer input)
   const openProblems = data.questions.filter(q => q.modes.numeric)
@@ -58,6 +64,20 @@ function TopicSelector({ onSelectTopic, lastSession, onViewProgress, onStartLigh
 
   return (
     <div className="min-h-screen bg-slate-50 px-3 sm:px-4 py-4 sm:py-6 flex flex-col">
+      {/* ADR-032: Current user display with switch option */}
+      {onSwitchUser && (
+        <button
+          onClick={onSwitchUser}
+          className="self-end flex items-center gap-1.5 text-sm text-slate-500 mb-2
+            hover:text-slate-700 transition-colors"
+        >
+          <UserCircleIcon className="w-5 h-5" />
+          <span>{currentUserName}</span>
+          <span className="text-slate-400">|</span>
+          <span className="text-safe-blue">Změnit</span>
+        </button>
+      )}
+
       {/* Welcome back message */}
       {lastSession && (
         <div className="bg-white rounded-xl p-4 mb-6 shadow-sm">

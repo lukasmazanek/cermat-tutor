@@ -1,5 +1,6 @@
 /**
  * ADR-023: localStorage Implementation
+ * ADR-032: Multi-user support
  *
  * Phase 1 storage provider using browser localStorage.
  * Will be replaced/augmented by Supabase in Phase 2.
@@ -12,6 +13,24 @@ import {
   TopicStats,
   StorageProvider
 } from './types'
+
+// ADR-032: Current user ID (module-level state)
+let currentUserId: string = 'local'
+
+/**
+ * Set the current user ID for all storage operations.
+ * Called when user selects a profile.
+ */
+export function setCurrentUserId(userId: string): void {
+  currentUserId = userId
+}
+
+/**
+ * Get the current user ID.
+ */
+export function getCurrentUserId(): string {
+  return currentUserId
+}
 
 // Storage keys
 const ATTEMPTS_KEY = 'tutor_attempts'
@@ -31,7 +50,8 @@ function generateUUID(): string {
 class LocalStorageProvider implements StorageProvider {
   // Attempts
 
-  async getAttempts(): Promise<AttemptRecord[]> {
+  // ADR-032: Get ALL attempts (unfiltered, for internal use)
+  private async getAllAttempts(): Promise<AttemptRecord[]> {
     try {
       return JSON.parse(localStorage.getItem(ATTEMPTS_KEY) || '[]')
     } catch {
@@ -39,16 +59,22 @@ class LocalStorageProvider implements StorageProvider {
     }
   }
 
+  // ADR-032: Get attempts filtered by current user
+  async getAttempts(): Promise<AttemptRecord[]> {
+    const all = await this.getAllAttempts()
+    return all.filter(a => a.user_id === currentUserId)
+  }
+
   async saveAttempt(input: SaveAttemptInput): Promise<AttemptRecord> {
     const attempt: AttemptRecord = {
       id: generateUUID(),
-      user_id: 'local',
+      user_id: currentUserId, // ADR-032: Use current user ID
       session_id: this.getCurrentSessionId() || generateUUID(),
       ...input,
       created_at: new Date().toISOString()
     }
 
-    const attempts = await this.getAttempts()
+    const attempts = await this.getAllAttempts() // Save to full list
     attempts.push(attempt)
     localStorage.setItem(ATTEMPTS_KEY, JSON.stringify(attempts))
 
@@ -74,12 +100,19 @@ class LocalStorageProvider implements StorageProvider {
 
   // Sessions
 
-  async getSessions(): Promise<SessionRecord[]> {
+  // ADR-032: Get ALL sessions (unfiltered, for internal use)
+  private async getAllSessions(): Promise<SessionRecord[]> {
     try {
       return JSON.parse(localStorage.getItem(SESSIONS_KEY) || '[]')
     } catch {
       return []
     }
+  }
+
+  // ADR-032: Get sessions filtered by current user
+  async getSessions(): Promise<SessionRecord[]> {
+    const all = await this.getAllSessions()
+    return all.filter(s => s.user_id === currentUserId)
   }
 
   async startSession(topic: string): Promise<string> {
@@ -88,14 +121,14 @@ class LocalStorageProvider implements StorageProvider {
 
     const session: SessionRecord = {
       id: sessionId,
-      user_id: 'local',
+      user_id: currentUserId, // ADR-032: Use current user ID
       topic,
       started_at: new Date().toISOString(),
       ended_at: null,
       problems_count: 0
     }
 
-    const sessions = await this.getSessions()
+    const sessions = await this.getAllSessions() // Save to full list
     sessions.push(session)
     localStorage.setItem(SESSIONS_KEY, JSON.stringify(sessions))
 
@@ -106,7 +139,7 @@ class LocalStorageProvider implements StorageProvider {
     const sessionId = sessionStorage.getItem(CURRENT_SESSION_KEY)
     if (!sessionId) return
 
-    const sessions = await this.getSessions()
+    const sessions = await this.getAllSessions() // ADR-032: Use full list for update
     const session = sessions.find(s => s.id === sessionId)
     if (session) {
       session.ended_at = new Date().toISOString()
