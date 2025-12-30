@@ -132,8 +132,8 @@
       "tags": ["úhly-a-přímky", "rovnoběžky"],
       "difficulty": 2,
       "question": {
-        "stem": "Čtyři přímky, dvě rovnoběžné. Úhel α a 6α dávají dohromady přímý úhel. Jaký je β = 6α?",
-        "context": "Dvě rovnoběžky proťaty příčkou. Úhly α a 6α jsou vedlejší (součet 180°). Vypočítej β = 6α.",
+        "stem": "Dvě rovnoběžky proťaty příčkou. Úhly α a 9α jsou vedlejší. Jaký je úhel β = 6α?",
+        "context": "Dvě rovnoběžky proťaty příčkou. Úhly α a 9α jsou vedlejší (součet 180°). Vypočítej β = 6α.",
         "image": null
       },
       "answer": {
@@ -146,15 +146,15 @@
         {"value": "72"}
       ],
       "hints": [
-        {"level": 1, "text": "α + 6α = 180° (vedlejší úhly)"},
-        {"level": 2, "text": "7α = 180°, α = 180°/7 ≈ 25.7°, β = 6α ≈ 154°... Počkej, zkontroluj: pokud 10α = 180°, tak α = 18°"}
+        {"level": 1, "text": "Vedlejší úhly mají součet 180°: α + 9α = 180°"},
+        {"level": 2, "text": "10α = 180° → α = 18°, takže β = 6α = ?"}
       ],
       "solution": {
         "steps": [
-          "α + 6α = 180° (vedlejší úhly u rovnoběžek)",
-          "Pokud jsou úhly α a β, kde β = 6α:",
-          "10α = 180°, α = 18°",
-          "β = 6 × 18° = 108°"
+          "α + 9α = 180° (vedlejší úhly)",
+          "10α = 180°",
+          "α = 18°",
+          "β = 6α = 6 × 18° = 108°"
         ],
         "strategy": "Vedlejší úhly"
       },
@@ -164,7 +164,7 @@
       },
       "diagram": {
         "type": "parallel_lines",
-        "labels": {"alpha": "α", "beta": "6α"},
+        "labels": {"alpha": "α", "beta": "9α"},
         "highlight": "beta"
       }
     },
