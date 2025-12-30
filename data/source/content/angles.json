@@ -174,28 +174,29 @@
       "tags": ["úhly-a-přímky"],
       "difficulty": 2,
       "question": {
-        "stem": "Čtyři přímky protínající se v bodě. Dané úhly 60° a 132°. Jaký je úhel α?",
-        "context": "Čtyři přímky se protínají v jednom bodě. Dva dané úhly jsou 60° a 132°. Vypočítej zbývající úhel α.",
+        "stem": "Čtyři úhly kolem bodu: 60°, 132° a dva stejné úhly α. Jaký je α?",
+        "context": "Kolem bodu jsou čtyři úhly: 60°, 132° a dva stejné úhly α. Vypočítej α.",
         "image": null
       },
       "answer": {
-        "correct": "27",
+        "correct": "84",
         "unit": "°",
         "variants": []
       },
       "distractors": [
-        {"value": "36"},
-        {"value": "24"}
+        {"value": "42"},
+        {"value": "90"}
       ],
       "hints": [
         {"level": 1, "text": "Součet všech úhlů kolem bodu je 360°."},
-        {"level": 2, "text": "Pokud 4α + 60° + 132° = 360°, pak 4α = 168°, α = 42°... Nebo zkontroluj zadání."}
+        {"level": 2, "text": "60° + 132° + 2α = 360°"}
       ],
       "solution": {
         "steps": [
-          "Úhly kolem bodu: 360°",
-          "4α = 108°",
-          "α = 27°"
+          "Součet úhlů kolem bodu: 360°",
+          "60° + 132° + 2α = 360°",
+          "2α = 360° - 192° = 168°",
+          "α = 84°"
         ],
         "strategy": "Úhly kolem bodu"
       },

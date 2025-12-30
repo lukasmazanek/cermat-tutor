@@ -1,6 +1,6 @@
 {
   "version": "4.0",
-  "generated": "2025-12-30T07:04:33.751Z",
+  "generated": "2025-12-30T07:39:10.976Z",
   "description": "ADR-022: Multi-mode questions with keyboard config",
   "topics": {
     "angles": {
@@ -359,17 +359,17 @@
       "topic": "angles",
       "difficulty": 2,
       "question": {
-        "stem": "Čtyři přímky protínající se v bodě. Dané úhly 60° a 132°. Jaký je úhel α?",
-        "context": "Čtyři přímky se protínají v jednom bodě. Dva dané úhly jsou 60° a 132°. Vypočítej zbývající úhel α."
+        "stem": "Čtyři úhly kolem bodu: 60°, 132° a dva stejné úhly α. Jaký je α?",
+        "context": "Kolem bodu jsou čtyři úhly: 60°, 132° a dva stejné úhly α. Vypočítej α."
       },
       "modes": {
         "numeric": {
-          "answer": "27",
+          "answer": "84",
           "unit": "°",
           "variants": [],
           "distractors": [
-            "36",
-            "24"
+            "42",
+            "90"
           ]
         }
       },
@@ -378,13 +378,14 @@
       },
       "hints": [
         "Součet všech úhlů kolem bodu je 360°.",
-        "Pokud 4α + 60° + 132° = 360°, pak 4α = 168°, α = 42°... Nebo zkontroluj zadání."
+        "60° + 132° + 2α = 360°"
       ],
       "solution": {
         "steps": [
-          "Úhly kolem bodu: 360°",
-          "4α = 108°",
-          "α = 27°"
+          "Součet úhlů kolem bodu: 360°",
+          "60° + 132° + 2α = 360°",
+          "2α = 360° - 192° = 168°",
+          "α = 84°"
         ],
         "strategy": "Úhly kolem bodu"
       },
