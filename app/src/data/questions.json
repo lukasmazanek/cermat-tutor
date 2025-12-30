@@ -1,6 +1,6 @@
 {
   "version": "4.0",
-  "generated": "2025-12-30T05:23:44.528Z",
+  "generated": "2025-12-30T05:27:40.935Z",
   "description": "ADR-022: Multi-mode questions with keyboard config",
   "topics": {
     "angles": {
@@ -126,6 +126,12 @@
     "systems_equations": {
       "id": "systems_equations",
       "name_cs": "Soustava rovnic",
+      "is_strength": false,
+      "is_critical": false
+    },
+    "tables_graphs": {
+      "id": "tables_graphs",
+      "name_cs": "Statistika - tabulky",
       "is_strength": false,
       "is_critical": false
     },
@@ -10222,6 +10228,174 @@
       "meta": {
         "type_id": "TEST-undefined",
         "type_label": "Soustava rovnic",
+        "original_type": null
+      }
+    },
+    {
+      "id": "tab-test-001",
+      "topic": "tables_graphs",
+      "difficulty": 1,
+      "question": {
+        "stem": "Zahrádkáři zůstalo 9 neprodaných vzrostlých stromků. Ano nebo Ne?",
+        "context": "Zahrádkář prodává stromky. Tabulka ukazuje počty zakoupených a prodaných stromků:\n\n| Druh | Zakoupeno | Prodáno |\n|------|-----------|--------|\n| Vzrostlé | 21 | 12 |\n| Malé | 21 | 16 |\n\nZůstalo mu 9 neprodaných vzrostlých stromků?"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "A",
+          "unit": null,
+          "variants": [
+            "Ano",
+            "ano",
+            "ANO",
+            "a"
+          ],
+          "distractors": []
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "Kolik vzrostlých zůstalo? Zakoupeno - Prodáno = ?",
+        "21 - 12 = 9. Ano, zůstalo mu 9 neprodaných vzrostlých."
+      ],
+      "solution": {
+        "steps": [
+          "Vzrostlé: zakoupeno 21, prodáno 12",
+          "Zůstalo: 21 - 12 = 9",
+          "Odpověď: Ano"
+        ],
+        "strategy": "Rozdíl = zakoupeno - prodáno"
+      },
+      "meta": {
+        "type_id": "TEST-52",
+        "type_label": "Statistika - tabulky",
+        "original_type": null
+      }
+    },
+    {
+      "id": "tab-test-002",
+      "topic": "tables_graphs",
+      "difficulty": 1,
+      "question": {
+        "stem": "Prodal všechny zakoupené jen u jednoho druhu stromků. Ano nebo Ne?",
+        "context": "Zahrádkář prodává stromky. Tabulka ukazuje počty zakoupených a prodaných stromků:\n\n| Druh | Zakoupeno | Prodáno |\n|------|-----------|--------|\n| Vzrostlé | 21 | 12 |\n| Malé | 16 | 16 |\n\nProdal všechny zakoupené jen u jednoho druhu?"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "A",
+          "unit": null,
+          "variants": [
+            "Ano",
+            "ano",
+            "ANO",
+            "a"
+          ],
+          "distractors": []
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "U kterého druhu se zakoupeno = prodáno?",
+        "Malé: 16 = 16. Vzrostlé: 21 ≠ 12. Jen u jednoho druhu (malé)."
+      ],
+      "solution": {
+        "steps": [
+          "Vzrostlé: 21 zakoupeno, 12 prodáno - neprodal vše",
+          "Malé: 16 zakoupeno, 16 prodáno - prodal vše",
+          "Odpověď: Ano (jen malé)"
+        ],
+        "strategy": "Porovnej zakoupeno vs prodáno u každého druhu"
+      },
+      "meta": {
+        "type_id": "TEST-52",
+        "type_label": "Statistika - tabulky",
+        "original_type": null
+      }
+    },
+    {
+      "id": "tab-test-003",
+      "topic": "tables_graphs",
+      "difficulty": 1,
+      "question": {
+        "stem": "V 9. ročníku je stejný počet dívek jako chlapců. Ano nebo Ne?",
+        "context": "Tabulka účasti v kroužcích:\n\n| Kroužek | 8.tř dívky | 8.tř chlapci | 9.tř dívky | 9.tř chlapci |\n|---------|------------|--------------|------------|-------------|\n| ČJ | 3 | 2 | 4 | 3 |\n| Mat | 2 | 3 | 2 | 4 |\n| Šachy | 4 | 5 | 6 | 7 |\n| Robotika | 3 | 6 | 5 | 4 |\n| Hudba | 4 | 2 | 8 | 7 |\n\nJe v 9. ročníku stejný počet dívek jako chlapců?"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "A",
+          "unit": null,
+          "variants": [
+            "Ano",
+            "ano",
+            "ANO",
+            "a"
+          ],
+          "distractors": []
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "Sečti všechny 9.tř dívky a všechny 9.tř chlapce.",
+        "Dívky: 4+2+6+5+8=25. Chlapci: 3+4+7+4+7=25. Stejný počet!"
+      ],
+      "solution": {
+        "steps": [
+          "9.tř dívky: 4+2+6+5+8 = 25",
+          "9.tř chlapci: 3+4+7+4+7 = 25",
+          "25 = 25, odpověď: Ano"
+        ],
+        "strategy": "Sečti sloupce a porovnej"
+      },
+      "meta": {
+        "type_id": "TEST-52",
+        "type_label": "Statistika - grafy",
+        "original_type": null
+      }
+    },
+    {
+      "id": "tab-test-004",
+      "topic": "tables_graphs",
+      "difficulty": 2,
+      "question": {
+        "stem": "Český jazyk volilo více než 16% všech žáků. Ano nebo Ne?",
+        "context": "Tabulka účasti v kroužcích (celkem 50 žáků):\n\n| Kroužek | 8.tř dívky | 8.tř chlapci | 9.tř dívky | 9.tř chlapci |\n|---------|------------|--------------|------------|-------------|\n| ČJ | 2 | 1 | 2 | 2 |\n| Mat | 2 | 3 | 2 | 4 |\n| Šachy | 4 | 5 | 6 | 7 |\n| Robotika | 3 | 6 | 5 | 4 |\n| Hudba | 4 | 2 | 8 | 7 |\n\nVolilo Český jazyk více než 16% všech žáků?"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "N",
+          "unit": null,
+          "variants": [
+            "Ne",
+            "ne",
+            "NE",
+            "n"
+          ],
+          "distractors": []
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "Kolik žáků volilo ČJ? Kolik je 16% z 50?",
+        "ČJ: 2+1+2+2=7. 16% z 50 = 8. 7 < 8, odpověď Ne."
+      ],
+      "solution": {
+        "steps": [
+          "ČJ celkem: 2+1+2+2 = 7 žáků",
+          "16% z 50 = 0.16 × 50 = 8",
+          "7 < 8, tedy NE více než 16%"
+        ],
+        "strategy": "Spočítej celkem a porovnej s procentem"
+      },
+      "meta": {
+        "type_id": "TEST-52",
+        "type_label": "Statistika - grafy",
         "original_type": null
       }
     },

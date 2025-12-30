@@ -1,7 +1,168 @@
 {
   "topic": "tables_graphs",
   "name": "Tabulky a grafy",
-  "version": "1.1",
-  "migrated": "2025-12-29",
-  "questions": []
+  "version": "1.2",
+  "migrated": "2025-12-30",
+  "questions": [
+    {
+      "id": "tab-test-001",
+      "topic": "tables_graphs",
+      "tags": ["statistika", "tabulky"],
+      "difficulty": 1,
+      "question": {
+        "stem": "Zahrádkáři zůstalo 9 neprodaných vzrostlých stromků. Ano nebo Ne?",
+        "context": "Zahrádkář prodává stromky. Tabulka ukazuje počty zakoupených a prodaných stromků:\n\n| Druh | Zakoupeno | Prodáno |\n|------|-----------|--------|\n| Vzrostlé | 21 | 12 |\n| Malé | 21 | 16 |\n\nZůstalo mu 9 neprodaných vzrostlých stromků?",
+        "image": null
+      },
+      "answer": {
+        "correct": "A",
+        "unit": null,
+        "variants": ["Ano", "ano", "ANO", "a"]
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Kolik vzrostlých zůstalo? Zakoupeno - Prodáno = ?"
+        },
+        {
+          "level": 2,
+          "text": "21 - 12 = 9. Ano, zůstalo mu 9 neprodaných vzrostlých."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Vzrostlé: zakoupeno 21, prodáno 12",
+          "Zůstalo: 21 - 12 = 9",
+          "Odpověď: Ano"
+        ],
+        "strategy": "Rozdíl = zakoupeno - prodáno"
+      },
+      "meta": {
+        "type_id": "TEST-52",
+        "type_label": "Statistika - tabulky",
+        "source": "M9PCD22C0T03"
+      }
+    },
+    {
+      "id": "tab-test-002",
+      "topic": "tables_graphs",
+      "tags": ["statistika", "tabulky"],
+      "difficulty": 1,
+      "question": {
+        "stem": "Prodal všechny zakoupené jen u jednoho druhu stromků. Ano nebo Ne?",
+        "context": "Zahrádkář prodává stromky. Tabulka ukazuje počty zakoupených a prodaných stromků:\n\n| Druh | Zakoupeno | Prodáno |\n|------|-----------|--------|\n| Vzrostlé | 21 | 12 |\n| Malé | 16 | 16 |\n\nProdal všechny zakoupené jen u jednoho druhu?",
+        "image": null
+      },
+      "answer": {
+        "correct": "A",
+        "unit": null,
+        "variants": ["Ano", "ano", "ANO", "a"]
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "U kterého druhu se zakoupeno = prodáno?"
+        },
+        {
+          "level": 2,
+          "text": "Malé: 16 = 16. Vzrostlé: 21 ≠ 12. Jen u jednoho druhu (malé)."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Vzrostlé: 21 zakoupeno, 12 prodáno - neprodal vše",
+          "Malé: 16 zakoupeno, 16 prodáno - prodal vše",
+          "Odpověď: Ano (jen malé)"
+        ],
+        "strategy": "Porovnej zakoupeno vs prodáno u každého druhu"
+      },
+      "meta": {
+        "type_id": "TEST-52",
+        "type_label": "Statistika - tabulky",
+        "source": "M9PCD22C0T03"
+      }
+    },
+    {
+      "id": "tab-test-003",
+      "topic": "tables_graphs",
+      "tags": ["statistika", "grafy"],
+      "difficulty": 1,
+      "question": {
+        "stem": "V 9. ročníku je stejný počet dívek jako chlapců. Ano nebo Ne?",
+        "context": "Tabulka účasti v kroužcích:\n\n| Kroužek | 8.tř dívky | 8.tř chlapci | 9.tř dívky | 9.tř chlapci |\n|---------|------------|--------------|------------|-------------|\n| ČJ | 3 | 2 | 4 | 3 |\n| Mat | 2 | 3 | 2 | 4 |\n| Šachy | 4 | 5 | 6 | 7 |\n| Robotika | 3 | 6 | 5 | 4 |\n| Hudba | 4 | 2 | 8 | 7 |\n\nJe v 9. ročníku stejný počet dívek jako chlapců?",
+        "image": null
+      },
+      "answer": {
+        "correct": "A",
+        "unit": null,
+        "variants": ["Ano", "ano", "ANO", "a"]
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Sečti všechny 9.tř dívky a všechny 9.tř chlapce."
+        },
+        {
+          "level": 2,
+          "text": "Dívky: 4+2+6+5+8=25. Chlapci: 3+4+7+4+7=25. Stejný počet!"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "9.tř dívky: 4+2+6+5+8 = 25",
+          "9.tř chlapci: 3+4+7+4+7 = 25",
+          "25 = 25, odpověď: Ano"
+        ],
+        "strategy": "Sečti sloupce a porovnej"
+      },
+      "meta": {
+        "type_id": "TEST-52",
+        "type_label": "Statistika - grafy",
+        "source": "M9PBD24C0T02"
+      }
+    },
+    {
+      "id": "tab-test-004",
+      "topic": "tables_graphs",
+      "tags": ["statistika", "procenta"],
+      "difficulty": 2,
+      "question": {
+        "stem": "Český jazyk volilo více než 16% všech žáků. Ano nebo Ne?",
+        "context": "Tabulka účasti v kroužcích (celkem 50 žáků):\n\n| Kroužek | 8.tř dívky | 8.tř chlapci | 9.tř dívky | 9.tř chlapci |\n|---------|------------|--------------|------------|-------------|\n| ČJ | 2 | 1 | 2 | 2 |\n| Mat | 2 | 3 | 2 | 4 |\n| Šachy | 4 | 5 | 6 | 7 |\n| Robotika | 3 | 6 | 5 | 4 |\n| Hudba | 4 | 2 | 8 | 7 |\n\nVolilo Český jazyk více než 16% všech žáků?",
+        "image": null
+      },
+      "answer": {
+        "correct": "N",
+        "unit": null,
+        "variants": ["Ne", "ne", "NE", "n"]
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Kolik žáků volilo ČJ? Kolik je 16% z 50?"
+        },
+        {
+          "level": 2,
+          "text": "ČJ: 2+1+2+2=7. 16% z 50 = 8. 7 < 8, odpověď Ne."
+        }
+      ],
+      "solution": {
+        "steps": [
+          "ČJ celkem: 2+1+2+2 = 7 žáků",
+          "16% z 50 = 0.16 × 50 = 8",
+          "7 < 8, tedy NE více než 16%"
+        ],
+        "strategy": "Spočítej celkem a porovnej s procentem"
+      },
+      "meta": {
+        "type_id": "TEST-52",
+        "type_label": "Statistika - grafy",
+        "source": "M9PBD24C0T02"
+      }
+    }
+  ]
 }
