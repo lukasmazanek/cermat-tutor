@@ -2,7 +2,7 @@
 
 This directory contains all Educational Decision Records (EDRs) for the Tutor project.
 
-**Total:** 4 EDRs + 29 ADRs + 2 PDRs | **Format:** One file per record | **Naming:** `EDR-XXX-slug.md`, `ADR-XXX-slug.md`, or `PDR-XXX-slug.md`
+**Total:** 4 EDRs + 30 ADRs + 2 PDRs | **Format:** One file per record | **Naming:** `EDR-XXX-slug.md`, `ADR-XXX-slug.md`, or `PDR-XXX-slug.md`
 
 ---
 
@@ -70,6 +70,7 @@ This directory contains all Educational Decision Records (EDRs) for the Tutor pr
 | [ADR-027](ADR-027-feedback-shows-question.md) | Feedback Shows Question | Accepted | Show original question + diagram on wrong answer feedback |
 | [ADR-028](ADR-028-question-display-component.md) | QuestionDisplay Component | Accepted | Centralized component for question + diagram rendering |
 | [ADR-029](ADR-029-component-consolidation.md) | Component Consolidation | Accepted | Master plan for eliminating code duplication |
+| [ADR-030](ADR-030-strategy-distractors.md) | Strategy Distractors | Accepted | Topic-level + question-level strategy distractors |
 
 ---
 

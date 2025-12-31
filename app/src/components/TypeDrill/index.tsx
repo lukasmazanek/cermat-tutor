@@ -13,6 +13,87 @@ import { saveAttempt, saveError, startSession, endSession } from '../../hooks/us
 
 const data = questionsData as QuestionsData
 
+// ADR-030: Topic-level strategy distractors (misconception-based)
+const TOPIC_STRATEGY_DISTRACTORS: Record<string, string[]> = {
+  // Kritické téma - misconception focus
+  'o_x_vice': ['+ zlomek místo ×', '÷ místo ×'],
+
+  // Pythagorova věta
+  'pythagorean': ['a + b = c', 'a × b = c'],
+
+  // Binomické vzorce - zapomenuté členy
+  'binomial_squares': ['a² + b² (chybí 2ab)', 'a² − b² (chybí 2ab)'],
+
+  // Zlomky
+  'fractions': ['Násobit čitatele i jmenovatele', 'Sečíst čitatele'],
+
+  // Rovnice
+  'equations': ['Přičíst na obě strany', 'Vydělit jen jednu stranu'],
+
+  // Průměry
+  'averages': ['Sečíst a vydělit 2', 'Vzít prostřední hodnotu'],
+
+  // Posloupnosti
+  'sequences': ['Sečíst první a poslední', 'Násobit počtem členů'],
+
+  // Převody jednotek
+  'unit_conversions': ['× 10', '× 100'],
+
+  // Úlohy o práci
+  'work_problems': ['Sečíst časy', 'Přímá úměrnost'],
+
+  // Úhly
+  'angles': ['Odečíst od 90°', 'Vydělit počtem úhlů'],
+
+  // Objem
+  'volume': ['Délka × šířka', 'Obvod × výška'],
+
+  // Obsah a obvod
+  'area_perimeter': ['Sečíst všechny strany', 'Násobit všechny strany'],
+
+  // Procenta (data: percents)
+  'percents': ['Vydělit 100', 'Přičíst procenta'],
+
+  // Poměry
+  'ratios': ['Sečíst části', 'Vydělit části'],
+
+  // Slovní úlohy
+  'word_problems': ['Sečíst všechna čísla', 'Použít první operaci'],
+
+  // Grafy a tabulky (data: tables_graphs)
+  'tables_graphs': ['Odečíst z osy', 'Průměr hodnot'],
+
+  // Soustavy rovnic (data: systems_equations)
+  'systems_equations': ['Sečíst rovnice', 'Dosadit bez úpravy'],
+
+  // Mocniny
+  'powers': ['Sečíst exponenty', 'Násobit exponenty'],
+
+  // Odmocniny (data: square_roots)
+  'square_roots': ['Odmocnit každý člen', 'Vydělit 2'],
+
+  // Výrazy
+  'expressions': ['Sečíst koeficienty', 'Násobit vše'],
+
+  // Funkce
+  'functions': ['Dosadit do x', 'Vyřešit pro y'],
+
+  // Kruhy
+  'circles': ['πr', '2r'],
+
+  // Konstrukce
+  'constructions': ['Od oka', 'Bez kružítka'],
+
+  // Desetinná čísla
+  'decimals': ['Posunout čárku', 'Ignorovat čárku'],
+
+  // Faktorizace
+  'factoring': ['Rozdělit na členy', 'Sečíst členy'],
+
+  // Celá čísla
+  'integers': ['Sečíst', 'Odečíst']
+}
+
 // Helper: Get type distractors - kept as helper function, not transformation
 function getTypeDistractors(typeId: string | null): TypeOption[] {
   const distractorMap: Record<string, TypeOption[]> = {
@@ -45,15 +126,22 @@ function getTypeDistractors(typeId: string | null): TypeOption[] {
   ]
 }
 
-// Helper: Get strategy distractors
-function getStrategyDistractors(topic: string): string[] {
-  const map: Record<string, string[]> = {
-    'o_x_vice': ['+ zlomek', '÷ zlomek'],
-    'equations': ['Vytýkej', 'Rozlož'],
-    'fractions': ['Násob přímo', 'Převrať'],
-    'pythagorean': ['a + b', 'a × b']
+// ADR-030: Get strategy distractors with 3-level hierarchy
+function getStrategyDistractors(question: UnifiedQuestion): string[] {
+  // 1. Question-level (highest priority)
+  const strategyMode = (question.modes as Record<string, unknown>)?.strategy_recognition as { distractors?: string[] } | undefined
+  if (strategyMode?.distractors && strategyMode.distractors.length >= 2) {
+    return strategyMode.distractors
   }
-  return map[topic] || ['Jiná strategie']
+
+  // 2. Topic-level defaults
+  const topicDistractors = TOPIC_STRATEGY_DISTRACTORS[question.topic]
+  if (topicDistractors && topicDistractors.length >= 2) {
+    return topicDistractors
+  }
+
+  // 3. Generic fallback (should be rare)
+  return ['Jiná strategie', 'Tipnout odpověď']
 }
 
 // NO TRANSFORMATION FUNCTION - extend UnifiedQuestion inline
@@ -61,7 +149,7 @@ function prepareTypeDrillQuestion(q: UnifiedQuestion): TypeDrillQuestion {
   return {
     ...q,
     typeDistractors: getTypeDistractors(q.meta.type_id),
-    strategyDistractors: getStrategyDistractors(q.topic)
+    strategyDistractors: getStrategyDistractors(q)  // ADR-030: pass full question
   }
 }
 
@@ -87,8 +175,13 @@ function TypeDrill({ onExit, onViewProgress }: TypeDrillProps) {
     startSession('typedrill')
 
     // ADR-022: Filter questions that support type_recognition mode
+    // ADR-030: Also require valid strategy for strategy phase
     const typeDrillQuestions = data.questions
-      .filter(q => q.modes.type_recognition && (q.question.context || q.question.stem))
+      .filter(q =>
+        q.modes.type_recognition &&
+        (q.question.context || q.question.stem) &&
+        q.solution.strategy  // Must have strategy for strategy phase
+      )
       .map(prepareTypeDrillQuestion)
 
     const shuffled = [...typeDrillQuestions].sort(() => Math.random() - 0.5)
