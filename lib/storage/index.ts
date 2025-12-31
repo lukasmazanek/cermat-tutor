@@ -92,3 +92,19 @@ export function getRecentAttempts(days: number = 7) {
   const provider = getActiveStorage()
   return provider.getRecentAttempts(days)
 }
+
+// Error queue
+export function saveError(...args: Parameters<StorageProvider['saveError']>) {
+  const provider = getActiveStorage()
+  return provider.saveError(...args)
+}
+
+export function getErrorQueue() {
+  const provider = getActiveStorage()
+  return provider.getErrorQueue()
+}
+
+export function markErrorReviewed(id: string) {
+  const provider = getActiveStorage()
+  return provider.markErrorReviewed(id)
+}

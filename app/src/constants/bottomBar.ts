@@ -19,15 +19,16 @@ import {
   ArrowRightIcon,
   ForwardIcon,
   ArrowLeftIcon,
-  ArrowPathIcon
+  ArrowPathIcon,
+  ExclamationTriangleIcon
 } from '@heroicons/react/24/outline'
 
 // ============================================
 // TYPE DEFINITIONS
 // ============================================
 
-export type StyleKey = 'default' | 'toggle_off' | 'toggle_on' | 'hint' | 'primary' | 'secondary' | 'disabled'
-export type ActionKey = 'submit' | 'continue' | 'skip' | 'back' | 'restart'
+export type StyleKey = 'default' | 'toggle_off' | 'toggle_on' | 'hint' | 'primary' | 'secondary' | 'error' | 'disabled'
+export type ActionKey = 'submit' | 'continue' | 'skip' | 'back' | 'restart' | 'error'
 export type SlotPosition = 1 | 2 | 3 | 4 | 5
 
 export type HeroIcon = ComponentType<SVGProps<SVGSVGElement>>
@@ -69,6 +70,9 @@ export const STYLES: Record<StyleKey, string> = {
   // Secondary action (Skip)
   secondary: 'bg-slate-200 text-slate-400 hover:bg-slate-300',
 
+  // Error report button (amber/warning)
+  error: 'bg-amber-100 text-amber-700 hover:bg-amber-200',
+
   // Disabled state (applied additively)
   disabled: 'opacity-50 cursor-not-allowed'
 }
@@ -79,21 +83,21 @@ export const STYLES: Record<StyleKey, string> = {
 
 // All buttons share these classes
 export const BASE_BUTTON_CLASS = `
-  py-3 rounded-xl flex items-center justify-center
+  py-2.5 rounded-lg flex items-center justify-center flex-1
   transition-gentle active:scale-[0.98]
 `.trim().replace(/\s+/g, ' ')
 
 // Icon size
 export const ICON_CLASS = 'w-6 h-6'
 
-// Grid container
-export const GRID_CLASS = 'grid grid-cols-5 gap-2'
+// Flex container - buttons stretch to fill width
+export const GRID_CLASS = 'flex w-full gap-1'
 
 // Bottom bar container
 export const CONTAINER_CLASS = 'fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 safe-area-pb'
 
-// Inner wrapper with max-width
-export const WRAPPER_CLASS = 'max-w-2xl mx-auto px-4 py-2'
+// Inner wrapper - no horizontal padding (parent has px-4)
+export const WRAPPER_CLASS = 'max-w-2xl mx-auto py-1'
 
 // ============================================
 // SLOT DEFINITIONS
@@ -195,6 +199,14 @@ export const ACTIONS: Record<ActionKey, ActionConfig> = {
     icon: ArrowPathIcon,
     title: 'Znovu',
     style: 'primary'
+  },
+
+  // Report error/problem with question (warning triangle)
+  error: {
+    id: 'error',
+    icon: ExclamationTriangleIcon,
+    title: 'Chyba',
+    style: 'error'
   }
 }
 

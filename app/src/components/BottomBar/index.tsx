@@ -60,13 +60,10 @@ function BottomBar({ slots = {}, contained = false }: BottomBarProps) {
     </div>
   )
 
-  // Contained mode: just the grid with wrapper, no fixed positioning
+  // Contained mode: just the grid, no wrapper or fixed positioning
+  // Parent already provides max-width and padding
   if (contained) {
-    return (
-      <div className={WRAPPER_CLASS}>
-        {grid}
-      </div>
-    )
+    return grid
   }
 
   // Default: full fixed layout

@@ -70,6 +70,43 @@ export interface TopicStats {
   avg_time_ms: number
 }
 
+// Error queue record - question saved for later review
+export interface ErrorQueueRecord {
+  id: string
+  user_id: string
+
+  // Question snapshot
+  question_id: string
+  question_stem: string
+  correct_answer: string
+  topic: string
+  difficulty: number
+
+  // Context at time of error
+  user_answer: string | null
+  hints_shown: string[]
+  time_spent_ms: number
+
+  // Status
+  status: 'pending' | 'reviewed' | 'mastered'
+  reviewed_at: string | null
+
+  // Metadata
+  created_at: string
+}
+
+// Input for saving error to queue
+export interface SaveErrorInput {
+  question_id: string
+  question_stem: string
+  correct_answer: string
+  topic: string
+  difficulty: number
+  user_answer: string | null
+  hints_shown: string[]
+  time_spent_ms: number
+}
+
 // Storage provider interface - implemented by localStorage, Supabase, etc.
 export interface StorageProvider {
   // Attempts
@@ -87,4 +124,9 @@ export interface StorageProvider {
 
   // Analytics
   getTopicStats(): Promise<TopicStats[]>
+
+  // Error queue
+  saveError(input: SaveErrorInput): Promise<ErrorQueueRecord>
+  getErrorQueue(): Promise<ErrorQueueRecord[]>
+  markErrorReviewed(id: string): Promise<void>
 }

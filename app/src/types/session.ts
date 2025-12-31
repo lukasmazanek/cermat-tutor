@@ -12,6 +12,7 @@ export interface SessionAttempt {
   hintsUsed: number
   timeSpent: number
   usedFullSolution?: boolean
+  skippedAsError?: boolean  // Saved to error queue for later review
 }
 
 // Metrics for a session (závod sama se sebou)
@@ -44,6 +45,7 @@ export interface AttemptResult {
   hintsUsed: number
   timeSpent: number
   usedFullSolution?: boolean
+  skippedAsError?: boolean  // Saved to error queue for later review
 }
 
 // Progress indicator props

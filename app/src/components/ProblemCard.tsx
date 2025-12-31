@@ -8,7 +8,7 @@ import topicTypeMapping from '../data/topic_type_mapping.json'
 import { evaluateAnswer } from '@lib/mathParser'
 import { UnifiedQuestion, TopicTypeMappingData, findMatchingCommonError, CommonError } from '../types'
 import { AttemptResult, ProgressIndicator } from '../types'
-import { saveAttempt } from '../hooks/useAttempts'
+import { saveAttempt, saveError } from '../hooks/useAttempts'
 
 // ADR-031: Topic display names for header
 const TOPIC_LABELS: Record<string, string> = {
@@ -63,7 +63,7 @@ interface ProblemCardProps {
   onExit: () => void
   onViewProgress: () => void
   typePromptEnabled: boolean
-  onToggleTypePrompt: () => void
+  onToggleTypePrompt?: () => void  // Optional now - error button replaced toggle
   skipStrategyPrompt: boolean
   onStrategyAnswered?: (topic: string) => void
 }
@@ -78,7 +78,7 @@ function ProblemCard({
   onExit,
   onViewProgress,
   typePromptEnabled,
-  onToggleTypePrompt,
+  // onToggleTypePrompt - replaced by error button in slot 3
   skipStrategyPrompt,
   onStrategyAnswered
 }: ProblemCardProps) {
@@ -251,6 +251,31 @@ function ProblemCard({
       hintsUsed: revealedSteps.length,
       timeSpent: Date.now() - problemStartTime,
       usedFullSolution: true
+    })
+    resetState()
+  }
+
+  // Report error - save to queue and skip to next question
+  const handleReportError = async () => {
+    if (!problem.modes.numeric) return
+
+    await saveError({
+      question_id: problem.id,
+      question_stem: problemText,
+      correct_answer: String(problem.modes.numeric.answer),
+      topic: problem.topic,
+      difficulty: problem.difficulty,
+      user_answer: userAnswer || null,
+      hints_shown: revealedSteps.map(i => hintSource[i]),
+      time_spent_ms: Date.now() - problemStartTime
+    })
+
+    // Skip to next question without marking as answered
+    onAnswer({
+      correct: false,
+      hintsUsed: revealedSteps.length,
+      timeSpent: Date.now() - problemStartTime,
+      skippedAsError: true
     })
     resetState()
   }
@@ -552,7 +577,7 @@ function ProblemCard({
               slots={{
                 1: { onClick: onExit },
                 2: { onClick: onViewProgress },
-                3: { onClick: onToggleTypePrompt, active: typePromptEnabled },
+                3: { action: 'error', onClick: handleReportError },
                 4: { onClick: showNextHint, disabled: solutionRevealed },
                 5: {
                   action: solutionRevealed ? 'continue' : 'submit',

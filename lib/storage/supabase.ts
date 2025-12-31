@@ -13,7 +13,9 @@ import {
   SessionRecord,
   SaveAttemptInput,
   TopicStats,
-  StorageProvider
+  StorageProvider,
+  ErrorQueueRecord,
+  SaveErrorInput
 } from './types'
 
 class SupabaseStorageProvider implements StorageProvider {
@@ -210,6 +212,69 @@ class SupabaseStorageProvider implements StorageProvider {
     }
 
     return stats
+  }
+
+  // Error Queue
+
+  async getErrorQueue(): Promise<ErrorQueueRecord[]> {
+    const client = this.getClient()
+
+    const { data, error } = await client
+      .from('error_queue')
+      .select('*')
+      .eq('user_id', getCurrentUserId())
+      .eq('status', 'pending')
+      .order('created_at', { ascending: false })
+
+    if (error) {
+      // Table might not exist yet - fallback gracefully
+      console.warn('Error queue not available:', error.message)
+      return []
+    }
+    return data || []
+  }
+
+  async saveError(input: SaveErrorInput): Promise<ErrorQueueRecord> {
+    const client = this.getClient()
+
+    const errorRecord = {
+      user_id: getCurrentUserId(),
+      ...input,
+      status: 'pending',
+      reviewed_at: null,
+      created_at: new Date().toISOString()
+    }
+
+    const { data, error } = await client
+      .from('error_queue')
+      .insert(errorRecord)
+      .select()
+      .single()
+
+    if (error) {
+      // Table might not exist - fallback to localStorage
+      console.warn('Error queue save failed, using localStorage:', error.message)
+      // Import dynamically to avoid circular dependency
+      const { localStorageProvider } = await import('./localStorage')
+      return localStorageProvider.saveError(input)
+    }
+    return data
+  }
+
+  async markErrorReviewed(id: string): Promise<void> {
+    const client = this.getClient()
+
+    const { error } = await client
+      .from('error_queue')
+      .update({
+        status: 'reviewed',
+        reviewed_at: new Date().toISOString()
+      })
+      .eq('id', id)
+
+    if (error) {
+      console.warn('Mark error reviewed failed:', error.message)
+    }
   }
 }
 

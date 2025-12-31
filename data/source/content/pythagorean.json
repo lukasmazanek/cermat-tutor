@@ -1975,12 +1975,13 @@
       "id": "pyt-test-037",
       "topic": "pythagorean",
       "tags": [
-        "pythagorova-věta"
+        "pythagorova-věta",
+        "3D"
       ],
       "difficulty": 2,
       "question": {
-        "stem": "Délka lomené čáry ACFHA v kvádru",
-        "context": "Délka lomené čáry ACFHA v kvádru",
+        "stem": "Kvádru 15m × 8m × 6m. Délka lomené čáry A→C→F→H→A?",
+        "context": "Kvádru ABCDEFGH má rozměry 15m × 8m × 6m (délka × šířka × výška). Spodní podstava je ABCD, horní EFGH. Vypočítej délku lomené čáry A→C→F→H→A.",
         "image": null
       },
       "answer": {
@@ -1988,11 +1989,23 @@
         "unit": "m",
         "variants": []
       },
-      "distractors": [],
-      "hints": [],
+      "distractors": [
+        {"value": "44"},
+        {"value": "60"}
+      ],
+      "hints": [
+        {"level": 1, "text": "Rozlož na 4 úsečky: AC, CF, FH, HA. Každá je buď úhlopříčka stěny nebo hrany."},
+        {"level": 2, "text": "AC = √(15² + 8²) = 17m, CF = √(8² + 6²) = 10m"}
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "AC = √(15² + 8²) = √(225 + 64) = √289 = 17m",
+          "CF = √(8² + 6²) = √(64 + 36) = √100 = 10m",
+          "FH = √(15² + 8²) = 17m",
+          "HA = √(8² + 6²) = 10m",
+          "Celkem = 17 + 10 + 17 + 10 = 54m"
+        ],
+        "strategy": "Pythagorova věta pro úhlopříčky stěn"
       },
       "meta": {
         "type_id": "TEST-35",
@@ -2008,8 +2021,8 @@
       ],
       "difficulty": 1,
       "question": {
-        "stem": "Délka strany AB",
-        "context": "Délka strany AB",
+        "stem": "Pravoúhlý △ABC: přepona AC = 5 cm, odvěsna BC = 3 cm. AB = ?",
+        "context": "Pravoúhlý trojúhelník ABC má pravý úhel u vrcholu B. Přepona AC = 5 cm, odvěsna BC = 3 cm. Jaká je délka odvěsny AB?",
         "image": null
       },
       "answer": {
@@ -2017,16 +2030,31 @@
         "unit": "cm",
         "variants": []
       },
-      "distractors": [],
-      "hints": [],
+      "distractors": [
+        {"value": "2"},
+        {"value": "8"}
+      ],
+      "hints": [
+        {"level": 1, "text": "Použij Pythagorovu větu: AB² + BC² = AC²"},
+        {"level": 2, "text": "AB² = 5² - 3² = 25 - 9 = 16"}
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "AB² + BC² = AC²",
+          "AB² = 5² - 3² = 25 - 9 = 16",
+          "AB = √16 = 4 cm"
+        ],
+        "strategy": "a² = c² - b²"
       },
       "meta": {
-        "type_id": "TEST-undefined",
+        "type_id": "PYTH-CALC",
         "type_label": "Pythagorova věta",
         "source": "M9PAD17C0T01"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {"a": "?", "b": "3", "c": "5"},
+        "highlight": "a"
       }
     },
     {
@@ -2037,8 +2065,8 @@
       ],
       "difficulty": 1,
       "question": {
-        "stem": "Délka strany CD",
-        "context": "Délka strany CD",
+        "stem": "Pravoúhlý △: odvěsny 5 cm a 12 cm. Přepona CD = ?",
+        "context": "Pravoúhlý trojúhelník má odvěsny délky 5 cm a 12 cm. Jaká je délka přepony CD?",
         "image": null
       },
       "answer": {
@@ -2046,18 +2074,31 @@
         "unit": "cm",
         "variants": []
       },
-      "distractors": [],
-      "hints": [],
+      "distractors": [
+        {"value": "17"},
+        {"value": "√17"}
+      ],
+      "hints": [
+        {"level": 1, "text": "Pythagorova věta: c² = a² + b²"},
+        {"level": 2, "text": "CD² = 5² + 12² = 25 + 144 = 169"}
+      ],
       "solution": {
         "steps": [
-          "√169 = 13"
+          "CD² = 5² + 12²",
+          "CD² = 25 + 144 = 169",
+          "CD = √169 = 13 cm"
         ],
-        "strategy": null
+        "strategy": "c² = a² + b²"
       },
       "meta": {
-        "type_id": "TEST-undefined",
+        "type_id": "PYTH-CALC",
         "type_label": "Pythagorova věta",
         "source": "M9PAD17C0T01"
+      },
+      "diagram": {
+        "type": "right_triangle",
+        "labels": {"a": "5", "b": "12", "c": "?"},
+        "highlight": "c"
       }
     }
   ]

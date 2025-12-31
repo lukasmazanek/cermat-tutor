@@ -16,6 +16,8 @@ export {
   type SaveAttemptInput,
   type TopicStats,
   type AttemptMode,
+  type ErrorQueueRecord,
+  type SaveErrorInput,
 
   // Functions
   storage,
@@ -29,6 +31,11 @@ export {
   getAttemptsForQuestion,
   getAttemptsForTopic,
   getRecentAttempts,
+
+  // Error queue
+  saveError,
+  getErrorQueue,
+  markErrorReviewed,
 
   // ADR-032: User ID management
   setCurrentUserId,

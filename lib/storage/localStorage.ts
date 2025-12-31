@@ -11,7 +11,9 @@ import {
   SessionRecord,
   SaveAttemptInput,
   TopicStats,
-  StorageProvider
+  StorageProvider,
+  ErrorQueueRecord,
+  SaveErrorInput
 } from './types'
 
 // ADR-032: Current user ID (module-level state)
@@ -36,6 +38,7 @@ export function getCurrentUserId(): string {
 const ATTEMPTS_KEY = 'tutor_attempts'
 const SESSIONS_KEY = 'tutor_sessions'
 const CURRENT_SESSION_KEY = 'tutor_current_session'
+const ERROR_QUEUE_KEY = 'tutor_error_queue'
 
 // UUID generator (simple version for browser)
 function generateUUID(): string {
@@ -181,6 +184,50 @@ class LocalStorageProvider implements StorageProvider {
     }
 
     return stats
+  }
+
+  // Error Queue
+
+  // Get ALL errors (unfiltered, for internal use)
+  private async getAllErrors(): Promise<ErrorQueueRecord[]> {
+    try {
+      return JSON.parse(localStorage.getItem(ERROR_QUEUE_KEY) || '[]')
+    } catch {
+      return []
+    }
+  }
+
+  // Get errors filtered by current user
+  async getErrorQueue(): Promise<ErrorQueueRecord[]> {
+    const all = await this.getAllErrors()
+    return all.filter(e => e.user_id === currentUserId && e.status === 'pending')
+  }
+
+  async saveError(input: SaveErrorInput): Promise<ErrorQueueRecord> {
+    const error: ErrorQueueRecord = {
+      id: generateUUID(),
+      user_id: currentUserId,
+      ...input,
+      status: 'pending',
+      reviewed_at: null,
+      created_at: new Date().toISOString()
+    }
+
+    const errors = await this.getAllErrors()
+    errors.push(error)
+    localStorage.setItem(ERROR_QUEUE_KEY, JSON.stringify(errors))
+
+    return error
+  }
+
+  async markErrorReviewed(id: string): Promise<void> {
+    const errors = await this.getAllErrors()
+    const error = errors.find(e => e.id === id)
+    if (error) {
+      error.status = 'reviewed'
+      error.reviewed_at = new Date().toISOString()
+      localStorage.setItem(ERROR_QUEUE_KEY, JSON.stringify(errors))
+    }
   }
 }
 

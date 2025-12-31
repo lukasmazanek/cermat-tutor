@@ -1,6 +1,6 @@
 {
   "version": "4.0",
-  "generated": "2025-12-30T07:39:10.976Z",
+  "generated": "2025-12-31T10:21:46.153Z",
   "description": "ADR-022: Multi-mode questions with keyboard config",
   "topics": {
     "angles": {
@@ -1753,6 +1753,403 @@
         "type_id": "TEST-25",
         "type_label": "Vzorce (a+b)²",
         "original_type": "open"
+      }
+    },
+    {
+      "id": "bin-mid-001",
+      "topic": "binomial_squares",
+      "difficulty": 1,
+      "question": {
+        "stem": "Prostřední člen v (x + 2)² = ?",
+        "context": "Urči pouze prostřední člen (2ab)"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "4x",
+          "unit": null,
+          "variants": [
+            "+4x"
+          ],
+          "distractors": [
+            "2x",
+            "x"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "Prostřední člen = 2 × a × b",
+        "2 × x × 2 = 4x"
+      ],
+      "solution": {
+        "steps": [
+          "Prostřední člen = 2ab = 2 × x × 2 = 4x"
+        ],
+        "strategy": "2ab"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM-MID",
+        "type_label": "Prostřední člen",
+        "original_type": null
+      }
+    },
+    {
+      "id": "bin-mid-002",
+      "topic": "binomial_squares",
+      "difficulty": 1,
+      "question": {
+        "stem": "Prostřední člen v (x - 3)² = ?",
+        "context": "Urči pouze prostřední člen (2ab)"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "-6x",
+          "unit": null,
+          "variants": [],
+          "distractors": [
+            "-3x",
+            "6x"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "Prostřední člen = -2ab (minus protože je to rozdíl)",
+        "-2 × x × 3 = -6x"
+      ],
+      "solution": {
+        "steps": [
+          "Prostřední člen = -2ab = -2 × x × 3 = -6x"
+        ],
+        "strategy": "-2ab"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM-MID",
+        "type_label": "Prostřední člen",
+        "original_type": null
+      }
+    },
+    {
+      "id": "bin-mid-003",
+      "topic": "binomial_squares",
+      "difficulty": 1,
+      "question": {
+        "stem": "Prostřední člen v (a + 5)² = ?",
+        "context": "Urči pouze prostřední člen (2ab)"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "10a",
+          "unit": null,
+          "variants": [
+            "+10a"
+          ],
+          "distractors": [
+            "5a",
+            "25a"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "Prostřední člen = 2 × a × b",
+        "2 × a × 5 = 10a"
+      ],
+      "solution": {
+        "steps": [
+          "Prostřední člen = 2ab = 2 × a × 5 = 10a"
+        ],
+        "strategy": "2ab"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM-MID",
+        "type_label": "Prostřední člen",
+        "original_type": null
+      }
+    },
+    {
+      "id": "bin-mid-004",
+      "topic": "binomial_squares",
+      "difficulty": 1,
+      "question": {
+        "stem": "Prostřední člen v (y - 4)² = ?",
+        "context": "Urči pouze prostřední člen (2ab)"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "-8y",
+          "unit": null,
+          "variants": [],
+          "distractors": [
+            "-4y",
+            "8y"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "Prostřední člen = -2ab",
+        "-2 × y × 4 = -8y"
+      ],
+      "solution": {
+        "steps": [
+          "Prostřední člen = -2ab = -2 × y × 4 = -8y"
+        ],
+        "strategy": "-2ab"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM-MID",
+        "type_label": "Prostřední člen",
+        "original_type": null
+      }
+    },
+    {
+      "id": "bin-mid-005",
+      "topic": "binomial_squares",
+      "difficulty": 2,
+      "question": {
+        "stem": "Prostřední člen v (2x + 3)² = ?",
+        "context": "Pozor: a = 2x, ne jen x!"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "12x",
+          "unit": null,
+          "variants": [
+            "+12x"
+          ],
+          "distractors": [
+            "6x",
+            "3x"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": "x"
+      },
+      "hints": [
+        "a = 2x, b = 3. Prostřední člen = 2ab",
+        "2 × (2x) × 3 = 12x"
+      ],
+      "solution": {
+        "steps": [
+          "a = 2x, b = 3",
+          "Prostřední člen = 2 × (2x) × 3 = 12x"
+        ],
+        "strategy": "2ab kde a = 2x"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM-MID",
+        "type_label": "Prostřední člen",
+        "original_type": null
+      }
+    },
+    {
+      "id": "bin-mid-006",
+      "topic": "binomial_squares",
+      "difficulty": 2,
+      "question": {
+        "stem": "Prostřední člen v (3a - 2)² = ?",
+        "context": "Toto je přesně ta úloha, kde jsi udělala chybu!"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "-12a",
+          "unit": null,
+          "variants": [],
+          "distractors": [
+            "-6a",
+            "-3a"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": "a"
+      },
+      "hints": [
+        "a = 3a, b = 2. Nezapomeň na tu DVOJKU!",
+        "-2 × (3a) × 2 = -12a (ne -6a!)"
+      ],
+      "solution": {
+        "steps": [
+          "a = 3a, b = 2",
+          "Prostřední člen = -2 × (3a) × 2 = -12a"
+        ],
+        "strategy": "-2ab kde a = 3a"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM-MID",
+        "type_label": "Prostřední člen",
+        "original_type": null
+      }
+    },
+    {
+      "id": "bin-mid-007",
+      "topic": "binomial_squares",
+      "difficulty": 2,
+      "question": {
+        "stem": "Prostřední člen v (4n - 3)² = ?",
+        "context": "Pozor na koeficient u n!"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "-24n",
+          "unit": null,
+          "variants": [],
+          "distractors": [
+            "-12n",
+            "-7n"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": "n"
+      },
+      "hints": [
+        "a = 4n, b = 3",
+        "-2 × (4n) × 3 = -24n"
+      ],
+      "solution": {
+        "steps": [
+          "a = 4n, b = 3",
+          "Prostřední člen = -2 × (4n) × 3 = -24n"
+        ],
+        "strategy": "-2ab kde a = 4n"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM-MID",
+        "type_label": "Prostřední člen",
+        "original_type": null
+      }
+    },
+    {
+      "id": "bin-mid-008",
+      "topic": "binomial_squares",
+      "difficulty": 2,
+      "question": {
+        "stem": "Prostřední člen v (5x + 2)² = ?",
+        "context": "a = 5x, b = 2"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "20x",
+          "unit": null,
+          "variants": [
+            "+20x"
+          ],
+          "distractors": [
+            "10x",
+            "7x"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": "x"
+      },
+      "hints": [
+        "Prostřední člen = 2 × a × b",
+        "2 × (5x) × 2 = 20x"
+      ],
+      "solution": {
+        "steps": [
+          "a = 5x, b = 2",
+          "Prostřední člen = 2 × (5x) × 2 = 20x"
+        ],
+        "strategy": "2ab"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM-MID",
+        "type_label": "Prostřední člen",
+        "original_type": null
+      }
+    },
+    {
+      "id": "bin-mid-009",
+      "topic": "binomial_squares",
+      "difficulty": 3,
+      "question": {
+        "stem": "Prostřední člen v (1/3 - 4b)² = ?",
+        "context": "Toto je ta nejtěžší úloha - kombinuje zlomky a koeficienty!"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "-8b/3",
+          "unit": null,
+          "variants": [
+            "-8/3b",
+            "-8/3·b"
+          ],
+          "distractors": [
+            "-4b/3",
+            "-4/3b"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": "b"
+      },
+      "hints": [
+        "a = 1/3, b = 4b. Prostřední člen = -2 × (1/3) × (4b)",
+        "-2 × (1/3) × (4b) = -8b/3 (ne -4b/3!)"
+      ],
+      "solution": {
+        "steps": [
+          "a = 1/3, b = 4b",
+          "Prostřední člen = -2 × (1/3) × (4b) = -8b/3"
+        ],
+        "strategy": "-2ab"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM-MID",
+        "type_label": "Prostřední člen",
+        "original_type": null
+      }
+    },
+    {
+      "id": "bin-mid-010",
+      "topic": "binomial_squares",
+      "difficulty": 3,
+      "question": {
+        "stem": "Prostřední člen v (2/3a - 3)² = ?",
+        "context": "a = 2/3a, b = 3"
+      },
+      "modes": {
+        "numeric": {
+          "answer": "-4a",
+          "unit": null,
+          "variants": [],
+          "distractors": [
+            "-2a",
+            "-6a"
+          ]
+        }
+      },
+      "keyboard": {
+        "variable": "a"
+      },
+      "hints": [
+        "a = 2/3a, b = 3",
+        "-2 × (2/3a) × 3 = -4a"
+      ],
+      "solution": {
+        "steps": [
+          "a = 2/3a, b = 3",
+          "-2 × (2/3)a × 3 = -2 × 2a = -4a"
+        ],
+        "strategy": "-2ab"
+      },
+      "meta": {
+        "type_id": "ALG-BINOM-MID",
+        "type_label": "Prostřední člen",
+        "original_type": null
       }
     },
     {
@@ -9553,24 +9950,36 @@
       "topic": "pythagorean",
       "difficulty": 2,
       "question": {
-        "stem": "Délka lomené čáry ACFHA v kvádru",
-        "context": "Délka lomené čáry ACFHA v kvádru"
+        "stem": "Kvádru 15m × 8m × 6m. Délka lomené čáry A→C→F→H→A?",
+        "context": "Kvádru ABCDEFGH má rozměry 15m × 8m × 6m (délka × šířka × výška). Spodní podstava je ABCD, horní EFGH. Vypočítej délku lomené čáry A→C→F→H→A."
       },
       "modes": {
         "numeric": {
           "answer": "54",
           "unit": "m",
           "variants": [],
-          "distractors": []
+          "distractors": [
+            "44",
+            "60"
+          ]
         }
       },
       "keyboard": {
         "variable": null
       },
-      "hints": [],
+      "hints": [
+        "Rozlož na 4 úsečky: AC, CF, FH, HA. Každá je buď úhlopříčka stěny nebo hrany.",
+        "AC = √(15² + 8²) = 17m, CF = √(8² + 6²) = 10m"
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "AC = √(15² + 8²) = √(225 + 64) = √289 = 17m",
+          "CF = √(8² + 6²) = √(64 + 36) = √100 = 10m",
+          "FH = √(15² + 8²) = 17m",
+          "HA = √(8² + 6²) = 10m",
+          "Celkem = 17 + 10 + 17 + 10 = 54m"
+        ],
+        "strategy": "Pythagorova věta pro úhlopříčky stěn"
       },
       "meta": {
         "type_id": "TEST-35",
@@ -9588,34 +9997,48 @@
       "topic": "pythagorean",
       "difficulty": 1,
       "question": {
-        "stem": "Délka strany AB",
-        "context": "Délka strany AB"
+        "stem": "Pravoúhlý △ABC: přepona AC = 5 cm, odvěsna BC = 3 cm. AB = ?",
+        "context": "Pravoúhlý trojúhelník ABC má pravý úhel u vrcholu B. Přepona AC = 5 cm, odvěsna BC = 3 cm. Jaká je délka odvěsny AB?"
       },
       "modes": {
         "numeric": {
           "answer": "4",
           "unit": "cm",
           "variants": [],
-          "distractors": []
+          "distractors": [
+            "2",
+            "8"
+          ]
         }
       },
       "keyboard": {
         "variable": null
       },
-      "hints": [],
+      "hints": [
+        "Použij Pythagorovu větu: AB² + BC² = AC²",
+        "AB² = 5² - 3² = 25 - 9 = 16"
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "AB² + BC² = AC²",
+          "AB² = 5² - 3² = 25 - 9 = 16",
+          "AB = √16 = 4 cm"
+        ],
+        "strategy": "a² = c² - b²"
       },
       "meta": {
-        "type_id": "TEST-undefined",
+        "type_id": "PYTH-CALC",
         "type_label": "Pythagorova věta",
         "original_type": null
       },
       "diagram": {
         "type": "right_triangle",
-        "highlight": "c",
-        "labels": null
+        "highlight": "a",
+        "labels": {
+          "a": "?",
+          "b": "3",
+          "c": "5"
+        }
       }
     },
     {
@@ -9623,36 +10046,48 @@
       "topic": "pythagorean",
       "difficulty": 1,
       "question": {
-        "stem": "Délka strany CD",
-        "context": "Délka strany CD"
+        "stem": "Pravoúhlý △: odvěsny 5 cm a 12 cm. Přepona CD = ?",
+        "context": "Pravoúhlý trojúhelník má odvěsny délky 5 cm a 12 cm. Jaká je délka přepony CD?"
       },
       "modes": {
         "numeric": {
           "answer": "13",
           "unit": "cm",
           "variants": [],
-          "distractors": []
+          "distractors": [
+            "17",
+            "√17"
+          ]
         }
       },
       "keyboard": {
         "variable": null
       },
-      "hints": [],
+      "hints": [
+        "Pythagorova věta: c² = a² + b²",
+        "CD² = 5² + 12² = 25 + 144 = 169"
+      ],
       "solution": {
         "steps": [
-          "√169 = 13"
+          "CD² = 5² + 12²",
+          "CD² = 25 + 144 = 169",
+          "CD = √169 = 13 cm"
         ],
-        "strategy": null
+        "strategy": "c² = a² + b²"
       },
       "meta": {
-        "type_id": "TEST-undefined",
+        "type_id": "PYTH-CALC",
         "type_label": "Pythagorova věta",
         "original_type": null
       },
       "diagram": {
         "type": "right_triangle",
         "highlight": "c",
-        "labels": null
+        "labels": {
+          "a": "5",
+          "b": "12",
+          "c": "?"
+        }
       }
     },
     {

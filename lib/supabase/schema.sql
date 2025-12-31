@@ -52,3 +52,37 @@ ALTER TABLE attempts ENABLE ROW LEVEL SECURITY;
 -- Policy: Allow all operations for now (single-user app)
 CREATE POLICY "Allow all for sessions" ON sessions FOR ALL USING (true) WITH CHECK (true);
 CREATE POLICY "Allow all for attempts" ON attempts FOR ALL USING (true) WITH CHECK (true);
+
+-- Error queue table (questions to review later)
+CREATE TABLE error_queue (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  user_id TEXT NOT NULL,
+
+  -- Question snapshot
+  question_id TEXT NOT NULL,
+  question_stem TEXT NOT NULL,
+  correct_answer TEXT NOT NULL,
+  topic TEXT NOT NULL,
+  difficulty INTEGER NOT NULL,
+
+  -- Context at time of error
+  user_answer TEXT,  -- What they had entered (if anything)
+  hints_shown JSONB DEFAULT '[]',
+  time_spent_ms INTEGER DEFAULT 0,
+
+  -- Status
+  status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'reviewed', 'mastered')),
+  reviewed_at TIMESTAMPTZ,
+
+  -- Metadata
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Indexes
+CREATE INDEX idx_error_queue_user_id ON error_queue(user_id);
+CREATE INDEX idx_error_queue_status ON error_queue(status);
+CREATE INDEX idx_error_queue_topic ON error_queue(topic);
+
+-- RLS
+ALTER TABLE error_queue ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Allow all for error_queue" ON error_queue FOR ALL USING (true) WITH CHECK (true);
