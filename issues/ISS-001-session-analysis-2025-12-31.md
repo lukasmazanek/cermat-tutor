@@ -2,7 +2,7 @@
 
 **Date:** 2026-01-01
 **Type:** Analysis
-**Status:** Bugs Resolved (2026-01-01)
+**Status:** Bugs + Content Fixed (2026-01-01)
 **Reporter:** System (Supabase data analysis)
 **Session Period:** 2025-12-29 to 2025-12-31
 
@@ -116,13 +116,39 @@ Analysis of Anezka's app usage from December 29-31, 2025. Identified learning pa
 
 ## Content Issues (41 Reported)
 
-### By Category
+### CONTENT-1: Letter Answers in Numeric Mode ✅ RESOLVED
+
+**Description:** 13 questions had multiple choice letter answers (A/B/C/D/E) instead of numeric values, making them impossible to answer correctly.
+
+**Fixed Questions:**
+
+| ID | Old Answer | New Answer | Topic |
+|----|-----------|------------|-------|
+| cir-test-001 | D) 25,12 cm² | 25,12 | circles |
+| cir-test-002 | D | 33 | circles |
+| per-test-016 | E | 60 | percents |
+| per-test-017 | B | 30 | percents |
+| per-test-018 | D | 50 | percents |
+| per-test-020 | E) 360 | 360 | percents |
+| per-test-021 | C) 320 | 320 | percents |
+| per-test-022 | A) 280 | 280 | percents |
+| per-test-025 | E | 450 | percents |
+| per-test-026 | C | 500 | percents |
+| per-test-027 | D | 480 | percents |
+| vol-test-009 | C | 314 | volume |
+| wor-test-012 | C) 200 | 200 | word_problems |
+
+**Commit:** `87e1a11` (2026-01-01)
+
+### Remaining Issues
+
+#### By Category
 
 | Category | Count | Description |
 |----------|-------|-------------|
 | Missing context | 9 | Question needs image/diagram |
 | Unsupported type | 10 | Construction/table can't be solved digitally |
-| Unclear answer | 22 | Answer format wrong or unclear |
+| ~~Unclear answer~~ | ~~22~~ → 9 | ~~Answer format wrong~~ Most fixed above |
 
 ### By Topic
 
@@ -157,17 +183,18 @@ Analysis of Anezka's app usage from December 29-31, 2025. Identified learning pa
 
 ## Recommendations
 
-### Immediate (Bugs)
+### Immediate (Bugs) ✅ DONE
 
-1. **Fix duplicate saving** - Add debounce or check for existing attempt
-2. **Fix user_id in error_queue** - Use `getCurrentUserId()` in `saveError()`
+1. ~~**Fix duplicate saving**~~ ✅ Fixed in `103795e`
+2. ~~**Fix user_id in error_queue**~~ ✅ Fixed in `103795e`
 
-### Short-term (Content)
+### Short-term (Content) - Partially Done
 
 1. **Add `requires_image` flag** to questions that need diagrams
 2. **Hide/disable constructions** topic until digital solution exists
-3. **Fix PYTH-P01 answer** - should be "5", not "Pythagorova věta"
-4. **Review tables_graphs** - fix markdown rendering or convert to images
+3. ~~**Fix PYTH-P01 answer**~~ ✅ Verified: correctly uses type_recognition mode
+4. ~~**Fix letter answers**~~ ✅ Fixed 13 questions in `87e1a11`
+5. **Review tables_graphs** - tables in context OK, only type_recognition mode
 
 ### Medium-term (Learning)
 
