@@ -582,7 +582,8 @@ function ProblemCard({
                 5: {
                   action: solutionRevealed ? 'continue' : 'submit',
                   onClick: solutionRevealed ? handleContinueAfterSolution : checkAnswer,
-                  disabled: !solutionRevealed && !userAnswer.trim()
+                  // BUG-1 fix: Also disable during 'correct' feedback to prevent duplicate saves
+                  disabled: feedback === 'correct' || (!solutionRevealed && !userAnswer.trim())
                 }
               }}
             />

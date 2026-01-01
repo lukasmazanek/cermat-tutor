@@ -139,8 +139,12 @@ function App() {
     }
   }
 
-  // Load last session on mount
+  // Load last session on mount + BUG-2 fix: set user ID for storage layer
   useEffect(() => {
+    const storedUser = getStoredUser()
+    if (storedUser) {
+      setCurrentUserId(storedUser) // Ensure storage layer has correct user ID
+    }
     setLastSession(getLastSession())
   }, [])
 
