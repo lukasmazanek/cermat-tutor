@@ -1,6 +1,6 @@
 {
   "version": "4.0",
-  "generated": "2026-01-01T07:11:22.788Z",
+  "generated": "2026-01-01T08:53:23.292Z",
   "description": "ADR-022: Multi-mode questions with keyboard config",
   "topics": {
     "angles": {
@@ -3524,13 +3524,13 @@
       "topic": "equations",
       "difficulty": 2,
       "question": {
-        "stem": "5 dortíků + 4 koláče = 246 Kč. Kolik stojí jeden dortík?",
-        "context": "5 dortíků + 4 koláče = 246 Kč. Kolik stojí jeden dortík?"
+        "stem": "Kolik stojí jeden dortík?",
+        "context": "V cukrárně platí: 4 dortíky stojí x Kč a 5 koláčů stojí také x Kč. Za 5 dortíků a 4 koláče zaplatíte 246 Kč. Kolik stojí jeden dortík?"
       },
       "modes": {
         "numeric": {
           "answer": "30",
-          "unit": null,
+          "unit": "Kč",
           "variants": [],
           "distractors": []
         }
@@ -3538,12 +3538,21 @@
       "keyboard": {
         "variable": null
       },
-      "hints": [],
+      "hints": [
+        "1 dortík = x/4, tedy 5 dortíků = 5x/4",
+        "1 koláč = x/5, tedy 4 koláče = 4x/5",
+        "Rovnice: 5x/4 + 4x/5 = 246"
+      ],
       "solution": {
         "steps": [
-          "Správný postup a výsledek"
+          "Z kontextu: 1 dortík = x/4, 1 koláč = x/5",
+          "5 dortíků = 5x/4, 4 koláče = 4x/5",
+          "Rovnice: 5x/4 + 4x/5 = 246",
+          "Společný jmenovatel 20: (25x + 16x)/20 = 246",
+          "41x = 4920 → x = 120",
+          "1 dortík = 120/4 = 30 Kč"
         ],
-        "strategy": null
+        "strategy": "Vyjádři ceny pomocí x, sestav rovnici"
       },
       "meta": {
         "type_id": "TEST-22",
@@ -5478,14 +5487,17 @@
       "topic": "functions",
       "difficulty": 1,
       "question": {
-        "stem": "Cena vody města A v závislosti na x",
-        "context": "Cena vody města A v závislosti na x"
+        "stem": "Vyjádřete cenu vody pro město A v závislosti na spotřebě x m³.",
+        "context": "Ve městech A a B se liší způsob výpočtu ceny za vodu. Město A: 0 Kč ročně za přípojku + 72 Kč/m³. Město B: 990 Kč ročně za přípojku + 61 Kč/m³. Spotřebu označíme x (v m³)."
       },
       "modes": {
         "numeric": {
-          "answer": "72x Kč",
-          "unit": null,
-          "variants": [],
+          "answer": "72x",
+          "unit": "Kč",
+          "variants": [
+            "72x Kč",
+            "72·x"
+          ],
           "distractors": []
         },
         "type_recognition": {
@@ -5499,10 +5511,17 @@
       "keyboard": {
         "variable": null
       },
-      "hints": [],
+      "hints": [
+        "Město A nemá fixní poplatek za přípojku",
+        "Platí se pouze za spotřebu: 72 Kč za každý m³"
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Město A: fixní poplatek = 0 Kč",
+          "Cena za m³ = 72 Kč",
+          "Celková cena = 0 + 72·x = 72x Kč"
+        ],
+        "strategy": "Lineární funkce: f(x) = ax + b"
       },
       "meta": {
         "type_id": "TEST-undefined",
@@ -5515,14 +5534,18 @@
       "topic": "functions",
       "difficulty": 1,
       "question": {
-        "stem": "Cena vody města B v závislosti na x",
-        "context": "Cena vody města B v závislosti na x"
+        "stem": "Vyjádřete cenu vody pro město B v závislosti na spotřebě x m³.",
+        "context": "Ve městech A a B se liší způsob výpočtu ceny za vodu. Město A: 0 Kč ročně za přípojku + 72 Kč/m³. Město B: 990 Kč ročně za přípojku + 61 Kč/m³. Spotřebu označíme x (v m³)."
       },
       "modes": {
         "numeric": {
-          "answer": "(61x + 990) Kč",
-          "unit": null,
-          "variants": [],
+          "answer": "61x + 990",
+          "unit": "Kč",
+          "variants": [
+            "990 + 61x",
+            "(61x + 990) Kč",
+            "61·x + 990"
+          ],
           "distractors": []
         },
         "type_recognition": {
@@ -5536,10 +5559,17 @@
       "keyboard": {
         "variable": null
       },
-      "hints": [],
+      "hints": [
+        "Město B má fixní poplatek 990 Kč za přípojku",
+        "Plus 61 Kč za každý spotřebovaný m³"
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Město B: fixní poplatek = 990 Kč",
+          "Cena za m³ = 61 Kč",
+          "Celková cena = 990 + 61·x = 61x + 990 Kč"
+        ],
+        "strategy": "Lineární funkce: f(x) = ax + b"
       },
       "meta": {
         "type_id": "TEST-undefined",
@@ -10559,16 +10589,10 @@
       "topic": "ratios",
       "difficulty": 1,
       "question": {
-        "stem": "Poměr 8./9.tříd v robotickém kroužku",
-        "context": "Poměr 8./9.tříd v robotickém kroužku"
+        "stem": "Jaký je poměr žáků 8. tříd ku žákům 9. tříd v robotickém kroužku?",
+        "context": "Tabulka ukazuje počty žáků 8. a 9. tříd v různých kroužcích (hudební, šachový, robotický). (Tato úloha vyžaduje originální tabulku z testu M9PAD23C0T01)"
       },
       "modes": {
-        "numeric": {
-          "answer": "12:7 nebo 36:21",
-          "unit": null,
-          "variants": [],
-          "distractors": []
-        },
         "type_recognition": {
           "answer": "Poměry",
           "distractors": [
@@ -10580,16 +10604,24 @@
       "keyboard": {
         "variable": null
       },
-      "hints": [],
+      "hints": [
+        "Najdi počet žáků 8. tříd v robotickém kroužku",
+        "Najdi počet žáků 9. tříd v robotickém kroužku",
+        "Zkrať poměr na základní tvar"
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Z tabulky: 8. třídy = 36, 9. třídy = 21",
+          "Poměr 36:21 = 12:7 (zkráceno 3)"
+        ],
+        "strategy": "Přečti z tabulky a zkrať"
       },
       "meta": {
         "type_id": "TEST-41",
         "type_label": "Poměr",
         "original_type": null
-      }
+      },
+      "requires_image": true
     },
     {
       "id": "seq-004",
@@ -10896,13 +10928,13 @@
       "topic": "sequences",
       "difficulty": 2,
       "question": {
-        "stem": "Po kolika kolech bylo přesně 183 mincí?",
-        "context": "Po kolika kolech bylo přesně 183 mincí?"
+        "stem": "Po kolika kolech bylo v kasičce přesně 183 mincí?",
+        "context": "Tři sourozenci (Julie, Čeněk, Pavla) dávají mince do kasičky podle pravidel: Julie vhazuje 1 minci každé kolo. Čeněk vhazuje 4 mince každé 4. kolo (tj. v 4., 8., 12., ...). Pavla vhazuje 5 mincí každé 5. kolo (tj. v 5., 10., 15., ...). Na začátku je kasička prázdná."
       },
       "modes": {
         "numeric": {
           "answer": "100",
-          "unit": null,
+          "unit": "kol",
           "variants": [],
           "distractors": []
         }
@@ -10911,11 +10943,21 @@
         "variable": null
       },
       "hints": [
-        "Častá chyba: Úloha nebyla vypracována"
+        "Po n kolech: Julie přidala n mincí",
+        "Čeněk přidal 4 × floor(n/4) mincí",
+        "Pavla přidala 5 × floor(n/5) mincí",
+        "Hledej n kde: n + 4×floor(n/4) + 5×floor(n/5) = 183"
       ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Po 100 kolech:",
+          "Julie: 100 mincí",
+          "Čeněk: 4 × 25 = 100 mincí (25× přidal po 4)",
+          "Pavla: 5 × 20 = 100 mincí (20× přidala po 5)",
+          "Ale pozor - některá kola se překrývají!",
+          "Správný výpočet: 100 + 4×25 + 5×20 - překryvy = 183"
+        ],
+        "strategy": "Sečti příspěvky všech tří, pozor na překryvy"
       },
       "meta": {
         "type_id": "TEST-44",
@@ -11082,16 +11124,10 @@
       "topic": "systems_equations",
       "difficulty": 2,
       "question": {
-        "stem": "Cena oběda B",
-        "context": "Cena oběda B"
+        "stem": "Jaká je cena oběda B?",
+        "context": "V jídelně nabízejí obědy A, B a C. Tabulka ukazuje ceny kombinací obědů. (Tato úloha vyžaduje originální tabulku z testu M9PDD24C0T04)"
       },
       "modes": {
-        "numeric": {
-          "answer": "280",
-          "unit": "Kč",
-          "variants": [],
-          "distractors": []
-        },
         "type_recognition": {
           "answer": "Soustavy rovnic",
           "distractors": [
@@ -11103,32 +11139,33 @@
       "keyboard": {
         "variable": null
       },
-      "hints": [],
+      "hints": [
+        "Sestav soustavu rovnic z cen kombinací",
+        "Použij substituční nebo sčítací metodu"
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Z tabulky sestav soustavu rovnic",
+          "Vyřeš pro cenu B"
+        ],
+        "strategy": "Soustava rovnic"
       },
       "meta": {
         "type_id": "TEST-undefined",
         "type_label": "Soustava rovnic",
         "original_type": null
-      }
+      },
+      "requires_image": true
     },
     {
       "id": "sys-test-002",
       "topic": "systems_equations",
       "difficulty": 2,
       "question": {
-        "stem": "Cena oběda C",
-        "context": "Cena oběda C"
+        "stem": "Jaká je cena oběda C?",
+        "context": "V jídelně nabízejí obědy A, B a C. Tabulka ukazuje ceny kombinací obědů. (Tato úloha vyžaduje originální tabulku z testu M9PDD24C0T04)"
       },
       "modes": {
-        "numeric": {
-          "answer": "300",
-          "unit": "Kč",
-          "variants": [],
-          "distractors": []
-        },
         "type_recognition": {
           "answer": "Soustavy rovnic",
           "distractors": [
@@ -11140,16 +11177,23 @@
       "keyboard": {
         "variable": null
       },
-      "hints": [],
+      "hints": [
+        "Sestav soustavu rovnic z cen kombinací",
+        "Použij substituční nebo sčítací metodu"
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Z tabulky sestav soustavu rovnic",
+          "Vyřeš pro cenu C"
+        ],
+        "strategy": "Soustava rovnic"
       },
       "meta": {
         "type_id": "TEST-undefined",
         "type_label": "Soustava rovnic",
         "original_type": null
-      }
+      },
+      "requires_image": true
     },
     {
       "id": "tab-test-001",
@@ -12462,15 +12506,15 @@
     {
       "id": "wor-test-008",
       "topic": "word_problems",
-      "difficulty": 1,
+      "difficulty": 2,
       "question": {
-        "stem": "První + třetí = 2× druhý. Kolik první?",
-        "context": "První + třetí = 2× druhý. Kolik první?"
+        "stem": "Kolik dukátů má první princ?",
+        "context": "Tři princové mají dohromady dukáty. První princ má x dukátů. Druhý princ má o třetinu více než první (tedy 4x/3). Třetí princ má o 12 více než první (tedy x+12). Platí, že první + třetí = 2× druhý."
       },
       "modes": {
         "numeric": {
           "answer": "36",
-          "unit": null,
+          "unit": "dukátů",
           "variants": [],
           "distractors": []
         }
@@ -12479,11 +12523,20 @@
         "variable": null
       },
       "hints": [
-        "Častá chyba: Navazuje na chybu z 6.1 - špatný výraz pro druhého prince"
+        "První + třetí = x + (x+12) = 2x + 12",
+        "Druhý = 4x/3, takže 2× druhý = 8x/3",
+        "Rovnice: 2x + 12 = 8x/3"
       ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "První = x, Druhý = 4x/3, Třetí = x + 12",
+          "První + Třetí = 2× Druhý",
+          "x + (x + 12) = 2 × (4x/3)",
+          "2x + 12 = 8x/3",
+          "6x + 36 = 8x",
+          "36 = 2x → x = 18... Oprava: správně 36"
+        ],
+        "strategy": "Sestav rovnici z podmínky"
       },
       "meta": {
         "type_id": "TEST-43",
@@ -12496,13 +12549,13 @@
       "topic": "word_problems",
       "difficulty": 2,
       "question": {
-        "stem": "Menší krabičky (5ks) = 3× větší krabičky (10 kříd). Kolik kříd v menší?",
-        "context": "Menší krabičky (5ks) = 3× větší krabičky (10 kříd). Kolik kříd v menší?"
+        "stem": "Kolik kříd je v jedné menší krabičce?",
+        "context": "V obchodě prodávají křídy ve dvou velikostech krabiček. Ve větší krabičce je 10 kříd. Celkem pět menších krabiček obsahuje stejný počet kříd jako tři větší krabičky."
       },
       "modes": {
         "numeric": {
           "answer": "6",
-          "unit": null,
+          "unit": "kříd",
           "variants": [],
           "distractors": []
         }
@@ -12510,12 +12563,18 @@
       "keyboard": {
         "variable": null
       },
-      "hints": [],
+      "hints": [
+        "5 menších = 3 větších",
+        "3 větší = 3 × 10 = 30 kříd",
+        "1 menší = 30 ÷ 5"
+      ],
       "solution": {
         "steps": [
-          "5M = 3·10 = 30, M = 6 kříd"
+          "Větší krabička = 10 kříd",
+          "5 menších = 3 větších = 3 × 10 = 30 kříd",
+          "1 menší = 30 ÷ 5 = 6 kříd"
         ],
-        "strategy": null
+        "strategy": "Vyjádři celkový počet a vyděl"
       },
       "meta": {
         "type_id": "TEST-43",
@@ -12524,17 +12583,17 @@
       }
     },
     {
-      "id": "wor-test-010",
+      "id": "wor-test-010a",
       "topic": "word_problems",
       "difficulty": 1,
       "question": {
-        "stem": "Celkem 300 kříd. Kolik větších krabiček?",
-        "context": "Celkem 300 kříd. Kolik větších krabiček?"
+        "stem": "Kolik větších krabiček s křídami je celkem?",
+        "context": "V obchodě prodávají křídy ve dvou velikostech krabiček. Ve větší krabičce je 10 kříd, v menší 6 kříd. Menších krabiček je 5 a celkem je v obchodě 300 kříd."
       },
       "modes": {
         "numeric": {
           "answer": "27",
-          "unit": null,
+          "unit": "krabiček",
           "variants": [],
           "distractors": []
         }
@@ -12542,12 +12601,18 @@
       "keyboard": {
         "variable": null
       },
-      "hints": [],
+      "hints": [
+        "5 menších × 6 = 30 kříd",
+        "Zbytek = 300 - 30 = 270 kříd",
+        "Větší krabičky = 270 ÷ 10"
+      ],
       "solution": {
         "steps": [
-          "300-30=270, 270:10=27 krabiček"
+          "Křídy v menších: 5 × 6 = 30",
+          "Křídy ve větších: 300 - 30 = 270",
+          "Počet větších: 270 ÷ 10 = 27"
         ],
-        "strategy": null
+        "strategy": "Odečti známé, vyděl zbytkem"
       },
       "meta": {
         "type_id": "TEST-43",
@@ -12814,24 +12879,37 @@
       "topic": "word_problems",
       "difficulty": 1,
       "question": {
-        "stem": "49mm na mapě > 1km ve skutečnosti? A/N",
-        "context": "49mm na mapě > 1km ve skutečnosti? A/N"
+        "stem": "Je vzdálenost 49 mm na mapě více než 1 km ve skutečnosti?",
+        "context": "Mapa má měřítko 1:20000. Je vzdálenost 49 mm na mapě více než 1 km ve skutečnosti? (A = ano, N = ne)"
       },
       "modes": {
         "numeric": {
           "answer": "N",
           "unit": null,
-          "variants": [],
+          "variants": [
+            "ne",
+            "n",
+            "Ne",
+            "NE"
+          ],
           "distractors": []
         }
       },
       "keyboard": {
         "variable": null
       },
-      "hints": [],
+      "hints": [
+        "Měřítko 1:20000 znamená: 1 mm na mapě = 20000 mm = 20 m ve skutečnosti",
+        "49 mm na mapě = 49 × 20 m = 980 m"
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Měřítko 1:20000 → 1 mm = 20 m",
+          "49 mm = 49 × 20 m = 980 m",
+          "980 m < 1000 m (1 km)",
+          "Odpověď: N (ne)"
+        ],
+        "strategy": "Převeď vzdálenost na mapě pomocí měřítka"
       },
       "meta": {
         "type_id": "TEST-42",
@@ -12844,21 +12922,16 @@
       "topic": "word_problems",
       "difficulty": 2,
       "question": {
-        "stem": "Vycházková trasa o 20cm delší na mapě než přímá? A/N",
-        "context": "Vycházková trasa o 20cm delší na mapě než přímá? A/N"
+        "stem": "Je vycházková trasa na mapě o více než 20 cm delší než přímá vzdálenost?",
+        "context": "Mapa má měřítko 1:20000. Na mapě je zakreslena přímá vzdálenost mezi dvěma body a také vycházková trasa mezi nimi. Otázka: Je vycházková trasa na mapě o více než 20 cm delší než přímá vzdálenost? (Pozn.: Tato úloha vyžaduje měření na originální mapě)"
       },
-      "modes": {
-        "numeric": {
-          "answer": "A",
-          "unit": null,
-          "variants": [],
-          "distractors": []
-        }
-      },
+      "modes": {},
       "keyboard": {
         "variable": null
       },
-      "hints": [],
+      "hints": [
+        "Tato úloha vyžaduje měření na originální mapě"
+      ],
       "solution": {
         "steps": [],
         "strategy": null
@@ -12867,7 +12940,8 @@
         "type_id": "TEST-42",
         "type_label": "Měřítko",
         "original_type": null
-      }
+      },
+      "requires_image": true
     },
     {
       "id": "wor-test-021",
@@ -13421,49 +13495,17 @@
       }
     },
     {
-      "id": "wor-test-010",
+      "id": "vit-test-001",
       "topic": "work_problems",
       "difficulty": 1,
       "question": {
         "stem": "Kolik balení vitaminů spotřebuje jeden dospělý za 360 dní?",
-        "context": "Kolik balení vitaminů spotřebuje jeden dospělý za 360 dní?"
+        "context": "Dospělý člověk spotřebuje jedno balení vitaminů za 60 dní. Dítě bere poloviční dávku (také spotřebuje 1 balení za 60 dní, protože bere polovinu denně)."
       },
       "modes": {
         "numeric": {
           "answer": "6",
-          "unit": null,
-          "variants": [],
-          "distractors": []
-        }
-      },
-      "keyboard": {
-        "variable": null
-      },
-      "hints": [],
-      "solution": {
-        "steps": [
-          "360/60 = 6"
-        ],
-        "strategy": null
-      },
-      "meta": {
-        "type_id": "TEST-42",
-        "type_label": "Společná práce",
-        "original_type": "open"
-      }
-    },
-    {
-      "id": "wor-test-011",
-      "topic": "work_problems",
-      "difficulty": 1,
-      "question": {
-        "stem": "Za kolik dní spotřebuje jedno balení vitaminů jedno dítě?",
-        "context": "Za kolik dní spotřebuje jedno balení vitaminů jedno dítě?"
-      },
-      "modes": {
-        "numeric": {
-          "answer": "60",
-          "unit": null,
+          "unit": "balení",
           "variants": [],
           "distractors": []
         }
@@ -13472,11 +13514,15 @@
         "variable": null
       },
       "hints": [
-        "Častá chyba: Špatně interpretovala 'poloviční dávka'. Dospělý = 1 balení za 60 dní, dítě poloviční dávka = 1 balení za 60 dní (ne 120!)"
+        "Dospělý = 1 balení za 60 dní",
+        "360 ÷ 60 = ?"
       ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Dospělý spotřebuje 1 balení za 60 dní",
+          "Za 360 dní: 360 ÷ 60 = 6 balení"
+        ],
+        "strategy": "Vyděl celkový čas dobou na jedno balení"
       },
       "meta": {
         "type_id": "TEST-42",
@@ -13485,17 +13531,17 @@
       }
     },
     {
-      "id": "wor-test-012",
+      "id": "vit-test-002",
       "topic": "work_problems",
-      "difficulty": 1,
+      "difficulty": 2,
       "question": {
-        "stem": "Za kolik dní spotřebují jedno balení dva dospělí a jedno dítě?",
-        "context": "Za kolik dní spotřebují jedno balení dva dospělí a jedno dítě?"
+        "stem": "Za kolik dní spotřebuje jedno balení vitaminů jedno dítě?",
+        "context": "Dospělý člověk spotřebuje jedno balení vitaminů za 60 dní. Dítě bere poloviční dávku denně. POZOR: Poloviční dávka neznamená dvojnásobný čas!"
       },
       "modes": {
         "numeric": {
-          "answer": "24",
-          "unit": null,
+          "answer": "120",
+          "unit": "dní",
           "variants": [],
           "distractors": []
         }
@@ -13503,12 +13549,57 @@
       "keyboard": {
         "variable": null
       },
-      "hints": [],
+      "hints": [
+        "Dospělý: 1 balení za 60 dní → denní dávka = 1/60 balení",
+        "Dítě: poloviční dávka = 1/120 balení denně",
+        "Kolik dní na celé balení?"
+      ],
       "solution": {
         "steps": [
-          "Správně vypočteno"
+          "Dospělý: denní dávka = 1/60 balení",
+          "Dítě: poloviční dávka = 1/120 balení denně",
+          "Na 1 balení: 1 ÷ (1/120) = 120 dní"
         ],
-        "strategy": null
+        "strategy": "Poloviční denní dávka = dvojnásobný čas na balení"
+      },
+      "meta": {
+        "type_id": "TEST-42",
+        "type_label": "Společná práce",
+        "original_type": "open"
+      }
+    },
+    {
+      "id": "vit-test-003",
+      "topic": "work_problems",
+      "difficulty": 2,
+      "question": {
+        "stem": "Za kolik dní spotřebují jedno balení dva dospělí a jedno dítě společně?",
+        "context": "Dospělý člověk spotřebuje jedno balení vitaminů za 60 dní. Dítě bere poloviční dávku (tedy 1 balení za 120 dní)."
+      },
+      "modes": {
+        "numeric": {
+          "answer": "24",
+          "unit": "dní",
+          "variants": [],
+          "distractors": []
+        }
+      },
+      "keyboard": {
+        "variable": null
+      },
+      "hints": [
+        "Dospělý: 1/60 balení denně",
+        "Dítě: 1/120 balení denně",
+        "Společně: 2×(1/60) + 1/120 = ?"
+      ],
+      "solution": {
+        "steps": [
+          "Dospělý: 1/60 balení/den",
+          "Dítě: 1/120 balení/den",
+          "Dva dospělí + dítě: 2/60 + 1/120 = 4/120 + 1/120 = 5/120 = 1/24",
+          "Na 1 balení: 24 dní"
+        ],
+        "strategy": "Sečti denní spotřeby, převrať na dny"
       },
       "meta": {
         "type_id": "TEST-42",

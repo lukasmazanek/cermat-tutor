@@ -491,64 +491,40 @@
       }
     },
     {
-      "id": "wor-test-010",
+      "id": "vit-test-001",
       "topic": "work_problems",
       "tags": [
-        "společná-práce"
+        "společná-práce",
+        "vitaminy"
       ],
       "difficulty": 1,
       "question": {
         "stem": "Kolik balení vitaminů spotřebuje jeden dospělý za 360 dní?",
-        "context": "Kolik balení vitaminů spotřebuje jeden dospělý za 360 dní?",
+        "context": "Dospělý člověk spotřebuje jedno balení vitaminů za 60 dní. Dítě bere poloviční dávku (také spotřebuje 1 balení za 60 dní, protože bere polovinu denně).",
         "image": null
       },
       "answer": {
         "correct": "6",
-        "unit": null,
-        "variants": []
-      },
-      "distractors": [],
-      "hints": [],
-      "solution": {
-        "steps": [
-          "360/60 = 6"
-        ],
-        "strategy": null
-      },
-      "meta": {
-        "type_id": "TEST-42",
-        "type_label": "Společná práce",
-        "source": "M9PAD22C0T01",
-        "original_type": "open"
-      }
-    },
-    {
-      "id": "wor-test-011",
-      "topic": "work_problems",
-      "tags": [
-        "společná-práce"
-      ],
-      "difficulty": 1,
-      "question": {
-        "stem": "Za kolik dní spotřebuje jedno balení vitaminů jedno dítě?",
-        "context": "Za kolik dní spotřebuje jedno balení vitaminů jedno dítě?",
-        "image": null
-      },
-      "answer": {
-        "correct": "60",
-        "unit": null,
+        "unit": "balení",
         "variants": []
       },
       "distractors": [],
       "hints": [
         {
           "level": 1,
-          "text": "Častá chyba: Špatně interpretovala 'poloviční dávka'. Dospělý = 1 balení za 60 dní, dítě poloviční dávka = 1 balení za 60 dní (ne 120!)"
+          "text": "Dospělý = 1 balení za 60 dní"
+        },
+        {
+          "level": 2,
+          "text": "360 ÷ 60 = ?"
         }
       ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Dospělý spotřebuje 1 balení za 60 dní",
+          "Za 360 dní: 360 ÷ 60 = 6 balení"
+        ],
+        "strategy": "Vyděl celkový čas dobou na jedno balení"
       },
       "meta": {
         "type_id": "TEST-42",
@@ -558,29 +534,95 @@
       }
     },
     {
-      "id": "wor-test-012",
+      "id": "vit-test-002",
       "topic": "work_problems",
       "tags": [
-        "společná-práce"
+        "společná-práce",
+        "vitaminy"
       ],
-      "difficulty": 1,
+      "difficulty": 2,
       "question": {
-        "stem": "Za kolik dní spotřebují jedno balení dva dospělí a jedno dítě?",
-        "context": "Za kolik dní spotřebují jedno balení dva dospělí a jedno dítě?",
+        "stem": "Za kolik dní spotřebuje jedno balení vitaminů jedno dítě?",
+        "context": "Dospělý člověk spotřebuje jedno balení vitaminů za 60 dní. Dítě bere poloviční dávku denně. POZOR: Poloviční dávka neznamená dvojnásobný čas!",
+        "image": null
+      },
+      "answer": {
+        "correct": "120",
+        "unit": "dní",
+        "variants": []
+      },
+      "distractors": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Dospělý: 1 balení za 60 dní → denní dávka = 1/60 balení"
+        },
+        {
+          "level": 2,
+          "text": "Dítě: poloviční dávka = 1/120 balení denně"
+        },
+        {
+          "level": 3,
+          "text": "Kolik dní na celé balení?"
+        }
+      ],
+      "solution": {
+        "steps": [
+          "Dospělý: denní dávka = 1/60 balení",
+          "Dítě: poloviční dávka = 1/120 balení denně",
+          "Na 1 balení: 1 ÷ (1/120) = 120 dní"
+        ],
+        "strategy": "Poloviční denní dávka = dvojnásobný čas na balení"
+      },
+      "meta": {
+        "type_id": "TEST-42",
+        "type_label": "Společná práce",
+        "source": "M9PAD22C0T01",
+        "original_type": "open",
+        "note": "Častá chyba: odpověď 60 (zapomíná, že poloviční dávka = dvojnásobný čas)"
+      }
+    },
+    {
+      "id": "vit-test-003",
+      "topic": "work_problems",
+      "tags": [
+        "společná-práce",
+        "vitaminy"
+      ],
+      "difficulty": 2,
+      "question": {
+        "stem": "Za kolik dní spotřebují jedno balení dva dospělí a jedno dítě společně?",
+        "context": "Dospělý člověk spotřebuje jedno balení vitaminů za 60 dní. Dítě bere poloviční dávku (tedy 1 balení za 120 dní).",
         "image": null
       },
       "answer": {
         "correct": "24",
-        "unit": null,
+        "unit": "dní",
         "variants": []
       },
       "distractors": [],
-      "hints": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Dospělý: 1/60 balení denně"
+        },
+        {
+          "level": 2,
+          "text": "Dítě: 1/120 balení denně"
+        },
+        {
+          "level": 3,
+          "text": "Společně: 2×(1/60) + 1/120 = ?"
+        }
+      ],
       "solution": {
         "steps": [
-          "Správně vypočteno"
+          "Dospělý: 1/60 balení/den",
+          "Dítě: 1/120 balení/den",
+          "Dva dospělí + dítě: 2/60 + 1/120 = 4/120 + 1/120 = 5/120 = 1/24",
+          "Na 1 balení: 24 dní"
         ],
-        "strategy": null
+        "strategy": "Sečti denní spotřeby, převrať na dny"
       },
       "meta": {
         "type_id": "TEST-42",

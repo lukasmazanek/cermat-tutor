@@ -1,8 +1,9 @@
 {
   "topic": "functions",
   "name": "Lineární funkce",
-  "version": "1.1",
+  "version": "1.2",
   "migrated": "2025-12-29",
+  "updated": "2026-01-01",
   "questions": [
     {
       "id": "fun-test-001",
@@ -12,20 +13,36 @@
       ],
       "difficulty": 1,
       "question": {
-        "stem": "Cena vody města A v závislosti na x",
-        "context": "Cena vody města A v závislosti na x",
+        "stem": "Vyjádřete cenu vody pro město A v závislosti na spotřebě x m³.",
+        "context": "Ve městech A a B se liší způsob výpočtu ceny za vodu. Město A: 0 Kč ročně za přípojku + 72 Kč/m³. Město B: 990 Kč ročně za přípojku + 61 Kč/m³. Spotřebu označíme x (v m³).",
         "image": null
       },
       "answer": {
-        "correct": "72x Kč",
-        "unit": null,
-        "variants": []
+        "correct": "72x",
+        "unit": "Kč",
+        "variants": [
+          "72x Kč",
+          "72·x"
+        ]
       },
       "distractors": [],
-      "hints": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Město A nemá fixní poplatek za přípojku"
+        },
+        {
+          "level": 2,
+          "text": "Platí se pouze za spotřebu: 72 Kč za každý m³"
+        }
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Město A: fixní poplatek = 0 Kč",
+          "Cena za m³ = 72 Kč",
+          "Celková cena = 0 + 72·x = 72x Kč"
+        ],
+        "strategy": "Lineární funkce: f(x) = ax + b"
       },
       "meta": {
         "type_id": "TEST-undefined",
@@ -50,20 +67,37 @@
       ],
       "difficulty": 1,
       "question": {
-        "stem": "Cena vody města B v závislosti na x",
-        "context": "Cena vody města B v závislosti na x",
+        "stem": "Vyjádřete cenu vody pro město B v závislosti na spotřebě x m³.",
+        "context": "Ve městech A a B se liší způsob výpočtu ceny za vodu. Město A: 0 Kč ročně za přípojku + 72 Kč/m³. Město B: 990 Kč ročně za přípojku + 61 Kč/m³. Spotřebu označíme x (v m³).",
         "image": null
       },
       "answer": {
-        "correct": "(61x + 990) Kč",
-        "unit": null,
-        "variants": []
+        "correct": "61x + 990",
+        "unit": "Kč",
+        "variants": [
+          "990 + 61x",
+          "(61x + 990) Kč",
+          "61·x + 990"
+        ]
       },
       "distractors": [],
-      "hints": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Město B má fixní poplatek 990 Kč za přípojku"
+        },
+        {
+          "level": 2,
+          "text": "Plus 61 Kč za každý spotřebovaný m³"
+        }
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Město B: fixní poplatek = 990 Kč",
+          "Cena za m³ = 61 Kč",
+          "Celková cena = 990 + 61·x = 61x + 990 Kč"
+        ],
+        "strategy": "Lineární funkce: f(x) = ax + b"
       },
       "meta": {
         "type_id": "TEST-undefined",

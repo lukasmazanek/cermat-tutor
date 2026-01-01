@@ -341,7 +341,12 @@ npm run deploy  # Deploy to GitHub Pages
 - **Framework**: React 18 + Vite 4
 - **Styling**: Tailwind CSS v3
 - **Approach**: Mobile-first (mobile is PRIMARY target)
-- **Data**: localStorage (MVP), Supabase (future)
+- **Data**: Supabase (all answers stored in cloud)
+
+### Supabase Integration
+- **All user answers are saved to Supabase** in real-time
+- Use Supabase dashboard or SQL queries to analyze answer patterns
+- Flagged/problematic questions can be identified through answer data
 
 ### Breakpoints
 | Breakpoint | Width | Priority |

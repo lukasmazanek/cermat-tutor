@@ -1,8 +1,9 @@
 {
   "topic": "systems_equations",
   "name": "Soustavy rovnic",
-  "version": "1.1",
+  "version": "1.2",
   "migrated": "2025-12-29",
+  "updated": "2026-01-01",
   "questions": [
     {
       "id": "sys-test-001",
@@ -11,9 +12,10 @@
         "soustava-rovnic"
       ],
       "difficulty": 2,
+      "requires_image": true,
       "question": {
-        "stem": "Cena oběda B",
-        "context": "Cena oběda B",
+        "stem": "Jaká je cena oběda B?",
+        "context": "V jídelně nabízejí obědy A, B a C. Tabulka ukazuje ceny kombinací obědů. (Tato úloha vyžaduje originální tabulku z testu M9PDD24C0T04)",
         "image": null
       },
       "answer": {
@@ -22,10 +24,22 @@
         "variants": []
       },
       "distractors": [],
-      "hints": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Sestav soustavu rovnic z cen kombinací"
+        },
+        {
+          "level": 2,
+          "text": "Použij substituční nebo sčítací metodu"
+        }
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Z tabulky sestav soustavu rovnic",
+          "Vyřeš pro cenu B"
+        ],
+        "strategy": "Soustava rovnic"
       },
       "meta": {
         "type_id": "TEST-undefined",
@@ -49,9 +63,10 @@
         "soustava-rovnic"
       ],
       "difficulty": 2,
+      "requires_image": true,
       "question": {
-        "stem": "Cena oběda C",
-        "context": "Cena oběda C",
+        "stem": "Jaká je cena oběda C?",
+        "context": "V jídelně nabízejí obědy A, B a C. Tabulka ukazuje ceny kombinací obědů. (Tato úloha vyžaduje originální tabulku z testu M9PDD24C0T04)",
         "image": null
       },
       "answer": {
@@ -60,10 +75,22 @@
         "variants": []
       },
       "distractors": [],
-      "hints": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Sestav soustavu rovnic z cen kombinací"
+        },
+        {
+          "level": 2,
+          "text": "Použij substituční nebo sčítací metodu"
+        }
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Z tabulky sestav soustavu rovnic",
+          "Vyřeš pro cenu C"
+        ],
+        "strategy": "Soustava rovnic"
       },
       "meta": {
         "type_id": "TEST-undefined",

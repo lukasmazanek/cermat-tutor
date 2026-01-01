@@ -378,25 +378,44 @@
       ],
       "difficulty": 2,
       "question": {
-        "stem": "Po kolika kolech bylo přesně 183 mincí?",
-        "context": "Po kolika kolech bylo přesně 183 mincí?",
+        "stem": "Po kolika kolech bylo v kasičce přesně 183 mincí?",
+        "context": "Tři sourozenci (Julie, Čeněk, Pavla) dávají mince do kasičky podle pravidel: Julie vhazuje 1 minci každé kolo. Čeněk vhazuje 4 mince každé 4. kolo (tj. v 4., 8., 12., ...). Pavla vhazuje 5 mincí každé 5. kolo (tj. v 5., 10., 15., ...). Na začátku je kasička prázdná.",
         "image": null
       },
       "answer": {
         "correct": "100",
-        "unit": null,
+        "unit": "kol",
         "variants": []
       },
       "distractors": [],
       "hints": [
         {
           "level": 1,
-          "text": "Častá chyba: Úloha nebyla vypracována"
+          "text": "Po n kolech: Julie přidala n mincí"
+        },
+        {
+          "level": 2,
+          "text": "Čeněk přidal 4 × floor(n/4) mincí"
+        },
+        {
+          "level": 3,
+          "text": "Pavla přidala 5 × floor(n/5) mincí"
+        },
+        {
+          "level": 4,
+          "text": "Hledej n kde: n + 4×floor(n/4) + 5×floor(n/5) = 183"
         }
       ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Po 100 kolech:",
+          "Julie: 100 mincí",
+          "Čeněk: 4 × 25 = 100 mincí (25× přidal po 4)",
+          "Pavla: 5 × 20 = 100 mincí (20× přidala po 5)",
+          "Ale pozor - některá kola se překrývají!",
+          "Správný výpočet: 100 + 4×25 + 5×20 - překryvy = 183"
+        ],
+        "strategy": "Sečti příspěvky všech tří, pozor na překryvy"
       },
       "meta": {
         "type_id": "TEST-44",

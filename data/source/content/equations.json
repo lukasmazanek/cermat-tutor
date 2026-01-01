@@ -924,26 +924,45 @@
       "id": "equ-test-025",
       "topic": "equations",
       "tags": [
-        "lineární-rovnice"
+        "lineární-rovnice",
+        "slovní-úloha"
       ],
       "difficulty": 2,
       "question": {
-        "stem": "5 dortíků + 4 koláče = 246 Kč. Kolik stojí jeden dortík?",
-        "context": "5 dortíků + 4 koláče = 246 Kč. Kolik stojí jeden dortík?",
+        "stem": "Kolik stojí jeden dortík?",
+        "context": "V cukrárně platí: 4 dortíky stojí x Kč a 5 koláčů stojí také x Kč. Za 5 dortíků a 4 koláče zaplatíte 246 Kč. Kolik stojí jeden dortík?",
         "image": null
       },
       "answer": {
         "correct": "30",
-        "unit": null,
+        "unit": "Kč",
         "variants": []
       },
       "distractors": [],
-      "hints": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "1 dortík = x/4, tedy 5 dortíků = 5x/4"
+        },
+        {
+          "level": 2,
+          "text": "1 koláč = x/5, tedy 4 koláče = 4x/5"
+        },
+        {
+          "level": 3,
+          "text": "Rovnice: 5x/4 + 4x/5 = 246"
+        }
+      ],
       "solution": {
         "steps": [
-          "Správný postup a výsledek"
+          "Z kontextu: 1 dortík = x/4, 1 koláč = x/5",
+          "5 dortíků = 5x/4, 4 koláče = 4x/5",
+          "Rovnice: 5x/4 + 4x/5 = 246",
+          "Společný jmenovatel 20: (25x + 16x)/20 = 246",
+          "41x = 4920 → x = 120",
+          "1 dortík = 120/4 = 30 Kč"
         ],
-        "strategy": null
+        "strategy": "Vyjádři ceny pomocí x, sestav rovnici"
       },
       "meta": {
         "type_id": "TEST-22",

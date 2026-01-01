@@ -93,21 +93,40 @@
         "poměr"
       ],
       "difficulty": 1,
+      "requires_image": true,
       "question": {
-        "stem": "Poměr 8./9.tříd v robotickém kroužku",
-        "context": "Poměr 8./9.tříd v robotickém kroužku",
+        "stem": "Jaký je poměr žáků 8. tříd ku žákům 9. tříd v robotickém kroužku?",
+        "context": "Tabulka ukazuje počty žáků 8. a 9. tříd v různých kroužcích (hudební, šachový, robotický). (Tato úloha vyžaduje originální tabulku z testu M9PAD23C0T01)",
         "image": null
       },
       "answer": {
-        "correct": "12:7 nebo 36:21",
+        "correct": "12:7",
         "unit": null,
-        "variants": []
+        "variants": [
+          "36:21"
+        ]
       },
       "distractors": [],
-      "hints": [],
+      "hints": [
+        {
+          "level": 1,
+          "text": "Najdi počet žáků 8. tříd v robotickém kroužku"
+        },
+        {
+          "level": 2,
+          "text": "Najdi počet žáků 9. tříd v robotickém kroužku"
+        },
+        {
+          "level": 3,
+          "text": "Zkrať poměr na základní tvar"
+        }
+      ],
       "solution": {
-        "steps": [],
-        "strategy": null
+        "steps": [
+          "Z tabulky: 8. třídy = 36, 9. třídy = 21",
+          "Poměr 36:21 = 12:7 (zkráceno 3)"
+        ],
+        "strategy": "Přečti z tabulky a zkrať"
       },
       "meta": {
         "type_id": "TEST-41",
